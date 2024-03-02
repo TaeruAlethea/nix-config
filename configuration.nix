@@ -143,7 +143,7 @@
       vintagestory
     ];
   };
-  home-manager.users.taeru = [./home.nix];
+  home-manager.users.taeru = import ./home.nix;
 
   # Needed for Obsidian. Remove as soon as possible.
   nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0"];
