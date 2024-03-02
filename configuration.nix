@@ -1,14 +1,15 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -28,7 +29,6 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
-  
   # Set your time zone.
   time.timeZone = "America/New_York";
 
@@ -46,34 +46,33 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-  
+
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
   };
-  
+
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = [ "nvidia" ];
-  
+  services.xserver.videoDrivers = ["nvidia"];
+
   hardware.nvidia = {
     nvidiaSettings = true;
     # open = true; # The open drivers are generally recommended these days
     # modesetting.enable = true; # Starts the nvidia with kms, ensuring that there is no tty flicker and enabling a variety of important things down the stack
-    
+
     # Needed for 4070 Ti Super
     # package = config.boot.kernelPackages.nvidiaPackages.beta;
     package = config.boot.kernelPackages.nvidiaPackages.beta.overrideAttrs (old: let
       version = "550.54.14";
-        in {
-        src = pkgs.fetchurl {
+    in {
+      src = pkgs.fetchurl {
         url = "https://download.nvidia.com/XFree86/Linux-x86_64/${version}/NVIDIA-Linux-x86_64-${version}.run";
         sha256 = "sha256-jEl/8c/HwxD7h1FJvDD6pP0m0iN7LLps0uiweAFXz+M=";
       };
-      patches = [ ];
+      patches = [];
     });
-
 
     # powermanagement.enable = true; Optional, this fixes suspend for me
 
@@ -84,7 +83,7 @@
     # See above
     # hardware.nvidia.forceFullCompositionPipeline = false;
   };
-  
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -104,7 +103,7 @@
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
-  hardware.pulseaudio.extraModules = [ pkgs.pulseaudio-modules-bt ];
+  hardware.pulseaudio.extraModules = [pkgs.pulseaudio-modules-bt];
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -125,13 +124,13 @@
   # Peripheral configurations
   # RAZER Support
   hardware.openrazer.enable = true;
-  hardware.openrazer.users = [ "taeru" ];
+  hardware.openrazer.users = ["taeru"];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.taeru = {
     isNormalUser = true;
     description = "Taeru";
-    extraGroups = [ "networkmanager" "wheel" "plugdev" "libvirtd" "openrazer" ];
+    extraGroups = ["networkmanager" "wheel" "plugdev" "libvirtd" "openrazer"];
     packages = with pkgs; [
       firefox
       steam
@@ -139,16 +138,14 @@
       protonup-qt
       vesktop
 
-    # Games them selves
+      # Games them selves
       vintagestory
-
     ];
   };
-  
-  # Needed for Obsidian. Remove as soon as possible.
   nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
 
-  
+  # Needed for Obsidian. Remove as soon as possible.
+  nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0"];
 
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
@@ -175,20 +172,20 @@
     openrazer-daemon
     wine
     wine64
-    
+
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
         bbenoist.nix
-        ];
-      })
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+      ];
+    })
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
   ];
 
   # Virtualization
   programs.virt-manager.enable = true;
   virtualisation.libvirtd.enable = true;
-  
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
