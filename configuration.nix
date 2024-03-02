@@ -134,6 +134,7 @@
     extraGroups = ["networkmanager" "wheel" "plugdev" "libvirtd" "openrazer"];
     packages = with pkgs; [
       firefox
+      lutris
       steam
       obsidian
       protonup-qt
