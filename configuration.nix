@@ -140,6 +140,7 @@
       vesktop
 
       # Games them selves
+      tetrio-desktop
       vintagestory
     ];
   };
