@@ -142,7 +142,6 @@
       vintagestory
     ];
   };
-  nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
 
   # Needed for Obsidian. Remove as soon as possible.
   nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0"];
