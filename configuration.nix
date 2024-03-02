@@ -165,6 +165,7 @@
     easyeffects
     git
     github-desktop
+    libnotify
     helvum
     razergenie
     polychromatic
