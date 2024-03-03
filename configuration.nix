@@ -142,7 +142,19 @@
 
       # Games them selves
       tetrio-desktop
-      vintagestory
+      (
+        vintagestory.overrideAttrs
+        (
+          old: let
+            version = "1.18.15";
+          in {
+            src = pkgs.fetchurl {
+              url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_${version}.tar.gz";
+              sha256 = "sha256-luZwRKVptSd69tCaf6Jv0YOfwOeDOcuY7VoL+21tTEo=";
+            };
+          }
+        )
+      )
     ];
   };
   home-manager.users.taeru = import ./home.nix;
@@ -150,20 +162,20 @@
   # Needed for Obsidian. Remove as soon as possible.
   nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0"];
 
-  nixpkgs.overlays = [
-    (
-      final: prev: {
-        vintagestory = prev.vintagestory.overrideAttrs (old: let
-          version = "1.18.15";
-        in {
-          src = pkgs.fetchurl {
-            url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_${version}.tar.gz";
-            sha256 = "sha256-luZwRKVptSd69tCaf6Jv0YOfwOeDOcuY7VoL+21tTEo=";
-          };
-        });
-      }
-    )
-  ];
+  # nixpkgs.overlays = [
+  #  (
+  #    final: prev: {
+  #      vintagestory = prev.vintagestory.overrideAttrs (old: let
+  #        version = "1.18.15";
+  #      in {
+  #        src = pkgs.fetchurl {
+  #          url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_${version}.tar.gz";
+  #          sha256 = "sha256-luZwRKVptSd69tCaf6Jv0YOfwOeDOcuY7VoL+21tTEo=";
+  #        };
+  #      });
+  #    }
+  #  )
+  #];
 
   # ALVR
   # programs.alvr.enable = true;
