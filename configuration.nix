@@ -158,7 +158,7 @@
         in {
           src = pkgs.fetchurl {
             url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_${version}.tar.gz";
-            sha256 = "sha256-akeW03+IdRvt3Fs3gF6TcYv9gD33DHPtpmiiMa0b92k=";
+            sha256 = "sha256-luZwRKVptSd69tCaf6Jv0YOfwOeDOcuY7VoL+21tTEo=";
           };
         });
       }
