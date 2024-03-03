@@ -9,7 +9,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    <home-manager/nixos>
+    # <home-manager/nixos>
   ];
 
   # Bootloader.
@@ -93,9 +93,9 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "us";
-    xkbVariant = "";
+    variant = "";
   };
 
   # Enable CUPS to print documents.
@@ -145,10 +145,29 @@
       vintagestory
     ];
   };
-  home-manager.users.taeru = import ./home.nix;
+  # home-manager.users.taeru = import ./home.nix;
 
   # Needed for Obsidian. Remove as soon as possible.
   nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0"];
+
+  nixpkgs.overlays = [
+    (
+      final: prev: {
+        vintagestory = prev.vintagestory.overrideAttrs (old: let
+          version = "1.18.15";
+        in {
+          src = pkgs.fetchurl {
+            url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_${version}.tar.gz";
+            sha256 = "sha256-akeW03+IdRvt3Fs3gF6TcYv9gD33DHPtpmiiMa0b92k=";
+          };
+        });
+      }
+    )
+  ];
+
+  # ALVR
+  # programs.alvr.enable = true;
+  # programs.alvr.openFirewall = true;
 
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
@@ -165,6 +184,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     alejandra
+    # alvr
     bottles
     easyeffects
     git
@@ -196,7 +216,7 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
+  # programs.mtr.enable = true;alvr
   # programs.gnupg.agent = {
   #   enable = true;
   #   enableSSHSupport = true;
