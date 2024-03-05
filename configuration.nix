@@ -204,8 +204,9 @@
     libnotify
     helvum
     razergenie
-    polychromatic
     openrazer-daemon
+    polychromatic
+    qemu
     wine
     wine64
 
