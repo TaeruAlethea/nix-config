@@ -206,7 +206,6 @@
     razergenie
     openrazer-daemon
     polychromatic
-    qemu
     wine
     wine64
 
