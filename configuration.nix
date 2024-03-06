@@ -202,6 +202,7 @@
     easyeffects
     git
     github-desktop
+    kitty
     libnotify
     helvum
     razergenie
