@@ -132,6 +132,7 @@
     isNormalUser = true;
     description = "Taeru";
     extraGroups = ["networkmanager" "wheel" "plugdev" "libvirtd" "openrazer"];
+    openssh.authorizedKeys.keyFiles = [./ssh/authorized_keys/id_ed25519.pub];
     packages = with pkgs; [
       firefox
       lutris
@@ -242,6 +243,7 @@
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
+    ports = [75];
     settings.PasswordAuthentication = false;
     settings.KbdInteractiveAuthentication = false;
     settings.PermitRootLogin = "without-password";
