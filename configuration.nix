@@ -55,9 +55,6 @@
     driSupport32Bit = true;
   };
 
-  # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
-
   hardware.nvidia = {
     nvidiaSettings = true;
     # open = true; # The open drivers are generally recommended these days
@@ -85,18 +82,35 @@
     # hardware.nvidia.forceFullCompositionPipeline = false;
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  services.xserver = {
+    # Enable the X11 windowing system.
+    enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+    # Load nvidia driver for Xorg and Wayland
+    videoDrivers = ["nvidia"];
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+    displayManager = {
+      # Enable the GNOME Desktop Environment.
+      gdm.enable = true;
+
+      autoLogin.enable = true;
+      autoLogin.user = "taeru";
+    };
+
+    desktopManager = {
+      xterm.enable = false;
+
+      # Enable the GNOME Desktop Environment.
+      gnome.enable = true;
+    };
+
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
   };
+
+  programs.gnome-terminal.enable = false;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -181,10 +195,6 @@
   # ALVR
   # programs.alvr.enable = true;
   # programs.alvr.openFirewall = true;
-
-  # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "taeru";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
