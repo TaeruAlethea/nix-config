@@ -1,5 +1,14 @@
 {pkgs, ...}: {
-  home.packages = [pkgs.atool pkgs.httpie];
+  home = {
+    packages = [pkgs.atool pkgs.httpie];
+
+    sessionVariables = {
+      EDITOR = "vscode";
+      BROWSER = "firefox";
+      TERMINAL = "Kitty";
+    };
+  };
+
   programs.bash.enable = true;
 
   programs.git = {
