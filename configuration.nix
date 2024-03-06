@@ -139,7 +139,6 @@
       obsidian
       protonup-qt
       vesktop
-      xdotool
 
       # Games them selves
       tetrio-desktop
@@ -209,6 +208,7 @@
     polychromatic
     wine
     wine64
+    xdotool
 
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
