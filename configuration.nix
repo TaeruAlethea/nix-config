@@ -208,6 +208,8 @@
     polychromatic
     wine
     wine64
+    xbindkeys
+    xbindkeys-config
     xdotool
 
     (vscode-with-extensions.override {
