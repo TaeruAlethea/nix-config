@@ -139,6 +139,7 @@
       obsidian
       protonup-qt
       vesktop
+      xdotool
 
       # Games them selves
       tetrio-desktop
