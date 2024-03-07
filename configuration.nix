@@ -240,9 +240,10 @@
   ];
 
   environment.gnome.excludePackages = (with pkgs; [
+    gedit # text editor
+    gnome-console
     gnome-photos
     gnome-tour
-    gedit # text editor
   ]) ++ (with pkgs.gnome; [
     cheese # webcam tool
     gnome-music
