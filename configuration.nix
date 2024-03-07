@@ -172,7 +172,12 @@
       )
     ];
   };
-  home-manager.users.taeru = import ./home.nix;
+
+  home-manager = {
+    users.taeru = import ./home.nix;
+    useUserPackages = true;
+    # useGlobalPkgs = true;
+  };
 
   # Needed for Obsidian. Remove as soon as possible.
   nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0"];

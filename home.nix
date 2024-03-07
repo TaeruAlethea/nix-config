@@ -10,7 +10,7 @@
     sessionVariables = {
       EDITOR = "vscode";
       BROWSER = "firefox";
-      TERMINAL = "Kitty";
+      TERMINAL = "kitty";
     };
 
     packages = [pkgs.atool pkgs.httpie];
