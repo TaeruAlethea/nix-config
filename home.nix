@@ -3,6 +3,11 @@
   pkgs,
   ...
 }: {
+dconf={
+  enable = true;
+  settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+  };
+
   home = {
     username = "taeru";
     homeDirectory = "/home/taeru";
@@ -23,7 +28,7 @@
 
     bash = {
       enable = true;
-      # bashrcExtra = import ./DotConfigs/bashrc;
+      bashrcExtra = "bash ~/Documents/GitHub/Nix-Configuration/DotConfigs/.bashrc";
     };
 
     git = {
@@ -50,7 +55,7 @@
     starship = {
       enable = true;
       enableBashIntegration = true;
-      # settings = import ./DotConfigs/starship.toml;
+      settings = (builtins.fromTOML (builtins.readFile ./DotConfigs/starship.nix));
     };
   };
   # The state version is required and should stay at the version you

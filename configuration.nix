@@ -176,7 +176,6 @@
   home-manager = {
     users.taeru = import ./home.nix;
     useUserPackages = true;
-    # useGlobalPkgs = true;
   };
 
   # Needed for Obsidian. Remove as soon as possible.
@@ -217,6 +216,7 @@
     easyeffects
     git
     github-desktop
+    gnomeExtensions.appindicator
     kitty
     libnotify
     helvum
@@ -239,6 +239,26 @@
     #  wget
   ];
 
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-photos
+    gnome-tour
+    gedit # text editor
+  ]) ++ (with pkgs.gnome; [
+    cheese # webcam tool
+    gnome-music
+    gnome-terminal
+    epiphany # web browser
+    geary # email reader
+    evince # document viewer
+    gnome-characters
+    totem # video player
+    tali # poker game
+    iagno # go game
+    hitori # sudoku game
+    atomix # puzzle game
+  ]);
+
+
   environment.interactiveShellInit = ''
     alias rebuild="bash ~/Documents/Scripts/nixos-rebuild.sh"
   '';
@@ -256,7 +276,6 @@
   # };
 
   # List services that you want to enable:
-
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
@@ -265,6 +284,8 @@
     settings.KbdInteractiveAuthentication = false;
     settings.PermitRootLogin = "without-password";
   };
+
+  services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
