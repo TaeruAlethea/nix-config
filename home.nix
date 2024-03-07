@@ -28,7 +28,7 @@ dconf={
 
     bash = {
       enable = true;
-      bashrcExtra = "bash ~/Documents/GitHub/Nix-Configuration/DotConfigs/.bashrc";
+      # bashrcExtra = "bash ~/Documents/GitHub/Nix-Configuration/DotConfigs/.bashrc";
     };
 
     git = {
