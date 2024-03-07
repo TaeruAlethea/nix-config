@@ -110,8 +110,6 @@
     };
   };
 
-  programs.gnome-terminal.enable = false;
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
