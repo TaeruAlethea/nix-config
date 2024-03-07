@@ -55,7 +55,7 @@ dconf={
     starship = {
       enable = true;
       enableBashIntegration = true;
-      settings = (builtins.fromTOML (builtins.readFile ./DotConfigs/starship.nix));
+      settings = (builtins.fromTOML (builtins.readFile ./DotConfigs/starship.toml));
     };
   };
   # The state version is required and should stay at the version you
