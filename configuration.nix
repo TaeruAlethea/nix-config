@@ -223,6 +223,7 @@
     razergenie
     openrazer-daemon
     polychromatic
+    powerline-fonts
     wine
     wine64
     xbindkeys
