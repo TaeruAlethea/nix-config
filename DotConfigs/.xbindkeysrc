@@ -1,0 +1,5 @@
+"xdotool search --name SR; keydown --window %1 "Control_L+9";"
+    control + 9 
+
+"xdotool search --name SR; keyup --window %1 "Control_L+9";"
+    Release + control + 9

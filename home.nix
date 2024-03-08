@@ -28,7 +28,7 @@ dconf={
 
     bash = {
       enable = true;
-      # bashrcExtra = "bash ~/Documents/GitHub/Nix-Configuration/DotConfigs/.bashrc";
+      bashrcExtra = "bash ~/Documents/GitHub/Nix-Configuration/DotConfigs/.bashrc";
     };
 
     git = {
@@ -57,6 +57,9 @@ dconf={
       enableBashIntegration = true;
       settings = (builtins.fromTOML (builtins.readFile ./DotConfigs/starship.toml));
     };
+
+    #xbindkeys
+    # home.file.".xbindkeysrc".text = (builtins.readFile ./DotConfigs/.xkeybindsrc);
   };
   # The state version is required and should stay at the version you
   # originally installed.

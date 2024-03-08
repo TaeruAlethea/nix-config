@@ -155,8 +155,7 @@
 
       # Games them selves
       tetrio-desktop
-      (
-        vintagestory.overrideAttrs
+      (vintagestory.overrideAttrs
         (
           old: let
             version = "1.18.15";
@@ -170,6 +169,8 @@
       )
     ];
   };
+
+
 
   home-manager = {
     users.taeru = import ./home.nix;
@@ -222,6 +223,7 @@
     openrazer-daemon
     polychromatic
     powerline-fonts
+    starship
     wine
     wine64
     xbindkeys
@@ -239,7 +241,6 @@
 
   environment.gnome.excludePackages = (with pkgs; [
     gedit # text editor
-    gnome-console
     gnome-photos
     gnome-tour
   ]) ++ (with pkgs.gnome; [

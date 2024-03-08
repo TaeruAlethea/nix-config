@@ -1,0 +1,1 @@
+xdotool search --name SR keyup --window %1 "Control_L+9"
