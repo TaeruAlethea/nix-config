@@ -216,9 +216,9 @@
     git
     github-desktop
     gnomeExtensions.appindicator
+    helvum
     kitty
     libnotify
-    helvum
     razergenie
     openrazer-daemon
     polychromatic
