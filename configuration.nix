@@ -220,6 +220,7 @@
     kitty
     libnotify
     razergenie
+    neofetch
     openrazer-daemon
     polychromatic
     powerline-fonts
@@ -276,16 +277,18 @@
   # };
 
   # List services that you want to enable:
+  services = {
   # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    ports = [75];
-    settings.PasswordAuthentication = false;
-    settings.KbdInteractiveAuthentication = false;
-    settings.PermitRootLogin = "without-password";
-  };
+    openssh = {
+        enable = true;
+        ports = [75];
+        settings.PasswordAuthentication = false;
+        settings.KbdInteractiveAuthentication = false;
+        settings.PermitRootLogin = "without-password";
+      };
 
-  services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+    udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
