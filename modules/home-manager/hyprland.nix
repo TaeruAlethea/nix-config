@@ -125,4 +125,10 @@ in
       };
     };
   };
+
+  programs.hyprlock.settings = {
+    general = { 
+      disable_loading_bar = true;
+    };
+  };
 }
