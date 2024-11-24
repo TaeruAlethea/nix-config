@@ -9,7 +9,6 @@
 
     # Shell & CLI
     bash.enable = true;
-    nh.enable = true;
     };
 
     home = {
@@ -17,7 +16,6 @@
         username = "astraeaf";
         homeDirectory = "/home/astraeaf";
         sessionVariables = {
-            FLAKE = "./home/astraeaf/nix-config";
             BROWSER = "firefox";
             TERMINAL = "kitty";
         };
