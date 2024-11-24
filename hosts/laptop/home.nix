@@ -6,6 +6,9 @@
 
   programs = {
     home-manager.enable = true;
+
+    # Shell & CLI
+    bash.enable = true;
     nh.enable = true;
     };
 
