@@ -23,7 +23,7 @@
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
-          nixos-hardware.nixosModules.microsoft-surface-common
+          inputs.nixos-hardware.nixosModules.microsoft-surface-common
           ./hosts/laptop/configuration.nix
           inputs.stylix.nixosModules.stylix
         ];
