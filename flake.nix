@@ -17,13 +17,15 @@
     stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./hosts/default/configuration.nix
-        inputs.stylix.nixosModules.stylix
-      ];
+  outputs = { self, nixpkgs, ... }@inputs: {
+    nixosConfigurations = {
+      laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/laptop/configuration.nix
+          inputs.stylix.nixosModules.stylix
+        ];
+      };
     };
   };
 }
