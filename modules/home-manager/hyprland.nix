@@ -164,7 +164,7 @@ in
 
     image = {
       monitor = "eDP-1";
-      path = "/home/${username}/Pictures/profile.png";
+      path = "/home/astraeaf/Pictures/profile.png";
 
       position = "0, 50";
       halign = "center";
