@@ -14,7 +14,7 @@
         username = "astraeaf";
         homeDirectory = "/home/astraeaf";
         sessionVariables = {
-            FLAKE = "/home/astraeaf/nix-config/flake.nix";
+            FLAKE = "/home/astraeaf/nix-config/";
             BROWSER = "firefox";
             TERMINAL = "kitty";
         };
