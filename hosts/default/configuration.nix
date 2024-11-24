@@ -51,12 +51,13 @@
   # services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-    settings = {
-      autoLogin.User = "astraeaf";
-      autoLogin.relogin = true;
+  services.displayManager = {
+    autoLogin.enable = true;
+    autoLogin.User = "astraeaf";
+    sddm = {
+      enable = true;
+      wayland.enable = true;
+      settings.autoLogin.relogin = true;
     };
   };
   # services.desktopManager.plasma6.enable = true;
