@@ -32,7 +32,7 @@ in
       ];
 
       monitor = [
-        ",preferred,auto,1.333333"
+        "eDP-1,preferred,auto,1.333333"
       ];
 
       general = {
@@ -64,6 +64,7 @@ in
       bind = [
         "SUPER, T, exec, kitty"
         "SUPER, A, exec, sysmenu"
+        "SUPER, L, exec, hyprlock-blue"
       ];
 
       #bindm = [
@@ -126,9 +127,60 @@ in
     };
   };
 
+  programs.hyprlock.enable = true;
   programs.hyprlock.settings = {
     general = { 
       disable_loading_bar = true;
-    };
+    }
+    background = {
+      monitor=eDP-1
+      blur_passes=1
+      noise=0.011700
+      path=/tmp/screenshot1.png
+    }
+    image {
+      monitor=eDP-1
+      halign=center
+      path=/home/astraeaf/Pictures/profile.png
+      position=0, 50
+      valign=center
+    }
+    input-field {
+      monitor=eDP-1
+      size=200,50
+      check_color=rgb(30, 107, 204)
+      dots_center=true
+      dots_size=0.200000
+      fade_on_empty=false
+      font_color=rgb(111, 45, 104)
+      halign=center
+      inner_color=rgba(0, 0, 0, 0.2)
+      outer_color=rgba(0, 0, 0, 0)
+      outline_thickness=2
+      placeholder_text=<i><span foreground="##cdd6f4">Input Password...</span></i>
+      position=0, -100
+      rounding=-1
+      valign=center
+    }
+    label {
+      monitor=eDP-1
+      color=rgba(242, 243, 244, 0.75)
+      font_family=JetBrains Mono
+      font_size=95
+      halign=center
+      position=0, 300
+      time=$TIME
+      valign=center
+    }
+    label {
+      monitor=eDP-1
+      color=rgba(242, 243, 244, 0.75)
+      font_family=JetBrains Mono
+      font_size=22
+      halign=center
+      position=0,200
+      text=cmd[update:1000] echo $(date +"%A, %B %d")
+      valign=center
+    }
   };
 }

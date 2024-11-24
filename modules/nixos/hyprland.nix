@@ -30,7 +30,7 @@ in
 
   security = {
     polkit.enable = true;
-    pam.services.hyprlock = {};
+    pam.services.hyprlock = { };
   };
 
   environment.systemPackages = with pkgs; [
