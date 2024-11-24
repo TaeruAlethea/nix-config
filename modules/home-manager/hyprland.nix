@@ -131,7 +131,7 @@ in
   programs.hyprlock.settings = {
     general = { 
       disable_loading_bar = true;
-    }
+    };
     # inspiration from https://github.com/justinmdickey/publicdots/blob/main/.config/hypr/hyprlock.conf
     background = [{
       monitor = "eDP-1";
