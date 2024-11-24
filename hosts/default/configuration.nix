@@ -53,9 +53,9 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager = {
     autoLogin.enable = true;
-    autoLogin.User = "astraeaf";
     sddm = {
       enable = true;
+      autoLogin.user = "astraeaf";
       wayland.enable = true;
       settings.autoLogin.relogin = true;
     };

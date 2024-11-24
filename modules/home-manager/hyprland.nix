@@ -32,7 +32,7 @@ in
       ];
 
       monitor = [
-        ",preferred,auto,1.3"
+        ",preferred,auto,1.333333"
       ];
 
       general = {

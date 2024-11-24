@@ -7,7 +7,7 @@
   programs = {
     home-manager.enable = true;
     nh.enable = true;
-  };
+    };
 
     home = {
 	stateVersion = "24.05";

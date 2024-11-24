@@ -1,10 +1,11 @@
 { inputs, pkgs, config, ... }:
 let
   conf = pkgs.writeText "config" ''
+    exec-once = hyprlock
     exec-once = waybar
     exec-once = swww init
-    exec-once = hyprlock
-  '';
+    '';
+
 in
 {
   programs = {
@@ -29,6 +30,7 @@ in
 
   security = {
     polkit.enable = true;
+    pam.services.hyprlock = {};
   };
 
   environment.systemPackages = with pkgs; [
