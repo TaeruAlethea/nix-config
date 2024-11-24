@@ -4,13 +4,17 @@
         ./../../modules/home-manager/git.nix
     ];
 
-  programs.home-manager.enable = true;
+  programs = {
+    home-manager.enable = true;
+    nh.enable = true;
+  };
 
     home = {
 	stateVersion = "24.05";
         username = "astraeaf";
         homeDirectory = "/home/astraeaf";
         sessionVariables = {
+            FLAKE = "/home/astraeaf/nix-config/flake.nix";
             BROWSER = "firefox";
             TERMINAL = "kitty";
         };

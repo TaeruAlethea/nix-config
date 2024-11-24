@@ -13,7 +13,7 @@ let
   '';
 in
 {
-  #home.packages = [ launcher ];
+  home.packages = [ launcher ];
   programs = {
     bemenu.enable = true;
     kitty.enable = true;

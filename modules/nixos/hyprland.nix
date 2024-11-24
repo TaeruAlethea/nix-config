@@ -4,24 +4,12 @@ let
     exec-once = waybar
     exec-once = swww init
     exec-once = hyprlock
-    exec-once = kitty
   '';
 in
 {
-  # services.xserver.displayManager.startx.enable = true;
-  #services.greetd = {
-  #  enable = true;
-  #  settings.default_session.command = "Hyprland --config ${conf}";
-  #};
-
   programs = {
     uwsm = {
       enable = true;
-      #waylandCompositors.hyprland = {
-      #  binPath = "/run/current-system/sw/bin/Hyprland";
-      #  comment = "Hyprland session managed by uwsm";
-      #  prettyName = "Hyprland";
-      #};
     };
 
     hyprland = {
@@ -41,7 +29,6 @@ in
 
   security = {
     polkit.enable = true;
-    #pam.services.ags = {};
   };
 
   environment.systemPackages = with pkgs; [
