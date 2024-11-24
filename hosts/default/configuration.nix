@@ -109,7 +109,7 @@
     enable = true;
     autoEnable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/irblack.yaml";
-    image = ./my-cool-wallpaper.jpg;
+    image = /home/astraeaf/Pictures/my-cool-wallpaper.jpg;
   };
 
   home-manager = {
