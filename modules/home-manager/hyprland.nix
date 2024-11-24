@@ -32,7 +32,7 @@ in
       ];
 
       monitor = [
-        ",preferred,auto,2"
+        ",preferred,auto,1.75"
       ];
 
       general = {
@@ -63,6 +63,7 @@ in
 
       bind = [
         "SUPER, T, exec, kitty"
+        "SUPER, A, exec, sysmenu"
       ];
 
       #bindm = [

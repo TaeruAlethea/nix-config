@@ -33,6 +33,8 @@ in
 
   environment.systemPackages = with pkgs; [
     swww
+    sysmenu    
+
     loupe
     adwaita-icon-theme
     nautilus
