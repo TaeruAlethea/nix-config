@@ -135,7 +135,7 @@
 
   programs.nh = {
     enable = true;
-    flake = "./home/astraeaf/nix-config";
+    flake = "~/nix-config";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
