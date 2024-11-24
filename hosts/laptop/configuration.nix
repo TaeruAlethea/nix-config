@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./../../modules/nixos/hyprland.nix
-      inputs.home-manager.nixosModules.laptop
+      inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
