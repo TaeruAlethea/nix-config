@@ -41,6 +41,8 @@ in
       general = {
         layout = "master";
         resize_on_border = true;
+        gaps_in = 2;
+        gaps_out = 5;
       };
 
       misc = {
@@ -78,7 +80,7 @@ in
       dwindle = { 
         pseudotile = "yes"; 
         preserve_split = "yes";
-        # no_gaps_when_only = "yes";
+        no_gaps_when_only = "yes";
       };
 
       gestures = {
