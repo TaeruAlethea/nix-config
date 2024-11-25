@@ -1,7 +1,7 @@
 { config, pkgs, user, inputs, lib, ... }:
 let
 #	inputImage = /home/astraeaf/Pictures/wallpaper.jpg;
-	theme = "${pkgs.base16-schemes}/share/themes/irblack.yaml";
+#	theme = "${pkgs.base16-schemes}/share/themes/irblack.yaml";
 #	wallpaper = pkgs.runCommand "image.png" {} ''
 #		COLOR=$(${pkgs.yq}/bin/yq -r .base00 ${theme})
 #		COLOR="#"$COLOR
@@ -31,7 +31,7 @@ in
   stylix = {
     enable = true;
     autoEnable = true;
-    base16Scheme = theme;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/irblack.yaml";
 #    image = config.lib.stylix.pixel "base0A";
   };
 
