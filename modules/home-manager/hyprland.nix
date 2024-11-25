@@ -47,7 +47,7 @@ in
       };
 
       input = {
-        follow_mouse = 2;
+        follow_mouse = 1;
         touchpad = {
           natural_scroll = "yes";
           disable_while_typing = true;
@@ -103,7 +103,7 @@ in
         animation = [
           "windows, 1, 5, myBezier"
           "windowsOut, 1, 7, default, popin 80%"
-          "border, 1, 10, default"
+          "border, 1, 2, default"
           "fade, 1, 7, default"
           "workspaces, 1, 6, default"
         ];
@@ -112,13 +112,13 @@ in
       plugin = {
         hyprbars = {
           bar_color = "rgb(2a2a2a)";
-          bar_height = 28;
+          bar_height = 16;
           col_text = "rgba(ffffffdd)";
-          bar_text_size = 11;
-          bar_text_font = "Ubuntu Nerd Font";
+          bar_text_size = 10;
+          #bar_text_font = "Ubuntu Nerd Font";
 
           buttons = {
-            button_size = 0;
+            button_size = 10;
             "col.maximize" = "rgba(ffffff11)";
             "col.close" = "rgba(ff111133)";
           };
