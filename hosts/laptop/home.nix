@@ -18,8 +18,10 @@
     };
   };
 
+  gtk.enable = true;
   programs = {
     home-manager.enable = true;
+
 
     # Shell & CLI
     bash.enable = true;
