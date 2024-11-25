@@ -15,6 +15,9 @@ in
 {
   home.packages = [ launcher ];
   programs = {
+    hyprlock.enable = true;
+    waybar.enable = true;
+
     bemenu.enable = true;
     kitty.enable = true;
   };
