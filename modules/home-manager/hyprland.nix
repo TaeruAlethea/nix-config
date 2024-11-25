@@ -32,6 +32,7 @@ in
     settings = {
       exec-once = [
         "hyprctl setcursor Qogir 24"
+        "waybar"
       ];
 
       monitor = [
