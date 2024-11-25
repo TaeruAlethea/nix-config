@@ -39,7 +39,7 @@ in
 #    image = pkgs.runCommand "dimmed-background.png" { } ''
 #      ${pkgs.imagemagick}/bin/convert "${inputImage}" -brightness-contrast ${brightness},${contrast} -fill ${fillColor} $out
 #    '';
-    image = /home/astraeaf/Pictures/wallpaper.jpg;
+    image = "/home/astraeaf/Pictures/wallpaper.jpg";
   };
 
   programs = {
