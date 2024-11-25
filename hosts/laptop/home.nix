@@ -3,7 +3,7 @@ let
 	inputImage = /home/astraeaf/Pictures/wallpaper.jpg;
 	brightness = -30;
 	contrast = 0;
-	fillColor = "black"
+	fillColor = "black";
 	theme = "${pkgs.base16-schemes}/share/themes/irblack.yaml";
 #	wallpaper = pkgs.runCommand "image.png" {} ''
 #		COLOR=$(${pkgs.yq}/bin/yq -r .base00 ${theme})
