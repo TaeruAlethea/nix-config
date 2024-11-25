@@ -129,17 +129,16 @@
     git
     github-desktop
     starship
-    nix-output-monitor
     powerline-fonts
   ];
 
+  environment.sessionVariables = {
+    FLAKE = "/home/astraeaf/nix-config";
+  };
+
   programs.nh = {
     enable = true;
-<<<<<<< HEAD
-    flake = "~/nix-config";
-=======
     # flake = "/home/astraeaf/nix-config";
->>>>>>> e05e4bc (trying to stop using --impure)
   };
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -64,7 +64,7 @@ in
       bind = [
         "SUPER, T, exec, kitty"
         "SUPER, A, exec, sysmenu"
-        "SUPER, L, exec, hyprlock-blue"
+        "SUPER, L, exec, hyprlock"
       ];
 
       #bindm = [
