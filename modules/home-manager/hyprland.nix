@@ -24,7 +24,7 @@ in
     package = hyprland;
     # systemd.enable = true;
     xwayland.enable = true;
-    plugins = with plugins; [ hyprbars ];
+    plugins = with plugins; [ hyprbars sysbar ];
 
     settings = {
       exec-once = [
@@ -36,7 +36,7 @@ in
       ];
 
       general = {
-        layout = "dwindle";
+        layout = "master";
         resize_on_border = true;
       };
 
