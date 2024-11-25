@@ -3,7 +3,18 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, inputs, ... }:
-
+let
+	inputImage = /home/astraeaf/Pictures/wallpaper.jpg;
+	brightness = -30;
+	contrast = 0;
+	fillColor = "black";
+	theme = "${pkgs.base16-schemes}/share/themes/irblack.yaml";
+#	wallpaper = pkgs.runCommand "image.png" {} ''
+#		COLOR=$(${pkgs.yq}/bin/yq -r .base00 ${theme})
+#		COLOR="#"$COLOR
+#		${pkgs.imagemagick}/bin/magick convert -size 1920x1080 xc:$COLOR $out
+#	'';
+in
 {
   imports =
     [ # Include the results of the hardware scan.
