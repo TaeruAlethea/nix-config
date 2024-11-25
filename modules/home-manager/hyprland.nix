@@ -24,7 +24,7 @@ in
     package = hyprland;
     # systemd.enable = true;
     xwayland.enable = true;
-    # plugins = with plugins; [ hyprbars borderspp ];
+    plugins = with plugins; [ hyprbars ];
 
     settings = {
       exec-once = [
