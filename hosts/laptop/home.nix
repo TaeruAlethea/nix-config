@@ -1,4 +1,4 @@
-{ config, pkgs, user, ... }:{
+{ config, pkgs, user, inputs, ... }:{
     imports = [
     	inputs.sops-nix.homeManagerModules.sops
         ./../../modules/home-manager/hyprland.nix
