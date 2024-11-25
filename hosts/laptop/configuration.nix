@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
       ./../../modules/nixos/hyprland.nix
       inputs.home-manager.nixosModules.default
-      inputs.sops-nix-nixosModules.sops
+      inputs.sops-nix.nixosModules.sops
     ];
 
   # Bootloader.
