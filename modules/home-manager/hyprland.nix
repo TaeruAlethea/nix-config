@@ -61,7 +61,6 @@ in
           disable_while_typing = true;
           drag_lock = true;
         };
-        sensitivity = 0;
         float_switch_override_focus = 2;
       };
 
