@@ -105,12 +105,12 @@
     ];
   };
   
-  stylix = {
-    enable = true;
-    autoEnable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/irblack.yaml";
-    image = /home/astraeaf/Pictures/my-cool-wallpaper.jpg;
-  };
+  #stylix = {
+  #  enable = true;
+  #  autoEnable = true;
+  #  base16Scheme = "${pkgs.base16-schemes}/share/themes/irblack.yaml";
+  #  image = ./my-cool-wallpaper.jpg;
+  #};
 
   home-manager = {
     # also pass inputs to home-manager modules
@@ -135,7 +135,11 @@
 
   programs.nh = {
     enable = true;
+<<<<<<< HEAD
     flake = "~/nix-config";
+=======
+    # flake = "/home/astraeaf/nix-config";
+>>>>>>> e05e4bc (trying to stop using --impure)
   };
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -9,6 +9,8 @@
 
     # Shell & CLI
     bash.enable = true;
+    gh.enable = true;
+    gh-dash.enable = true;
     };
 
     home = {
