@@ -8,6 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix.url = "github:Mic92/sops-nix";
 
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
@@ -23,8 +24,9 @@
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
-          inputs.nixos-hardware.nixosModules.microsoft-surface-common
           ./hosts/laptop/configuration.nix
+          inputs.nixos-hardware.nixosModules.microsoft-surface-common
+          inputs.sops-nix.nixosModules.sops
           inputs.stylix.nixosModules.stylix
         ];
       };
