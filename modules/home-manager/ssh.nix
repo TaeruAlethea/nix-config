@@ -2,7 +2,7 @@
   sops.sectrets = {
     "github" = {
       owner = config.users.users.astraeaf.name;
-      inherit (config.users.users.ta) group;
+      inherit (config.users.users.astraeaf) group;
     };
   };
 
