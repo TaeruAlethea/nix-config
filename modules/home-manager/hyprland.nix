@@ -27,7 +27,7 @@ in
     package = hyprland;
     # systemd.enable = true;
     xwayland.enable = true;
-    plugins = with plugins; [ hyprbars sysbar ];
+    plugins = with plugins; [ hyprbars ];
 
     settings = {
       exec-once = [
