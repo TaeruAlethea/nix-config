@@ -80,7 +80,7 @@ in
       dwindle = { 
         pseudotile = "yes"; 
         preserve_split = "yes";
-        no_gaps_when_only = "yes";
+        #no_gaps_when_only = "yes";
       };
 
       gestures = {
