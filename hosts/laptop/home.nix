@@ -32,7 +32,7 @@ in
     enable = true;
     autoEnable = true;
     base16Scheme = theme;
-    image = config.lib.stylix.pixel "base0A";
+#    image = config.lib.stylix.pixel "base0A";
   };
 
   programs = {
