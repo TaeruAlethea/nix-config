@@ -32,7 +32,7 @@ in
       ];
 
       monitor = [
-        "eDP-1,preferred,auto,1.333333"
+        "eDP-1,preferred,auto,1.9"
       ];
 
       general = {

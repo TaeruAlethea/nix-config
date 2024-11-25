@@ -111,7 +111,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.astraeaf = {
     isNormalUser = true;
-    hashedPasswordFIle = config.sops.secrets.astraeaf-password.path;
+    hashedPasswordFile = config.sops.secrets.astraeaf-password.path;
     description = "Astraea Falke";
     extraGroups = [ "networkmanager" "wheel" ];
      # openssh.authorizedKeys.keyFiles = [ ./ssh/id_ed25519 ];
@@ -128,7 +128,7 @@
   #  enable = true;
   #  autoEnable = true;
   #  base16Scheme = "${pkgs.base16-schemes}/share/themes/irblack.yaml";
-  #  image = ./my-cool-wallpaper.jpg;
+  #  image = "./my-cool-wallpaper.jpg";
   #};
 
   home-manager = {
@@ -148,7 +148,7 @@
     age
     git
     github-desktop
-    ssh-to-sops
+    #ssh-to-sops
     sops
     starship
     powerline-fonts
