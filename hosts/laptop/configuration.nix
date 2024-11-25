@@ -148,7 +148,7 @@ in
     autoEnable = true;
     base16Scheme = theme;
     polarity = "dark";
-    image = config.lib.stylix.pixel "base0A";
+    image = config.lib.stylix.pixel "base01";
 #    image = pkgs.runCommand "dimmed-background.png" { } ''
 #      ${pkgs.imagemagick}/bin/convert "${inputImage}" -brightness-contrast ${brightness},${contrast} -fill ${fillColor} $out
 #    '';
