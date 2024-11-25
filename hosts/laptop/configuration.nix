@@ -133,7 +133,7 @@
 
   home-manager = {
     # also pass inputs to home-manager modules
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs config; };
     users = {
       "astraeaf" = import ./home.nix;
     };
