@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:{
+{ config, pkgs, users, ... }:{
   sops.sectrets = {
     "github" = {
       owner = config.users.users.astraeaf.name;
