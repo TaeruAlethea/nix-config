@@ -36,9 +36,10 @@ in
     autoEnable = true;
     base16Scheme = theme;
 #    image = config.lib.stylix.pixel "base0A";
-    image = pkgs.runCommand "dimmed-background.png" { } ''
-      ${pkgs.imagemagick}/bin/convert "${inputImage}" -brightness-contrast ${brightness},${contrast} -fill ${fillColor} $out
-    '';
+#    image = pkgs.runCommand "dimmed-background.png" { } ''
+#      ${pkgs.imagemagick}/bin/convert "${inputImage}" -brightness-contrast ${brightness},${contrast} -fill ${fillColor} $out
+#    '';
+    image = /home/astraeaf/Pictures/wallpaper.jpg;
   };
 
   programs = {
