@@ -123,11 +123,7 @@
       vesktop
     ];
   };
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> e0297fc (as)
   home-manager = {
     # also pass inputs to home-manager modules
     extraSpecialArgs = { inherit inputs; };
