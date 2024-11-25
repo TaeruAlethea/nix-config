@@ -1,4 +1,4 @@
-{ config, pkgs, user, inputs, lib, ... }:
+{ config, pkgs, user, inputs, ... }:
 let
 	inputImage = /home/astraeaf/Pictures/wallpaper.jpg;
 	brightness = -30;
