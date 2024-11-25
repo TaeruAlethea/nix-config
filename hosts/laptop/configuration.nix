@@ -91,7 +91,21 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  sops.secrets.astraeaf-password.neededForUsers = true;
+  sops = {
+    defaultSopsFile = ./secrets.yaml;
+    validateSopsFiles = false;
+
+    age = {
+      sshKeysPaths = [ "/etc/ssh/ssh_host_ed25519_key"];
+      keyFile = "/var/lib/sops-nix/key.txt";
+      generateKey = true;
+    };
+    
+    secrets = {
+      github = {};
+      astraeaf-password.neededForUsers = true;
+    };
+  };
   users.mutableUsers = false;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -147,21 +161,6 @@
   programs.nh = {
     enable = true;
     # flake = "/home/astraeaf/nix-config";
-  };
-
-  sops = {
-    defaultSopsFile = ./secrets.yaml;
-    validateSopsFiles = false;
-
-    age = {
-      sshKeysPaths = [ "/etc/ssh/ssh_host_ed25519_key"];
-      keyFile = "/var/lib/sops-nix/key.txt";
-      generateKey = true;
-    };
-    
-    secrets = {
-      github = {};
-    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
