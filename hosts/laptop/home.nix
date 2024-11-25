@@ -8,7 +8,7 @@
 
   sops = {
     age.keyFile = "/home/astraeaf/.config/sops/age/keys.txt";
-    defaultSopsfile = ./secrets.yaml;
+    defaultSopsFile = ./secrets.yaml;
     validateSopsFiles = false;
 
     secrets = {
