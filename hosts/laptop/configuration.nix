@@ -95,8 +95,8 @@
     isNormalUser = true;
     description = "Astraea Falke";
     extraGroups = [ "networkmanager" "wheel" ];
-    openssh.authorizedKeys.keyFiles = [ ./ssh/id_ed25519.pub ];
-    packages = with pkgs; [
+     # openssh.authorizedKeys.keyFiles = [ ./ssh/id_ed25519 ];
+      packages = with pkgs; [
       kdePackages.kate
 
       firefox-wayland
@@ -152,7 +152,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ 22 ];
@@ -167,5 +167,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "unstable"; # Did you read the comment?
-
 }

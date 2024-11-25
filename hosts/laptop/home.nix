@@ -9,6 +9,7 @@
 
     # Shell & CLI
     bash.enable = true;
+    bash.initExtra = "ssh-add ~/.ssh/id_ed25519";
     gh.enable = true;
     gh-dash.enable = true;
     };
