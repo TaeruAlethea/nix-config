@@ -40,7 +40,7 @@ in
       ];
 
       general = {
-        layout = "master";
+        layout = "dwindle";
         resize_on_border = true;
         gaps_in = 2;
         gaps_out = 5;
@@ -54,6 +54,8 @@ in
 
       input = {
         follow_mouse = 1;
+        force_no_accel = true;
+        sensitivity = -0.5;
         touchpad = {
           natural_scroll = "yes";
           disable_while_typing = true;
@@ -71,6 +73,7 @@ in
         "SUPER, T, exec, kitty"
         "SUPER, A, exec, sysmenu"
         "SUPER, L, exec, hyprlock"
+        "SUPER, Q, exec, killactive"
       ];
 
       #bindm = [
