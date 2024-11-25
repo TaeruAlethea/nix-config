@@ -18,6 +18,13 @@
     };
   };
 
+  stylix = {
+    enable = true;
+    autoEnable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/irblack.yaml";
+    image = "./my-cool-wallpaper.jpg";
+  };
+
   programs = {
     home-manager.enable = true;
 
