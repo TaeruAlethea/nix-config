@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./../../modules/nixos/hyprland.nix
       inputs.home-manager.nixosModules.default
+      inputs.sops-nix-nixosModules.sops
     ];
 
   # Bootloader.
@@ -90,9 +91,13 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  sops.secrets.astraeaf-password.neededForUsers = true;
+  users.mutableUsers = false;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.astraeaf = {
     isNormalUser = true;
+    hashedPasswordFIle = config.sops.secrets.astraeaf-password.path;
     description = "Astraea Falke";
     extraGroups = [ "networkmanager" "wheel" ];
      # openssh.authorizedKeys.keyFiles = [ ./ssh/id_ed25519 ];
@@ -126,8 +131,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    age
     git
     github-desktop
+    ssh-to-sops
+    sops
     starship
     powerline-fonts
   ];
@@ -141,6 +149,21 @@
     # flake = "/home/astraeaf/nix-config";
   };
 
+  sops = {
+    defaultSopsFile = ./secrets.yaml;
+    validateSopsFiles = false;
+
+    age = {
+      sshKeysPaths = [ "/etc/ssh/ssh_host_ed25519_key"];
+      keyFile = "/var/lib/sops-nix/key.txt";
+      generateKey = true;
+    };
+    
+    secrets = {
+      github = {};
+    };
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -152,7 +175,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ 22 ];

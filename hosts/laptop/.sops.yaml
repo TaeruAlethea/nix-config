@@ -1,0 +1,11 @@
+keys:
+  - &users:
+    - &astraeaf age1u7s7amjx32fj6ddvwl637um7vxdcjq0jwcy7wm8x3zj4rcknqp9q2f2qjl
+  - &hosts:
+    - &laptop age1vjdgnsl9f5javlu7xhwts9rhf6zffnde5t3hztpr87l5hjwshg6sc5q46t
+creation_rules:
+  - path_regex: secrets.yaml$
+    key_groups:
+    - age:
+      - *astraeaf
+      - *laptop
