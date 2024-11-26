@@ -37,6 +37,7 @@ in
 
   # Enable networking
   networking.networkmanager.enable = true;
+  programs.nm-applet.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -164,7 +165,6 @@ in
     age
     git
     github-desktop
-    nm-applet
     #ssh-to-sops
     sops
     starship
