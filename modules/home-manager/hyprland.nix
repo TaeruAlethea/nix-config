@@ -72,7 +72,7 @@ in
         "SUPER, T, exec, kitty"
         "SUPER, A, exec, sysmenu"
         "SUPER, L, exec, hyprlock"
-        "SUPER, Q, exec, killactive"
+        "SUPER, Q, killactive," # killactive is an dispatcher itself.
       ];
 
       #bindm = [
