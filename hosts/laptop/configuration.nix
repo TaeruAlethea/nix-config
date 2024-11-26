@@ -164,6 +164,7 @@ in
     age
     git
     github-desktop
+    nm-applet
     #ssh-to-sops
     sops
     starship
