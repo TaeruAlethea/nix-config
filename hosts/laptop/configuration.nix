@@ -165,6 +165,7 @@ in
     age
     git
     github-desktop
+    networkmanagerapplet
     #ssh-to-sops
     sops
     starship
