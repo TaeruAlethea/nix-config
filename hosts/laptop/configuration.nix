@@ -179,26 +179,29 @@ in
     sops
     starship
     powerline-fonts
-
-  # Fallback Fonts
-    jetbrains-mono
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-cjk-serif
-    noto-fonts-color-emoji
-    noto-fonts-monochrome-emoji
   ];
 
-#  fonts.fontDir.enable = true;
-#  fonts.fontconfig = {
-#    enable = true;
-#    defaultFonts = {
-#      emoji = [ "Noto Color Emoji" "Noto Emoji" ];
-#      monospace = [ "Jetbrains Mono" ];
-#      serif = [ "Noto Serif" ];
-#      sansSerif = [ "Noto Sans" ];
-#    };
-#  };
+  fonts = {
+    packages = with pkgs; [
+    # Fallback Fonts
+      jetbrains-mono
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-color-emoji
+      noto-fonts-monochrome-emoji
+    ];
+    fontDir.enable = true;
+    fontconfig = {
+        enable = true;
+      defaultFonts = {
+        emoji = [ "Noto Color Emoji" "Noto Emoji" ];
+        monospace = [ "Jetbrains Mono" ];
+        serif = [ "Noto Serif" ];
+        sansSerif = [ "Noto Sans" ];
+      };
+    };
+  };
 
   environment.sessionVariables = {
     FLAKE = "/home/astraeaf/nix-config";
