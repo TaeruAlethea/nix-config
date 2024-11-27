@@ -151,12 +151,12 @@ in
         popups = 18;
         terminal = 20;
       };
+    };
     opacity = {
       applications = 1.0;
       desktop = .75;
       popups = 0.9;
       terminal = 0.5;
-    };
     };
     targets = {
       bemenu.enable = true;
