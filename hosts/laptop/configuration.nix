@@ -152,7 +152,7 @@ in
     image = config.lib.stylix.pixel "base01";
     fonts = {
       sizes = {
-        terminal = 18
+        terminal = 18;
       };
     };
   };
