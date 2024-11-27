@@ -4,6 +4,7 @@
         ./../../modules/home-manager/hyprland.nix
         ./../../modules/home-manager/git.nix
 	./../../modules/home-manager/ssh.nix
+	./../../modules/home-manager/waybar.nix
     ];
 
   sops = {
@@ -38,9 +39,21 @@
             TERMINAL = "kitty";
         };
 
-        packages = [
-            pkgs.atool
-            pkgs.httpie
+        packages = with pkgs; [
+            atool
+            httpie
+            
+          # Fonts
+            jetbrains-mono
+            openmoji-black
+            openmoji-color
         ];
+    };
+    fonts.fontsconfig = {
+      enable = true;
+      defaultFonts = {
+        monospace = [ "Jetbrains Mono" ];
+        emoji = [ openmoji-black openmoji-color ];
+      };
     };
 }
