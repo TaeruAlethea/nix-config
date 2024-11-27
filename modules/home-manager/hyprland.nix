@@ -119,13 +119,13 @@ in
       plugin = {
         hyprbars = {
           bar_color = "rgb(2a2a2a)";
-          bar_height = 20;
+          bar_height = 24;
           col_text = "rgba(ffffffdd)";
-          bar_text_size = 18;
+          bar_text_size = 20;
           bar_text_font = "JetBrainsMono NF";
 
           buttons = {
-            button_size = 18;
+            button_size = 20;
             "col.maximize" = "rgba(ffffff11)";
             "col.close" = "rgba(ff111133)";
           };

@@ -1,6 +1,7 @@
 { pkgs, ... }:{
 programs.waybar = {
 	enable = true;
+	systemd.enable = true;
 	style = builtins.readFile ./additional/waybar.css;
 	settings = [{
 		layer = "top";
