@@ -137,7 +137,7 @@ in
     users = {
       "astraeaf" = import ./home.nix;
     };
-    targets = {
+    stylix.targets = {
       bemenu.enable = true;
       firefox.enable = true;
       gnome.enable = true;
