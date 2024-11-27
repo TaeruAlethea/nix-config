@@ -18,6 +18,7 @@ in
     hyprlock.enable = true;
 
     bemenu.enable = true;
+    kitty.enable = true;
   };
 
   wayland.windowManager.hyprland = {

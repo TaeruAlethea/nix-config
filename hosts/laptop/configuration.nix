@@ -150,6 +150,11 @@ in
     base16Scheme = theme;
     polarity = "dark";
     image = config.lib.stylix.pixel "base01";
+    fonts = {
+      sizes = {
+        terminal = 18
+      };
+    };
   };
 
   # Allow unfree packages

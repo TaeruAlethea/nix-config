@@ -1,7 +1,6 @@
 { config, pkgs, user, inputs, ... }:{
     imports = [
     	inputs.sops-nix.homeManagerModules.sops
-      	./../../modules/home-manager/kitty.nix
         ./../../modules/home-manager/hyprland.nix
         ./../../modules/home-manager/git.nix
         ./../../modules/home-manager/ssh.nix
