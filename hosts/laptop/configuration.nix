@@ -183,7 +183,7 @@ in
         enable = true;
       defaultFonts = {
         emoji = [ "Noto Color Emoji" "Noto Emoji" ];
-        monospace = [ "JetBrainsMono Nerd Font" ];
+        monospace = [ "JetBrainsMono NF" ];
         serif = [ "Noto Serif" ];
         sansSerif = [ "Noto Sans" ];
       };
