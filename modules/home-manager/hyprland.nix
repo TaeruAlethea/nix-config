@@ -18,7 +18,6 @@ in
     hyprlock.enable = true;
 
     bemenu.enable = true;
-    kitty.enable = true;
   };
 
   wayland.windowManager.hyprland = {
@@ -119,13 +118,13 @@ in
       plugin = {
         hyprbars = {
           bar_color = "rgb(2a2a2a)";
-          bar_height = 16;
+          bar_height = 20;
           col_text = "rgba(ffffffdd)";
-          bar_text_size = 10;
-          bar_text_font = "JetBrains Mono";
+          bar_text_size = 18;
+          bar_text_font = "JetBrainsMono NF";
 
           buttons = {
-            button_size = 10;
+            button_size = 18;
             "col.maximize" = "rgba(ffffff11)";
             "col.close" = "rgba(ff111133)";
           };
