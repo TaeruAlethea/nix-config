@@ -19,10 +19,21 @@
     };
   };
 
+  stylix.targets = {
+    bemenu.enable = true;
+    firefox.enable = true;
+    gnome.enable = true;
+    gtk.enable = true;
+    hyprland.enable = true;
+    hyprlock.enable = true;
+    kitty.enable = true;
+    vscode.enable = true;
+    waybar.enable = true;
+  };
+
   gtk.enable = true;
   programs = {
     home-manager.enable = true;
-
 
     # Shell & CLI
     bash.enable = true;
@@ -31,23 +42,23 @@
     };
 
     home = {
-	stateVersion = "24.05";
-        username = "astraeaf";
-        homeDirectory = "/home/astraeaf";
-        sessionVariables = {
-            BROWSER = "firefox";
-            TERMINAL = "kitty";
-        };
+	    stateVersion = "24.05";
+      username = "astraeaf";
+      homeDirectory = "/home/astraeaf";
+      sessionVariables = {
+          BROWSER = "firefox";
+          TERMINAL = "kitty";
+      };
 
-        packages = with pkgs; [
-            atool
-            httpie
-            
-          # Fonts
-            jetbrains-mono
-            openmoji-black
-            openmoji-color
+      packages = with pkgs; [
+          atool
+          httpie
+          
+        # Fonts
+          jetbrains-mono
+          openmoji-black
+          openmoji-color
 
-        ];
+      ];
     };
 }
