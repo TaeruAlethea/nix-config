@@ -1,10 +1,15 @@
-{ inputs, pkgs, config, ... }:
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
 let
   conf = pkgs.writeText "config" ''
     exec-once = hyprlock
     exec-once = waybar
     exec-once = swww init
-    '';
+  '';
 
 in
 {
@@ -32,7 +37,7 @@ in
 
   environment.systemPackages = with pkgs; [
     swww
-    sysmenu    
+    sysmenu
 
     loupe
     adwaita-icon-theme

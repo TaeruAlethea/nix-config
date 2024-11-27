@@ -2,22 +2,27 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 let
-	inputImage = /home/astraeaf/Pictures/wallpaper.jpg;
-	brightness = -30;
-	contrast = 0;
-	fillColor = "black";
-	theme = "${pkgs.base16-schemes}/share/themes/irblack.yaml";
+  inputImage = /home/astraeaf/Pictures/wallpaper.jpg;
+  brightness = -30;
+  contrast = 0;
+  fillColor = "black";
+  theme = "${pkgs.base16-schemes}/share/themes/irblack.yaml";
 in
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./../../modules/nixos/hyprland.nix
-      inputs.home-manager.nixosModules.default
-      inputs.sops-nix.nixosModules.sops
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./../../modules/nixos/hyprland.nix
+    inputs.home-manager.nixosModules.default
+    inputs.sops-nix.nixosModules.sops
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -34,7 +39,10 @@ in
   networking.networkmanager.enable = true;
   programs.nm-applet.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -103,13 +111,13 @@ in
     validateSopsFiles = false;
 
     age = {
-      sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key"];
+      sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
       keyFile = "/var/lib/sops-nix/key.txt";
       generateKey = true;
     };
-    
+
     secrets = {
-      github = {};
+      github = { };
       astraeaf-password.neededForUsers = true;
     };
   };
@@ -120,9 +128,12 @@ in
     isNormalUser = true;
     hashedPasswordFile = config.sops.secrets.astraeaf-password.path;
     description = "Astraea Falke";
-    extraGroups = [ "networkmanager" "wheel" ];
-     # openssh.authorizedKeys.keyFiles = [ ./ssh/id_ed25519 ];
-      packages = with pkgs; [
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    # openssh.authorizedKeys.keyFiles = [ ./ssh/id_ed25519 ];
+    packages = with pkgs; [
       kdePackages.kate
 
       firefox-wayland
@@ -133,7 +144,9 @@ in
 
   home-manager = {
     # also pass inputs to home-manager modules
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {
+      inherit inputs;
+    };
     users = {
       "astraeaf" = import ./home.nix;
     };
@@ -154,7 +167,7 @@ in
     };
     opacity = {
       applications = 1.0;
-      desktop = .75;
+      desktop = 0.75;
       popups = 0.9;
       terminal = 0.5;
     };
@@ -183,7 +196,7 @@ in
 
   fonts = {
     packages = with pkgs; [
-    # Fallback Fonts
+      # Fallback Fonts
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       noto-fonts
       noto-fonts-cjk-sans
@@ -193,9 +206,12 @@ in
     ];
     fontDir.enable = true;
     fontconfig = {
-        enable = true;
+      enable = true;
       defaultFonts = {
-        emoji = [ "Noto Color Emoji" "Noto Emoji" ];
+        emoji = [
+          "Noto Color Emoji"
+          "Noto Emoji"
+        ];
         monospace = [ "JetBrainsMono NF" ];
         serif = [ "Noto Serif" ];
         sansSerif = [ "Noto Sans" ];

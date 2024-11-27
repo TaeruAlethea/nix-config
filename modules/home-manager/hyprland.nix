@@ -79,8 +79,8 @@ in
       #  "SUPER, mouse:272, movewindow"
       #];
 
-      dwindle = { 
-        pseudotile = "yes"; 
+      dwindle = {
+        pseudotile = "yes";
         preserve_split = "yes";
         #no_gaps_when_only = "yes";
       };
@@ -98,7 +98,7 @@ in
           size = 8;
           passes = 3;
           new_optimizations = "on";
-          noise = 0.01;
+          noise = 1.0e-2;
           contrast = 0.9;
           brightness = 0.8;
         };
@@ -135,7 +135,7 @@ in
   };
 
   programs.hyprlock.settings = {
-    general = { 
+    general = {
       disable_loading_bar = true;
     };
     # inspiration from https://github.com/justinmdickey/publicdots/blob/main/.config/hypr/hyprlock.conf
@@ -145,26 +145,29 @@ in
     #  blur_size = 7;
     #  noise = 1.17e-2;
     #}];
-    
-    label = [{
-      monitor = "eDP-1";
-      text = "$TIME";
-      #color = "rgba(242, 243, 244, 0.75)";
-      font_size = 95;
-      font_family = "JetBrains Mono";
-      position = "0, 300";
-      halign = "center";
-      valign = "center";
-    }{
-      monitor = "eDP-1";
-      text = ''cmd[update:1000] echo $(date +"%A, %B %d")'';
-      #color = "rgba(242, 243, 244, 0.75)";
-      font_size = 22;
-      font_family = "JetBrains Mono";
-      position = "0, 200";
-      halign = "center";
-      valign = "center";
-    }];
+
+    label = [
+      {
+        monitor = "eDP-1";
+        text = "$TIME";
+        #color = "rgba(242, 243, 244, 0.75)";
+        font_size = 95;
+        font_family = "JetBrains Mono";
+        position = "0, 300";
+        halign = "center";
+        valign = "center";
+      }
+      {
+        monitor = "eDP-1";
+        text = ''cmd[update:1000] echo $(date +"%A, %B %d")'';
+        #color = "rgba(242, 243, 244, 0.75)";
+        font_size = 22;
+        font_family = "JetBrains Mono";
+        position = "0, 200";
+        halign = "center";
+        valign = "center";
+      }
+    ];
 
     image = {
       monitor = "eDP-1";

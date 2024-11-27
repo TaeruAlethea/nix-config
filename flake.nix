@@ -22,17 +22,21 @@
     stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations = {
-      laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/laptop/configuration.nix
-          inputs.nixos-hardware.nixosModules.microsoft-surface-common
-          inputs.sops-nix.nixosModules.sops
-          inputs.stylix.nixosModules.stylix
-        ];
+  outputs =
+    { self, nixpkgs, ... }@inputs:
+    {
+      nixosConfigurations = {
+        laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./hosts/laptop/configuration.nix
+            inputs.nixos-hardware.nixosModules.microsoft-surface-common
+            inputs.sops-nix.nixosModules.sops
+            inputs.stylix.nixosModules.stylix
+          ];
+        };
       };
     };
-  };
 }
