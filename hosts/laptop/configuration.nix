@@ -172,6 +172,7 @@ in
     powerline-fonts
 
   # Fallback Fonts
+    jetbrains-mono
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
@@ -179,14 +180,21 @@ in
     noto-fonts-monochrome-emoji
   ];
 
+  fonts.fontconfig = {
+    enable = true;
+    defaultFonts = {
+      emoji = [ "Noto Color Emoji" "Noto Emoji" ];
+      monospace = [ "Jetbrains Mono" ];
+      serif = [ "Noto Serif" ];
+      sansSerif = [ "Noto Sans" ];
+    };
+  };
+
   environment.sessionVariables = {
     FLAKE = "/home/astraeaf/nix-config";
   };
 
-  programs.nh = {
-    enable = true;
-    # flake = "/home/astraeaf/nix-config";
-  };
+  programs.nh.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

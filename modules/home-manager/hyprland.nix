@@ -122,7 +122,7 @@ in
           bar_height = 16;
           col_text = "rgba(ffffffdd)";
           bar_text_size = 10;
-          #bar_text_font = "Ubuntu Nerd Font";
+          bar_text_font = "JetBrains Mono";
 
           buttons = {
             button_size = 10;
