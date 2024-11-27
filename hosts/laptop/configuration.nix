@@ -180,6 +180,7 @@ in
     noto-fonts-monochrome-emoji
   ];
 
+  fonts.fontDir.enable = true;
   fonts.fontconfig = {
     enable = true;
     defaultFonts = {
