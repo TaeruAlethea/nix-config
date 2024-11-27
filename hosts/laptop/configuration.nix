@@ -171,6 +171,7 @@ in
   fonts = {
     packages = with pkgs; [
     # Fallback Fonts
+      nerdfonts
       (nerdfonts.override { fonts = [ "JetBrainsMono"]; })
       noto-fonts
       noto-fonts-cjk-sans
