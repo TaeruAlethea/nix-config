@@ -155,7 +155,7 @@ in
       emoji.package = pkgs.noto-fonts-color-emoji;
 
       monospace.name = "JetBrainsMono Nerd Font";
-      monospace.package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ];
+      monospace.package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ] };
 
       sansSerif.name = "Noto Sans";
       sansSerif.package = pkgs.noto-fonts-cjk-sans;
