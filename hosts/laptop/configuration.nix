@@ -9,11 +9,6 @@ let
 	contrast = 0;
 	fillColor = "black";
 	theme = "${pkgs.base16-schemes}/share/themes/irblack.yaml";
-#	wallpaper = pkgs.runCommand "image.png" {} ''
-#		COLOR=$(${pkgs.yq}/bin/yq -r .base00 ${theme})
-#		COLOR="#"$COLOR
-#		${pkgs.imagemagick}/bin/magick convert -size 1920x1080 xc:$COLOR $out
-#	'';
 in
 {
   imports =
@@ -146,14 +141,33 @@ in
 
   stylix = {
     enable = true;
-    autoEnable = true;
     base16Scheme = theme;
     polarity = "dark";
     image = config.lib.stylix.pixel "base01";
     fonts = {
-      sizes = {
-        terminal = 18;
+      opacity = {
+        applications = 1.0;
+        desktop = .75;
+        popups = 0.9;
+        terminal = 0.5;
       };
+      sizes = {
+        applications = 20;
+        desktop = 18;
+        popups = 18;
+        terminal = 20;
+      };
+    };
+    targets = {
+      bemenu.enable = true;
+      firefox.enable = true;
+      gnome.enable = true;
+      gtk.enable = true;
+      hyprland.enable = true;
+      hyprlock.enable = true;
+      kitty.enable = true;
+      vscode.enable = true;
+      waybar.enable = true;
     };
   };
 
