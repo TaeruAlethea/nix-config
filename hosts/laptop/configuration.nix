@@ -150,6 +150,12 @@ in
     base16Scheme = theme;
     polarity = "dark";
     image = config.lib.stylix.pixel "base01";
+    fonts = {
+      emoji.name = "Noto Color Emoji";
+      monospace.name = "Jetbrains Mono";
+      sansSerif = "Noto Sans";
+      serif = "Noto Serif";
+    };
   };
 
   # Allow unfree packages
@@ -176,16 +182,16 @@ in
     noto-fonts-monochrome-emoji
   ];
 
-  fonts.fontDir.enable = true;
-  fonts.fontconfig = {
-    enable = true;
-    defaultFonts = {
-      emoji = [ "Noto Color Emoji" "Noto Emoji" ];
-      monospace = [ "Jetbrains Mono" ];
-      serif = [ "Noto Serif" ];
-      sansSerif = [ "Noto Sans" ];
-    };
-  };
+#  fonts.fontDir.enable = true;
+#  fonts.fontconfig = {
+#    enable = true;
+#    defaultFonts = {
+#      emoji = [ "Noto Color Emoji" "Noto Emoji" ];
+#      monospace = [ "Jetbrains Mono" ];
+#      serif = [ "Noto Serif" ];
+#      sansSerif = [ "Noto Sans" ];
+#    };
+#  };
 
   environment.sessionVariables = {
     FLAKE = "/home/astraeaf/nix-config";
