@@ -163,7 +163,6 @@ in
       serif.name = "Noto Serif";
       serif.package = pkgs.noto-fonts-cjk-serif;
     };
-    targets.waybar.enable = true;
   };
 
   # Allow unfree packages
