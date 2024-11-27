@@ -14,11 +14,13 @@
 			modules-left = [
 				"hyprland/workspaces"
 				"custom/divider"
+				"custom/weather"
+				"custom/divider"
 				"cpu"
 				"custom/divider"
 				"memory"
 			];
-			modules-center = [ "hyperland/window" ];
+			modules-center = [ "hyprland/window" ];
 			modules-right = [
 				"tray"
 				"network"
@@ -31,10 +33,10 @@
 				"custom/divider"
 				"clock"
 			];
-			"hyprland/window" = { format = "{}" };
+			"hyprland/window" = { format = "{}"; };
 			"wlr/workspaces" = {
-				on-scroll-up = "hyprctl dispatch workspace e+1"
-				on-scroll-down = "hyprctl dispatch workspace e-1"
+				on-scroll-up = "hyprctl dispatch workspace e+1";
+				on-scroll-down = "hyprctl dispatch workspace e-1";
 				all-outputs = true;
 				on-click = "activate";
 			};
