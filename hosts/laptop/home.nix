@@ -50,11 +50,4 @@
 
         ];
     };
-    fonts.fontsconfig = {
-      enable = true;
-      defaultFonts = {
-        monospace = [ "Jetbrains Mono" ];
-        emoji = [ "openmoji-black" "openmoji-color" ];
-      };
-    };
 }
