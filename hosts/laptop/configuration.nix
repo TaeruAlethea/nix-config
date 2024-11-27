@@ -145,18 +145,18 @@ in
     polarity = "dark";
     image = config.lib.stylix.pixel "base01";
     fonts = {
-      opacity = {
-        applications = 1.0;
-        desktop = .75;
-        popups = 0.9;
-        terminal = 0.5;
-      };
       sizes = {
         applications = 20;
         desktop = 18;
         popups = 18;
         terminal = 20;
       };
+    opacity = {
+      applications = 1.0;
+      desktop = .75;
+      popups = 0.9;
+      terminal = 0.5;
+    };
     };
     targets = {
       bemenu.enable = true;
