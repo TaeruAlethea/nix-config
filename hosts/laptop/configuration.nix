@@ -150,19 +150,6 @@ in
     base16Scheme = theme;
     polarity = "dark";
     image = config.lib.stylix.pixel "base01";
-    fonts = {
-      emoji.name = "Noto Color Emoji";
-      emoji.package = pkgs.noto-fonts-color-emoji;
-
-      monospace.name = "Jetbrains Mono";
-      monospace.package = pkgs.jetbrains-mono;
-
-      sansSerif.name = "Noto Sans";
-      sansSerif.package = pkgs.noto-fonts-cjk-sans;
-
-      serif.name = "Noto Serif";
-      serif.package = pkgs.noto-fonts-cjk-serif;
-    };
   };
 
   # Allow unfree packages
