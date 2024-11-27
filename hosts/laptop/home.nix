@@ -47,13 +47,14 @@
             jetbrains-mono
             openmoji-black
             openmoji-color
+
         ];
     };
     fonts.fontsconfig = {
       enable = true;
       defaultFonts = {
         monospace = [ "Jetbrains Mono" ];
-        emoji = [ openmoji-black openmoji-color ];
+        emoji = [ "openmoji-black" "openmoji-color" ];
       };
     };
 }
