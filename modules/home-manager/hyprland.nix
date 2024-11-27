@@ -119,7 +119,7 @@ in
       plugin = {
         hyprbars = {
           bar_color = "rgb(2a2a2a)";
-          bar_height = 24;
+          bar_height = 28;
           col_text = "rgba(ffffffdd)";
           bar_text_size = 20;
           bar_text_font = "JetBrainsMono NF";

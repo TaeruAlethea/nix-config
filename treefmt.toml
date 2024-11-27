@@ -1,0 +1,10 @@
+# One CLI to format the code tree - https://github.com/numtide/treefmt
+excludes = ["*.toml"]
+
+[formatter.yamlfmt]
+command = "yamlfmt"
+includes = ["*.yaml"]
+
+[formatter.nixfmt-rfc-style]
+command = "nixfmt"
+includes = ["*.nix"]

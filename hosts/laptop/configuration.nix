@@ -170,10 +170,15 @@ in
     git
     github-desktop
     networkmanagerapplet
+
     #ssh-to-sops
     sops
     starship
-    powerline-fonts
+
+    # Formatters
+    treefmt2
+    nixfmt-rfc-style
+    yamlfmt
   ];
 
   fonts = {
