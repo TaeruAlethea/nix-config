@@ -153,8 +153,8 @@ in
     fonts = {
       emoji.name = "Noto Color Emoji";
       monospace.name = "Jetbrains Mono";
-      sansSerif = "Noto Sans";
-      serif = "Noto Serif";
+      sansSerif.name = "Noto Sans";
+      serif.name = "Noto Serif";
     };
   };
 
