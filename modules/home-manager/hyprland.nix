@@ -125,11 +125,9 @@ in
           bar_text_font = "JetBrainsMono NF";
 
           buttons = {
-            button_size = 20;
-            "col.maximize" = "rgba(ffffff11)";
-            "col.close" = "rgba(ff111133)";
-            hyprbars-button = "rgb(ff4040)", 10, 󰖭, "hyprctl dispatch killactive";
-            hyprbars-button = "rgb(eeee11)", 10, , "hyprctl dispatch fullscreen 1";
+            button_size = 20;            
+            "col.maximize" = "rgba(ff111133), 10, , hyprctl dispatch fullscreen 1";
+            "col.close" = "rgba(ffffff11), 10, 󰖭, hyprctl dispatch killactive";
           };
         };
       };
