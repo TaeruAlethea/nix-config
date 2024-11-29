@@ -109,6 +109,16 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  services.displayManager = {
+      autoLogin.enable = true;
+      autoLogin.user = "astraeaf";
+      sddm = {
+          enable = true;
+          wayland.enable = true;
+          settings.autoLogin.relogin = true;
+      };
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.astraeaf = {
     mutableUsers = false; # Required for Sops
