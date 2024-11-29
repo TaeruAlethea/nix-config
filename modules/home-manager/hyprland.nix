@@ -120,13 +120,14 @@ in
         hyprbars = {
           bar_color = "rgb(2a2a2a)";
           bar_height = 32;
+          "col.text" = "$foreground";
           bar_text_size = 20;
           bar_text_font = "JetBrainsMono NF Bold";
           bar_padding = 15;
           bar_button_padding = 15;
-          hyrbars-button = "$color4, 20, , hyprctl dispatch togglefloating";
-          hyprbars-button = "rgba(ff111133), 10, , hyprctl dispatch fullscreen 1";
-          hyprbars-button = "rgba(ffffff11), 10, 󰖭, hyprctl dispatch killactive";
+          "hyprbars-button0" = "$color4, 20, , hyprctl dispatch togglefloating";
+          "hyprbars-button1" = "rgba(ff111133), 10, , hyprctl dispatch fullscreen 1";
+          "hyprbars-button2" = "rgba(ffffff11), 10, 󰖭, hyprctl dispatch killactive";
         };
       };
     };
