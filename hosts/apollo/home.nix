@@ -10,14 +10,14 @@
   imports = [
     inputs.sops-nix.homeManagerModules.sops
     
-    "./../../modules/home-manager/" = [
-      fonts
-      hyprland
-      git
-      sops
-      ssh
-      waybar
-      #emacs
+    map (x:homeManagerSettings + x) [
+      /fonts
+      /hyprland
+      /git
+      /sops
+      /ssh
+      /waybar
+      #/emacs
     ];
   ];
 
