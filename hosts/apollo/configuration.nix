@@ -26,7 +26,7 @@
       /sops
       /stylix
       /wayland
-    ];
+    ]
 
     inputs.sops-nix.nixosModules.sops
     inputs.stylix.nixosModules.stylix

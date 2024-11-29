@@ -18,7 +18,7 @@
       /ssh
       /waybar
       #/emacs
-    ];
+    ]
   ];
 
   nixpkgs = {
