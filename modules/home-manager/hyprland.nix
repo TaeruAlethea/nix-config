@@ -118,17 +118,21 @@ in
 
       plugin = {
         hyprbars = {
-          bar_color = "rgb(2a2a2a)";
-          bar_height = 50;
+          bar_title_enabled = true;
+          bar_precedence_over_border = true;
+          bar_part_of_window = true;
+          bar_color = "rgba(2a2a2acc)";
+          bar_height = 60;
           bar_text_size = 20;
-          bar_text_font = "JetBrainsMono NF Bold";
-          bar_padding = 15;
-          bar_button_padding = 15;
+          bar_text_font = monospace;
+          bar_text_align = left;
+          bar_padding = 50;
+          bar_button_padding = 50;
           extraConfig = 
             ''
-            hyprbars-button = rgba(ff0000cc), 20, 󰖭, hyprctl dispatch killactive
-            hyprbars-button = rgba(ffc800cc), 20, , hyprctl dispatch fullscreen 1
-            hyprbars-button = rgba(00c800cc), 20, , hyprctl dispatch togglefloating
+            hyprbars-button = rgba(ff0000cc), 10, 󰖭, hyprctl dispatch killactive
+            hyprbars-button = rgba(ffc800cc), 10, , hyprctl dispatch fullscreen 1
+            hyprbars-button = rgba(00c800cc), 10, , hyprctl dispatch togglefloating
             '';
         };
       };
@@ -153,7 +157,7 @@ in
         text = "$TIME";
         #color = "rgba(242, 243, 244, 0.75)";
         font_size = 95;
-        font_family = "JetBrains Mono";
+        font_family = monospace;
         position = "0, 300";
         halign = "center";
         valign = "center";
