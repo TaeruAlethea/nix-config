@@ -10,7 +10,8 @@
   imports = [
     inputs.sops-nix.homeManagerModules.sops
 
-    homeManagerSettings + /fonts
+    outputs.homeManagerSettings.fonts
+    # homeManagerSettings + /fonts
     homeManagerSettings + /hyprland
     homeManagerSettings + /git
     homeManagerSettings + /sops

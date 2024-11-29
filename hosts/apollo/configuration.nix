@@ -20,11 +20,11 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
     
-    nixosSettings + /hyprland
-    nixosSettings + /localization
-    nixosSettings + /sops
-    nixosSettings + /stylix
-    nixosSettings + /wayland
+    ( nixosSettings + /hyprland )
+    ( nixosSettings + /localization )
+    ( nixosSettings + /sops )
+    ( nixosSettings + /stylix )
+    ( nixosSettings + /wayland )
     };
 
     inputs.sops-nix.nixosModules.sops
