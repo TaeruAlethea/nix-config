@@ -20,8 +20,8 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
     
-    outputs.nixosSettings.hyprland
-    outputs.nixosSettings.localization
+    (outputs.nixosSettings + "/hyprland")
+    (outputs.nixosSettings + "/localization")
     outputs.nixosSettings.sops
     outputs.nixosSettings.stylix
     outputs.nixosSettings.wayland
