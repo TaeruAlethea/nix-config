@@ -139,6 +139,7 @@ in
       firefox-wayland
       obsidian
       vesktop
+      inputs.zen-browser.packages."${system}".default
     ];
   };
 
