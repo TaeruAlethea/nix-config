@@ -22,9 +22,6 @@
 
     outputs.nixosSettings
 
-    inputs.sops-nix.nixosModules.sops
-    inputs.stylix.nixosModules.stylix
-
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
