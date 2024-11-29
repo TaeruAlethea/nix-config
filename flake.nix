@@ -22,6 +22,7 @@
     stylix.url = "github:danth/stylix";
 
     zen-browser.url = "github:MarceColl/zen-browser-flake";
+    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
   };
 
   outputs =
