@@ -9,18 +9,14 @@
 {
   imports = [
     inputs.sops-nix.homeManagerModules.sops
-    
-      { x = [
-        /fonts
-        /hyprland
-        /git
-        /sops
-        /ssh
-        /waybar
-        #/emacs
-        ]
-        map (x:homeManagerSettings + x)
-      }
+
+    homeManagerSettings + /fonts
+    homeManagerSettings + /hyprland
+    homeManagerSettings + /git
+    homeManagerSettings + /sops
+    homeManagerSettings + /ssh
+    homeManagerSettings + /waybar
+    #homeManagerSettings + /emacs
     ];
 
   nixpkgs = {
