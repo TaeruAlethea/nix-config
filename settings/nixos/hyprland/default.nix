@@ -19,10 +19,6 @@ let
 # exec-once = dconf write /org/gnome/desktop/interface/monospace-font-name "'Noto Sans Mono Medium 11'"
 in
 {
-  nixpkgs.overlays = [
-      outputs.overlays.unstable-packages
-  ];
-
   programs = {
     uwsm = {
       enable = true;
