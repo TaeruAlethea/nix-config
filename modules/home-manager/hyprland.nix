@@ -123,7 +123,7 @@ in
           bar_part_of_window = true;
           bar_color = "rgba(2a2a2acc)";
           bar_height = 36;
-          bar_text_size = 24;
+          bar_text_size = 18;
           bar_text_font = "JetBrains NF";
           bar_text_align = "left";
           bar_padding = 32;
