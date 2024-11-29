@@ -71,7 +71,7 @@ in
         "SUPER, T, exec, kitty"
         "SUPER, A, exec, sysmenu"
         "SUPER, L, exec, hyprlock"
-        "SUPER, Q, killactive," # killactive is an dispatcher itself.
+        "SUPER, Q, killactive," # killactive is a dispatcher itself with no command.
       ];
 
       #bindm = [
@@ -119,16 +119,14 @@ in
       plugin = {
         hyprbars = {
           bar_color = "rgb(2a2a2a)";
-          bar_height = 28;
-          col_text = "rgba(ffffffdd)";
+          bar_height = 32;
           bar_text_size = 20;
-          bar_text_font = "JetBrainsMono NF";
-
-          buttons = {
-            button_size = 20;            
-            "col.maximize" = "rgba(ff111133), 10, , hyprctl dispatch fullscreen 1";
-            "col.close" = "rgba(ffffff11), 10, 󰖭, hyprctl dispatch killactive";
-          };
+          bar_text_font = "JetBrainsMono NF Bold";
+          bar_padding = 15
+          bar_button_padding = 15
+          hyrbars-button = "$color4, 20, , hyprctl dispatch togglefloating";
+          hyprbars-button = "rgba(ff111133), 10, , hyprctl dispatch fullscreen 1";
+          hyprbars-button = "rgba(ffffff11), 10, 󰖭, hyprctl dispatch killactive";
         };
       };
     };
