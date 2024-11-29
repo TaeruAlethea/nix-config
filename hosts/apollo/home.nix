@@ -11,13 +11,12 @@
     inputs.sops-nix.homeManagerModules.sops
 
     outputs.homeManagerSettings.fonts
-    # homeManagerSettings + /fonts
-    homeManagerSettings + /hyprland
-    homeManagerSettings + /git
-    homeManagerSettings + /sops
-    homeManagerSettings + /ssh
-    homeManagerSettings + /waybar
-    #homeManagerSettings + /emacs
+    outputs.homeManagerSettings.hyprland
+    outputs.homeManagerSettings.git
+    outputs.homeManagerSettings.sops
+    outputs.homeManagerSettings.ssh
+    outputs.homeManagerSettings.waybar
+    #outputs.homeManagerSettings.emacs
     ];
 
   nixpkgs = {
