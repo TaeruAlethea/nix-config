@@ -8,6 +8,6 @@
 
   programs.doom-emacs = {
     enable = true;
-    doomPrivateDir = ./additional/doom.d;
+    doomPrivateDir = ./additional/doom.d/;
   };
 }

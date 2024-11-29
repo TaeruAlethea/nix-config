@@ -189,6 +189,13 @@ in
     sops
     starship
 
+    # emacs specific
+    emacs
+    ripgrep
+    coreutils
+    fd
+    clang
+
     # Formatters
     treefmt2
     nixfmt-rfc-style
