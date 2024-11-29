@@ -2,7 +2,6 @@
   inputs,
   pkgs,
   config,
-  nixpkgs-unstable,
   ...
 }:
 let
@@ -28,7 +27,7 @@ in
     hyprland = {
       enable = true;
       withUWSM = true;
-      package = inputs.hyprland.packages.${nixpkgs-unstable.system}.hyprland;
+      package = inputs.hyprland.packages.${pkgs.unstable.system}.hyprland;
       xwayland.enable = true;
     };
   };
