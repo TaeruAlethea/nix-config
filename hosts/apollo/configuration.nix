@@ -19,14 +19,17 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
-
-    map (x:nixosSettings + x) [
-      /hyprland
-      /localization
-      /sops
-      /stylix
-      /wayland
-    ]
+    
+    {
+      x = [
+        /hyprland
+        /localization
+        /sops
+        /stylix
+        /wayland
+      ]
+      map (x:nixosSettings + x) 
+    }
 
     inputs.sops-nix.nixosModules.sops
     inputs.stylix.nixosModules.stylix

@@ -10,16 +10,18 @@
   imports = [
     inputs.sops-nix.homeManagerModules.sops
     
-    map (x:homeManagerSettings + x) [
-      /fonts
-      /hyprland
-      /git
-      /sops
-      /ssh
-      /waybar
-      #/emacs
-    ]
-  ];
+      { x = [
+        /fonts
+        /hyprland
+        /git
+        /sops
+        /ssh
+        /waybar
+        #/emacs
+        ]
+        map (x:homeManagerSettings + x)
+      }
+    ];
 
   nixpkgs = {
     # You can add overlays here
