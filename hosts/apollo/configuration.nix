@@ -22,9 +22,9 @@
     
     (outputs.nixosSettings + "/hyprland")
     (outputs.nixosSettings + "/localization")
-    outputs.nixosSettings.sops
-    outputs.nixosSettings.stylix
-    outputs.nixosSettings.wayland
+    (outputs.nixosSettings + "/sops")
+    (outputs.nixosSettings + "/stylix")
+    (outputs.nixosSettings + "/wayland")
 
     inputs.sops-nix.nixosModules.sops
     inputs.stylix.nixosModules.stylix

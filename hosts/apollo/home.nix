@@ -10,13 +10,13 @@
   imports = [
     inputs.sops-nix.homeManagerModules.sops
 
-    outputs.homeManagerSettings.fonts
-    outputs.homeManagerSettings.hyprland
-    outputs.homeManagerSettings.git
-    outputs.homeManagerSettings.sops
-    outputs.homeManagerSettings.ssh
-    outputs.homeManagerSettings.waybar
-    #outputs.homeManagerSettings.emacs
+    (outputs.homeManagerSettings + "/fonts")
+    (outputs.homeManagerSettings + "/hyprland")
+    (outputs.homeManagerSettings + "/git")
+    (outputs.homeManagerSettings + "/sops")
+    (outputs.homeManagerSettings + "/ssh")
+    (outputs.homeManagerSettings + "/waybar")
+    #(outputs.homeManagerSettings + "/emacs")
     ];
 
   nixpkgs = {
