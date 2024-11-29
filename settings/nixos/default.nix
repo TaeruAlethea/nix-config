@@ -4,7 +4,7 @@
     # List your module files here
     # my-module = import ./my-module.nix;
 
-    #hyprland = import ./hyprland;
+    hyprland = import ./hyprland;
     localization = import ./localization;
     sops = import ./sops;
     stylix = import ./stylix;
