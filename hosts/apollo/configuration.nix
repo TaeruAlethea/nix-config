@@ -24,7 +24,6 @@
     outputs.nixosSettings.localization
     outputs.nixosSettings.sops
     outputs.nixosSettings.stylix
-    outputs.nixosSettings.wayland
 
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
