@@ -8,5 +8,4 @@
     localization = import ./localization;
     sops = import ./sops;
     stylix = import ./stylix;
-    wayland = import ./wayland;
 }
