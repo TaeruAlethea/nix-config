@@ -37,9 +37,9 @@
     homeManagerModules = import ./modules/home-manager;
     
     # Personally created nixos settings files.
-    nixosSettings = import ./settings/nixos;
+    nixosSettings = ./settings/nixos;
     # Personally created home-manager settings files.
-    homeManagerSettings = import ./settings/home-manager;
+    homeManagerSettings = ./settings/home-manager;
 
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
