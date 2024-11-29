@@ -120,7 +120,6 @@ in
         hyprbars = {
           bar_color = "rgb(2a2a2a)";
           bar_height = 32;
-          "col.text" = "$foreground";
           bar_text_size = 20;
           bar_text_font = "JetBrainsMono NF Bold";
           bar_padding = 15;
