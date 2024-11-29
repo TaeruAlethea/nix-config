@@ -144,7 +144,7 @@ in
   };
 
   home-manager = {
-    backupFileExtension = "backup";
+    #backupFileExtension = "backup";
     # also pass inputs to home-manager modules
     extraSpecialArgs = {
       inherit inputs;
