@@ -8,7 +8,7 @@
 }:
 {
   imports = [
-    outputs.homeManagerSettings
+    outputs.homeManagerModules
 
     inputs.sops-nix.homeManagerModules.sops
     ];
