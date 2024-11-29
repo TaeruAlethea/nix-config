@@ -4,20 +4,13 @@
   lib,
   config,
   pkgs,
-  homeManagerSettingsPath,
   ...
 }:
 {
   imports = [
-    inputs.sops-nix.homeManagerModules.sops
+    outputs.homeManagerSettings
 
-    ("../../" + homeManagerSettingsPath + "/fonts/default.nix" )
-    ("../../" + homeManagerSettingsPath + "/hyprland/default.nix" )
-    ("../../" + homeManagerSettingsPath + "/git/default.nix" )
-    ("../../" + homeManagerSettingsPath + "/sops/default.nix" )
-    ("../../" + homeManagerSettingsPath + "/ssh/default.nix" )
-    ("../../" + homeManagerSettingsPath + "/waybar/default.nix" )
-    ("../../" + homeManagerSettingsPath + "/emacs/default.nix" )
+    inputs.sops-nix.homeManagerModules.sops
     ];
 
   nixpkgs = {
