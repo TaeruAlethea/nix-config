@@ -12,7 +12,7 @@
     ./../../modules/home-manager/git.nix
     ./../../modules/home-manager/ssh.nix
     ./../../modules/home-manager/waybar.nix
-    ./../../modules/home-manager/emacs.nix
+    #./../../modules/home-manager/emacs.nix
   ];
 
   sops = {
