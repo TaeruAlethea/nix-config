@@ -20,7 +20,7 @@ let
 in
 {
   nixpkgs.overlays = [
-      outputs.overlays.nixpkgs-unstable
+      outputs.overlays.unstable-packages
   ];
 
   programs = {
