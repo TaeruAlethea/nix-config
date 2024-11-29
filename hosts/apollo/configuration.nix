@@ -20,6 +20,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
 
+    outputs.nixosSettings.hyprland
     outputs.nixosSettings.localization
     outputs.nixosSettings.sops
     outputs.nixosSettings.stylix
@@ -121,9 +122,10 @@
       };
   };
 
+  users.mutableUsers = false; # Required for Sops
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.astraeaf = {
-    mutableUsers = false; # Required for Sops
+
     isNormalUser = true;
     hashedPasswordFile = config.sops.secrets.astraeaf-password.path;
     description = "Astraea Falke";

@@ -49,7 +49,6 @@
         modules = [
           # > Our main nixos configuration file <
           ./hosts/apollo/configuration.nix
-          outputs.nixosSettings.hyprland
         ];
       };
     };
