@@ -11,13 +11,13 @@
   imports = [
     inputs.sops-nix.homeManagerModules.sops
 
-    (homeManagerSettingsPath + "/fonts/default.nix" )
-    (homeManagerSettingsPath + "/hyprland/default.nix" )
-    (homeManagerSettingsPath + "/git/default.nix" )
-    (homeManagerSettingsPath + "/sops/default.nix" )
-    (homeManagerSettingsPath + "/ssh/default.nix" )
-    (homeManagerSettingsPath + "/waybar/default.nix" )
-    (homeManagerSettingsPath + "/emacs/default.nix" )
+    ("../../" + homeManagerSettingsPath + "/fonts/default.nix" )
+    ("../../" + homeManagerSettingsPath + "/hyprland/default.nix" )
+    ("../../" + homeManagerSettingsPath + "/git/default.nix" )
+    ("../../" + homeManagerSettingsPath + "/sops/default.nix" )
+    ("../../" + homeManagerSettingsPath + "/ssh/default.nix" )
+    ("../../" + homeManagerSettingsPath + "/waybar/default.nix" )
+    ("../../" + homeManagerSettingsPath + "/emacs/default.nix" )
     ];
 
   nixpkgs = {

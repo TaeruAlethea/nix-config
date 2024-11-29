@@ -21,11 +21,11 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
     
-    (nixosSettingsPath + "/hyprland/default.nix" )
-    (nixosSettingsPath + "/localization/default.nix" )
-    (nixosSettingsPath + "/sops/default.nix" )
-    (nixosSettingsPath + "/stylix/default.nix" )
-    (nixosSettingsPath + "/wayland/default.nix" )
+    ("../../" + nixosSettingsPath + "/hyprland/default.nix" )
+    ("../../" + nixosSettingsPath + "/localization/default.nix" )
+    ("../../" + nixosSettingsPath + "/sops/default.nix" )
+    ("../../" + nixosSettingsPath + "/stylix/default.nix" )
+    ("../../" + nixosSettingsPath + "/wayland/default.nix" )
 
     inputs.sops-nix.nixosModules.sops
     inputs.stylix.nixosModules.stylix
