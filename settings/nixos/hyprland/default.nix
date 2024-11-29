@@ -17,6 +17,7 @@ let
 # exec-once = dconf write /org/gnome/desktop/interface/font-name "'Noto Sans Medium 11'"
 # exec-once = dconf write /org/gnome/desktop/interface/monospace-font-name "'Noto Sans Mono Medium 11'"
 
+  pkgs = outputs.nixpkgs-unstable;
 in
 {
   programs = {
@@ -27,7 +28,7 @@ in
     hyprland = {
       enable = true;
       withUWSM = true;
-      package.unstable-packages = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       xwayland.enable = true;
     };
   };
