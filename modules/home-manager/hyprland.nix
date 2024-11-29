@@ -122,8 +122,8 @@ in
           bar_height = 32;
           bar_text_size = 20;
           bar_text_font = "JetBrainsMono NF Bold";
-          bar_padding = 15
-          bar_button_padding = 15
+          bar_padding = 15;
+          bar_button_padding = 15;
           hyrbars-button = "$color4, 20, , hyprctl dispatch togglefloating";
           hyprbars-button = "rgba(ff111133), 10, , hyprctl dispatch fullscreen 1";
           hyprbars-button = "rgba(ffffff11), 10, 󰖭, hyprctl dispatch killactive";
