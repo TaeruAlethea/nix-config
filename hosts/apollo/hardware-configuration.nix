@@ -12,10 +12,10 @@
 
 {
   imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
     inputs.nixos-hardware.nixosModules.microsoft-surface-common
   ];
-    # Bootloader.
+
+  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
