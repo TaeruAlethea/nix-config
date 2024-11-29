@@ -10,13 +10,13 @@
   imports = [
     inputs.sops-nix.homeManagerModules.sops
 
-    ./settings/home-manager/fonts
-    ./settings/home-manager/hyprland
-    ./settings/home-manager/git
-    ./settings/home-manager/sops
-    ./settings/home-manager/ssh
-    ./settings/home-manager/waybar
-    ./settings/home-manager/emacs
+    ./settings/home-manager/fonts/default.nix
+    ./settings/home-manager/hyprland/default.nix
+    ./settings/home-manager/git/default.nix
+    ./settings/home-manager/sops/default.nix
+    ./settings/home-manager/ssh/default.nix
+    ./settings/home-manager/waybar/default.nix
+    ./settings/home-manager/emacs/default.nix
     ];
 
   nixpkgs = {
