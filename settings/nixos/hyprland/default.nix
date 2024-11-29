@@ -16,10 +16,12 @@ let
 # exec-once = dconf write /org/gnome/desktop/interface/document-font-name "'Noto Sans Medium 11'"
 # exec-once = dconf write /org/gnome/desktop/interface/font-name "'Noto Sans Medium 11'"
 # exec-once = dconf write /org/gnome/desktop/interface/monospace-font-name "'Noto Sans Mono Medium 11'"
-
-  pkgs = outputs.nixpkgs-unstable;
 in
 {
+  nixpkgs.overlays = [
+      outputs.overlays.nixpkgs-unstable
+  ];
+
   programs = {
     uwsm = {
       enable = true;
