@@ -4,20 +4,20 @@
     # List your module files here
     # my-module = import ./my-module.nix;
 
-    #imports = [
-    #    ./fonts/default.nix
-    #    ./hyprland/default.nix
-    #    ./git/default.nix
-    #    ./sops/default.nix
-    #    ./ssh/default.nix
-    #    ./waybar/default.nix
-    #    ./emacs/default.nix
-    #];
+    imports = [
+        ./fonts/default.nix
+        ./hyprland/default.nix
+        ./git/default.nix
+        ./sops/default.nix
+        ./ssh/default.nix
+        ./waybar/default.nix
+        ./emacs/default.nix
+    ];
 
-    emacs = import ./emacs;
-    hyprland = import ./hyprland;
-    git = import ./git;
-    sops = import ./sops;
-    ssh = import ./ssh;
-    waybar = import ./waybar;
+    #emacs = import ./emacs;
+    #hyprland = import ./hyprland;
+    #git = import ./git;
+    #sops = import ./sops;
+    #ssh = import ./ssh;
+    #waybar = import ./waybar;
 }

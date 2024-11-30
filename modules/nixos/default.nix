@@ -4,16 +4,17 @@
     # List your module files here
     # my-module = import ./my-module.nix;
 
-    #imports = [
-    #    ./hyprland/default.nix
-    #    ./localization/default.nix
-    #    ./sops/default.nix
-    #    ./stylix/default.nix
-    #];
+    imports = [
+        ./fonts/default.nix
+        ./hyprland/default.nix
+        ./localization/default.nix
+        ./sops/default.nix
+        ./stylix/default.nix
+    ];
 
-    fonts = import ./fonts;
-    hyprland = import ./hyprland; #todo: make this work right as a module
-    localization = import ./localization;
-    sops = import ./sops;
-    stylix = import ./stylix;
+    #fonts = import ./fonts;
+    #hyprland = import ./hyprland; #todo: make this work right as a module
+    #localization = import ./localization;
+    #sops = import ./sops;
+    #stylix = import ./stylix;
 }
