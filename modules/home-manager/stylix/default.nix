@@ -1,5 +1,7 @@
-{ ... }:
+{ inputs, ... }:
 {
+    imports = [ inputs.stylix.nixosHomeManager.stylix ];
+
     stylix.targets = {
         bemenu.enable = true;
         firefox.enable = true;
