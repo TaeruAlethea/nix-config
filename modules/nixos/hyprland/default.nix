@@ -1,5 +1,6 @@
 {
   inputs,
+  outputs,
   pkgs,
   config,
   ...
@@ -16,7 +17,6 @@ let
 # exec-once = dconf write /org/gnome/desktop/interface/document-font-name "'Noto Sans Medium 11'"
 # exec-once = dconf write /org/gnome/desktop/interface/font-name "'Noto Sans Medium 11'"
 # exec-once = dconf write /org/gnome/desktop/interface/monospace-font-name "'Noto Sans Mono Medium 11'"
-
 in
 {
   programs = {

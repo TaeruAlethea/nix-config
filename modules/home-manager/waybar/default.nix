@@ -3,7 +3,7 @@
   programs.waybar = {
     enable = true;
     systemd.enable = true;
-    style = builtins.readFile ./additional/waybar.css;
+    style = builtins.readFile ./waybar.css;
     settings = [
       {
         layer = "top";

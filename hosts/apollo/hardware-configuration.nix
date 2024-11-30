@@ -2,6 +2,7 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 {
+  inputs,
   config,
   lib,
   pkgs,
@@ -11,8 +12,12 @@
 
 {
   imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
+    inputs.nixos-hardware.nixosModules.microsoft-surface-common
   ];
+
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.availableKernelModules = [
     "xhci_pci"
@@ -55,6 +60,5 @@
   # Surface SP5 Specific Configs
   services.thermald.enable = true;
   services.iptsd.enable = true;
-  #microsoft-surface.surface-control.enable = true;
-
+  #microsoft-surface.surface-control.enable = true; # Inop, possibly depricated.
 }
