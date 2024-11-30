@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 {
+  imports = [    
+    inputs.sops-nix.homeManagerModules.sops
+  ];
+
   sops = {
     age.keyFile = "/home/astraeaf/.config/sops/age/keys.txt";
     defaultSopsFile = ./secrets.yaml;
