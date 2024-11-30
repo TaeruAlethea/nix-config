@@ -6,7 +6,6 @@
   ...
 }:
 let
-  pkgs = import nixpkgs { config = {}; overlays = []; };
   conf = pkgs.writeText "config" ''
     exec-once = hyprlock
     exec-once = waybar

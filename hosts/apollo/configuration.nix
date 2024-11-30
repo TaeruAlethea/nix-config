@@ -20,8 +20,11 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
 
-    outputs.nixosModules
-
+    outputs.nixosModules.hyprland #todo: make this work right as a module
+    outputs.nixosModules.localization
+    outputs.nixosModules.sops
+    outputs.nixosModules.stylix
+    
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
