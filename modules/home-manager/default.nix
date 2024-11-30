@@ -5,7 +5,6 @@
     # my-module = import ./my-module.nix;
 
     imports = [
-        ./fonts/default.nix
         ./hyprland/default.nix
         ./git/default.nix
         ./sops/default.nix
