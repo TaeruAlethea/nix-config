@@ -5,13 +5,13 @@
     # my-module = import ./my-module.nix;
 
     imports = [
-        ./fonts
-        ./hyprland
-        ./git
-        ./sops
-        ./ssh
-        ./waybar
-        ./emacs
+        ./fonts/default.nix
+        ./hyprland/default.nix
+        ./git/default.nix
+        ./sops/default.nix
+        ./ssh/default.nix
+        ./waybar/default.nix
+        ./emacs/default.nix
     ];
 
     #fonts = import ./fonts;

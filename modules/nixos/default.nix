@@ -5,10 +5,10 @@
     # my-module = import ./my-module.nix;
 
     imports = [
-        ./hyprland
-        ./localization
-        ./sops
-        ./stylix
+        ./hyprland/default.nix
+        ./localization/default.nix
+        ./sops/default.nix
+        ./stylix/default.nix
     ];
 
     #hyprland = import ./hyprland; #todo: make this work right as a module
