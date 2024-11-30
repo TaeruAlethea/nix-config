@@ -4,11 +4,21 @@
     # List your module files here
     # my-module = import ./my-module.nix;
 
-    fonts = import ./fonts;
-    hyprland = import ./hyprland;
-    git = import ./git;
-    sops = import ./sops;
-    ssh = import ./ssh;
-    waybar = import ./waybar;
-    emacs = import ./emacs;
+    imports = [
+        ./fonts
+        ./hyprland
+        ./git
+        ./sops
+        ./ssh
+        ./waybar
+        ./emacs
+    ];
+
+    #fonts = import ./fonts;
+    #hyprland = import ./hyprland;
+    #git = import ./git;
+    #sops = import ./sops;
+    #ssh = import ./ssh;
+    #waybar = import ./waybar;
+    #emacs = import ./emacs;
 }
