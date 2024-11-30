@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-    imports = [ inputs.stylix.nixosHomeManager.stylix ];
+    imports = [ inputs.stylix.homeManagerModules.stylix ];
 
     stylix.targets = {
         bemenu.enable = true;
