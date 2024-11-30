@@ -1,6 +1,4 @@
-{ pkgs, ... }:
 {
-    imports = [  ];
     fonts = {
         packages = with pkgs; [
             # Fallback Fonts
