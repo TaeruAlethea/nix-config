@@ -14,11 +14,10 @@
     #    ./emacs/default.nix
     #];
 
-    fonts = import ./fonts;
+    emacs = import ./emacs;
     hyprland = import ./hyprland;
     git = import ./git;
     sops = import ./sops;
     ssh = import ./ssh;
     waybar = import ./waybar;
-    emacs = import ./emacs;
 }

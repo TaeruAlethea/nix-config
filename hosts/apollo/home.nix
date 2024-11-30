@@ -8,13 +8,7 @@
 }:
 {
   imports = [
-    outputs.homeManagerModules.fonts
-    outputs.homeManagerModules.hyprland
-    outputs.homeManagerModules.git
-    outputs.homeManagerModules.sops
-    outputs.homeManagerModules.ssh
-    outputs.homeManagerModules.waybar
-    outputs.homeManagerModules.emacs
+    outputs.homeManagerModules
     ];
 
   nixpkgs = {

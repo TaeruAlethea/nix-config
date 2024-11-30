@@ -11,6 +11,7 @@
     #    ./stylix/default.nix
     #];
 
+    fonts = import ./fonts;
     hyprland = import ./hyprland; #todo: make this work right as a module
     localization = import ./localization;
     sops = import ./sops;
