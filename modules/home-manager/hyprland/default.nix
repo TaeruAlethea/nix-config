@@ -129,9 +129,9 @@ in
           bar_padding = 32;
           bar_button_padding = 32;
           hyprbars-button = [
-            "rgba(ff0000cc), 24,󰖭, hyprctl dispatch killactive"
-            "rgba(ffc800cc), 24, , hyprctl dispatch fullscreen 1"
-            "rgba(00c800cc), 24, , hyprctl dispatch togglefloating"
+            "rgba(ff0000cc), 24,󰖭 , hyprctl dispatch killactive"
+            "rgba(ffc800cc), 24,󰖯, hyprctl dispatch fullscreen 1"
+            "rgba(00c800cc), 24,󰔶, hyprctl dispatch togglefloating"
           ];
         };
       };
