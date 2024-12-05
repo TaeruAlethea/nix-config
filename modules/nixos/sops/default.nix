@@ -2,7 +2,7 @@
     imports = [ inputs.sops-nix.nixosModules.sops ];
 
     sops = {
-        defaultSopsFile = ../../secrets/secrets.yaml;
+        defaultSopsFile = ../../../secrets/secrets.yaml;
         validateSopsFiles = false;
 
         age = {

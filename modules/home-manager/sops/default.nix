@@ -5,7 +5,7 @@
   ];
 
   sops = {
-    defaultSopsFile = ../../secrets/secrets.yaml;
+    defaultSopsFile = ../../../secrets/secrets.yaml;
 
     age.keyFile = "/home/astraeaf/.config/sops/age/keys.txt";
     validateSopsFiles = false;

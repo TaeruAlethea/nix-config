@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, lib, ... }:
 let
   hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland;
   plugins = inputs.hyprland-plugins.packages.${pkgs.system};
@@ -189,12 +189,12 @@ in
       dots_size = 0.2; # Scale of input-field height, 0.2 - 0.8
       dots_spacing = 0.35; # Scale of dots' absolute size, 0.0 - 1.0
       dots_center = true;
-      outer_color = "rgba(0, 0, 0, 0)";
-      inner_color = "rgba(0, 0, 0, 0.2)";
-      font_color = "rgb(111, 45, 104)";
+      outer_color = lib.mkDefault "rgba(0, 0, 0, 0)";
+      inner_color = lib.mkDefault "rgba(0, 0, 0, 0.2)";
+      font_color = lib.mkDefault "rgb(111, 45, 104)";
       fade_on_empty = false;
       rounding = -1;
-      check_color = "rgb(30, 107, 204)";
+      check_color = lib.mkDefault "rgb(30, 107, 204)";
       placeholder_text = ''<i><span foreground="##cdd6f4">Input Password...</span></i>'';
       hide_input = false;
       position = "0, -100";
