@@ -6,6 +6,7 @@
 
   imports = [
     ./emacs/default.nix
+    ./fonts/default.nix
     ./git/default.nix
     ./hyprland/default.nix
     ./sops/default.nix
