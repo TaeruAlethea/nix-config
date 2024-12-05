@@ -9,7 +9,7 @@
 {
   imports = [
     outputs.homeManagerModules
-    ];
+  ];
 
   nixpkgs = {
     # You can add overlays here
@@ -47,9 +47,9 @@
 
   # Home packages & programs
   home.packages = with pkgs; [
-      atool
-      httpie
-    ];
+    atool
+    httpie
+  ];
   programs = {
     home-manager.enable = true; # alwayas enabled
 
@@ -61,8 +61,6 @@
 
   # To be made into pacakges
   gtk.enable = true;
-
-
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

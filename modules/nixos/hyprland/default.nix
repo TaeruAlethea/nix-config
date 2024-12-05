@@ -12,12 +12,12 @@ let
     exec-once = swww init
   '';
 
+in
 # exec-once = dconf write /org/gnome/desktop/interface/gtk-theme "'Adwaita'"
 # exec-once = dconf write /org/gnome/desktop/interface/icon-theme "'Flat-Remix-Red-Dark'"
 # exec-once = dconf write /org/gnome/desktop/interface/document-font-name "'Noto Sans Medium 11'"
 # exec-once = dconf write /org/gnome/desktop/interface/font-name "'Noto Sans Medium 11'"
 # exec-once = dconf write /org/gnome/desktop/interface/monospace-font-name "'Noto Sans Mono Medium 11'"
-in
 {
   programs = {
     uwsm = {
