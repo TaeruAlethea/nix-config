@@ -36,7 +36,7 @@ in
     settings = {
       exec-once = [
         "hyprctl setcursor Qogir 48"
-	"systemctl --user enable --now waybar.service"
+	"waybar"
       ];
 
       monitor = [
