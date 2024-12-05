@@ -10,7 +10,7 @@
         ./hyprland/default.nix
         ./sops/default.nix
         ./ssh/default.nix
-        ./stylix/default.nix
+       # ./stylix/default.nix
         ./waybar/default.nix
     ];
 
