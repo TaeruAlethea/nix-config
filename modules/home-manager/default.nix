@@ -1,11 +1,11 @@
 { ... }:
 {
-  emacs = imports ./emacs/default.nix;
-  fonts = imports ./fonts/default.nix;
-  git = imports ./git/default.nix;
-  hyprland = imports ./hyprland/default.nix;
-  sops = imports ./sops/default.nix;
-  ssh = imports ./ssh/default.nix;
-  stylix = imports ./stylix/default.nix;
-  waybar = imports ./waybar/default.nix;
+  emacs = import ./emacs;
+  fonts = import ./fonts;
+  git = import ./git;
+  hyprland = import ./hyprland;
+  sops = import ./sops;
+  ssh = import ./ssh;
+  stylix = import ./stylix;
+  waybar = import ./waybar;
 }
