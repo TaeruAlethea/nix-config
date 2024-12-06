@@ -8,7 +8,14 @@
 }:
 {
   imports = [
-    outputs.homeManagerModules
+    ../../modules/home-manager/emacs/default.nix
+    ../../modules/home-manager/fonts/default.nix
+    ../../modules/home-manager/git/default.nix
+    ../../modules/home-manager/hyprland/default.nix
+    ../../modules/home-manager/sops/default.nix
+    ../../modules/home-manager/ssh/default.nix
+    ../../modules/home-manager/stylix/default.nix
+    ../../modules/home-manager/waybar/default.nix
   ];
 
   nixpkgs = {

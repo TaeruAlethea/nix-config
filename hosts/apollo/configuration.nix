@@ -20,7 +20,11 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
 
-    outputs.nixosModules
+    ../../modules/nixos/fonts/default.nix
+    ../../modules/nixos/hyprland/default.nix
+    ../../modules/nixos/localization/default.nix
+    ../../modules/nixos/sops/default.nix
+    ../../modules/nixos/stylix/default.nix
 
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
