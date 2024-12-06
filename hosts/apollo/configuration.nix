@@ -19,22 +19,15 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
-
-    #../../modules/nixos/fonts/default.nix
-    #../../modules/nixos/hyprland/default.nix
-    #../../modules/nixos/localization/default.nix
-    #../../modules/nixos/sops/default.nix
-    #../../modules/nixos/stylix/default.nix
+    ../../modules/nixos/fonts/default.nix
+    ../../modules/nixos/hyprland/default.nix
+    ../../modules/nixos/localization/default.nix
+    ../../modules/nixos/sops/default.nix
+    ../../modules/nixos/stylix/default.nix
 
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
-
-  import outputs.nixosModules.fonts;
-  import outputs.nixosModules.hyprland;
-  import outputs.nixosModules.localization;
-  import outputs.nixosModules.sops;
-  import outputs.nixosModules.stylix;
 
   nixpkgs = {
     # You can add overlays here
@@ -81,7 +74,7 @@
       #registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
       #nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
     };
-
+    
   networking.hostName = "apollo"; # Define your hostname.
 
   # Configure network proxy if necessary
