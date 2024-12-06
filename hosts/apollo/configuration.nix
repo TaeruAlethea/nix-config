@@ -12,6 +12,11 @@
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
+    outputs.nixosModules.fonts
+    outputs.nixosModules.hyprland
+    outputs.nixosModules.localization
+    outputs.nixosModules.sops
+    outputs.nixosModules.stylix
 
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
@@ -29,14 +34,6 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
-  import = [
-    outputs.nixosModules.fonts
-    outputs.nixosModules.hyprland
-    outputs.nixosModules.localization
-    outputs.nixosModules.sops
-    outputs.nixosModules.stylix
-  ];
-
 
   nixpkgs = {
     # You can add overlays here
