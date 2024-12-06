@@ -30,11 +30,11 @@
     ./hardware-configuration.nix
   ];
 
-  outputs.nixosModules.fonts
-  outputs.nixosModules.hyprland
-  outputs.nixosModules.localization
-  outputs.nixosModules.sops
-  outputs.nixosModules.stylix
+  import outputs.nixosModules.fonts;
+  import outputs.nixosModules.hyprland;
+  import outputs.nixosModules.localization;
+  import outputs.nixosModules.sops;
+  import outputs.nixosModules.stylix;
 
   nixpkgs = {
     # You can add overlays here
