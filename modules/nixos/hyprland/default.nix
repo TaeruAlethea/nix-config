@@ -4,7 +4,8 @@
   pkgs,
   config,
   ...
-}:{
+}:
+{
   programs = {
     uwsm = {
       enable = true;
