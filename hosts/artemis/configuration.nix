@@ -61,7 +61,7 @@
   nixos-wsl.nixosModules.default {
     wsl.enable = true;
     wsl.defaultUser = "astraeaf";
-    wsl.wslConf.network.hostname = "artemis-wsl";
+    wsl.wslConf.network.hostname = "artemis";
     };
 
   users.mutableUsers = false; # Required for Sops
