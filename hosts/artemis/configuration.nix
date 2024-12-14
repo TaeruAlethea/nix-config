@@ -91,18 +91,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    age
     git
-
-    #ssh-to-sops
-    sops
-
-    # emacs specific
-    emacs
-    ripgrep
-    coreutils
-    fd
-    clang
 
     # Formatters
     treefmt2
