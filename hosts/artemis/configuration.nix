@@ -18,7 +18,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
-    (concatMapStrings (x: "../../" + x) [
+    (map (x: "../../" + x) [
       "modules/nixos/fonts/default.nix"
       "modules/nixos/sops/default.nix"
     ])
