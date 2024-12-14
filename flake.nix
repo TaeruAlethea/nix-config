@@ -74,7 +74,7 @@
           modules = [
             # > Our main home-manager configuration file <
             #./users/astraeaf.nix
-            home.stateVersion = "24.05";
+            { home.stateVersion = "24.05"; }
           ];
         };
       };
