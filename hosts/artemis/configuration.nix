@@ -9,7 +9,6 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
     inputs.nixos-wsl.nixosModules.default
   ];
 
@@ -59,9 +58,14 @@
       #nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
     };
 
-    wsl.enable = true;
-    wsl.defaultUser = "astraeaf";
-    wsl.wslConf.network.hostname = "artemis";
+  # WSL is closer to a container than anything else
+  boot.isContainer = true;
+  wsl.enable = true;
+  wsl.defaultUser = "astraeaf";
+  wsl.wslConf.network.hostname = "artemis";
+
+  environment.etc.hosts.enable = false;
+  environment.etc."resolv.conf".enable = false;
 
   users.mutableUsers = false; # Required for Sops
   # Define a user account. Don't forget to set a password with ‘passwd’.
