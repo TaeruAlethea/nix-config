@@ -8,8 +8,8 @@
 }:
 {
   imports = [
-    # include NixOS-WSL modules
-    #<nixos-wsl/modules>
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
   ];
 
   nixpkgs = {
