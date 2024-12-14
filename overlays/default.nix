@@ -1,6 +1,10 @@
 # This file defines overlays
-{ inputs, ... }:
+{ lib, inputs, ... }:
 {
+  # use path relative to the root of the project
+  # https://github.com/EmergentMind/nix-config/blob/e1984059e129f38c2a348d93b56d99ad01e6aca7/lib/default.nix#L5
+  relativeToRoot = lib.path.append ../.;
+
   # This one brings our custom packages from the 'pkgs' directory
   additions = final: _prev: import ../pkgs final.pkgs;
 
