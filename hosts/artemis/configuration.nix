@@ -11,7 +11,7 @@
     # include NixOS-WSL modules
     <nixos-wsl/modules>
   ];
-  
+
   nixpkgs = {
     # You can add overlays here
     overlays = [
@@ -58,11 +58,11 @@
       #nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
     };
 
-
-
-  wsl.enable = true;
-  wsl.defaultUser = "astraeaf";
-  wsl.wslConf.network.hostname = "artemis-wsl";
+  nixos-wsl.nixosModules.default {
+    wsl.enable = true;
+    wsl.defaultUser = "astraeaf";
+    wsl.wslConf.network.hostname = "artemis-wsl";
+    };
 
   users.mutableUsers = false; # Required for Sops
   # Define a user account. Don't forget to set a password with ‘passwd’.
