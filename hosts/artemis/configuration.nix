@@ -8,8 +8,19 @@
 }:
 {
   imports = [
-    # Include the results of the hardware scan.
+    # If you want to use modules your own flake exports (from modules/nixos):
+    # outputs.nixosModules.example
+
+    # Or modules from other flakes (such as nixos-hardware):
+    # inputs.hardware.nixosModules.common-cpu-amd
+    # inputs.hardware.nixosModules.common-ssd
     inputs.nixos-wsl.nixosModules.default
+
+    # You can also split up your configuration and import pieces of it here:
+    # ./users.nix
+
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
   ];
 
   nixpkgs = {
@@ -58,10 +69,6 @@
       #nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
     };
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-
-  # WSL is closer to a container than anything else
-  boot.isContainer = true;
   wsl.enable = true;
   wsl.defaultUser = "astraeaf";
   wsl.wslConf.network.hostname = "artemis";
