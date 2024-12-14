@@ -18,8 +18,6 @@
     #../../modules/home-manager/ssh/default.nix
     #../../modules/home-manager/stylix/default.nix
     #../../modules/home-manager/waybar/default.nix
-
-    #outputs.homeManagerModules.fonts
   ];
 
   nixpkgs = {
@@ -46,6 +44,8 @@
       allowUnfree = true;
     };
   };
+
+  home-manager.backupFileExtension = "hm-backup";
 
   home = {
     username = "astraeaf";
