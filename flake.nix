@@ -73,7 +73,7 @@
           };
           modules = [
             # > Our main home-manager configuration file <
-            ./hosts/apollo/home.nix
+            ./users/astraeaf.nix
           ];
         };
       };
