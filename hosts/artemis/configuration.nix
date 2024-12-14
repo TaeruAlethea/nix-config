@@ -58,7 +58,7 @@
       #nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
     };
 
-  nixos-wsl.nixosModules.default {
+  nixos-wsl.nixosModules.default = {
     wsl.enable = true;
     wsl.defaultUser = "astraeaf";
     wsl.wslConf.network.hostname = "artemis";
