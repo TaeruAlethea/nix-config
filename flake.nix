@@ -75,8 +75,8 @@
             # > Our main home-manager configuration file <
             ./users/astraeaf.nix
           ];
-          backupFileExtension = "hm-backup";
         };
+        backupFileExtension = "hm-backup";
       };
     };
 
