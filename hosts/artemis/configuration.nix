@@ -10,6 +10,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    inputs.nixos-wsl.nixosModules.default
   ];
 
   nixpkgs = {
