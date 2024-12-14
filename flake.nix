@@ -73,7 +73,7 @@
           };
           modules = [
             # > Our main home-manager configuration file <
-            ./users/astraeaf.nix
+            #./users/astraeaf.nix
           ];
         };
       };
