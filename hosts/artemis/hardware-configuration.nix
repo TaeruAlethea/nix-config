@@ -7,8 +7,9 @@
   ...
 }:
 {
-  imports = [
-  ];
+  imports =
+    [
+    ];
 
   ######
   # I consider WSL to be a "hardware-configuration" scope thing.
