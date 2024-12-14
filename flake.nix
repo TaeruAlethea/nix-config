@@ -68,6 +68,7 @@
       homeConfigurations = {
         "astraeaf" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          backupFileExtension = "hm-backup";
           extraSpecialArgs = {
             inherit inputs outputs;
           };
@@ -76,7 +77,6 @@
             ./users/astraeaf.nix
           ];
         };
-        backupFileExtension = "hm-backup";
       };
     };
 
