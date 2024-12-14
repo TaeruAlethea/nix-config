@@ -57,7 +57,6 @@
             inherit inputs outputs;
           };
           modules = [
-            # > Our main nixos configuration file <
             ./hosts/artemis/configuration.nix
           ];
         };
@@ -72,7 +71,6 @@
             inherit inputs outputs;
           };
           modules = [
-            # > Our main home-manager configuration file <
             ./users/astraeaf.nix
           ];
         };
