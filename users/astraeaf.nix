@@ -66,7 +66,7 @@
     gh-dash.enable = true;
   };
 
-  # To be made into pacakges
+  # To be made into packages
   gtk.enable = true;
 
   # Nicely reload system units when changing configs
