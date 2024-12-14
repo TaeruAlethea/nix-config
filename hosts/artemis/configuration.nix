@@ -84,9 +84,11 @@
     description = "Astraea Falke";
     isNormalUser = true;
     hashedPasswordFile = config.sops.secrets.astraeaf-password.path;
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
-
-  programs.nh.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -98,6 +100,8 @@
     nixfmt-rfc-style
     yamlfmt
   ];
+
+  programs.nh.enable = true;
 
   environment.sessionVariables = {
     FLAKE = "/home/astraeaf/nix-config";
