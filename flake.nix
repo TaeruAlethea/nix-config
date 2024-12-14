@@ -51,6 +51,16 @@
             ./hosts/apollo/configuration.nix
           ];
         };
+
+        artemis = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [
+            # > Our main nixos configuration file <
+            ./hosts/artemis/configuration.nix
+          ];
+        };
       };
 
       # Standalone home-manager configuration entrypoint
@@ -93,6 +103,9 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+
+    # Only needed for Windows Subsystem for Linux
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
     nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
     stylix.url = "github:danth/stylix";
