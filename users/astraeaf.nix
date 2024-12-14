@@ -10,7 +10,7 @@
   programs.home-manager.enable = true; # alwayas enabled
   
   imports = [
-    ../../modules/home-manager/emacs/default.nix
+    #../../modules/home-manager/emacs/default.nix
     ../../modules/home-manager/fonts/default.nix
     ../../modules/home-manager/git/default.nix
     ../../modules/home-manager/hyprland/default.nix
