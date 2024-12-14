@@ -18,6 +18,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
+    ../../modules/nixos/sops/default.nix
 
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
