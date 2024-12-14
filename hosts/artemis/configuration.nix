@@ -58,6 +58,8 @@
       #nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
     };
 
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+
   # WSL is closer to a container than anything else
   boot.isContainer = true;
   wsl.enable = true;
