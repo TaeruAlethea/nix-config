@@ -8,7 +8,6 @@
 }:
 {
   programs.home-manager.enable = true; # alwayas enabled
-  backupFileExtension = "hm-backup";
 
   imports = [
     #../../modules/home-manager/emacs/default.nix
