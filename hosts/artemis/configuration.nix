@@ -7,7 +7,7 @@
   ...
 }:
 {
-  imports = (map (x: "../../" + x) [
+  MyModules = (map (x: "../../" + x) [
     "modules/nixos/fonts/default.nix"
     "modules/nixos/sops/default.nix"
   ]);
@@ -26,7 +26,7 @@
 
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-  ];
+  ] // MyModules;
 
   nixpkgs = {
     # You can add overlays here
