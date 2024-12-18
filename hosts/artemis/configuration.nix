@@ -78,6 +78,12 @@
   environment.etc.hosts.enable = false;
   environment.etc."resolv.conf".enable = false;
 
+  console = {
+    font = "JetBrainsMono";
+    keyMap = "us";
+    packages = with pkgs; [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
+  };
+
   users.mutableUsers = false; # Required for Sops
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.astraeaf = {
