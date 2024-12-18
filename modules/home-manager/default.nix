@@ -1,6 +1,4 @@
 { ... }:
-let
-in
 {
   emacs = import ./emacs;
   fonts = import ./fonts;
