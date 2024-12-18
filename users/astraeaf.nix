@@ -52,7 +52,7 @@
     homeDirectory = "/home/astraeaf";
     sessionVariables = {
       BROWSER = "firefox";
-      TERMINAL = "kitty";
+      #TERMINAL = "kitty";
     };
   };
 
