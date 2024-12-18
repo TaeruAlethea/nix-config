@@ -11,6 +11,9 @@
   programs.home-manager.enable = true; # alwayas enabled
 
   imports = [
+    # outputs.homeManagerModules.git # this doesn't work as I would expect. I'm wanting to just "add in the whole thing"
+    
+
     #../../modules/home-manager/emacs/default.nix
     (inputs.self + /modules/home-manager/fonts/default.nix)
     (inputs.self + /modules/home-manager/git/default.nix)
