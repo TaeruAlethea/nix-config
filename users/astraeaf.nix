@@ -16,7 +16,7 @@
     (inputs.self + /modules/home-manager/git/default.nix)
     #../../modules/home-manager/hyprland/default.nix
     (inputs.self + /modules/home-manager/sops/default.nix)
-    (inputs.self + /modules/home-manager/oh-my-posh/default.nix)
+    # (inputs.self + /modules/home-manager/oh-my-posh/default.nix)
     #../../modules/home-manager/ssh/default.nix
     #../../modules/home-manager/stylix/default.nix
     #../../modules/home-manager/waybar/default.nix
