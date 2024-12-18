@@ -12,7 +12,7 @@
 
   imports = [
     #../../modules/home-manager/emacs/default.nix
-    (inputs.self + /modules/home-manager/fonts/default.nix)
+    # (inputs.self + /modules/home-manager/fonts/default.nix)
     (inputs.self + /modules/home-manager/git/default.nix)
     #../../modules/home-manager/hyprland/default.nix
     (inputs.self + /modules/home-manager/sops/default.nix)

@@ -11,5 +11,18 @@
       noto-fonts-monochrome-emoji
     ];
     fontDir.enable = true;
+
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        emoji = [
+          "Noto Color Emoji"
+          "Noto Emoji"
+        ];
+        monospace = [ "JetBrainsMono NF" ];
+        serif = [ "Noto Serif" ];
+        sansSerif = [ "Noto Sans" ];
+      };
+    };
   };
 }
