@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
     programs.oh-my-posh = {
         enable = true;
