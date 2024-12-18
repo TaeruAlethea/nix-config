@@ -42,13 +42,13 @@
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
-        apollo = nixpkgs.lib.nixosSystem {
+        ares = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
           };
           modules = [
             # > Our main nixos configuration file <
-            ./hosts/apollo/configuration.nix
+            ./hosts/ares/configuration.nix
           ];
         };
 

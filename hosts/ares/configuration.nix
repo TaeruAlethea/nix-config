@@ -75,7 +75,7 @@
       #nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
     };
 
-  networking.hostName = "apollo"; # Define your hostname.
+  networking.hostName = "ares"; # Define your hostname.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
