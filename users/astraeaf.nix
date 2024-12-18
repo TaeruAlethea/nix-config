@@ -10,8 +10,7 @@
   programs.home-manager.enable = true; # alwayas enabled
 
   imports = [
-    outputs.homeManagerModules.fonts
-    outputs.homeManagerModules.git
+    outputs.homeManagerModules
 
     #../../modules/home-manager/emacs/default.nix
     #../../modules/home-manager/fonts/default.nix
