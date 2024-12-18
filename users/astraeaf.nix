@@ -3,7 +3,7 @@
   outputs,
   lib,
   config,
-  pkgs, 
+  pkgs,
   self,
   ...
 }:
