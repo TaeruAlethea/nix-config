@@ -19,7 +19,7 @@
           "Noto Color Emoji"
           "Noto Emoji"
         ];
-        monospace = [ "JetBrainsMono NF" ];
+        monospace = [ "JetBrainsMono" ];
         serif = [ "Noto Serif" ];
         sansSerif = [ "Noto Sans" ];
       };
