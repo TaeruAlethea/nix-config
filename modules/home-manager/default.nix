@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   emacs = import ./emacs;
   fonts = import ./fonts;
