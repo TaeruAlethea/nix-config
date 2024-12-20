@@ -1,10 +1,10 @@
-    {
-      inputs,
-      outputs,
-      nixpkgs,
-      home-manager,
-      ...
-    }:
+{
+  inputs,
+  outputs,
+  nixpkgs,
+  home-manager,
+  ...
+}:
 {
   ares = nixpkgs.lib.nixosSystem {
     specialArgs = { inherit inputs outputs; };
