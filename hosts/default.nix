@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, nixpkgs, home-manager, ... }:
 {
   ares = nixpkgs.lib.nixosSystem {
     specialArgs = {
