@@ -78,18 +78,6 @@
   environment.etc.hosts.enable = false;
   environment.etc."resolv.conf".enable = false;
 
-  users.mutableUsers = false; # Required for Sops
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.astraeaf = {
-    description = "Astraea Falke";
-    isNormalUser = true;
-    hashedPasswordFile = config.sops.secrets.astraeaf-password.path;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-  };
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
