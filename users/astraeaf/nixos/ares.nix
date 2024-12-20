@@ -1,5 +1,5 @@
 {
-	users.mutableUsers = false; # Required for Sops
+  users.mutableUsers = false; # Required for Sops
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.astraeaf = {
 
@@ -20,4 +20,4 @@
       inputs.zen-browser.packages."${system}".default
     ];
   };
-  }
+}
