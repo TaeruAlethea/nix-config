@@ -127,14 +127,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    age
     git
     github-desktop
     networkmanagerapplet
-
-    #ssh-to-sops
-    sops
-    starship
 
     # emacs specific
     emacs

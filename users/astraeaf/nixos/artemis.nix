@@ -1,4 +1,9 @@
+{inputs, ...}:
 {
+  imports = [
+    (inputs.self + ./modules/nixos/sops)
+  ];
+
   users.mutableUsers = false; # Required for Sops
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.astraeaf = {
@@ -10,4 +15,6 @@
       "wheel"
     ];
   };
+
+
 }
