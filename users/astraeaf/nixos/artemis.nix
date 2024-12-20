@@ -1,4 +1,4 @@
-{inputs, ...}:
+{inputs,config, ...}:
 {
   imports = [
     (inputs.self + ./modules/nixos/sops)
