@@ -1,7 +1,7 @@
 {inputs,config, ...}:
 {
   imports = [
-    ./modules/sops
+    (inputs.self + /modules/sops)
   ];
 
   users.mutableUsers = false; # Required for Sops
