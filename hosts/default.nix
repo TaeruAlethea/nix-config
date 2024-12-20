@@ -1,5 +1,6 @@
     {
-      self,
+      inputs,
+      outputs,
       nixpkgs,
       home-manager,
       ...
