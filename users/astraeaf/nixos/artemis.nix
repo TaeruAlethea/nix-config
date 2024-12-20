@@ -1,7 +1,7 @@
 {inputs,config, ...}:
 {
   imports = [
-    (inputs.self + ./modules/nixos/sops)
+    ./modules/sops
   ];
 
   users.mutableUsers = false; # Required for Sops
@@ -15,6 +15,4 @@
       "wheel"
     ];
   };
-
-
 }
