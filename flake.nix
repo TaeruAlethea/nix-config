@@ -17,11 +17,11 @@
 
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
-      nixosConfigurations = import ./hosts { inherit inputs outputs; };
+      nixosConfigurations = import ./hosts { inherit inputs outputs nixpkgs home-manager; };
 
       # Standalone home-manager configuration entrypoint
       # Available through 'home-manager --flake .#your-username@your-hostname'
-      homeConfigurations = import ./users { inherit inputs outputs; };
+      homeConfigurations = import ./users { inherit inputs outputs nixpkgs home-manager; };
     };
 
   inputs = {
