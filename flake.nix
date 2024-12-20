@@ -6,6 +6,7 @@
       self,
       nixpkgs,
       home-manager,
+      lib,
       ...
     }@inputs:
     let
