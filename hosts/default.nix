@@ -1,3 +1,9 @@
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
 {
   ares = nixpkgs.lib.nixosSystem {
     specialArgs = { inherit inputs outputs; };
