@@ -73,8 +73,6 @@
 
       #dev
       jetbrains.rider
-      cargo
-      rustc
   ];
   programs = {
     # Shell & CLI
