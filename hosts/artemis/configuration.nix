@@ -9,7 +9,7 @@
 
 {
   imports = [
-    inputs.nixos-wsl.nisosModules.default
+    inputs.nixos-wsl.nixosModules.default
 
     outputs.nixosModules.agenix
     outputs.nixosModules.fonts
