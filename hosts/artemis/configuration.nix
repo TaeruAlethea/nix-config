@@ -18,7 +18,7 @@
 
   wsl ={
     enable = true;
-    defaultUser = "astraeaf":
+    defaultUser = "astraeaf";
     wslConf = {
       network.hostname = "artemis";
     };
