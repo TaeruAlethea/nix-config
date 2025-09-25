@@ -7,6 +7,6 @@ in
         enable = true;
         enableBashIntegration = true;
         #settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile configPath));
-        useTheme = "sonicboom_dark.omp.json";
+        useTheme = "sonicboom_dark";
     };
 }
