@@ -57,6 +57,9 @@
     };
   };
 
+
+  rust-bin.stable.latest.default
+
   # Home packages & programs
   home.packages = with pkgs; [
       bitwarden-desktop
@@ -70,7 +73,8 @@
 
       #dev
       jetbrains.rider
-      rust-bin.stable.latest.default
+      cargo
+      rustc
   ];
   programs = {
     # Shell & CLI
