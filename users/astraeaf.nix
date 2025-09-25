@@ -62,7 +62,7 @@
 
   # Home packages & programs
   home.packages = with pkgs; [
-      bitwarden-desktop
+      bitwarden
       bitwarden-cli
       bottles
 
