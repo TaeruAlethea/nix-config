@@ -63,6 +63,8 @@
       bitwarden-cli
       bottles
 
+      gitkraken
+
       firefox-beta
       obsidian
       vesktop
