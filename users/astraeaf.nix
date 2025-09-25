@@ -59,7 +59,8 @@
 
   # Home packages & programs
   home.packages = with pkgs; [
-      bitwarden
+      bitwarden-desktop
+      bitwarden-cli
       bottles
 
       firefox-beta
