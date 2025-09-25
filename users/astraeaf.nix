@@ -70,6 +70,7 @@
 
       #dev
       jetbrains.rider
+      rust-bin.stable.latest.default
   ];
   programs = {
     # Shell & CLI

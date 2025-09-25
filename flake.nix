@@ -125,6 +125,12 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
     nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix.url = "github:danth/stylix";
   };
 }
