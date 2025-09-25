@@ -5,7 +5,7 @@
   ...
 }:
 {
-  imports = [ inputs.sops-nix.nixosModules.sops ];
+  imports = [ inputs.agenix.nixosModules.default ];
 
   environment.systemPackages = with pkgs; [
     age
@@ -13,7 +13,7 @@
   ];
 
   sops = {
-    defaultSopsFile = ../../../secrets/secrets.yaml;
+    defaultSopsFile = (inputs.self + /secrets/secrets.yaml);
     validateSopsFiles = false;
 
     age = {
@@ -25,6 +25,7 @@
     secrets = {
       github = { };
       astraeaf-password.neededForUsers = true;
+      astraeaf-password2.neededForUsers = true;
     };
   };
 }

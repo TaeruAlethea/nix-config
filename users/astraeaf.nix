@@ -11,15 +11,17 @@
   programs.home-manager.enable = true; # alwayas enabled
 
   imports = [
-    #../../modules/home-manager/emacs/default.nix
-    # (inputs.self + /modules/home-manager/fonts/default.nix)
-    (inputs.self + /modules/home-manager/git/default.nix)
-    #../../modules/home-manager/hyprland/default.nix
-    (inputs.self + /modules/home-manager/sops/default.nix)
-    # (inputs.self + /modules/home-manager/oh-my-posh/default.nix)
-    #../../modules/home-manager/ssh/default.nix
-    #../../modules/home-manager/stylix/default.nix
-    #../../modules/home-manager/waybar/default.nix
+    outputs.homeManagerModules.oh-my-posh
+    outputs.homeManagerModules.wezterm
+
+    # outputs.homeManagerModules.emacs
+    # outputs.homeManagerModules.fonts
+    # outputs.homeManagerModules.git
+    # outputs.homeManagerModules.hyprland
+    # outputs.homeManagerModules.sops
+    # outputs.homeManagerModules.ssh
+    # outputs.homeManagerModules.stylix
+    # outputs.homeManagerModules.waybar
   ];
 
   nixpkgs = {
@@ -42,7 +44,6 @@
     ];
     # Configure your nixpkgs instance
     config = {
-      # Disable if you don't want unfree packages
       allowUnfree = true;
     };
   };
@@ -52,14 +53,22 @@
     homeDirectory = "/home/astraeaf";
     sessionVariables = {
       BROWSER = "firefox";
-      #TERMINAL = "kitty";
+      TERMINAL = "wezterm";
     };
   };
 
   # Home packages & programs
   home.packages = with pkgs; [
-    atool
-    httpie
+      bitwarden
+      bottles
+
+      firefox-beta
+      obsidian
+      vesktop
+      steam
+
+      #dev
+      jetbrains.rider
   ];
   programs = {
     # Shell & CLI
@@ -68,11 +77,8 @@
     gh-dash.enable = true;
   };
 
-  # To be made into packages
-  gtk.enable = true;
-
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
-  home.stateVersion = "24.05";
+  home.stateVersion = "25.05";
 }

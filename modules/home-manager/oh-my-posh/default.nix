@@ -1,9 +1,11 @@
-{ lib, pkgs, ... }:
+{ lib, inputs, ... }:
+let
+    configPath = ( inputs.self + "/modules/home-manager/oh-my-posh/uew.omp.json" );
+in
 {
     programs.oh-my-posh = {
         enable = true;
         enableBashIntegration = true;
-        useTheme = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile "${pkgs.oh-my-posh}/share/oh-my-posh/themes/uew.omp.json"));
-        # settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile "${pkgs.oh-my-posh}/share/oh-my-posh/themes/uew"));
+        settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile configPath));
     };
 }
