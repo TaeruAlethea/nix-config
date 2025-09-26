@@ -33,6 +33,6 @@
 	};
 
 
-	systemd.users.startServices = "sd-switch";
+	systemd.user.startServices = "sd-switch";
 	home.stateVersion = "25.05";
 }
