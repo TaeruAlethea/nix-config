@@ -39,7 +39,7 @@
       homeManagerModules = import ./modules/home-manager;
 
       #hosts = import ./hosts;
-      users = import ./users;
+      userConfig = import ./users;
 
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
@@ -83,7 +83,7 @@
             inherit inputs outputs;
           };
           modules = [
-            outputs.users.astraeaf
+            outputs.userConfig.astraeaf
           ];
         };
 
