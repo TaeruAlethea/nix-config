@@ -32,7 +32,7 @@
     };
   };
 
-  networking.hostname = "artemis";
+  networking.hostName = "artemis";
 
   users.mutableUsers = false;
   users.users.astraeaf = {
