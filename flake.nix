@@ -56,6 +56,7 @@
           };
           modules = [
             ./hosts/artemis/configuration.nix
+	    agenix.nixosModules.default
           ];
         };
 
