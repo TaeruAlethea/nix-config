@@ -9,6 +9,7 @@
 	# core terminal tooling, themes, etc.
 
 	imports = [
+		outputs.homeManagerModules.helix
 		outputs.homeManagerModules.oh-my-posh
 	];
 

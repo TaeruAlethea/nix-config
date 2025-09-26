@@ -59,7 +59,7 @@
   environment.systemPackages = with pkgs; [
     #audio
     wireplumber
-    helvum
+    coppwr
 
     # Peripherals
     openrazer-daemon
