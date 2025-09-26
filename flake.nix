@@ -38,8 +38,10 @@
       # These are usually stuff you would upstream into home-manager
       homeManagerModules = import ./modules/home-manager;
 
-      #hosts = import ./hosts;
-      userConfig = import ./users;
+      hostConfigs = import ./hosts;
+      userConfigs = import ./users;
+
+      import = [ agenix.nixosModules.default ];
 
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
@@ -49,7 +51,7 @@
             inherit inputs outputs;
           };
           modules = [
-            ./hosts/ares/configuration.nix
+            outputs.hostConfigs.ares
           ];
         };
 
@@ -58,8 +60,7 @@
             inherit inputs outputs;
           };
           modules = [
-            ./hosts/artemis/configuration.nix
-            agenix.nixosModules.default
+            outputs.hostConfigs.artemis
           ];
         };
 
@@ -68,8 +69,7 @@
             inherit inputs outputs ;
           };
           modules = [
-            ./hosts/zues/configuration.nix
-            agenix.nixosModules.default
+            outputs.hostConfigs.zues
           ];
         };
       };
@@ -83,7 +83,7 @@
             inherit inputs outputs;
           };
           modules = [
-            outputs.userConfig.astraeaf.default
+            outputs.userConfigs.astraeaf.core
           ];
         };
 
@@ -93,7 +93,7 @@
             inherit inputs outputs;
           };
           modules = [
-            outputs.userConfig.astraeaf.heavy
+            outputs.userConfigs.astraeaf.heavy
           ];
         };
       };
