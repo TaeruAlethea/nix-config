@@ -9,8 +9,9 @@
 }:
 {
   imports = [
-    outputs.homeManagerModules.wezterm
+    outputs.userConfig.astraeaf.default
 
+    outputs.homeManagerModules.wezterm
     # outputs.homeManagerModules.emacs
     # outputs.homeManagerModules.fonts
     # outputs.homeManagerModules.git

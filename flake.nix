@@ -83,7 +83,7 @@
             inherit inputs outputs;
           };
           modules = [
-            outputs.userConfig.astraeaf
+            outputs.userConfig.astraeaf.default
           ];
         };
 
@@ -93,7 +93,7 @@
             inherit inputs outputs;
           };
           modules = [
-            ./users/astraeaf.nix
+            outputs.userConfig.astraeaf.heavy
           ];
         };
       };
