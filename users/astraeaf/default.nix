@@ -1,4 +1,12 @@
-{ outputs, ... }:
+{
+	inputs,
+	outputs,
+	lib,
+	config,
+	pkgs,
+	self,
+	...
+}:
 {
 	programs.home-manager.eneable = true;
 
