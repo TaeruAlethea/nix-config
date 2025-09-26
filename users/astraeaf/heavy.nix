@@ -8,10 +8,7 @@
   ...
 }:
 {
-  programs.home-manager.enable = true; # alwayas enabled
-
   imports = [
-    outputs.homeManagerModules.oh-my-posh
     outputs.homeManagerModules.wezterm
 
     # outputs.homeManagerModules.emacs
@@ -49,8 +46,6 @@
   };
 
   home = {
-    username = "astraeaf";
-    homeDirectory = "/home/astraeaf";
     sessionVariables = {
       BROWSER = "firefox";
       TERMINAL = "wezterm";
@@ -73,15 +68,5 @@
       #dev
       jetbrains.rider
   ];
-  programs = {
-    # Shell & CLI
-    bash.enable = true;
-    gh.enable = true;
-    gh-dash.enable = true;
-  };
-
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
-
-  home.stateVersion = "25.05";
+  
 }
