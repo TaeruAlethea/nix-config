@@ -83,9 +83,7 @@
             inherit inputs outputs;
           };
           modules = [
-            #outputs.users.astraeaf
-            ./users/astraeaf/default.nix
-            #./users/astraeaf.nix
+            outputs.users.astraeaf
           ];
         };
 
