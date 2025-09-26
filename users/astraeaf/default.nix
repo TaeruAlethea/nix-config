@@ -17,7 +17,7 @@
 		outputs.homeManagerModules.oh-my-posh
 	];
 
-	nixpks.config.allowUnfree = true; # You get used to this, so always have it.
+	nixpkgs.config.allowUnfree = true; # You get used to this, so always have it.
 
 	home = {
 		username = "astraeaf";
