@@ -9,7 +9,7 @@
 }:
 {
   imports = [
-    outputs.userConfig.astraeaf.default
+    outputs.userConfigs.astraeaf.core
 
     outputs.homeManagerModules.wezterm
     # outputs.homeManagerModules.emacs

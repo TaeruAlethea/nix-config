@@ -34,13 +34,13 @@
 
                 keys = {
                     normal = {
-                        esc = ["collapse_selection", "keep_primary_selection"];
+                        esc = ["collapse_selection" "keep_primary_selection"];
                         ctrl.g = [
-                            ":write-all",
-                            ":new",
-                            ":insert-output lazygit",
-                            ":buffer-close!",
-                            ":redraw",
+                            ":write-all"
+                            ":new"
+                            ":insert-output lazygit"
+                            ":buffer-close!"
+                            ":redraw"
                             ":reload-all"
                         ];
                         ctrl.s = ":w";
@@ -66,9 +66,9 @@
         }];
 
 
-        themes = [
-            "foxo_dark" = { "inherits" = "ayu_evolve"; };
-            "foxo_light" = { "inherits" = "ayu_light"; };
-        ];
+        themes = {
+            foxo_dark = { "inherits" = "ayu_evolve"; };
+            foxo_light = { "inherits" = "ayu_light"; };
+        };
     };
 }

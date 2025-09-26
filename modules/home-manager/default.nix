@@ -3,6 +3,7 @@
   emacs = import ./emacs;
   fonts = import ./fonts;
   git = import ./git;
+  helix = import ./helix;
   hyprland = import ./hyprland;
   oh-my-posh = import ./oh-my-posh;
   sops = import ./sops;
