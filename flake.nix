@@ -39,7 +39,7 @@
       homeManagerModules = import ./modules/home-manager;
 
       #hosts = import ./hosts;
-      #users = import ./users;
+      users = import ./users;
 
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
@@ -83,7 +83,7 @@
             inherit inputs outputs;
           };
           modules = [
-            inputs.users.astraeaf
+            outputs.users.astraeaf
             #./users/astraeaf.nix
           ];
         };
@@ -101,8 +101,6 @@
     };
 
   inputs = {
-    users = import ./users;
-    
     # Nixpkgs
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
