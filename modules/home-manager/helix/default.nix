@@ -25,45 +25,43 @@
                     newline = "none";
                 };
 
-                softwrap.enable = true;
+                soft-wrap.enable = true;
 
                 inline-diagnostics = {
                     cursor-line = "warning";
                     other-lines = "error";
                 };
+            };
+            keys = {
+                normal = {
+                    esc = ["collapse_selection" "keep_primary_selection"];
+                    C-g = [
+                        ":write-all"
+                        ":new"
+                        ":insert-output lazygit"
+                        ":buffer-close!"
+                        ":redraw"
+                        ":reload-all"
+                    ];
+                    C-s = ":w";
+                };
 
-                keys = {
-                    normal = {
-                        esc = ["collapse_selection" "keep_primary_selection"];
-                        ctrl.g = [
-                            ":write-all"
-                            ":new"
-                            ":insert-output lazygit"
-                            ":buffer-close!"
-                            ":redraw"
-                            ":reload-all"
-                        ];
-                        ctrl.s = ":w";
-                    };
+                insert = {
+                    C-c = "normal_mode";
+                };
 
-                    insert = {
-                        ctrl.c = "normal_mode";
-                    };
-
-                    select = {
-                        ctrl.c = "normal_mode";
-                    };
+                select = {
+                    C-c = "normal_mode";
                 };
             };
 
         };
 
 
-        languages = [{
-            name = "rust";
-            formatter = "{ command = \"rustfmt\" }";
-            auto-format = true;
-        }];
+        languages = { language = [
+            { name = "rust"; formatter = { command = "rustfmt"; }; auto-format = true; }
+            ];
+        };
 
 
         themes = {

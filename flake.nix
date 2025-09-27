@@ -39,8 +39,6 @@
       hostConfigs = import ./hosts;
       userConfigs = import ./users;
 
-      imports = [ agenix.nixosModules.default ];
-
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
@@ -59,6 +57,7 @@
           };
           modules = [
             outputs.hostConfigs.artemis
+            agenix.nixosModules.default
           ];
         };
 
@@ -68,6 +67,7 @@
           };
           modules = [
             outputs.hostConfigs.zues
+            agenix.nixosModules.default
           ];
         };
       };
