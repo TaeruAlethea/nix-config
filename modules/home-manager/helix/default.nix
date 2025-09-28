@@ -1,5 +1,12 @@
 { pkgs, ... }:
 {
+    home.packages = with pkgs; [
+        rustfmt # Rust Formatter
+
+        nil # Nix Language Server
+        nixfmt-tree # Nix Formatter
+    ];
+
     programs.helix = {
         enable = true;
         defaultEditor = true;
@@ -24,7 +31,6 @@
                     nnbsp = "none";
                     newline = "none";
                 };
-
                 soft-wrap.enable = true;
 
                 inline-diagnostics = {
@@ -60,6 +66,7 @@
 
         languages = { language = [
             { name = "rust"; formatter = { command = "rustfmt"; }; auto-format = true; }
+            { name = "nix"; formatter = { command = "nixfmt"; }; }
             ];
         };
 

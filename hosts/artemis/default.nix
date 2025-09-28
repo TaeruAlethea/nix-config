@@ -42,10 +42,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  environment.systemPackages = with pkgs; [
-    helix
-  ];
-
   programs.nh = {
     enable = true;
     flake = "/home/astraeaf/nix-config";
