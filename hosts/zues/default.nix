@@ -84,7 +84,7 @@
     helix # Text editor!
 
     # Formatters
-    treefmt2
+    treefmt
     nixfmt-rfc-style
     yamlfmt
   ];
