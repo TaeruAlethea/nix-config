@@ -1,28 +1,39 @@
-{ pkgs ? import <nixpkgs> {} }:
-
-pkgs.stdenv.mkDerivation rec {
-  pname = "OpenDeck"; # Name of your package
-  version = "2.6.0";          # Version of your package
+let
+  pkgs = import <nixpkgs> { };
+in
+pkgs.stdenv.mkDerivation (finalAttrs: {  
+  pname = "opendeck";
+  version = "2.6.0";
 
   src = pkgs.fetchFromGitHub {
-    owner = "nekename";  # Replace with the GitHub owner/organization
-    repo = "OpenDeck";       # Replace with your repository name
-    rev = "bb64d0e81aa3852e4751f262a5f9bea62b233428"; # Or a specific commit hash/tag
-    sha256 = "sha256-hash-of-the-source"; # Calculate this hash (see below)
+    owner = "nekename";
+    repo = "OpenDeck";
+    tag = "v${finalAttrs.version}";
+    sha256 = "sha256-nI6ZpDdW1pw2FC4XN3q2R1LgYJtu0o47mv8cCDSj0lY=";
   };
 
-  # Optional: if your buildable code is in a subdirectory
-  # sourceRoot = "${src.name}/path/to/subdirectory";
+  nativeBuildInputs = [ pkgs.makeWrapper pkgs.cargo-tauri ];
 
-  # Build instructions (e.g., for C++ or Go, this might vary)
+  dontBuild = true;
+
   buildPhase = ''
-    # Example for C++:
-    # make
+   ${pkgs.lib.getExe pkgs.deno} task tauri build
   '';
 
+  
   installPhase = ''
-    # Example for C++:
-    # mkdir -p $out/bin
-    # cp my-executable $out/bin/
+    runHook preInstall
+
+    mkdir -p $out/{bin,lib}
+    makeWrapper ${pkgs.lib.getExe pkgs.deno} $out/bin/opendeck \
+      --set DENO_NO_UPDATE_CHECK "1" \
+      --add-flags "run -A $out/lib/src/main.ts"
+
+    runHook postInstall
   '';
-}
+
+  meta = {
+    homepage = "https://github.com/nekename/OpenDeck";
+    #license = lib.licenses.gpl3;
+  };
+})
