@@ -10,7 +10,7 @@
   ];
 
   sops = {
-    defaultSopsFile = ( inputs.self + /secrets/secrets.yaml );
+    defaultSopsFile = (inputs.self + /secrets/secrets.yaml);
     defaultSopsFormat = "yaml";
 
     age.keyFile = "/home/astraeaf/.config/sops/age/keys.txt";

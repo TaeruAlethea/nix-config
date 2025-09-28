@@ -1,3 +1,3 @@
 {
-	astraeaf = import ./astraeaf;
+  astraeaf = import ./astraeaf;
 }

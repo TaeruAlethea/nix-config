@@ -1,9 +1,9 @@
 { ... }:
 let
-myShellAliases = {
+  myShellAliases = {
     RestartSound = "systemctl restart --user wireplumber";
-};
+  };
 in
 {
-    environment.shellAliases = myShellAliases;
+  environment.shellAliases = myShellAliases;
 }

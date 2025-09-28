@@ -1,7 +1,7 @@
 let
   pkgs = import <nixpkgs> { };
 in
-pkgs.stdenv.mkDerivation (finalAttrs: {  
+pkgs.stdenv.mkDerivation (finalAttrs: {
   pname = "opendeck";
   version = "2.6.0";
 
@@ -12,15 +12,17 @@ pkgs.stdenv.mkDerivation (finalAttrs: {
     sha256 = "sha256-nI6ZpDdW1pw2FC4XN3q2R1LgYJtu0o47mv8cCDSj0lY=";
   };
 
-  nativeBuildInputs = [ pkgs.makeWrapper pkgs.cargo-tauri ];
+  nativeBuildInputs = [
+    pkgs.makeWrapper
+    pkgs.cargo-tauri
+  ];
 
   dontBuild = true;
 
   buildPhase = ''
-   ${pkgs.lib.getExe pkgs.deno} task tauri build
+    ${pkgs.lib.getExe pkgs.deno} task tauri build
   '';
 
-  
   installPhase = ''
     runHook preInstall
 

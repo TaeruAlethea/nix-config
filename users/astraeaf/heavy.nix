@@ -55,19 +55,19 @@
 
   # Home packages & programs
   home.packages = with pkgs; [
-      bitwarden-desktop
-      bitwarden-cli
-      bottles
+    bitwarden-desktop
+    bitwarden-cli
+    bottles
 
-      gitkraken
+    gitkraken
 
-      firefox-beta
-      obsidian
-      vesktop
-      steam
+    firefox-beta
+    obsidian
+    vesktop
+    steam
 
-      #dev
-      jetbrains.rider
+    #dev
+    jetbrains.rider
   ];
-  
+
 }

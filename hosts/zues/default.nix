@@ -1,27 +1,36 @@
-{ config, pkgs, inputs, outputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  outputs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
 
-      outputs.nixosModules.agenix
-      outputs.nixosModules.fonts
-      outputs.nixosModules.localization
-      outputs.nixosModules.terminal
-      outputs.nixosModules.stylix
-    ];
+    outputs.nixosModules.agenix
+    outputs.nixosModules.fonts
+    outputs.nixosModules.localization
+    outputs.nixosModules.terminal
+    outputs.nixosModules.stylix
+  ];
 
-  nix ={
+  nix = {
     gc.automatic = true;
     settings = {
       auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
   };
 
   networking.hostName = "zues"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Enable networking
+  networking.networkmanager.enable = true; # Enable networking
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
@@ -41,7 +50,11 @@
     isNormalUser = true;
     hashedPasswordFile = config.age.secrets.secret1.path;
     description = "Astraea Falke";
-    extraGroups = [ "networkmanager" "wheel" "openrazer" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "openrazer"
+    ];
     packages = with pkgs; [
       dotnetCorePackages.sdk_9_0-bin
       dotnetCorePackages.sdk_8_0-bin
@@ -79,13 +92,15 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
-   programs.gnupg.agent = {
-     enable = true;
-     enableSSHSupport = true;
-   };
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
 
   programs.nh = {
     enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "/home/astraeaf/nix-config";
   };
 

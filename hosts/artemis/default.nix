@@ -5,7 +5,14 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, inputs, outputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  outputs,
+  ...
+}:
 
 {
   imports = [
@@ -16,7 +23,7 @@
     outputs.nixosModules.localization
   ];
 
-  wsl ={
+  wsl = {
     enable = true;
     defaultUser = "astraeaf";
     wslConf = {
@@ -24,11 +31,14 @@
     };
   };
 
-  nix ={
+  nix = {
     gc.automatic = true;
     settings = {
       auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
   };
 
@@ -39,7 +49,10 @@
     isNormalUser = true;
     hashedPasswordFile = config.age.secrets.secret1.path;
     description = "Astraea Falke";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   programs.nh = {

@@ -1,5 +1,5 @@
 {
-    ares = import ./ares;
-    artemis = import ./artemis;
-    zues = ./zues;
+  ares = import ./ares;
+  artemis = import ./artemis;
+  zues = ./zues;
 }

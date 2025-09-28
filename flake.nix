@@ -63,7 +63,7 @@
 
         zues = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs outputs ;
+            inherit inputs outputs;
           };
           modules = [
             outputs.hostConfigs.zues
