@@ -9,6 +9,7 @@
 
   stylix = {
     enable = true;
+    autoEnable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/irblack.yaml";
     polarity = "dark";
     image = config.lib.stylix.pixel "base01";

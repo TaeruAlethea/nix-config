@@ -9,6 +9,7 @@
       outputs.nixosModules.fonts
       outputs.nixosModules.localization
       outputs.nixosModules.terminal
+      outputs.nixosModules.stylix
     ];
 
   nix ={

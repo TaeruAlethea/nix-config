@@ -11,7 +11,6 @@
 	imports = [
 		outputs.homeManagerModules.helix
 		outputs.homeManagerModules.oh-my-posh
-		outputs.homeManagerModules.stylix
 	];
 
 	nixpkgs.config.allowUnfree = true; # You get used to this, so always have it.
