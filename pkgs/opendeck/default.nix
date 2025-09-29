@@ -1,41 +1,32 @@
-let
-  pkgs = import <nixpkgs> { };
-in
-pkgs.stdenv.mkDerivation (finalAttrs: {
+{ stdenv, pkgs, lib, fetchurl }:
+
+stdenv.mkDerivation rec {
   pname = "opendeck";
   version = "2.6.0";
 
-  src = pkgs.fetchFromGitHub {
-    owner = "nekename";
-    repo = "OpenDeck";
-    tag = "v${finalAttrs.version}";
-    sha256 = "sha256-nI6ZpDdW1pw2FC4XN3q2R1LgYJtu0o47mv8cCDSj0lY=";
-  };
+  # src = pkgs.fetchFromGitHub {
+  #   owner = "nekename";
+  #   repo = "OpenDeck";
+  #   tag = "v${version}";
+  #   sha256 = "sha256-nI6ZpDdW1pw2FC4XN3q2R1LgYJtu0o47mv8cCDSj0lY=";
+  # };
 
-  nativeBuildInputs = [
-    pkgs.makeWrapper
-    pkgs.cargo-tauri
-  ];
+  src = fetchurl {
+    url = "https://github.com/nekename/OpenDeck/releases/download/v${version}/OpenDeck_x64.app.tar.gz";
+    sha256 = "sha256-VujqwKoojy6v9b+XvQTjMyms1ohLRj54VP8UW7GE/Ho=";
+  };
 
   dontBuild = true;
 
-  buildPhase = ''
-    ${pkgs.lib.getExe pkgs.deno} task tauri build
-  '';
-
   installPhase = ''
-    runHook preInstall
-
-    mkdir -p $out/{bin,lib}
-    makeWrapper ${pkgs.lib.getExe pkgs.deno} $out/bin/opendeck \
-      --set DENO_NO_UPDATE_CHECK "1" \
-      --add-flags "run -A $out/lib/src/main.ts"
-
-    runHook postInstall
+    mkdir -p $out/bin
+    cp ${pname} $out/bin/
   '';
+
+  #propagatedBuildInputs = [ runTimePackage ];
 
   meta = {
     homepage = "https://github.com/nekename/OpenDeck";
     #license = lib.licenses.gpl3;
   };
-})
+}
