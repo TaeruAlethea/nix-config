@@ -35,16 +35,13 @@
   services.desktopManager.plasma6.enable = true;
 
   # Enable sound with pipewire.
-  # services.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  #hardware.alsa.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    jack.enable = true;
-    wireplumber.enable = true;
   };
 
   users.users.astraeaf = {
@@ -73,6 +70,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     #audio
+    wireplumber
     coppwr
 
     # Peripherals
