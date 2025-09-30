@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  home.sessionVariables.EDITOR = "hx";
+
   home.packages = with pkgs; [
     rustfmt # Rust Formatter
 
