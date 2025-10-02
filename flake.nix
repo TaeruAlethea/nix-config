@@ -20,11 +20,11 @@
       forAllSystems = nixpkgs.lib.genAttrs systems;
     in
     {
-      # Your custom packages
-      # Accessible through 'nix build', 'nix shell', etc
-      packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+      # Add any packages we have made
+      nixpkgs.config.packageOverrides = import ./pkgs;
+
       # Formatter for your nix files, available through 'nix fmt'
-     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.treefmt);
+      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.treefmt);
 
       # Your custom packages and modifications, exported as overlays
       overlays = import ./overlays { inherit inputs; };
