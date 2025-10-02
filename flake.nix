@@ -24,16 +24,11 @@
       # Accessible through 'nix build', 'nix shell', etc
       packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
       # Formatter for your nix files, available through 'nix fmt'
-      # Other options beside 'alejandra' include 'nixpkgs-fmt'
-      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.treefmt);
+     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.treefmt);
 
       # Your custom packages and modifications, exported as overlays
       overlays = import ./overlays { inherit inputs; };
-      # Reusable nixos modules you might want to export
-      # These are usually stuff you would upstream into nixpkgs
       nixosModules = import ./modules/nixos;
-      # Reusable home-manager modules you might want to export
-      # These are usually stuff you would upstream into home-manager
       homeManagerModules = import ./modules/home-manager;
 
       hostConfigs = import ./hosts;
