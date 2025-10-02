@@ -21,7 +21,7 @@
     in
     {
       # Add any packages we have made
-      nixpkgs.config.packageOverrides = import ./pkgs;
+      customPkgs = import ./pkgs;
 
       # Formatter for your nix files, available through 'nix fmt'
       formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.treefmt);
