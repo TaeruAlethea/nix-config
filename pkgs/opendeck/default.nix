@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "opendeck";
-  version = "2.6.0";
+  version = "2.6.1";
 
   # src = pkgs.fetchFromGitHub {
   #   owner = "nekename";
@@ -12,8 +12,8 @@ stdenv.mkDerivation rec {
   # };
 
   src = fetchurl {
-    url = "https://github.com/nekename/OpenDeck/releases/download/v${version}/OpenDeck_x64.app.tar.gz";
-    sha256 = "sha256-VujqwKoojy6v9b+XvQTjMyms1ohLRj54VP8UW7GE/Ho=";
+    url = "https://github.com/nekename/OpenDeck/releases/download/v${version}/opendeck_${version}_amd64.AppImage";
+    sha256 = "sha256:e12f0330d2a6349f8be702b94dc6839af33c10e04a5e0b86641ad6fd10959cd8";
   };
 
   dontBuild = true;
