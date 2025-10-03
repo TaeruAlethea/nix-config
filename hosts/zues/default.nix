@@ -77,7 +77,7 @@
     # Peripherals
     openrazer-daemon
     polychromatic
-    opendeck
+    #opendeck
 
     git
     github-desktop
