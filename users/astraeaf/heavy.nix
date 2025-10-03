@@ -59,6 +59,7 @@
     bitwarden-cli
     bottles
 
+    blender
     gitkraken
 
     firefox-beta
