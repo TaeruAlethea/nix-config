@@ -36,6 +36,7 @@
     bottles
 
     blender
+    gimp3-with-plugins
     gitkraken
 
     firefox-beta
