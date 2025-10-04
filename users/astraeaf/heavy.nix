@@ -1,10 +1,6 @@
 {
-  inputs,
   outputs,
-  lib,
-  config,
   pkgs,
-  self,
   ...
 }:
 {
@@ -46,13 +42,4 @@
     #dev
     jetbrains.rider
   ];
-
-  programs = {
-    steam ={
-      enable = true;
-      remotePlay = true;
-      dedicatedServer.openFirewall = true;
-      localNetworkGameTransfers.openFirewall = true;
-    };
-  };
 }
