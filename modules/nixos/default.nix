@@ -5,6 +5,7 @@
   hyprland = import ./hyprland;
   localization = import ./localization;
   sops = import ./sops;
+  steam = import ./steam;
   stylix = import ./stylix;
   terminal = import ./terminal;
 }
