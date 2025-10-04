@@ -89,6 +89,11 @@
     yamlfmt
   ];
 
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    SDL_VIDEODRIVER = "wayland";
+  };
+
   nixpkgs.config.packageOverrides = pkgs: {
     opendeck = pkgs.callPackage outputs.customPkgs.opendeck {};
   };
