@@ -121,7 +121,9 @@
     # Only needed for Windows Subsystem for Linux
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
-    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+    nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
+
     stylix.url = "github:danth/stylix";
+    matui.url = "github:pkulak/matui";
   };
 }

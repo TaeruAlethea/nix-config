@@ -1,4 +1,5 @@
 {
+  inputs,
   outputs,
   pkgs,
   ...
@@ -8,7 +9,7 @@
     outputs.userConfigs.astraeaf.core
 
     outputs.homeManagerModules.wezterm
-    # outputs.homeManagerModules.emacs
+    outputs.homeManagerModules.emacs
     # outputs.homeManagerModules.fonts
     # outputs.homeManagerModules.git
     # outputs.homeManagerModules.hyprland
@@ -41,5 +42,8 @@
 
     #dev
     jetbrains.rider
+
+    # Unstable
+    inputs.matui.packages.${system}.matui
   ];
 }
