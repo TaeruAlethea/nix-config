@@ -42,10 +42,17 @@
     firefox-beta
     obsidian
     vesktop
-    steam
 
     #dev
     jetbrains.rider
   ];
 
+  programs = {
+    steam ={
+      enable = true;
+      remotePlay = true;
+      dedicatedServer.openFirewall = true;
+      localNetworkGameTransfers.openFirewall = true;
+    };
+  };
 }
