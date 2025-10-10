@@ -19,7 +19,9 @@
   programs.doom-emacs = {
     enable = true;
     doomDir = ./doom.d;
-    extraPackages = epkgs: [ epkgs.treesit-grammars.with-all-grammars ];
+    extraPackages = epkgs: [
+      epkgs.treesit-grammars.with-all-grammars
+    ];
   };
 
   home.packages = with pkgs; [
