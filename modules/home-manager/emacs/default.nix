@@ -12,9 +12,14 @@
     enable = true;
   };
 
+  # programs.emacs = {
+  #   enable = true;
+  # };
+
   programs.doom-emacs = {
     enable = true;
-    doomDir = ./doom.d;  # or e.g. `./doom.d` for a local configuration
+    doomDir = ./doom.d;
+    extraPackages = epkgs: [ epkgs.treesit-grammars.with-all-grammars ];
   };
 
   home.packages = with pkgs; [
