@@ -8,7 +8,6 @@
 {
   config,
   lib,
-  pkgs,
   inputs,
   outputs,
   ...
@@ -17,6 +16,7 @@
 {
   imports = [
     inputs.nixos-wsl.nixosModules.default
+    inputs.agenix.nixosModules.default
 
     outputs.nixosModules.agenix
     outputs.nixosModules.fonts

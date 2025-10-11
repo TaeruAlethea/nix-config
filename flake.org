@@ -1,40 +1,101 @@
+#+title: Flake
+# -*- org-src-preserve-indentation: t; -*-
+#+PROPERTY: header-args :tangle flake.nix :LANG nix
+tangle command: C-c C-v t
+
+
+Preamble and Start expression
+#+begin_src nix
 {
   description = "Taeru's config flake";
+#+end_src
 
+
+* Flake Inputs
+Start Inputs block
+#+begin_src nix
   inputs = {
+#+end_src
 
+** Hardware
+Bring in the community hardware repo, that way we don't have to re-invent a ton of obvious hardware stuff
+#+begin_src nix
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+#+end_src
 
+** Nixpkgs
+Establish inputs to both unstable and stable packages.
+Generally, unstable is fine but if something is misbehaving, we have Stable as a fallback.
+#+begin_src nix    
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
+#+end_src
 
+** Home-Manager
+Use the same "unstable & stable" pattern for home-manager.
+#+begin_src nix
     home-manager.url = "github:nix-community/home-manager";
     home-manager-stable.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+#+end_src
 
+** Secrets Management
+#+begin_src nix
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     agenix.url = "github:ryantm/agenix";
+#+end_src
 
+
+** Hyprland
+For awhile, hyprland was iterating much faster than nixpkgs would keep up with, so we get it directly. 
+#+begin_src nix
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+#+end_src
 
+** Stylix
+stylix was used as part of styling Hyprland.
+#+begin_src nix
     stylix.url = "github:danth/stylix";
+#+end_src
 
+** Nixos-wsl
+This is a specific tools for running in a Windows Subsystem for Linux environment.
+#+begin_src nix
     # Only needed for Windows Subsystem for Linux
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+#+end_src
 
+** Doom Emacs
+lol, lmao.
+#+begin_src nix
     nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
+#+end_src
 
+** Matui - Matrix Client
+Matui is a matrix client https://github.com/pkulak/matui
+#+begin_src nix
     matui.url = "github:pkulak/matui";
+#+end_src
 
+** expression closure
+End Inputs block
+#+begin_src nix
   };
+#+end_src
 
+* Flake Outputs
+The business end of the whole flake!
+
+These are the nix expression inputs. I prefer to keep this as "pure" as I can, meaning only pointing at Nixpkgs and Home-Manager.
+I could probably shift those to also be explicit Input/Output pointers too.
+#+begin_src nix
   outputs = {
     self,
     nixpkgs,
@@ -50,7 +111,10 @@
       forAllSystems = nixpkgs.lib.genAttrs systems;
     in
     {
+#+end_src
 
+** Preamble
+#+begin_src nix
       # Add any packages we have made
       customPkgs = import ./pkgs;
 
@@ -64,21 +128,35 @@
 
       hostConfigs = import ./hosts;
       userConfigs = import ./users;
+#+end_src
 
+** Nix Systems
+#+begin_src nix
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
+#+end_src
 
+*** Ares
+A Nixos install on a Surface Pro 2017
+#+begin_src nix
         ares = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [ outputs.hostConfigs.ares ];
         };
+#+end_src
 
+*** Artemis
+A Nixos-WSL on a Zenbook Duo 2024, generally used for school
+#+begin_src nix
         artemis = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           Modules = [ outputs.hostConfigs.artemis ];
         };
-
+#+end_src
+*** Zeus
+The main desktop install
+#+begin_src nix
         zeus = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [ outputs.hostConfigs.zeus ];
@@ -101,5 +179,9 @@
         };
       };
     };
+#+end_src
 
+* Flake Expression Closure
+#+begin_src nix
 }
+#+end_src

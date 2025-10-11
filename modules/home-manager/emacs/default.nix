@@ -27,5 +27,13 @@
   home.packages = with pkgs; [
     fd
     ripgrep
+    ispell
+
+    # Vterm
+    gnumake
+    cmake
+
+    # Code tools
+    csharpier
   ];
 }

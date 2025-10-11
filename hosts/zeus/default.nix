@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   outputs,
   ...
 }:
@@ -9,6 +10,8 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+
+    inputs.agenix.nixosModules.default
 
     outputs.nixosModules.agenix
     outputs.nixosModules.fonts
@@ -27,7 +30,7 @@
     };
   };
 
-  networking.hostName = "zues"; # Define your hostname.
+  networking.hostName = "zeus"; # Define your hostname.
   networking.networkmanager.enable = true; # Enable networking
 
   # Enable the KDE Plasma Desktop Environment.
