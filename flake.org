@@ -1,6 +1,6 @@
 #+title: Flake
 # -*- org-src-preserve-indentation: t; -*-
-#+PROPERTY: header-args :tangle flake.nix :LANG nix
+#+property: header-args :tangle flake.nix 
 tangle command: C-c C-v t
 
 
@@ -161,23 +161,45 @@ The main desktop install
           specialArgs = { inherit inputs outputs; };
           modules = [ outputs.hostConfigs.zeus ];
         };
-      };
+#+end_src
 
+*** Nix Systems Closure
+#+begin_src nix
+      };
+#+end_src
+
+** Home-Manager Configurations
+#+begin_src nix
       # Standalone home-manager configuration entrypoint
       # Available through 'home-manager --flake .#your-username@your-hostname'
       homeConfigurations = {
+#+end_src
+*** Astraeaf
+**** Artemis
+Artemis is uses the Core definition because its important to keep it thin and light. Its mostly a Windows system due to the hardware.
+#+begin_src nix
         "astraeaf@artemis" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [ outputs.userConfigs.astraeaf.core ];
         };
+#+end_src
 
+**** Zeus
+This ones gets the Heavy config, which includes the Core stuff too.
+#+begin_src nix
         "astraeaf@zeus" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [ outputs.userConfigs.astraeaf.heavy ];
         };
+#+end_src
+*** Home-Manager Closure
+#+begin_src nix
       };
+#+end_src
+** Output Closure
+#+begin_src nix
     };
 #+end_src
 
