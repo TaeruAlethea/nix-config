@@ -1,8 +1,12 @@
 {
+  config,
   inputs,
   pkgs,
   ...
 }:
+let
+  link = config.lib.file.mkOutOfStoreSymlink;
+in
 {
   imports = [
     # inputs.nix-doom-emacs-unstraightened.homeModule
@@ -28,11 +32,11 @@
     package = pkgs.emacs-unstable-pgtk;
   };
 
-  xdg.configFile = {
-    "emacs/init.el".source = ./emacs/init.el;
-    "emacs/config.el".source = ./emacs/config.el;
-    "emacs/config.org".source = ./emacs/config.org;
-    "emacs/packages.el".source = ./emacs/packages.el;
+  home.file = {
+    ".config/emacs/init.el".source = link ./emacs/init.el;
+    ".config/emacs/config.el".source = link ./emacs/config.el;
+    ".config/emacs/config.org".source = link ./emacs/config.org;
+    ".config/emacs/packages.el".source = link ./emacs/packages.el;
   };
 
   # programs.doom-emacs = {
