@@ -1,6 +1,5 @@
 {
-  self,
-  # inputs,
+  inputs,
   pkgs,
   ...
 }:
@@ -9,7 +8,7 @@
     # inputs.nix-doom-emacs-unstraightened.homeModule
   ];
 
-  nixpkgs.overlays = [ (import self.inputs.emacs-overlay) ];
+  nixpkgs.overlays = [ (import inputs.emacs-overlay) ];
 
   services.emacs = {
     enable = true;
@@ -19,6 +18,13 @@
       )
     );
   };
+
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacs-unstable-pgtk;
+  };
+
+  xdg.configFile."emacs".source = ./emacs;
 
   # programs.doom-emacs = {
   #   enable = true;
