@@ -1,5 +1,4 @@
 {
-  config,
   inputs,
   pkgs,
   ...
@@ -29,9 +28,11 @@
     package = pkgs.emacs-unstable-pgtk;
   };
 
-  xdg.configFile."emacs" = {
-    source = config.lib.file.mkOutOfStoreSymlink ./emacs;
-    recursive = true;
+  xdg.configFile = {
+    "emacs/init.el".source = ./emacs/init.el;
+    "emacs/config.el".source = ./emacs/config.el;
+    "emacs/config.org".source = ./emacs/config.org;
+    "emacs/packages.el".source = ./emacs/packages.el;
   };
 
   # programs.doom-emacs = {
