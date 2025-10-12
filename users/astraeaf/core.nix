@@ -20,6 +20,8 @@
     homeDirectory = "/home/astraeaf";
   };
 
+  xdg.enable = true;
+
   programs = {
     bash.enable = true;
     gh.enable = true;

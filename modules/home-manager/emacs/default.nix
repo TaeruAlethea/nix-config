@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   pkgs,
   ...
@@ -14,7 +15,11 @@
     enable = true;
     package = with pkgs; (
       (emacsPackagesFor emacs-unstable-pgtk).emacsWithPackages (
-        epkgs: [ epkgs.vterm ]
+        epkgs: [
+          epkgs.helix
+          (epkgs.treesit-grammars.with-grammars (grammars: [ grammars.tree-sitter-bash ]))
+          epkgs.vterm
+        ]
       )
     );
   };
@@ -24,7 +29,10 @@
     package = pkgs.emacs-unstable-pgtk;
   };
 
-  xdg.configFile."emacs".source = ./emacs;
+  xdg.configFile."emacs" = {
+    source = config.lib.file.mkOutOfStoreSymlink ./emacs;
+    recursive = true;
+  };
 
   # programs.doom-emacs = {
   #   enable = true;
