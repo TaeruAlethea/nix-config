@@ -29,6 +29,7 @@
     # Only needed for Windows Subsystem for Linux
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
     nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
 
     matui.url = "github:pkulak/matui";

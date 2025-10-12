@@ -72,9 +72,11 @@ This is a specific tools for running in a Windows Subsystem for Linux environmen
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 #+end_src
 
-** Doom Emacs
-lol, lmao.
+** Emacs
+I keep going back and forth between running doom emacs or trying to make my own Helix Mode emacs flavor.
+I haven't fully decided.
 #+begin_src nix
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
     nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
 #+end_src
 
