@@ -39,6 +39,7 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
