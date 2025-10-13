@@ -4,6 +4,7 @@
   fonts = import ./fonts;
   hyprland = import ./hyprland;
   localization = import ./localization;
+  plasma = import ./plasma6;
   sops = import ./sops;
   steam = import ./steam;
   stylix = import ./stylix;

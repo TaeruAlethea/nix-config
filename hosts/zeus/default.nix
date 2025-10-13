@@ -16,6 +16,9 @@
     outputs.nixosModules.agenix
     outputs.nixosModules.fonts
     outputs.nixosModules.localization
+    
+    outputs.nixosModules.plasma
+    
     outputs.nixosModules.terminal
     outputs.nixosModules.steam
   ];
@@ -33,9 +36,9 @@
   networking.hostName = "zeus"; # Define your hostname.
   networking.networkmanager.enable = true; # Enable networking
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # Enable automatic login for the user.
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "astraeaf";
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -63,9 +66,6 @@
     ];
   };
 
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "astraeaf";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -80,7 +80,7 @@
     # Peripherals
     openrazer-daemon
     polychromatic
-    #opendeck
+    opendeck
 
     git
     github-desktop
