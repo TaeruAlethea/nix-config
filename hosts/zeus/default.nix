@@ -18,6 +18,7 @@
     outputs.nixosModules.localization
     
     outputs.nixosModules.plasma
+    # outputs.nixosModules.niri
     
     outputs.nixosModules.terminal
     outputs.nixosModules.steam
