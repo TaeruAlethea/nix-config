@@ -1,12 +1,13 @@
 { ... }:
 {
-	programs.gamescope.enable = true;
+	programs.gamescope = {
+		enable = true;
+		capSysNice = true;
+	};
 	
 	programs.steam = {
 		enable = true;
 		extest.enable = true;
-		gamescopeSession = true;
-		
 		remotePlay.openFirewall = true;
 		dedicatedServer.openFirewall = true;
 		localNetworkGameTransfers.openFirewall = true;
