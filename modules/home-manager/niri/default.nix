@@ -1,9 +1,9 @@
-{ outputs, ... } :
+{ inputs, outputs, ... } :
 {
 	imports = [
+		# inputs.niri.homeManagerModules.default
+
 		outputs.homeManagerModules.walker
 		outputs.homeManagerModules.waybar
 	];
-
-	
 }
