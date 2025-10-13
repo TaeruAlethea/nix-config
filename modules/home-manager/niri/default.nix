@@ -1,8 +1,8 @@
 { outputs, ... } :
 {
 	imports = [
-		outputs.homeManager.walker
-		outputs.homeManager.waybar
+		outputs.homeManagerModules.walker
+		outputs.homeManagerModules.waybar
 	];
 	
 	programs.niri = {
