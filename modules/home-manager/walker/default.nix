@@ -2,6 +2,6 @@
 {
 	services.walker = {
 		enable = true;
-		systemd = true;
+		systemd.enable = true;
 	};
 }
