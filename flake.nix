@@ -33,6 +33,10 @@
     nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
 
     matui.url = "github:pkulak/matui";
+    walker = {
+      url = "github:abenz1267/elephant";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
