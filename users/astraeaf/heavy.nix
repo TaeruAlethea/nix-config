@@ -17,7 +17,6 @@
     # outputs.homeManagerModules.sops
     # outputs.homeManagerModules.ssh
     # outputs.homeManagerModules.stylix
-    # outputs.homeManagerModules.waybar
   ];
 
     home = {

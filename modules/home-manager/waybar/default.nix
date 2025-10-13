@@ -4,40 +4,41 @@
     enable = true;
     systemd.enable = true;
     style = builtins.readFile ./waybar.css;
-    # settings = [
-    #   {
-    #     layer = "top";
-    #     position = "top";
-    #     mod = "dock";
-    #     exclusive = true;
-    #     passthrough = false;
-    #     gtk-layer-shell = true;
-    #     height = 0;
-    #     modules-left = [
-    #       "hyprland/workspaces"
-    #       "custom/divider"
-    #       "custom/weather"
-    #       "custom/divider"
-    #       "cpu"
-    #       "custom/divider"
-    #       "memory"
-    #     ];
-    #     modules-center = [ "hyprland/window" ];
-    #     modules-right = [
-    #       "tray"
-    #       "network"
-    #       "custom/divider"
-    #       "backlight"
-    #       "custom/divider"
-    #       "pulseaudio"
-    #       "custom/divider"
-    #       "battery"
-    #       "custom/divider"
-    #       "clock"
-    #     ];
-    #     "hyprland/window" = {
-    #       format = "{}";
-    #     };
+    settings = [
+      {
+        output = "DP-3";
+        layer = "top";
+        position = "top";
+        mod = "dock";
+        exclusive = true;
+        passthrough = false;
+        gtk-layer-shell = true;
+        height = 0;
+        modules-left = [
+          # "hyprland/workspaces"
+          # "custom/divider"
+          # "custom/weather"
+          # "custom/divider"
+          "cpu"
+          "custom/divider"
+          "memory"
+        ];
+        modules-center = [ "niri/window" ];
+        modules-right = [
+          "tray"
+          # "network"
+          "custom/divider"
+          # "backlight"
+          # "custom/divider"
+          # "pulseaudio"
+          # "custom/divider"
+          # "battery"
+          # "custom/divider"
+          "clock"
+        ];
+        "niri/window" = {
+          format = "{}";
+        };
     #     "wlr/workspaces" = {
     #       on-scroll-up = "hyprctl dispatch workspace e+1";
     #       on-scroll-down = "hyprctl dispatch workspace e-1";
@@ -47,18 +48,18 @@
     #     battery = {
     #       format = "󰁹 {}%";
     #     };
-    #     cpu = {
-    #       interval = 10;
-    #       format = "󰻠 {}%";
-    #       max-length = 10;
-    #       on-click = "";
-    #     };
-    #     memory = {
-    #       interval = 30;
-    #       format = "  {}%";
-    #       format-alt = " {used:0.1f}G";
-    #       max-length = 10;
-    #     };
+        cpu = {
+          interval = 10;
+          format = "󰻠 {}%";
+          max-length = 10;
+          on-click = "";
+        };
+        memory = {
+          interval = 30;
+          format = "  {}%";
+          format-alt = " {used:0.1f}G";
+          max-length = 10;
+        };
     #     backlight = {
     #       format = "󰖨 {}";
     #       device = "acpi_video0";
@@ -69,21 +70,21 @@
     #       restart-interval = 300;
     #       #exec = "/home/roastbeefer/.cargo/bin/weather";
     #     };
-    #     tray = {
-    #       icon-size = 13;
-    #       tooltip = false;
-    #       spacing = 10;
-    #     };
-    #     network = {
-    #       format = "󰖩 {essid}";
-    #       format-disconnected = "󰖪 disconnected";
-    #     };
-    #     clock = {
-    #       format = " {:%I:%M %p   %m/%d} ";
-    #       tooltip-format = ''
-    #         <big>{:%Y %B}</big>
-    #         <tt><small>{calendar}</small></tt>'';
-    #     };
+        tray = {
+          # icon-size = 16;
+          tooltip = false;
+          spacing = 10;
+        };
+        # network = {
+        #   format = "󰖩 {essid}";
+        #   format-disconnected = "󰖪 disconnected";
+        # };
+        clock = {
+          format = " {:%H:%M | W%U |  %y-%m-%d} ";
+          tooltip-format = ''
+            <big>{:%Y %B}</big>
+            <tt><small>{calendar}</small></tt>'';
+        };
     #     pulseaudio = {
     #       format = "{icon} {volume}%";
     #       tooltip = false;
@@ -116,17 +117,17 @@
     #       on-scroll-down = "pamixer --default-source -d 5";
     #       scroll-step = 5;
     #     };
-    #     "custom/divider" = {
-    #       format = " | ";
-    #       interval = "once";
-    #       tooltip = false;
-    #     };
-    #     "custom/endright" = {
-    #       format = "_";
-    #       interval = "once";
-    #       tooltip = false;
-    #     };
-    #   }
-    # ];
+        "custom/divider" = {
+          format = " | ";
+          interval = "once";
+          tooltip = false;
+        };
+        "custom/endright" = {
+          format = "_";
+          interval = "once";
+          tooltip = false;
+        };
+      }
+    ];
   };
 }
