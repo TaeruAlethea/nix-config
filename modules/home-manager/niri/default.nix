@@ -7,9 +7,5 @@
 		outputs.homeManagerModules.waybar
 	];
 
-	outputs.homeManagerModules.waybar = {
-		displayManager = "niri";
-	};
-
-	xdg.dotConfig."niri".source = ./config.kdl;
+	xdg.configFile."niri".source = ./config.kdl;
 }
