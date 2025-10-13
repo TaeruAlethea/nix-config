@@ -17,9 +17,6 @@
     outputs.nixosModules.fonts
     outputs.nixosModules.localization
     
-    # outputs.nixosModules.plasma
-    outputs.nixosModules.niri
-    
     outputs.nixosModules.terminal
     outputs.nixosModules.steam
   ];
@@ -37,7 +34,6 @@
   networking.hostName = "zeus"; # Define your hostname.
   networking.networkmanager.enable = true; # Enable networking
 
-  # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
 
