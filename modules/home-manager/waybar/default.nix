@@ -1,4 +1,8 @@
 { ... }:
+let
+  displayManager = "niri";
+  mainDisplayName = "DP-3";
+in
 {
   programs.waybar = {
     enable = true;
@@ -6,7 +10,7 @@
     style = builtins.readFile ./waybar.css;
     settings = [
       {
-        output = "DP-3";
+        output = "${mainDisplayName}";
         layer = "top";
         position = "top";
         mod = "dock";
@@ -23,7 +27,7 @@
           "custom/divider"
           "memory"
         ];
-        modules-center = [ "niri/window" ];
+        modules-center = [ "${displayManager}/window" ];
         modules-right = [
           "tray"
           # "network"
@@ -36,7 +40,7 @@
           # "custom/divider"
           "clock"
         ];
-        "niri/window" = {
+        "${displayManager}/window" = {
           format = "{}";
         };
     #     "wlr/workspaces" = {
