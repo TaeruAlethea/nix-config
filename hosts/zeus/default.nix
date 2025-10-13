@@ -13,6 +13,8 @@
 
     inputs.agenix.nixosModules.default
 
+    outputs.nixosModules.niri
+
     outputs.nixosModules.agenix
     outputs.nixosModules.fonts
     outputs.nixosModules.localization
