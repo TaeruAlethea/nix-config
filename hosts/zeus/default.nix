@@ -37,6 +37,9 @@
   networking.hostName = "zeus"; # Define your hostname.
   networking.networkmanager.enable = true; # Enable networking
 
+  # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "astraeaf";
