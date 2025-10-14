@@ -43,6 +43,8 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "astraeaf";
 
+  services.greetd.enable = true;
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security = {

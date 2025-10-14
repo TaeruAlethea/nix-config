@@ -11,10 +11,6 @@
 
 	programs = {
 		dankMaterialShell.enable = true;
-		ghostty = {
-			enable = true;
-			enableBashIntegration = true;
-		};
 	};
 
 	xdg.configFile."DankMaterialShell/" = {
