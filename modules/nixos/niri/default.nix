@@ -1,17 +1,6 @@
 { inputs, pkgs, ... } :
 {
-	nixpkgs = {
-		overlays = [
-			inputs.niri.overlays.niri
-			# Memory leak in mesa. Last known good version is 25.1.7
-			# # https://gitlab.freedesktop.org/mesa/mesa/-/issues/13780
-			(final: prev: {
-				mesa =
-					(builtins.getFlake "github:NixOS/nixpkgs/7c7fa70f697b01bb00fa9cc1132c51315836ad5c")
-					.legacyPackages.${pkgs.system}.mesa;
-			})
-		];
-	};
+	nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 
 	programs.niri = {
 	  enable = true;
