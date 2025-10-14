@@ -76,7 +76,7 @@
       "width": 50
     }
   ],
-  "showWorkspaceIndex": false,
+  "showWorkspaceIndex": true,
   "showWorkspacePadding": false,
   "showWorkspaceApps": false,
   "maxWorkspaceIcons": 3,
@@ -96,26 +96,34 @@
       "enabled": true
     },
     {
-      "id": "idleInhibitor",
-      "enabled": true
-    },
-    {
       "id": "workspaceSwitcher",
       "enabled": true
     },
     {
-      "id": "focusedWindow",
+      "id": "idleInhibitor",
       "enabled": true
     },
     {
       "id": "notepadButton",
+      "enabled": true
+    },
+    {
+      "id": "runningApps",
+      "enabled": true
+    },
+    {
+      "id": "focusedWindow",
       "enabled": true
     }
   ],
   "dankBarCenterWidgets": [
     "music",
     "clock",
-    "weather"
+    "weather",
+    {
+      "id": "dankPomodoroTimer",
+      "enabled": true
+    }
   ],
   "dankBarRightWidgets": [
     {
@@ -133,6 +141,16 @@
     {
       "id": "memUsage",
       "enabled": true
+    },
+    {
+      "id": "cpuTemp",
+      "enabled": true
+    },
+    {
+      "id": "gpuTemp",
+      "enabled": true,
+      "selectedGpuIndex": 0,
+      "pciId": "10de:2705"
     },
     {
       "id": "notificationButton",
@@ -175,7 +193,7 @@
   "dockAutoHide": false,
   "dockGroupByApp": false,
   "dockOpenOnOverview": false,
-  "dockPosition": 3,
+  "dockPosition": 1,
   "dockSpacing": 4,
   "dockBottomGap": 0,
   "cornerRadius": 12,
@@ -204,10 +222,14 @@
   "notificationTimeoutNormal": 5000,
   "notificationTimeoutCritical": 0,
   "notificationPopupPosition": 0,
-  "osdAlwaysShowValue": false,
+  "osdAlwaysShowValue": true,
   "updaterUseCustomCommand": false,
   "updaterCustomCommand": "",
   "updaterTerminalAdditionalParams": "",
-  "screenPreferences": {},
+  "screenPreferences": {
+    "dankBar": [
+      "DP-3"
+    ]
+  },
   "animationSpeed": 2
 }
