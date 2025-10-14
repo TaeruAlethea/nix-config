@@ -69,6 +69,9 @@
     ];
   };
 
+  # Needed for Nautilus file Browser
+  services.gvfs.enable = true; 
+  environment.pathsToLink = [ "share/thumbnailers" ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -79,6 +82,8 @@
     #audio
     wireplumber
     coppwr
+    nautilus # File Browser
+      libheif libheif.out # Image Preview in Nautilus
 
     # Peripherals
     openrazer-daemon

@@ -28,6 +28,7 @@
     gh-dash.enable = true;
     git.enable = true; # need to refactor the HM Module
     lazygit.enable = true;
+    yazi.enable = true;
   };
 
   systemd.user.startServices = "sd-switch";
