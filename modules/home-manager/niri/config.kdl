@@ -3,6 +3,22 @@
 // Check the wiki for a full description of the configuration:
 // https://yalter.github.io/niri/Configuration:-Introduction
 
+// Required for clipboard history integration
+spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
+
+// Recommended (must install polkit-mate before hand) for elevation prompts
+spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
+// This may be a different path on different distributions, the above is for the arch linux mate-polkit package
+
+// Starts DankShell
+spawn-at-startup "dms" "run"
+
+// If using niri newer than 271534e115e5915231c99df287bbfe396185924d (~aug 17 2025)
+// you can add this to disable built in config load errors since dank shell provides this
+config-notification {
+    disable-failed
+}
+
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
@@ -583,8 +599,8 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+Shift+V       { toggle-window-floating; }
+    // Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
@@ -620,4 +636,11 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+
+    Mod+Space hotkey-overlay-title="Application Launcher" {
+        spawn "dms" "ipc" "call" "spotlight" "toggle";
+    }
+    Mod+V hotkey-overlay-title="Clipboard Manager" {
+        spawn "dms" "ipc" "call" "clipboard" "toggle";
+    }
 }
