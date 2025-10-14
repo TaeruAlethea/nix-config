@@ -9,8 +9,8 @@
         font_size = 12,
         hide_mouse_cursor_when_typing = false,
         initial_cols = 120,
-        initial_rows = 28
-        window_background_opacity = 0.7
+        initial_rows = 28,
+        window_background_opacity = 0.8
       }";
   };
 }
