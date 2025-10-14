@@ -1,5 +1,6 @@
 # No { ... }: because this is a set
 {
+  dankMaterialShell = import ./dankMaterialShell;
   emacs = import ./emacs;
   fonts = import ./fonts;
   git = import ./git;

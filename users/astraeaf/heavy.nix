@@ -8,14 +8,10 @@
   imports = [
     outputs.userConfigs.astraeaf.core
 
+    outputs.homeManagerModules.dankMaterialShell
     outputs.homeManagerModules.wezterm
     outputs.homeManagerModules.emacs
-    # outputs.homeManagerModules.fonts
-    # outputs.homeManagerModules.git
-    # outputs.homeManagerModules.hyprland
     outputs.homeManagerModules.niri
-    # outputs.homeManagerModules.sops
-    # outputs.homeManagerModules.ssh
     # outputs.homeManagerModules.stylix
   ];
 
