@@ -45,7 +45,10 @@
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
+  };
   #hardware.alsa.enable = true;
   services.pipewire = {
     enable = true;

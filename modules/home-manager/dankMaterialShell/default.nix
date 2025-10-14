@@ -9,7 +9,13 @@
 		wl-clipboard
 	];
 
-	programs.dankMaterialShell.enable = true;
+	programs = {
+		dankMaterialShell.enable = true;
+		ghostty = {
+			enable = true;
+			enableBashIntegration = true;
+		};
+	};
 
 	xdg.configFile."DankMaterialShell/" = {
 	  source = ./config;
