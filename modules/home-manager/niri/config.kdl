@@ -3,6 +3,9 @@
 // Check the wiki for a full description of the configuration:
 // https://yalter.github.io/niri/Configuration:-Introduction
 
+include "dms/colors.kdl"
+include "dms/layout.kdl"
+
 // Required for clipboard history integration
 spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 
