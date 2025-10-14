@@ -2,13 +2,14 @@
 {
 	imports = [
 		inputs.niri.homeModules.niri
+		inputs.dankMaterialShell.homeModules.dankMaterialShell.default
 		inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
 
 		outputs.homeManagerModules.walker
 		outputs.homeManagerModules.waybar
 	];
 
-	programs.dankMaterialShell.enable = true;
+	# programs.dankMaterialShell.enable = true;
 
 	xdg.configFile."niri/config.kdl".source = ./config.kdl;
 }
