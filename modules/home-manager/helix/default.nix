@@ -89,9 +89,11 @@
     themes = {
       foxo_dark = {
         "inherits" = "ayu_evolve";
+        "ui.background" = "{}";
       };
       foxo_light = {
         "inherits" = "ayu_light";
+        "ui.background" = "{}";
       };
     };
   };
