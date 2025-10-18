@@ -23,6 +23,11 @@
     outputs.nixosModules.steam
   ];
 
+  # Steam/Deadlock need this
+  boot.kernel.sysctl = {
+    "vm.max_map_count" = 1048576;
+  };
+
   nix = {
     settings = {
       auto-optimise-store = true;
