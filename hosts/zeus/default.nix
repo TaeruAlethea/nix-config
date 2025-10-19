@@ -54,8 +54,9 @@
       initial_session ={
         command = "${pkgs.niri}/bin/niri";
         user = "astraeaf";
-    };
+      };
     default_session = initial_session;
+    };
   };
 
   # Enable sound with pipewire.
