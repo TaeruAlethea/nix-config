@@ -48,7 +48,15 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "astraeaf";
 
-  services.greetd.enable = true;
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session ={
+        command = "${pkgs.niri}/bin/niri";
+        user = "astraeaf";
+    };
+    default_session = initial_session;
+  };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
