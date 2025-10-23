@@ -63,7 +63,6 @@
     "usbhid"
     "usb_storage"
     "sd_mod"
-    "openrazer"
   ];
   boot.initrd.kernelModules = [ ];
 
@@ -71,7 +70,9 @@
 
   boot.kernelModules = [ "kvm-amd" ];
 
-  boot.extraModulePackages = [ ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    openrazer
+  ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/5ef6220e-9dc4-4fa1-a0e2-209ef0f134c5";
