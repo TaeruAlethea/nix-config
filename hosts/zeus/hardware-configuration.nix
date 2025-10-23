@@ -15,7 +15,10 @@
   ];
 
   hardware = {
-    openrazer.enable = true;
+    openrazer ={
+      enable = true;
+      users = [ "astraeaf" ];
+    };
     nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.production;
       modesetting.enable = true;
