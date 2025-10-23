@@ -63,6 +63,7 @@
     "usbhid"
     "usb_storage"
     "sd_mod"
+    "openrazer"
   ];
   boot.initrd.kernelModules = [ ];
 
