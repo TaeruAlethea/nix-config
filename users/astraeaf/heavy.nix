@@ -12,6 +12,7 @@
     outputs.homeManagerModules.wezterm
     outputs.homeManagerModules.emacs
     outputs.homeManagerModules.niri
+    outputs.homeManagerModules.elgato
     # outputs.homeManagerModules.stylix
   ];
 
