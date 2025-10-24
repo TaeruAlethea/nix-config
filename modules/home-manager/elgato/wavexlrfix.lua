@@ -9,6 +9,13 @@ waveXlrSourceOm = ObjectManager {
     }
 }
 
+waveXlrSinkOm = ObjectManager {
+    Interest {
+        type = "node",
+        Constraint { "node.name", "matches", "wavexlr-sink" },
+    }
+}
+
 linkOm = ObjectManager {
     Interest {
         type = "link",
@@ -93,54 +100,8 @@ end
 function onLinkCreated(_, link)
     if nullSinkLink and link.properties["object.id"] == nullSinkLink.properties["object.id"] then
         for node in waveXlrSourceOm:iterate() do
-            createWaveXlrSink(node)
+            waveXlrSinkOm:activate()
         end
-    end
-end
-
-function createWaveXlrSink(sourceNode)
-    local deviceInterest = Interest {
-        type = "device",
-        Constraint { "object.id", "equals", sourceNode.properties["device.id"] }
-    }
-
-    for device in devicesOm:iterate(deviceInterest) do
-        local sinkNodeProperties = {
-            ["device.id"] = sourceNode.properties["device.id"],
-            ["factory.name"] = "api.alsa.pcm.sink",
-            ["node.name"] = "wavexlr-sink",
-            ["node.description"] = "WaveXLR Sink",
-            ["node.nick"] = "WaveXLR Sink",
-            ["media.class"] = "Audio/Sink",
-            ["api.alsa.path"] = sourceNode.properties["api.alsa.path"],
-            ["api.alsa.pcm.card"] = sourceNode.properties["api.alsa.pcm.card"],
-            ["api.alsa.pcm.stream"] = "playback",
-            ["alsa.resolution_bits"] = "24",
-            ["audio.channels"] = "2",
-            ["audio.position"] = "FL,FR",
-            ["priority.driver"] = "1000",
-            ["priority.session"] = "1000",
-            ["node.pause-on-idle"] = "false",
-        }
-
-        for k, v in pairs(device.properties) do
-            if k:find("^api%.alsa%.card%..*") then
-                sinkNodeProperties[k] = v
-            end
-        end
-
-        log:notice("Creating custom WaveXLR sink. api.alsa.path: " .. sourceNode.properties["api.alsa.path"])
-
-        waveXlrSinkNode = Node("adapter", sinkNodeProperties)
-        waveXlrSinkNode:activate(Feature.Proxy.BOUND, function(n, err)
-            if err then
-                log:warning("Failed to create " .. sinkNodeProperties["node.name"]
-                    .. ": " .. tostring(err))
-                waveXlrSinkNode = nil
-            else
-                log:notice("Created custom WaveXLR sink. object.id: " .. n.properties["object.id"])
-            end
-        end)
     end
 end
 
@@ -159,7 +120,9 @@ function createNullSink()
         ["monitor.passthrough"] = "true",
         ["audio.channels"] = "1",
         ["audio.position"] = "MONO",
-        ["node.passive"] = "false"
+        ["node.passive"] = "false",
+        ["priority.driver"] = "1",
+        ["priority.session"] = "1"
     }
 
     log:notice("Creating custom null sink for WaveXLR Source")
