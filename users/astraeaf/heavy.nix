@@ -36,6 +36,7 @@
     firefox-beta
     obsidian
     vesktop
+    easyeffects
 
     #dev
     jetbrains.rider
