@@ -32,10 +32,13 @@
     blender
     gimp3-with-plugins
     gitkraken
+    vlc
 
     firefox-beta
     obsidian
     vesktop
+    zoom-us
+
     easyeffects
 
     #dev
