@@ -16,7 +16,7 @@
     # outputs.homeManagerModules.stylix
   ];
 
-    home = {
+  home = {
     sessionVariables = {
       BROWSER = "firefox";
       TERMINAL = "wezterm";
@@ -26,6 +26,7 @@
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
+    hyprcursor.enable = true;
     package = pkgs.lyra-cursors;
     # [
       # graphite-cursors
@@ -36,8 +37,9 @@
     # ];
     
     name = "LyraS-cursors";
-    size = 36;
+    size = 420;
   };
+  home.sessionVariables.XCURSOR_SIZE = 420;
 
   # Home packages & programs
   home.packages = with pkgs; [
