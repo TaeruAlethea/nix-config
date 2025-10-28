@@ -35,7 +35,7 @@
       # afterglow-cursors-recolored
     # ];
     
-    name = "lyra_light_cursors";
+    name = "LyraS-cursors";
     size = 24;
   };
 
