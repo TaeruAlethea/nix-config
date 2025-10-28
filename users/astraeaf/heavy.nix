@@ -36,7 +36,7 @@
     # ];
     
     name = "LyraS-cursors";
-    size = 24;
+    size = 36;
   };
 
   # Home packages & programs
