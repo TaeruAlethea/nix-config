@@ -26,15 +26,16 @@
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
-    package = with pkgs; [
+    package = pkgs.lyra-cursors;
+    # [
       # graphite-cursors
       # layan-cursors
-      lyra-cursors
+      # lyra-cursors
       # vimix-cursors
       # afterglow-cursors-recolored
-    ];
+    # ];
     
-    # name = "volantes_light_cursors";
+    name = "lyra_light_cursors";
     size = 24;
   };
 
