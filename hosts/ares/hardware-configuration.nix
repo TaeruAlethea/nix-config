@@ -15,6 +15,8 @@
     inputs.nixos-hardware.nixosModules.microsoft-surface-common
   ];
 
+  hardware.microsoft-surface.kernelVersion = "stable";
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -26,6 +28,7 @@
     "sd_mod"
   ];
   boot.initrd.kernelModules = [ ];
+  #boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 

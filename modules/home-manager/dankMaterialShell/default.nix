@@ -20,8 +20,8 @@
 		QT_QPA_PLATFORMTHEME_QT6 = "qt6ct";
 	};
 
-	xdg.configFile."DankMaterialShell/" = {
-	  source = ./config;
-	  recursive = true;
-	};
+	# xdg.configFile."DankMaterialShell/" = {
+	  # source = ./config;
+	  # recursive = true;
+	# };
 }
