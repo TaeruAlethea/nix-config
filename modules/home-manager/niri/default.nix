@@ -1,7 +1,11 @@
 { osConfig, inputs, ... } :
 let
-	configFile = (if ("{$hostName}" == "ares") then ./ares.kdl else ./zeus.kdl);
-		
+	supportedHosts = {
+		"ares" = ./ares.kdl;
+		"zeus" = ./zeus.kdl;
+	};
+	
+	configFile = supportedHosts."${osConfig.networking.hostName}";
 in
 {
 	imports = [
