@@ -84,7 +84,8 @@
 
         ares = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
-          modules = [ outputs.hostConfigs.ares ];
+          modules = [ outputs.hostConfigs.ares
+            home-manager.nixosModules.home-manager ];
         };
 
         artemis = nixpkgs.lib.nixosSystem {
