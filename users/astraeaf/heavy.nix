@@ -37,9 +37,9 @@
     # ];
     
     name = "Vimix-cursors";
-    size = 24;
+    size = 36;
   };
-  home.sessionVariables.XCURSOR_SIZE = 24;
+  home.sessionVariables.XCURSOR_SIZE = 36;
 
   # Home packages & programs
   home.packages = with pkgs; [
