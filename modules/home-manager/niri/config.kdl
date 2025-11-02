@@ -20,7 +20,7 @@ config-notification {
 }
 
 cursor{
-    xcursor-size 56
+    xcursor-size 36
 }
 
 // Input device configuration.
