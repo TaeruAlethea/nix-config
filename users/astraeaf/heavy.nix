@@ -27,19 +27,19 @@
     gtk.enable = true;
     x11.enable = true;
     hyprcursor.enable = true;
-    package = pkgs.lyra-cursors;
+    package = pkgs.vimix-cursors;
     # [
       # graphite-cursors
       # layan-cursors
-      # lyra-cursors
+      # lyra-cursors   # LyraS-cursors"
       # vimix-cursors
       # afterglow-cursors-recolored
     # ];
     
-    name = "LyraS-cursors";
-    size = 420;
+    name = "Vimix-cursors";
+    size = 56;
   };
-  home.sessionVariables.XCURSOR_SIZE = 420;
+  home.sessionVariables.XCURSOR_SIZE = 56;
 
   # Home packages & programs
   home.packages = with pkgs; [
