@@ -36,7 +36,6 @@
   networking.hostName = "ares"; # Define your hostname.
 
   networking.networkmanager.enable = true;
-  programs.nm-applet.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -116,10 +115,6 @@
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     SDL_VIDEODRIVER = "wayland";
-  };
-
-  nixpkgs.config.packageOverrides = pkgs: {
-    opendeck = pkgs.callPackage outputs.customPkgs.opendeck {};
   };
 
   # Some programs need SUID wrappers, can be configured further or are
