@@ -5,8 +5,8 @@ let
 		"zeus" = ./zeus.kdl;
 	};
 	
-	# configFile = supportedHosts."${osConfig.networking.hostName}";
-	configFile = supportedHosts.ares;
+	configFile = supportedHosts."${osConfig.networking.hostName}";
+	# configFile = supportedHosts.ares;
 
 in
 {
