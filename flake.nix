@@ -85,7 +85,12 @@
         ares = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [ outputs.hostConfigs.ares
-            home-manager.nixosModules.home-manager ];
+            home-manager.nixosModules.home-manager
+            {home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = {inherit inputs outputs;};
+            }; home-manager.users.astraeaf.imports = [ outputs.userConfigs.astraeaf.mobile ]; } ];
         };
 
         artemis = nixpkgs.lib.nixosSystem {
@@ -104,11 +109,11 @@
       # Available through 'home-manager --flake .#your-username@your-hostname'
       homeConfigurations = {
 
-        "astraeaf@ares" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ outputs.userConfigs.astraeaf.mobile ];
-        };
+        # "astraeaf@ares" = home-manager.lib.homeManagerConfiguration {
+          # pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          # extraSpecialArgs = { inherit inputs outputs; };
+          # modules = [ outputs.userConfigs.astraeaf.mobile ];
+        # };
         
         "astraeaf@artemis" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
