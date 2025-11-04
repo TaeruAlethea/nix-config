@@ -4,6 +4,7 @@
   elgato = import ./elgato;
   emacs = import ./emacs;
   fonts = import ./fonts;
+  ghostty = import ./ghostty;
   git = import ./git;
   helix = import ./helix;
   hyprland = import ./hyprland;

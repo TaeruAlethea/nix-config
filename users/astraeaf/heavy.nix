@@ -10,6 +10,7 @@
 
     outputs.homeManagerModules.dankMaterialShell
     outputs.homeManagerModules.wezterm
+    outputs.homeManagerModules.ghostty
     outputs.homeManagerModules.emacs
     outputs.homeManagerModules.niri
     outputs.homeManagerModules.elgato
