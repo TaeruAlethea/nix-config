@@ -103,6 +103,16 @@
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dms-plugin-registry = {
+      url = "github:AvengeMedia/dms-plugin-registry";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    matugen = {
+      url = "github:/InioX/Matugen";
+      inputs.nixpkgs.follows = "nixpkgs";
+      # If you need a specific version:
+      # ref = "refs/tags/matugen-v0.10.0";
+    };
 
     stylix.url = "github:danth/stylix";
 
