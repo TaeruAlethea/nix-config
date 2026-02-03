@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
 {
 	imports = [
-		inputs.dankMaterialShell.homeModules.default
+		inputs.dankMaterialShell.homeModules.dank-material-shell
 		# inputs.dankMaterialShell.homeModules.niri
 	];
 
@@ -10,7 +10,7 @@
 	];
 
 	programs = {
-		dankMaterialShell.enable = true;
+		dank-material-shell.enable = true;
 	};
 
 	qt.platformTheme = "kde";
