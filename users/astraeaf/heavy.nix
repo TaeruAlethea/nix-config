@@ -58,6 +58,11 @@
     vesktop
     zoom-us
 
+    #games
+    modrinth-app
+    vintagestory
+    xivlauncher
+
     easyeffects
 
     #dev

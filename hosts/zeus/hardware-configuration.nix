@@ -50,7 +50,7 @@
         {
           title = "Windows";
           efiDeviceHandle = boot-drive;
-          sortKey = "y_windows";
+          sortKey = "a_windows";
         };
     };
 
