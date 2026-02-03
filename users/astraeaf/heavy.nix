@@ -67,6 +67,10 @@
 
     #dev
     jetbrains.rider
+    # jdk25_headless
+    jdk21_headless
+    # jdk17_headless
+    # jdk8_headless
 
     # Unstable
     inputs.matui.packages.${system}.matui
