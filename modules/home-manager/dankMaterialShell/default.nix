@@ -4,7 +4,7 @@
 		inputs.dankMaterialShell.homeModules.dank-material-shell
 		inputs.dms-plugin-registry.modules.default
 		inputs.matugen.nixosModules.default
-		# inputs.dankMaterialShell.homeModules.niri
+		inputs.dankMaterialShell.homeModules.niri
 	];
 
 	home.packages = with pkgs; [
@@ -12,7 +12,26 @@
 	];
 
 	programs.dank-material-shell = {
-			enable = true;
+		enable = true;
+
+		niri = {
+			# enableKeybinds = true;   # Sets static preset keybinds
+			enableSpawn = true;      # Auto-start DMS with niri, if enabled
+		};
+
+		# Core features
+		enableSystemMonitoring = true;     # System monitoring widgets (dgop)
+		enableVPN = true;                  # VPN management widget
+		enableDynamicTheming = true;       # Wallpaper-based theming (matugen)
+		enableAudioWavelength = true;      # Audio visualizer (cava)
+		enableCalendarEvents = true;       # Calendar integration (khal)
+		enableClipboardPaste = true;       # Pasting items from the clipboard (wtype)
+
+		settings = {
+			theme = "dark";
+			dynamicTheming = true;
+			# Add any other settings here
+		};
 
 		plugins = {
 			# Add plugin-specific settingsi
@@ -36,8 +55,8 @@
 		QT_QPA_PLATFORMTHEME_QT6 = "qt6ct";
 	};
 
-	xdg.configFile."DankMaterialShell/" = {
-	  source = ./config;
-	  recursive = true;
-	};
+	# xdg.configFile."DankMaterialShell/" = {
+	  # source = ./config;
+	  # recursive = true;
+	# };
 }
