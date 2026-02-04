@@ -30,10 +30,10 @@
 		outputs = {
 			"DP-3" = {
 				enable = true;
-				mode = "3440x1440@120.000";
+				mode = "3440x1440@120";
 				variable-refresh-rate = true;
 				scale = 1;
-				transform = "normal";
+				transform.rotation = "0";
 				position.x = 1080;
 				position.y = 0;
 			};
@@ -41,7 +41,7 @@
 				enable = true;
 				mode = "1920x1080";
 				scale = 1;
-				transform = "90";
+				transform.rotation = "90";
 				position.x = 0;
 				postiion.y = 0;
 			};
