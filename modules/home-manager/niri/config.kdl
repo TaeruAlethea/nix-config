@@ -391,7 +391,6 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm"; }
-    Mod+D hotkey-overlay-title="Run an Application: walker" { spawn "walker"; }
 
     XF86AudioRaiseVolume allow-when-locked=true {
         spawn "dms" "ipc" "call" "audio" "increment" "3";
