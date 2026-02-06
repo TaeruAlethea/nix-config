@@ -33,14 +33,6 @@
 			# Add plugin-specific settingsi
 			dankPomodoroTimer.enable = true;
 			dankKDEConnect.enable = true;
-
-      mediaPlayer = {
-        enable = true;
-        # You can only define settings here if using the home-manager module
-        settings = {
-          preferredSource = "spotify";
-        };
-			};
 		};
 	};
 

@@ -76,43 +76,43 @@
   privacyShowScreenShareIcon = false;
   controlCenterWidgets = [
     {
+      enabled = true;
       id = "volumeSlider";
-      enabled = true;
       width = 50;
     }
     {
+      enabled = true;
       id = "brightnessSlider";
-      enabled = true;
       width = 50;
     }
     {
+      enabled = true;
       id = "wifi";
-      enabled = true;
       width = 50;
     }
     {
+      enabled = true;
       id = "bluetooth";
-      enabled = true;
       width = 50;
     }
     {
+      enabled = true;
       id = "audioOutput";
-      enabled = true;
       width = 50;
     }
     {
+      enabled = true;
       id = "audioInput";
-      enabled = true;
       width = 50;
     }
     {
+      enabled = true;
       id = "nightMode";
-      enabled = true;
       width = 50;
     }
     {
-      id = "darkMode";
       enabled = true;
+      id = "darkMode";
       width = 50;
     }
   ];
@@ -215,20 +215,20 @@
   networkPreference = "auto";
   iconTheme = "System Default";
   cursorSettings = {
-    theme = "System Default";
-    size = 24;
-    niri = {
-      hideWhenTyping = false;
-      hideAfterInactiveMs = 0;
+    dwl = {
+      cursorHideTimeout = 0;
     };
     hyprland = {
       hideOnKeyPress = false;
       hideOnTouch = false;
       inactiveTimeout = 0;
     };
-    dwl = {
-      cursorHideTimeout = 0;
+    niri = {
+      hideAfterInactiveMs = 0;
+      hideWhenTyping = false;
     };
+    size = 24;
+    theme = "System Default";
   };
   launcherLogoMode = "apps";
   launcherLogoCustomPath = "";
@@ -360,7 +360,7 @@
   notificationHistorySaveNormal = true;
   notificationHistorySaveCritical = true;
   osdAlwaysShowValue = false;
-  osdPosition = 5;
+  osdPosition = 4;
   osdVolumeEnabled = true;
   osdMediaVolumeEnabled = true;
   osdMediaPlaybackEnabled = true;
@@ -410,27 +410,44 @@
   displaySnapToEdge = true;
   barConfigs = [
     {
-      id = "default";
-      name = "Main Bar";
-      enabled = true;
-      position = 0;
-      screenPreferences = [
+      autoHide = false;
+      autoHideDelay = 250;
+      borderColor = "surfaceText";
+      borderEnabled = false;
+      borderOpacity = 1;
+      borderThickness = 1;
+      bottomGap = 0;
+      centerWidgets = [
+        "music"
+        "clock"
+        "weather"
         {
-          name = "DP-3";
-          model = "CU34G4";
+          id = "dankPomodoroTimer";
+          enabled = true;
+        }
+        {
+          id = "dankKDEConnect";
+          enabled = true;
         }
       ];
-      showOnLastDisplay = false;
+      enabled = true;
+      fontScale = 1;
+      gothCornerRadiusOverride = false;
+      gothCornerRadiusValue = 12;
+      gothCornersEnabled = false;
+      id = "default";
+      innerPadding = 4;
       leftWidgets = [
         "launcherButton"
         "workspaceSwitcher"
         "focusedWindow"
       ];
-      centerWidgets = [
-        "music"
-        "clock"
-        "weather"
-      ];
+      name = "Main Bar";
+      noBackground = false;
+      openOnOverview = false;
+      popupGapsAuto = true;
+      popupGapsManual = 4;
+      position = 0;
       rightWidgets = [
         "systemTray"
         "clipboard"
@@ -440,27 +457,18 @@
         "battery"
         "controlCenterButton"
       ];
+      screenPreferences = [
+        {
+          model = "CU34G4";
+          name = "DP-3";
+        }
+      ];
+      showOnLastDisplay = false;
       spacing = 4;
-      innerPadding = 4;
-      bottomGap = 0;
-      transparency = 1;
-      widgetTransparency = 1;
       squareCorners = false;
-      noBackground = false;
-      gothCornersEnabled = false;
-      gothCornerRadiusOverride = false;
-      gothCornerRadiusValue = 12;
-      borderEnabled = false;
-      borderColor = "surfaceText";
-      borderOpacity = 1;
-      borderThickness = 1;
-      fontScale = 1;
-      autoHide = false;
-      autoHideDelay = 250;
-      openOnOverview = false;
+      transparency = 1;
       visible = true;
-      popupGapsAuto = true;
-      popupGapsManual = 4;
+      widgetTransparency = 1;
     }
   ];
   desktopClockEnabled = false;
@@ -535,6 +543,9 @@
   desktopWidgetPositions = {
   };
   desktopWidgetGridSettings = {
+    DP-3 = {
+      enabled = true;
+    };
   };
   desktopWidgetInstances = [
 
