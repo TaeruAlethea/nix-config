@@ -90,34 +90,34 @@
 				"Mod+Shift+Slash".action.show-hotkey-overlay = true;
 
 				"Mod+T" = {
-					hotkey-overlay-title = "Open a Terminal: wezterm";
-					action.spawn = "wezterm";
+					hotkey-overlay.title = "Open a Terminal: wezterm";
+					action.spawn = ["wezterm"];
 				};
 
-				"XF86AudioRaiseVolume" = {
-					allow-when-locked = true;
-					action.spawn = ["dms" "ipc" "call" "audio" "increment" "3"];
-				};
-				"XF86AudioLowerVolume" = {
-					allow-when-locked = true;
-					action.spawn = ["dms" "ipc" "call" "audio" "decrement" "3"];
-				};
-				"XF86AudioMute" = {
-					allow-when-locked = true;
-					action.spawn = ["dms" "ipc" "call" "audio" "mute"];
-				};
-				"XF86AudioMicMute" = {
-					allow-when-locked = true;
-					action.spawn = ["dms" "ipc" "call" "audio" "micmute"];
-				};
-				"XF86MonBrightnessUp" = {
-					allow-when-locked = true;
-					action.spawn = ["dms" "ipc" "call" "brightness" "increment" "5" ""];
-				};
-				"XF86MonBrightnessDown" = {
-					allow-when-locked = true;
-					action.spawn = ["dms" "ipc" "call" "brightness" "decrement" "5" ""];
-				};
+				# "XF86AudioRaiseVolume" = {
+				# 	allow-when-locked = true;
+				# 	action.spawn = ["dms" "ipc" "call" "audio" "increment" "3"];
+				# };
+				# "XF86AudioLowerVolume" = {
+				# 	allow-when-locked = true;
+				# 	action.spawn = ["dms" "ipc" "call" "audio" "decrement" "3"];
+				# };
+				# "XF86AudioMute" = {
+				# 	allow-when-locked = true;
+				# 	action.spawn = ["dms" "ipc" "call" "audio" "mute"];
+				# };
+				# "XF86AudioMicMute" = {
+				# 	allow-when-locked = true;
+				# 	action.spawn = ["dms" "ipc" "call" "audio" "micmute"];
+				# };
+				# "XF86MonBrightnessUp" = {
+				# 	allow-when-locked = true;
+				# 	action.spawn = ["dms" "ipc" "call" "brightness" "increment" "5" ""];
+				# };
+				# "XF86MonBrightnessDown" = {
+				# 	allow-when-locked = true;
+				# 	action.spawn = ["dms" "ipc" "call" "brightness" "decrement" "5" ""];
+				# };
 
 				"Mod+Tab" = { repeat = false; action.toggle-overview = true; };
 				"Mod+Q" = { repeat = false; action.close-window = true; };
@@ -158,18 +158,18 @@
 				"Mod+Shift+Ctrl+K"     = { action.move-column-to-monitor-up = true; };
 				"Mod+Shift+Ctrl+L"     = { action.move-column-to-monitor-right = true; };
 
-				"Mod+WheelScrollDown"      = { cooldown-ms = 150; action.focus-workspace-down = true; };
-				"Mod+WheelScrollUp"        = { cooldown-ms = 150; action.focus-workspace-up = true; };
-				"Mod+Ctrl+WheelScrollDown" = { cooldown-ms = 150; action.move-column-to-workspace-down = true; };
-				"Mod+Ctrl+WheelScrollUp"   = { cooldown-ms = 150; move-column-to-workspace-up = true; };
+				# "Mod+WheelScrollDown"      = { cooldown-ms = 150; action.focus-workspace-down = true; };
+				# "Mod+WheelScrollUp"        = { cooldown-ms = 150; action.focus-workspace-up = true; };
+				# "Mod+Ctrl+WheelScrollDown" = { cooldown-ms = 150; action.move-column-to-workspace-down = true; };
+				# "Mod+Ctrl+WheelScrollUp"   = { cooldown-ms = 150; move-column-to-workspace-up = true; };
 				
 				"Mod+WheelScrollRight"      = { action.focus-column-right = true; };
 				"Mod+WheelScrollLeft"       = { action.focus-column-left = true; };
 				"Mod+Ctrl+WheelScrollRight" = { action.move-column-right = true; };
 				"Mod+Ctrl+WheelScrollLeft"  = { action.move-column-left = true; };
 
-				"Mod+Shift+WheelScrollDown"      = { action.focus-column-right = true; };
-				"Mod+Shift+WheelScrollUp"        = { action.focus-column-left = true; };
+				# "Mod+Shift+WheelScrollDown"      = { action.focus-column-right = true; };
+				# "Mod+Shift+WheelScrollUp"        = { action.focus-column-left = true; };
 				"Mod+Ctrl+Shift+WheelScrollDown" = { action.move-column-right = true; };
 				"Mod+Ctrl+Shift+WheelScrollUp"   = { action.move-column-left = true; };
 
@@ -213,58 +213,58 @@
 
 				"Mod+W"       = { action.toggle-column-tabbed-display = true; };
 
-				"Mod+Shift+S" = { action.screenshot = true; };
-				"Print"       = { action.screenshot = true; };
-				"Ctrl+Print"  = { action.screenshot-screen = true; };
-				"Alt+Print"   = { action.screenshot-window = true; };
+				"Mod+Shift+S" = { action.screenshot = { show-pointer = false; }; };
+				"Print"       = { action.screenshot = { show-pointer = false; }; };
+				"Ctrl+Print"  = { action.screenshot-screen = { show-pointer = false; }; };
+				"Alt+Print"   = { action.screenshot-window = { show-pointer = false; }; };
 
 				"Mod+Shift+E"     = { action.quit = true; };
 				"Ctrl+Alt+Delete" = { action.quit = true; };
 
 				"Mod+Shift+P" = { action.power-off-monitors = true; };
 
-				"Mod+Space" = {
-					hotkey-overlay-title = "Application Launcher";
-					action.spawn = ["dms" "ipc" "call" "spotlight" "toggle"];
-				};
-				"Mod+V" = {
-					hotkey-overlay-title="Clipboard Manager";
-					action.spawn = ["dms" "ipc" "call" "clipboard" "toggle"];
-				};
-				"Mod+M" = {
-					hotkey-overlay-title = "Task Manager";
-					action.spawn = ["dms" "ipc" "call" "processlist" "toggle"];
-				};
-				"Mod+N" = {
-					hotkey-overlay-title = "Notification Center";
-					action.spawn = ["dms" "ipc" "call" "notifications" "toggle"];
-				};
-				"Mod+Comma" = {
-					hotkey-overlay-title = "Settings";
-					action.spawn = ["dms" "ipc" "call" "settings" "toggle"];
-				};
-				"Mod+P" = {
-					hotkey-overlay-title = "Notepad";
-					action.spawn = ["dms" "ipc" "call" "notepad" "toggle"];
-				};
-				"Super+Alt+L" = {
-					hotkey-overlay-title = "Lock Screen";
-					action.spawn = ["dms" "ipc" "call" "lock" "lock"];
-				};
-				"Mod+X" = {
-					hotkey-overlay-title = "Power Menu";
-					action.spawn = ["dms" "ipc" "call" "powermenu" "toggle"];
-				};
-				"Mod+C" = {
-					hotkey-overlay-title = "Control Center";
-					action.spawn = ["dms" "ipc" "call" "control-center" "toggle"];
-				};
+				# "Mod+Space" = {
+				# 	hotkey-overlay-title = "Application Launcher";
+				# 	action.spawn = ["dms" "ipc" "call" "spotlight" "toggle"];
+				# };
+				# "Mod+V" = {
+				# 	hotkey-overlay-title="Clipboard Manager";
+				# 	action.spawn = ["dms" "ipc" "call" "clipboard" "toggle"];
+				# };
+				# "Mod+M" = {
+				# 	hotkey-overlay-title = "Task Manager";
+				# 	action.spawn = ["dms" "ipc" "call" "processlist" "toggle"];
+				# };
+				# "Mod+N" = {
+				# 	hotkey-overlay-title = "Notification Center";
+				# 	action.spawn = ["dms" "ipc" "call" "notifications" "toggle"];
+				# };
+				# "Mod+Comma" = {
+				# 	hotkey-overlay-title = "Settings";
+				# 	action.spawn = ["dms" "ipc" "call" "settings" "toggle"];
+				# };
+				# "Mod+P" = {
+				# 	hotkey-overlay-title = "Notepad";
+				# 	action.spawn = ["dms" "ipc" "call" "notepad" "toggle"];
+				# };
+				# "Super+Alt+L" = {
+				# 	hotkey-overlay-title = "Lock Screen";
+				# 	action.spawn = ["dms" "ipc" "call" "lock" "lock"];
+				# };
+				# "Mod+X" = {
+				# 	hotkey-overlay-title = "Power Menu";
+				# 	action.spawn = ["dms" "ipc" "call" "powermenu" "toggle"];
+				# };
+				# "Mod+C" = {
+				# 	hotkey-overlay-title = "Control Center";
+				# 	action.spawn = ["dms" "ipc" "call" "control-center" "toggle"];
+				# };
 
 				# Night mode toggle
-				"Mod+Shift+N" = {
-					allow-when-locked = true;
-					action.spawn = ["dms" "ipc" "call" "night" "toggle"];
-				};
+				# "Mod+Shift+N" = {
+				# 	allow-when-locked = true;
+				# 	action.spawn = ["dms" "ipc" "call" "night" "toggle"];
+				# };
 			};
 		};
 
