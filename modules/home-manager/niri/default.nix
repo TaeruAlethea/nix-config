@@ -8,7 +8,7 @@
 		spawn-at-startup =[
 			{ argv = ["bash" "-c" "wl-paste --watch cliphist store &"]; }
 			{ argv = ["/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"]; }
-			{ argv = ["dms" "run"]; }
+			# { argv = ["dms" "run"]; }
 		];
 
 		# config-notification.disable-failed = true;
@@ -77,7 +77,7 @@
 				# 	spread = 5;
 				# 	offset.x = 0;
 				# 	offset.y = 5;
-				# 	color = { "#0007" };
+				# 	color = "#000007";
 				# };
 			};
 
@@ -223,49 +223,7 @@
 
 				"Mod+Shift+P" = { action.power-off-monitors = []; };
 
-				# "Mod+Space" = {
-				# 	hotkey-overlay-title = "Application Launcher";
-				# 	action.spawn = ["dms" "ipc" "call" "spotlight" "toggle"];
-				# };
-				# "Mod+V" = {
-				# 	hotkey-overlay-title="Clipboard Manager";
-				# 	action.spawn = ["dms" "ipc" "call" "clipboard" "toggle"];
-				# };
-				# "Mod+M" = {
-				# 	hotkey-overlay-title = "Task Manager";
-				# 	action.spawn = ["dms" "ipc" "call" "processlist" "toggle"];
-				# };
-				# "Mod+N" = {
-				# 	hotkey-overlay-title = "Notification Center";
-				# 	action.spawn = ["dms" "ipc" "call" "notifications" "toggle"];
-				# };
-				# "Mod+Comma" = {
-				# 	hotkey-overlay-title = "Settings";
-				# 	action.spawn = ["dms" "ipc" "call" "settings" "toggle"];
-				# };
-				# "Mod+P" = {
-				# 	hotkey-overlay-title = "Notepad";
-				# 	action.spawn = ["dms" "ipc" "call" "notepad" "toggle"];
-				# };
-				# "Super+Alt+L" = {
-				# 	hotkey-overlay-title = "Lock Screen";
-				# 	action.spawn = ["dms" "ipc" "call" "lock" "lock"];
-				# };
-				# "Mod+X" = {
-				# 	hotkey-overlay-title = "Power Menu";
-				# 	action.spawn = ["dms" "ipc" "call" "powermenu" "toggle"];
-				# };
-				# "Mod+C" = {
-				# 	hotkey-overlay-title = "Control Center";
-				# 	action.spawn = ["dms" "ipc" "call" "control-center" "toggle"];
-				# };
-
-				# Night mode toggle
-				# "Mod+Shift+N" = {
-				# 	allow-when-locked = true;
-				# 	action.spawn = ["dms" "ipc" "call" "night" "toggle"];
-				# };
-			};
+				};
 		};
 
 	# xdg.configFile."niri/config.kdl".source = ./config.kdl;
