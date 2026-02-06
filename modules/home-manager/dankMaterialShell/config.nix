@@ -358,8 +358,6 @@
   notificationHistoryMaxAgeDays = 7;
   notificationHistorySaveLow = true;
   notificationHistorySaveNormal = true;
-
-  desktopWidgetInstances = [
   notificationHistorySaveCritical = true;
   osdAlwaysShowValue = false;
   osdPosition = 5;
