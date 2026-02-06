@@ -27,12 +27,8 @@
 		enableCalendarEvents = true;       # Calendar integration (khal)
 		enableClipboardPaste = true;       # Pasting items from the clipboard (wtype)
 
-		settings = {
-			theme = "dark";
-			dynamicTheming = true;
-			# Add any other settings here
-		};
-
+		settings = import ./config.nix;
+		
 		plugins = {
 			# Add plugin-specific settingsi
 			dankPomodoroTimer.enable = true;
@@ -42,7 +38,7 @@
         enable = true;
         # You can only define settings here if using the home-manager module
         settings = {
-          preferredSource = "youtube";
+          preferredSource = "spotify";
         };
 			};
 		};
