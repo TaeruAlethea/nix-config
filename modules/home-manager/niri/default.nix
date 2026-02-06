@@ -26,24 +26,24 @@
 				accel-profile = "flat";
 			};
 		};
-		
-		outputs = {
-			"DP-3" = {
-				enable = true;
-				mode = "3440x1440@120";
-				variable-refresh-rate = true;
-				scale = 1;
-				transform.rotation = "0";
-				position.x = 1080;
-				position.y = 0;
-			};
-			"HDMI-A-1" = {
-				enable = true;
-				mode = "1920x1080";
-				scale = 1;
-				transform.rotation = "90";
-				position.x = 0;
-				postiion.y = 0;
+			outputs = {
+				"DP-3" = {
+					enable = true;
+					# mode = "3440x1440@120";
+					variable-refresh-rate = true;
+					scale = 1;
+					transform.rotation = 0;
+					position.x = 1080;
+					position.y = 0;
+				};
+				"HDMI-A-1" = {
+					enable = true;
+					# mode = "1920x1080";
+					scale = 1;
+					transform.rotation = 90;
+					position.x = 0;
+					position.y = 0;
+				};
 			};
 
 			layout = {
@@ -54,46 +54,44 @@
 					{ proportion = 1. / 2.; }
 					{ proportion = 2. / 3.; }
 				];
-				default-column-width = [
-					{ proportion = 1. / 2.; }
-				];
+				default-column-width = { proportion = 1. / 2.; };
 
 				focus-ring = {
 					enable = true;
 					width = 4;
-					active-color = "#7fc8ff";
-					inactve-color = "#505050";
+					active = { color = "#7fc8ff"; };
+					inactive = { color = "#505050"; };
 				};
 
 				border = {
 					enable = true;
 					width = 4;
-					active-color = "#ffc87f";
-					inactive-color = "#505050";
-					urgent-color = "#9b0000";
+					active = { color = "#ffc87f"; };
+					inactive = { color = "#505050"; };
+					urgent = { color = "#9b0000"; };
 				};
 
-				shadow = {
-					enable = true;
-					softness = 30;
-					spread = 5;
-					offset.x = 0;
-					offset.y = 5;
-					color = "#0007";
-				};
+				# shadow = {
+				# 	enable = true;
+				# 	softness = 30;
+				# 	spread = 5;
+				# 	offset.x = 0;
+				# 	offset.y = 5;
+				# 	color = { "#0007" };
+				# };
 			};
 
-			window-rules."" = {
-				geometry-corner-radius = 12;
-				clip-to-geometry = true;
-			};
+			#window-rules.* = {
+			#	geometry-corner-radius = 12;
+			#	clip-to-geometry = true;
+			#};
 
 			binds = {
 				"Mod+Shift+Slash".action.show-hotkey-overlay = true;
 
 				"Mod+T" = {
 					hotkey-overlay-title = "Open a Terminal: wezterm";
-					action.spawn = ["wezterm"];
+					action.spawn = "wezterm";
 				};
 
 				"XF86AudioRaiseVolume" = {
@@ -155,10 +153,10 @@
 				"Mod+Shift+Ctrl+Down"  = { action.move-column-to-monitor-down = true; };
 				"Mod+Shift+Ctrl+Up"    = { action.move-column-to-monitor-up = true; };
 				"Mod+Shift+Ctrl+Right" = { action.move-column-to-monitor-right = true; };
-				"Mod+Shift+Ctrl+H"  = { action.move-column-to-monitor-left = true; };
-				"Mod+Shift+Ctrl+J"  = { action.move-column-to-monitor-down = true; };
-				"Mod+Shift+Ctrl+K"    = { action.move-column-to-monitor-up = true; };
-				"Mod+Shift+Ctrl+L" = { action.move-column-to-monitor-right = true; };
+				"Mod+Shift+Ctrl+H"     = { action.move-column-to-monitor-left = true; };
+				"Mod+Shift+Ctrl+J"     = { action.move-column-to-monitor-down = true; };
+				"Mod+Shift+Ctrl+K"     = { action.move-column-to-monitor-up = true; };
+				"Mod+Shift+Ctrl+L"     = { action.move-column-to-monitor-right = true; };
 
 				"Mod+WheelScrollDown"      = { cooldown-ms = 150; action.focus-workspace-down = true; };
 				"Mod+WheelScrollUp"        = { cooldown-ms = 150; action.focus-workspace-up = true; };
@@ -269,7 +267,6 @@
 				};
 			};
 		};
-	};
 
 	# xdg.configFile."niri/config.kdl".source = ./config.kdl;
 }
