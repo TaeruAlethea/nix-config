@@ -56,11 +56,11 @@
       # Available through 'home-manager --flake .#your-username@your-hostname'
       homeConfigurations = {
 
-        "astraeaf@artemis" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ outputs.userConfigs.astraeaf.core ];
-        };
+        # "astraeaf@artemis" = home-manager.lib.homemanagerconfiguration {
+        #   pkgs = nixpkgs.legacypackages.x86_64-linux;
+        #   extraspecialargs = { inherit inputs outputs; };
+        #   modules = [ outputs.userconfigs.astraeaf.core ];
+        # };
 
         "astraeaf@zeus" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;

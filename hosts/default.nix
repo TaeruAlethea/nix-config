@@ -1,5 +1,5 @@
 {
   ares = import ./ares;
-  artemis = import ./artemis;
+  artemis = w./artemis;
   zeus = ./zeus;
 }
