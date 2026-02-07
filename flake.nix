@@ -14,6 +14,12 @@
       # This is a function that generates an attribute by calling a function you
       # pass to it, with each system as an argument
       forAllSystems = nixpkgs.lib.genAttrs systems;
+
+      mkHome = username: hostname: home-manager.lib.homemanagerconfiguration {
+          pkgs = nixpkgs.legacypackages.x86_64-linux;
+          extraspecialargs = { inherit inputs outputs; };
+          modules = [ outputs.userconfigs.astraeaf.artemis ];
+        };
     in
     {
 
@@ -55,17 +61,10 @@
       # Standalone home-manager configuration entrypoint
       # Available through 'home-manager --flake .#your-username@your-hostname'
       homeConfigurations = {
-
-        # "astraeaf@artemis" = home-manager.lib.homemanagerconfiguration {
-        #   pkgs = nixpkgs.legacypackages.x86_64-linux;
-        #   extraspecialargs = { inherit inputs outputs; };
-        #   modules = [ outputs.userconfigs.astraeaf.core ];
-        # };
-
         "astraeaf@zeus" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ outputs.userConfigs.astraeaf.heavy ];
+          modules = [ outputs.userConfigs.astraeaf.zeus ];
         };
 
       };

@@ -11,10 +11,7 @@
     outputs.homeManagerModules.dankMaterialShell
     outputs.homeManagerModules.wezterm
     outputs.homeManagerModules.ghostty
-    outputs.homeManagerModules.emacs
     outputs.homeManagerModules.niri
-    outputs.homeManagerModules.elgato
-    # outputs.homeManagerModules.stylix
   ];
 
   home = {
@@ -66,13 +63,13 @@
     easyeffects
 
     #dev
-    jetbrains.rider
+    # jetbrains.rider
     # jdk25_headless
     jdk21_headless
     # jdk17_headless
     # jdk8_headless
 
     # Unstable
-    inputs.matui.packages.${system}.matui
+    # inputs.matui.packages.${system}.matui
   ];
 }

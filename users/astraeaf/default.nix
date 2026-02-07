@@ -1,4 +1,4 @@
 {
-  core = import ./core.nix;
-  heavy = import ./heavy.nix;
+  artemis = import ./artemis.nix;
+  zues = import ./zues.nix;
 }
