@@ -28,21 +28,21 @@
         nixosConfigurations = {
 
           ares = inputs.nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit inputs outputs; };
-            modules = [ outputs.hostConfigs.ares ];
+            specialArgs = { inherit inputs; };
+            modules = [ hostConfigs.ares ];
           };
 
           artemis = inputs.nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit inputs outputs; };
+            specialArgs = { inherit inputs; };
             modules = [ 
-              outputs.hostConfigs.artemis
+              hostConfigs.artemis
               #home-manager.nixosModules.home-manager
             ];
           };
 
           zeus = inputs.nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit inputs outputs; };
-            modules = [ outputs.hostConfigs.zeus ];
+            specialArgs = { inherit inputs; };
+            modules = [ hostConfigs.zeus ];
           };
 
         };
@@ -50,10 +50,10 @@
         # Standalone home-manager configuration entrypoint
         # Available through 'home-manager --flake .#your-username@your-hostname'
         homeConfigurations = {
-          "astraeaf@zeus" = inputs.home-manager.lib.homeManagerConfiguration {
+          "astraeaf@zeus" = intputs.home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.x86_64-linux;
-            extraSpecialArgs = { inherit inputs outputs; };
-            modules = [ outputs.userConfigs.astraeaf.zeus ];
+            extraSpecialArgs = { inherit inputs; };
+            modules = [ userConfigs.astraeaf.zeus ];
           };
 
         };
