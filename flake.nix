@@ -48,7 +48,10 @@
 
         artemis = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
-          modules = [ outputs.hostConfigs.artemis ];
+          modules = [ 
+            outputs.hostConfigs.artemis
+            home-manager.nixosModules.home-manager
+          ];
         };
 
         zeus = nixpkgs.lib.nixosSystem {
