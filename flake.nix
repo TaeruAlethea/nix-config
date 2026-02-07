@@ -15,16 +15,13 @@
         # Add any packages we have made
         customPkgs = import ./pkgs;
 
-        # Formatter for your nix files, available through 'nix fmt'
-       formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.treefmt);
+        # Your custom packages and modifications, exported as overlays
+        overlays = import ./overlays { inherit inputs; };
+        nixosModules = import ./modules/nixos;
+        homeManagerModules = import ./modules/home-manager;
 
-       # Your custom packages and modifications, exported as overlays
-       overlays = import ./overlays { inherit inputs; };
-       nixosModules = import ./modules/nixos;
-       homeManagerModules = import ./modules/home-manager;
-
-       hostConfigs = import ./hosts;
-       userConfigs = import ./users;
+        hostConfigs = import ./hosts;
+        userConfigs = import ./users;
 
         # NixOS configuration entrypoint
         # Available through 'nixos-rebuild --flake .#your-hostname'
