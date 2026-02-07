@@ -57,7 +57,7 @@
     pulse.enable = true;
   };
 
-  home-manager.users.astraeaf = outputs.userConfigs.artemis;
+  home-manager.users.astraeaf = outputs.userConfigs.astraeaf.artemis;
   users.users.astraeaf = {
     isNormalUser = true;
     hashedPasswordFile = config.age.secrets.secret1.path;
