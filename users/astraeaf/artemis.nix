@@ -6,7 +6,7 @@
 }:
 {
   imports = [
-    ./core.nix
+    outputs.userConfigs.core
 
     outputs.homeManagerModules.dankMaterialShell
     outputs.homeManagerModules.wezterm
