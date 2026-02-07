@@ -10,8 +10,16 @@
       ./hardware-configuration.nix
     ];
   
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+  nix = {
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+    };
+  };
+
   networking.hostName = "artemis";
 
   # Enable networking
@@ -82,6 +90,13 @@
   environment.systemPackages = with pkgs; [
     helix
   ];
+
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/astraeaf/nix-config";
+  };
 
   system.stateVersion = "25.11";
 
