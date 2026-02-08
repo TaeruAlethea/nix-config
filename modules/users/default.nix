@@ -1,4 +1,4 @@
-{ inputs, ...}: {
+{ inputs, self, ...}: {
   flake = {
     homeConfigurations.astraeaf = inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = import inputs.nixpkgs {
