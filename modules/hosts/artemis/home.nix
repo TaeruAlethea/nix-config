@@ -4,10 +4,6 @@
   ...
 }:
 {
-  imports = with config.flake.homeModules; [
-    oh-my-posh
-  ];
-
   programs.home-manager.enable = true;
 
   nixpkgs.config.allowUnfree = true; # You get used to this, so always have it.

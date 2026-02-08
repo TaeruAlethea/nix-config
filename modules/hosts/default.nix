@@ -15,7 +15,10 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.astraeaf = ./artemis/home.nix;
+            users.astraeaf = with config.flake.homeModules; [
+              ./artemis/home.nix
+              oh-my-posh
+            ];
             backupFileExtension = "bk";
             overwriteBackup = true;
             extraSpecialArgs = {
