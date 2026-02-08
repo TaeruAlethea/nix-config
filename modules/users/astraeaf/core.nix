@@ -1,6 +1,5 @@
 {
   outputs,
-  self',
   ...
 }:
 {
@@ -10,7 +9,6 @@
   # core terminal tooling, themes, etc.
 
   imports = [
-    self'.packages.oh-my-posh
   ];
 
   nixpkgs.config.allowUnfree = true; # You get used to this, so always have it.
