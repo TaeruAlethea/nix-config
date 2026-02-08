@@ -10,10 +10,12 @@
         
         self.nixosModules.defaultFonts
 
-        self.homeModules.oh-my-posh
-
         inputs.home-manager.nixosModules.home-manager 
         {
+          imports = [
+            self.homeModules.oh-my-posh
+          ];
+
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
