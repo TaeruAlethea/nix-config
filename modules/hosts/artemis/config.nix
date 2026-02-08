@@ -96,6 +96,11 @@
     flake = "/home/astraeaf/nix-config";
   };
 
+  home-manager = {
+    backupFileExtension = "bk";
+    overwriteBackup = true;
+  };
+
   system.stateVersion = "25.05";
 
 }
