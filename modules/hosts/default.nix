@@ -9,6 +9,17 @@
         ./artemis/config.nix
         
         self.nixosModules.defaultFonts
+
+        inputs.home-manager.nixosModules.home-manager 
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.astraeaf = ./home.nix;
+            backupFileExtension = "bk";
+            overwriteBackup = true;
+          };
+        }
       ];
     };
   };
