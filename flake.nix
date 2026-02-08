@@ -5,7 +5,7 @@
     # https://flake.parts/module-arguments.html
     flake-parts.lib.mkFlake { inherit inputs; } (top@{ config, withSystem, moduleWithSystem, ... }: {
       imports = [
-        #inputs.home-manager.flakeModules.home-manager
+        inputs.home-manager.flakeModules.home-manager
         
         ./modules/hosts
       ];
