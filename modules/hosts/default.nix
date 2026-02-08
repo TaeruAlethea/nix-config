@@ -9,6 +9,8 @@
         ./artemis/config.nix
         
         self.nixosModules.defaultFonts
+        self.nixosModules.localization
+        self.nixosModules.niri
 
         inputs.home-manager.nixosModules.home-manager 
         {
@@ -17,6 +19,10 @@
             useUserPackages = true;
             users.astraeaf.imports = with config.flake.homeModules; [
               ./artemis/home.nix
+              
+              dankMaterialShell
+              helix
+              niri
               oh-my-posh
             ];
             backupFileExtension = "bk";

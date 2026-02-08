@@ -1,8 +1,10 @@
 # No { ... }: because this is a set
 {
   imports = [
-    ./oh-my-posh
+    ./dankMaterialShell
     ./helix
+    ./oh-my-posh
+    ./niri
   ];
 }
 

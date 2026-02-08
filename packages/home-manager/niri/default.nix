@@ -1,8 +1,10 @@
-{ inputs, pkgs, osConfig, ... } :
-{
-	imports = [
-		inputs.niri.homeModules.niri
-	];
+{ ... }: {
+	flake.homeModules.niri = { inputs, pkgs, osConfig, ... } :
+	{
+		imports = [
+			inputs.niri.homeModules.niri
+		];
 
-	programs.niri.settings = "./${osConfig.hostname}.nix";
+		programs.niri.settings = "./${osConfig.hostname}.nix";
+	};
 }
