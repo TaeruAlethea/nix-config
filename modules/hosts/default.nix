@@ -5,10 +5,7 @@
     };
 
     nixosConfigurations.artemis = inputs.nixpkgs.lib.nixosSystem {
-      modules = [ 
-        ./artemis
-        self.nixosModules.defaultFonts
-      ];
+      modules = [ ./artemis ];
     };
 
     nixosConfigurations.zeus = inputs.nixpkgs.lib.nixosSystem {
