@@ -6,7 +6,7 @@
       };
       modules = [ 
         ./astraeaf/core.nix
-        ./astraeaf/artemis.nix
+        #./astraeaf/artemis.nix
       ];
     };
   };
