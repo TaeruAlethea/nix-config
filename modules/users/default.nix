@@ -5,7 +5,7 @@
         inherit system;
         config.allowUnfree = true;
       };
-            modules = [ 
+      modules = [ 
         ./astraeaf/core.nix
         ./astraeaf/artemis.nix
       ];
