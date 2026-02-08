@@ -7,7 +7,7 @@
     nixosConfigurations.artemis = inputs.nixpkgs.lib.nixosSystem {
       modules = [ 
         ./artemis
-        self.flake.nixosModules.defaultFonts
+        self.nixosModules.defaultFonts
       ];
     };
 
