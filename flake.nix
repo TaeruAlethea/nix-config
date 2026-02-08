@@ -8,6 +8,7 @@
         inputs.home-manager.flakeModules.home-manager
         
         ./modules
+        ./packages
       ];
       flake = {
 
