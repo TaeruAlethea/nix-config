@@ -10,6 +10,8 @@
         
         self.nixosModules.defaultFonts
 
+        self.homeModules.oh-my-posh
+
         inputs.home-manager.nixosModules.home-manager 
         {
           home-manager = {
