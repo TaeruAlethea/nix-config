@@ -15,7 +15,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.astraeaf = ./home.nix;
+            users.astraeaf = ./artemis/home.nix;
             backupFileExtension = "bk";
             overwriteBackup = true;
           };
