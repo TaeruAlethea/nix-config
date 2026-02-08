@@ -1,4 +1,4 @@
-{ inputs, self, ...}: {
+{ inputs, self, config, ...}: {
   flake = {
     nixosConfigurations.artemis = inputs.nixpkgs.lib.nixosSystem {
       pkgs = import inputs.nixpkgs {
