@@ -1,4 +1,4 @@
-{ inputs, self, config, ...}: {
+{ inputs, self, ...}: {
   flake = {
     nixosConfigurations.artemis = inputs.nixpkgs.lib.nixosSystem {
       pkgs = import inputs.nixpkgs {
@@ -15,7 +15,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.astraeaf = with config.flake.homeModules; [
+            users.astraeaf.imports = with config.flake.homeModules; [
               ./artemis/home.nix
               oh-my-posh
             ];
