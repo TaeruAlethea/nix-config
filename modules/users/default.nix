@@ -1,6 +1,6 @@
 { inputs, ...}: {
   flake = {
-    homeConfigurations.astraeaf = inputs.home-manager.homeManagerConfiguration {
+    homeConfigurations.astraeaf = inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = import inputs.nixpkgs {
         config.allowUnfree = true;
       };
