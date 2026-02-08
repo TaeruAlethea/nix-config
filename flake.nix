@@ -1,21 +1,13 @@
 {
   description = "Taeru's config flake";
 
-  outputs = inputs@{ flake-parts, nixpkgs, ...}:
-    let
-      # Replacement for import-tree
-      # From https://github.com/Michael-C-Buckley/nixos/blob/96dc6b3743a79a2df65e8a94bb680e6ccaa935bf/flake.nix#L14
-      # Thanks, Jet
-      inherit (nixpkgs.lib) hasPrefix lists;
-      inherit (nixpkgs.lib.fileset) toList fileFilter;
-      mkImport = path: toList (fileFilter (f: f.hasExt "nix" && !(hasPrefix "_" f.name)) path);
-    in
+  outputs = inputs@{ flake-parts, ...}:
     # https://flake.parts/module-arguments.html
     flake-parts.lib.mkFlake { inherit inputs; } (top@{ config, withSystem, moduleWithSystem, ... }: {
-      imports = lists.flatten [
+      imports = [
         #inputs.home-manager.flakeModules.home-manager
         
-        (mkImport ./hosts)
+        ./hosts
         #(mkImport ./modules)
         #(mkImport ./pkgs)
         #(mkImport ./secrets)
