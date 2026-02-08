@@ -18,7 +18,7 @@
             users.astraeaf = ./artemis/home.nix;
             backupFileExtension = "bk";
             overwriteBackup = true;
-            home-manager.extraSpecialArgs = {
+            extraSpecialArgs = {
           
               # bring in the list of inputs into the home-manager module
               inherit inputs;
