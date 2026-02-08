@@ -7,14 +7,14 @@
       imports = [
         #inputs.home-manager.flakeModules.home-manager
         
-        ./hosts
+        ./modules/hosts
         #(mkImport ./modules)
         #(mkImport ./pkgs)
         #(mkImport ./secrets)
         #(mkImport ./users)
       ];
       flake = {
-        
+
       };
       systems = [
         # systems for which you want to build the `perSystem` attributes
