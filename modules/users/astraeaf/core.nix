@@ -3,13 +3,7 @@
   ...
 }:
 {
-  #programs.home-manager.enable = true;
-
-  # Only define universal things.
-  # core terminal tooling, themes, etc.
-
-  imports = [
-  ];
+  programs.home-manager.enable = true;
 
   nixpkgs.config.allowUnfree = true; # You get used to this, so always have it.
 
