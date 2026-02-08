@@ -10,18 +10,19 @@
         
         self.nixosModules.defaultFonts
 
-        home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.astraeaf = ./artemis/home.nix;
-            home-manager = {
-              backupFileExtension = "bk";
-              overwriteBackup = true;
-            };
-            
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
-          }
+        self.home-manager.nixosModules.home-manager 
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.astraeaf = ./artemis/home.nix;
+          home-manager = {
+            backupFileExtension = "bk";
+            overwriteBackup = true;
+          };
+
+          # Optionally, use home-manager.extraSpecialArgs to pass
+          # arguments to home.nix
+        }
       ];
     };
   };
