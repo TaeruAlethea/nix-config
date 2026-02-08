@@ -1,15 +1,15 @@
 { inputs, ...}: {
   flake = {
 
-    nixosConfigurations.ares = nixosSystem {
+    nixosConfigurations.ares = inputs.nixpkgs.lib.nixosSystem {
       modules = ./ares;
     };
 
-    nixosConfigurations.artemis = nixosSystem {
+    nixosConfigurations.artemis = inputs.nixpkgs.lib.nixosSystem {
       modules = ./artemis;
     };
 
-    nixosConfigurations.zeus = nixosSystem {
+    nixosConfigurations.zeus = inputs.nixpkgs.lib.nixosSystem {
       modules = ./zeus;
     };
   };
