@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, outputs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -25,31 +25,43 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  # Set your time zone.
+  time.timeZone = "America/New_York";
 
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "astraeaf";
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
 
-  services.greetd = {
-    enable = true;
-    settings = rec {
-      initial_session ={
-        command = "niri-session";
-        user = "astraeaf";
-      };
-    default_session = initial_session;
-    };
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
   };
+
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+
+  # Enable the GNOME Desktop Environment.
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
-  security = {
-    rtkit.enable = true;
-    polkit.enable = true;
-  };
-  #hardware.alsa.enable = true;
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -57,60 +69,27 @@
     pulse.enable = true;
   };
 
-  #home-manager.users.astraeaf = outputs.userConfigs.astraeaf.artemis;
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.astraeaf = {
     isNormalUser = true;
-    hashedPasswordFile = config.age.secrets.secret1.path;
-    description = "Astraea Falke";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "plugdev"
-    ];
+    description = "astraeaf";
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+    #  thunderbird
     ];
   };
 
-  # Needed for Nautilus file Browser
-  services.gvfs.enable = true; 
-  environment.pathsToLink = [ "share/thumbnailers" ];
+  # Install firefox.
+  programs.firefox.enable = true;
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #audio
-    wireplumber
-    coppwr
-    nautilus # File Browser
-      libheif libheif.out # Image Preview in Nautilus
-
-    git
-    github-desktop
-    helix # Text editor!
-
-    # Formatters
-    treefmt
-    nixfmt-rfc-style
-    yamlfmt
+    helix
   ];
-
-  programs.zoom-us.enable = true;
-
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-    SDL_VIDEODRIVER = "wayland";
-  };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
 
   programs.nh = {
     enable = true;
@@ -120,4 +99,5 @@
   };
 
   system.stateVersion = "25.05";
+
 }
