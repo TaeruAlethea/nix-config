@@ -8,26 +8,16 @@
         #inputs.home-manager.flakeModules.home-manager
         
         ./modules/hosts
-        #(mkImport ./modules)
-        #(mkImport ./pkgs)
-        #(mkImport ./secrets)
-        #(mkImport ./users)
       ];
       flake = {
 
       };
-      systems = [
-        # systems for which you want to build the `perSystem` attributes
-        "x86_64-linux"
-        # ...
-      ];
+      systems = [ "x86_64-linux" ];
       perSystem = { system, ... }: {
         _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
           overlays = [ inputs.foo.overlays.default ];
-        config = {
-          allowUnfree = true;
-          };
+          config.allowUnfree = true;
         };
       };
     });
