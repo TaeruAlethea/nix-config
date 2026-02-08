@@ -2,61 +2,24 @@
   description = "Taeru's config flake";
 
   outputs = inputs@{ flake-parts, ...}:
+    let
+      # Replacement for import-tree
+      # From https://github.com/Michael-C-Buckley/nixos/blob/96dc6b3743a79a2df65e8a94bb680e6ccaa935bf/flake.nix#L14
+      # Thanks, Jet
+      mkImport = path: toList (fileFilter (f: f.hasExt "nix" && !(hasPrefix "_" f.name)) path);
+    in
     # https://flake.parts/module-arguments.html
     flake-parts.lib.mkFlake { inherit inputs; } (top@{ config, withSystem, moduleWithSystem, ... }: {
-      imports = [
-        inputs.home-manager.flakeModules.home-manager
-        # Optional: use external flake logic, e.g.
-        # inputs.foo.flakeModules.default
+      imports = lists.flatten [
+        #inputs.home-manager.flakeModules.home-manager
+        
+        (mkImport ./hosts)
+        #(mkImport ./modules)
+        #(mkImport ./pkgs)
+        #(mkImport ./secrets)
+        #(mkImport ./users)
       ];
       flake = {
-        # Put your original flake attributes here.
-
-        # Add any packages we have made
-        customPkgs = import ./pkgs;
-
-        # Your custom packages and modifications, exported as overlays
-        overlays = import ./overlays { inherit inputs; };
-        nixosModules = import ./modules/nixos;
-        homeManagerModules = import ./modules/home-manager;
-
-        hostConfigs = import ./hosts;
-        userConfigs = import ./users;
-
-        # NixOS configuration entrypoint
-        # Available through 'nixos-rebuild --flake .#your-hostname'
-        nixosConfigurations = {
-
-          ares = inputs.nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit inputs; };
-            modules = [ hostConfigs.ares ];
-          };
-
-          artemis = inputs.nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit inputs; };
-            modules = [ 
-              hostConfigs.artemis
-              #home-manager.nixosModules.home-manager
-            ];
-          };
-
-          zeus = inputs.nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit inputs; };
-            modules = [ hostConfigs.zeus ];
-          };
-
-        };
-
-        # Standalone home-manager configuration entrypoint
-        # Available through 'home-manager --flake .#your-username@your-hostname'
-        homeConfigurations = {
-          "astraeaf@zeus" = intputs.home-manager.lib.homeManagerConfiguration {
-            pkgs = nixpkgs.legacyPackages.x86_64-linux;
-            extraSpecialArgs = { inherit inputs; };
-            modules = [ userConfigs.astraeaf.zeus ];
-          };
-
-        };
 
       };
       systems = [
