@@ -18,8 +18,7 @@
               system = "x86_64-linux";
             };
             modules = [ 
-              ./astraeaf/core.nix
-              #./astraeaf/artemis.nix
+              ./artemis/home.nix
 
               self.homeModules.oh-my-posh
               #self.homeModules.helix
@@ -29,7 +28,6 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.astraeaf = ./artemis/home.nix;
             backupFileExtension = "bk";
             overwriteBackup = true;
           };
