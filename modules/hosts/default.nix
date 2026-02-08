@@ -1,4 +1,4 @@
-{ inputs, self, ...}: {
+{ inputs, ...}: {
   flake = {
     nixosConfigurations.ares = inputs.nixpkgs.lib.nixosSystem {
       modules = [ ./ares ];
