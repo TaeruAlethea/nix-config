@@ -9,6 +9,7 @@
         ./astraeaf/core.nix
         #./astraeaf/artemis.nix
 
+        self'.homeModules.oh-my-posh
         self'.homeModules.helix
       ];
     };
