@@ -7,14 +7,16 @@
       imports = [
         #inputs.home-manager.flakeModules.home-manager
         
-        ./hosts
+        #./hosts
         #(mkImport ./modules)
         #(mkImport ./pkgs)
         #(mkImport ./secrets)
         #(mkImport ./users)
       ];
       flake = {
-
+        nixosConfigurations.artemis = inputs.nixpkgs.lib.nixosSystem {
+        modules = [ ./hosts/artemis/default.nix ];
+    };
       };
       systems = [
         # systems for which you want to build the `perSystem` attributes
