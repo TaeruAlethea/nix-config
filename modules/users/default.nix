@@ -1,4 +1,4 @@
-{ inputs, config, ...}: {
+{ inputs, self, ...}: {
   flake = {
     homeConfigurations.astraeaf = inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = import inputs.nixpkgs {
@@ -9,8 +9,8 @@
         ./astraeaf/core.nix
         #./astraeaf/artemis.nix
 
-        config.homeModules.oh-my-posh
-        config.homeModules.helix
+        self.homeModules.oh-my-posh
+        self.homeModules.helix
       ];
     };
   };
