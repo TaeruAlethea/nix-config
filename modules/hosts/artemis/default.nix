@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
-      self.nixosModules.defaultFonts
+      self.flake.nixosModules.defaultFonts
     ];
   
   nix = {
