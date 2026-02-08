@@ -96,6 +96,17 @@
     flake = "/home/astraeaf/nix-config";
   };
 
+  inputs.home-manager.nixosModules.home-manager 
+  {
+    home-manager = {
+      useGlobalPkgs = true;
+      useUserPackages = true;
+      users.astraeaf = ./home.nix;
+      backupFileExtension = "bk";
+      overwriteBackup = true;
+    };
+  }
+
   system.stateVersion = "25.05";
 
 }
