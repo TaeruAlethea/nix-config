@@ -12,5 +12,5 @@
     nixosConfigurations.zeus = nixosSystem {
       modules = ./zeus;
     };
-  }
+  };
 }
