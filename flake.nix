@@ -1,7 +1,7 @@
 {
   description = "Taeru's config flake";
 
-  outputs = inputs@{ flake-parts, ...}:
+  outputs = inputs@{ flake-parts, nixpkgs, ...}:
     let
       # Replacement for import-tree
       # From https://github.com/Michael-C-Buckley/nixos/blob/96dc6b3743a79a2df65e8a94bb680e6ccaa935bf/flake.nix#L14
