@@ -1,5 +1,5 @@
 { ... }: {
-  perSystem = { pkgs, ... }: {
+  flake.homeModules.helix = { pkgs, ... }: {
     home.sessionVariables.EDITOR = "hx";
 
     home.packages = with pkgs; [
