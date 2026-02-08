@@ -1,5 +1,5 @@
 { ... }: {
-  flake.homeModules.oh-my-posh = { lib, ... }: {
+  perSystem.packages.oh-my-posh = { lib, ... }: {
     programs.oh-my-posh = {
       enable = true;
       enableBashIntegration = true;

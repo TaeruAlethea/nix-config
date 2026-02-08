@@ -1,3 +1,4 @@
+# No { ... }: because this is a set
 {
   imports = [
     ./oh-my-posh
@@ -5,7 +6,6 @@
   ];
 }
 
-# No { ... }: because this is a set
 #{
 #  dankMaterialShell = import ./dankMaterialShell;
 #  elgato = import ./elgato;
