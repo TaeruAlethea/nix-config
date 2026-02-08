@@ -6,6 +6,8 @@
       # Replacement for import-tree
       # From https://github.com/Michael-C-Buckley/nixos/blob/96dc6b3743a79a2df65e8a94bb680e6ccaa935bf/flake.nix#L14
       # Thanks, Jet
+      inherit (nixpkgs.lib) hasPrefix lists;
+      inherit (nixpkgs.lib.fileset) toList fileFilter;
       mkImport = path: toList (fileFilter (f: f.hasExt "nix" && !(hasPrefix "_" f.name)) path);
     in
     # https://flake.parts/module-arguments.html
