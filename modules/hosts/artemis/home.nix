@@ -3,7 +3,11 @@
   ...
 }:
 {
-  programs.home-manager.enable = true;
+  programs.home-manager = {
+    enable = true;
+    backupFileExtension = "bk";
+    overwriteBackup = true;
+  };
 
   nixpkgs.config.allowUnfree = true; # You get used to this, so always have it.
 
