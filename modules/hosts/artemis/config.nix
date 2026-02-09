@@ -64,7 +64,7 @@
   users.users.astraeaf = {
     isNormalUser = true;
     description = "astraeaf";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "i2c" ];
     packages = with pkgs; [
     #  thunderbird
     ];

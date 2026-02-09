@@ -10,6 +10,9 @@
 
 		home.packages = with pkgs; [
 			wl-clipboard
+			networkmanager
+			power-profiles-daemon
+			i2c-tools
 		];
 
 		programs.dank-material-shell = {
