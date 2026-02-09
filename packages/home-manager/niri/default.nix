@@ -5,6 +5,6 @@
 			inputs.niri.homeModules.niri
 		];
 
-		programs.niri.settings = import ./${osConfig.hostname}.nix;
+		programs.niri.settings = import ./artemis.nix;
 	};
 }
