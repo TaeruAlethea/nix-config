@@ -3,6 +3,7 @@
     ./fonts
     ./localization
     ./niri
+    ./steam
   ];
 
   #agenix = import ./agenix;

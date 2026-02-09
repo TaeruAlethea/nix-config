@@ -11,6 +11,7 @@
         self.nixosModules.defaultFonts
         self.nixosModules.localization
         self.nixosModules.niri
+        self.nixosModules.steam
 
         inputs.home-manager.nixosModules.home-manager 
         {
