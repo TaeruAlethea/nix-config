@@ -5,6 +5,7 @@
     ./helix
     ./oh-my-posh
     ./niri
+    ./wezterm
   ];
 }
 

@@ -21,25 +21,26 @@
         };
     };
     
-    #outputs = {
-    #    "DP-3" = {
-    #        enable = true;
-    #        # mode = "3440x1440@120";
-    #        variable-refresh-rate = true;
-    #        scale = 1;
-    #        transform.rotation = 0;
-    #        position.x = 1080;
-    #        position.y = 0;
-    #    };
-    #    "HDMI-A-1" = {
-    #        enable = true;
-    #        # mode = "1920x1080";
-    #        scale = 1;
-    #        transform.rotation = 90;
-    #        position.x = 0;
-    #        position.y = 0;
-    #    };
-    #};
+    outputs = {
+        "eDP-1" = {
+            # Top Display
+            enable = true;
+            # mode = "3440x1440@120";
+            scale = 1.5;
+            transform.rotation = 0;
+            position.x = 0;
+            position.y = 1800;
+        };
+        "eDP-2" = {
+            # Bottom Display
+            enable = true;
+            # mode = "1920x1080";
+            scale = 1.5;
+            transform.rotation = 0;
+            position.x = 0;
+            position.y = 0;
+        };
+    };
 
     layout = {
         gaps = 16;
