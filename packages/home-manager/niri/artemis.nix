@@ -33,7 +33,7 @@
         };
         "eDP-2" = {
             # Bottom Display
-            enable = true;
+            enable = false;
             # mode = "1920x1080";
             scale = 1.5;
             transform.rotation = 0;
