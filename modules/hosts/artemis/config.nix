@@ -75,7 +75,6 @@
 
   environment.systemPackages = with pkgs; [
     helix
-    alacritty
   ];
 
   programs.nh = {
