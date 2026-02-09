@@ -28,7 +28,7 @@
 			enableCalendarEvents = true;       # Calendar integration (khal)
 			enableClipboardPaste = true;       # Pasting items from the clipboard (wtype)
 
-			settings = import ./config.nix;
+			settings = import ./artemis.nix;
 			
 			plugins = {
 				# Add plugin-specific settingsi

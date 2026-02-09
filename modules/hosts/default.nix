@@ -24,6 +24,7 @@
               helix
               niri
               oh-my-posh
+              wezterm
             ];
             backupFileExtension = "bk";
             overwriteBackup = true;
