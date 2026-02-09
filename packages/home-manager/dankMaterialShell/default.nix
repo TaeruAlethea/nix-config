@@ -9,6 +9,7 @@
 		];
 
 		home.packages = with pkgs; [
+			accountsservice
 			wl-clipboard
 			networkmanager
 			power-profiles-daemon

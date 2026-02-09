@@ -12,7 +12,7 @@
 
 		environment.systemPackages = with pkgs; [
 			xwayland-satellite
-		];
+			];
 
 		environment.sessionVariables = {
 			DISPLAY = ":0";

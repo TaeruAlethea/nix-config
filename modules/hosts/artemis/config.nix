@@ -57,6 +57,17 @@
     pulse.enable = true;
   };
 
+  services = {
+    asusd = {
+      enable = true;
+      enableUserService = true;
+    };
+    power-profiles-daemon = {
+      enable = true;
+    };
+  };
+  powerManagement.enable = true;
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -67,6 +78,7 @@
     extraGroups = [ "networkmanager" "wheel" "i2c" ];
     packages = with pkgs; [
     #  thunderbird
+      asusctl
     ];
   };
 

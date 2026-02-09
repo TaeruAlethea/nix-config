@@ -263,7 +263,7 @@
   batterySuspendBehavior = 0;
   batteryProfileName = "";
   batteryChargeLimit = 100;
-  lockBeforeSuspend = false;
+  lockBeforeSuspend = true;
   loginctlLockIntegration = true;
   fadeToLockEnabled = true;
   fadeToLockGracePeriod = 5;
@@ -341,7 +341,7 @@
   lockScreenShowProfileImage = true;
   lockScreenShowPasswordField = true;
   lockScreenShowMediaPlayer = true;
-  lockScreenPowerOffMonitorsOnLock = false;
+  lockScreenPowerOffMonitorsOnLock = true;
   enableFprint = false;
   maxFprintTries = 15;
   lockScreenActiveMonitor = "all";
@@ -463,8 +463,8 @@
           name = "DP-3";
         }
         {
-          name = "eDP-1";
           model = "0x419D";
+          name = "eDP-1";
         }
       ];
       showOnLastDisplay = false;
