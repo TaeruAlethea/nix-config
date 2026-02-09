@@ -2,6 +2,7 @@
 {
   imports = [
     ./dankMaterialShell
+    ./ghostty
     ./helix
     ./oh-my-posh
     ./niri

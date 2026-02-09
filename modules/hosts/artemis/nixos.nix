@@ -65,8 +65,12 @@
     power-profiles-daemon = {
       enable = true;
     };
+    upower = {
+      enable = true;
+    };
   };
   powerManagement.enable = true;
+  hardware.bluetooth.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;

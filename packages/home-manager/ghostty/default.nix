@@ -1,5 +1,7 @@
-{ ... }:{
-	programs.ghostty = {
-		enable = true;
+{ ... }: {
+	flake.homeModules.ghostty = { ... }:{
+		programs.ghostty = {
+			enable = true;
+		};
 	};
 }
