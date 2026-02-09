@@ -52,6 +52,30 @@
   home.sessionVariables.XCURSOR_SIZE = 36;
 
 
+  # Home packages & programs
+  home.packages = with pkgs; [
+    gimp3-with-plugins
+    vlc
+
+    firefox-beta
+    obsidian
+    vesktop
+    zoom-us
+
+    #games
+    modrinth-app
+    vintagestory
+    xivlauncher
+
+    easyeffects
+
+    #dev
+    jetbrains.rider
+    # jdk25_headless
+    jdk21_headless
+    # jdk17_headless
+    # jdk8_headless
+  ];
 
   systemd.user.startServices = "sd-switch";
   home.stateVersion = "25.05";
