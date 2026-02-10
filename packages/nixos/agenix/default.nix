@@ -4,7 +4,7 @@
     environment.systemPackages = with pkgs; [
       age
 
-      inputs.agenix.packages."${system}".default
+      inputs.agenix.packages."${stdenv.hostPlatform.system}".default
     ];
 
     age = {
