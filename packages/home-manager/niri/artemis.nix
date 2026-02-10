@@ -19,6 +19,11 @@
             accel-speed = -0.2;
             accel-profile = "flat";
         };
+        touchpad = {
+            tap = true;
+            natural-scroll = true;
+            scroll-factor = 0.75;
+            disabled-on-external-mouse = true;
     };
     
     outputs = {
