@@ -1,5 +1,5 @@
 { ... }: {
-	flake.homeModules.dankMaterialShell = { inputs, pkgs, ... }:
+	flake.homeModules.dankMaterialShell = { inputs, pkgs, osConfig, ... }:
 	{
 		imports = [
 			inputs.dankMaterialShell.homeModules.dank-material-shell
@@ -32,8 +32,8 @@
 			enableCalendarEvents = true;       # Calendar integration (khal)
 			enableClipboardPaste = true;       # Pasting items from the clipboard (wtype)
 
-			settings = import ./artemis.nix;
-			
+			settings = import ./${osConfig.networking.hostName}.nix;
+
 			plugins = {
 				# Add plugin-specific settingsi
 				dankPomodoroTimer.enable = true;
