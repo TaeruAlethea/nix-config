@@ -26,7 +26,7 @@
     ../../modules/nixos/stylix/default.nix
 
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    ./_hardware-configuration.nix
   ];
 
   nixpkgs = {
