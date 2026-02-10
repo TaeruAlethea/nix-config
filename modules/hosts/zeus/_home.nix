@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   ...
 }:
@@ -79,9 +78,6 @@
     jdk21_headless
     # jdk17_headless
     # jdk8_headless
-
-    # Unstable
-    inputs.matui.packages.${system}.matui
   ];
 
   systemd.user.startServices = "sd-switch";
