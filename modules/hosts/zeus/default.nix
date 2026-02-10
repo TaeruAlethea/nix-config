@@ -5,7 +5,7 @@
         system = "x86_64-linux";
       };
       modules = [
-        ./nixos.nix
+        ./_nixos.nix
         
         self.nixosModules.agenix
         self.nixosModules.defaultFonts
@@ -21,7 +21,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             users.astraeaf.imports = with config.flake.homeModules; [
-              ./home.nix
+              ./_home.nix
               
               dankMaterialShell
               elgato
