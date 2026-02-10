@@ -20,11 +20,11 @@
             accel-profile = "flat";
         };
         touchpad = {
+            enable = true;
             tap = true;
             natural-scroll = true;
             scroll-factor = 0.75;
-            disabled-on-external-mouse = true;
-        };
+       };
     };
     
     outputs = {
