@@ -7,11 +7,8 @@
       imports = [
         inputs.home-manager.flakeModules.home-manager
         
-        ./modules
+        (inputs.import-tree ./modules)
       ];
-      flake = {
-
-      };
       systems = [ "x86_64-linux" ];
       perSystem = { system, ... }: {
         _module.args.pkgs = import inputs.nixpkgs {
@@ -25,25 +22,15 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
     home-manager.url = "github:nix-community/home-manager";
-    home-manager-stable.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
 
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     agenix.url = "github:ryantm/agenix";
 
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -70,11 +57,5 @@
 
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
-
-    matui.url = "github:pkulak/matui";
-    elephant = {
-      url = "github:abenz1267/elephant";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 }
