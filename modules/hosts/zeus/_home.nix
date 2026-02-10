@@ -1,6 +1,4 @@
 {
-  inputs,
-  outputs,
   pkgs,
   ...
 }:
@@ -49,6 +47,7 @@
     size = 36;
   };
   home.sessionVariables.XCURSOR_SIZE = 36;
+
 
   # Home packages & programs
   home.packages = with pkgs; [
