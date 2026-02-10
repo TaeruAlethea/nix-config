@@ -1,5 +1,5 @@
-{ ... }: {
-	flake.nixosModules.agenix = { inputs, pkgs, ... }:
+{ inputs, ... }: {
+	flake.nixosModules.agenix = { pkgs, ... }:
   {
     environment.systemPackages = with pkgs; [
       age
