@@ -1,25 +1,24 @@
 { inputs, self, config, ...}: {
-  flake = {
-    nixosConfigurations.artemis = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.artemis = inputs.nixpkgs.lib.nixosSystem {
       pkgs = import inputs.nixpkgs {
         config.allowUnfree = true;
         system = "x86_64-linux";
       };
       modules = [
-        ./nixos.nix
+        ./_nixos.nix
         
         self.nixosModules.defaultFonts
         self.nixosModules.localization
         self.nixosModules.niri
         self.nixosModules.steam
 
-        inputs.home-manager.nixosModules.home-manager 
+        inputs.home-manager.nixosModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
             users.astraeaf.imports = with config.flake.homeModules; [
-              ./home.nix
+              ./_home.nix
               
               dankMaterialShell
               helix
@@ -39,14 +38,4 @@
         }
       ];
     };
-  };
 }
-
-
-#{
-#  imports = [
-#    ./ares
-#    ./artemis
-#    ./zeus
-#  ];
-#}

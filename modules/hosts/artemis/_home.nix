@@ -1,10 +1,10 @@
 {
-  inputs,
-  outputs,
   pkgs,
   ...
 }:
 {
+  programs.home-manager.enable = true;
+
   nixpkgs.config.allowUnfree = true; # You get used to this, so always have it.
 
   home = {
@@ -22,18 +22,6 @@
     lazygit.enable = true;
     yazi.enable = true;
   };
-
-  systemd.user.startServices = "sd-switch";
-
-  imports = [
-    outputs.homeManagerModules.helix
-    outputs.homeManagerModules.oh-my-posh
-
-    outputs.homeManagerModules.dankMaterialShell
-    outputs.homeManagerModules.wezterm
-    outputs.homeManagerModules.ghostty
-    outputs.homeManagerModules.niri
-  ];
 
   home = {
     sessionVariables = {
@@ -60,15 +48,10 @@
   };
   home.sessionVariables.XCURSOR_SIZE = 36;
 
+
   # Home packages & programs
   home.packages = with pkgs; [
-    bitwarden-desktop
-    bitwarden-cli
-    bottles
-
-    blender
     gimp3-with-plugins
-    gitkraken
     vlc
 
     firefox-beta
@@ -84,13 +67,13 @@
     easyeffects
 
     #dev
-    # jetbrains.rider
+    jetbrains.rider
     # jdk25_headless
     jdk21_headless
     # jdk17_headless
     # jdk8_headless
-
-    # Unstable
-    # inputs.matui.packages.${system}.matui
   ];
+
+  systemd.user.startServices = "sd-switch";
+  home.stateVersion = "25.05";
 }

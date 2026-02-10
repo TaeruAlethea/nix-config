@@ -32,7 +32,7 @@
 			enableCalendarEvents = true;       # Calendar integration (khal)
 			enableClipboardPaste = true;       # Pasting items from the clipboard (wtype)
 
-			settings = import ./${osConfig.networking.hostName}.nix;
+			settings = import ./_${osConfig.networking.hostName}.nix;
 
 			plugins = {
 				# Add plugin-specific settingsi

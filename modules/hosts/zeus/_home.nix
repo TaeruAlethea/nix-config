@@ -1,4 +1,5 @@
 {
+  inputs,
   outputs,
   pkgs,
   ...
@@ -23,8 +24,6 @@
     lazygit.enable = true;
     yazi.enable = true;
   };
-
-
 
   home = {
     sessionVariables = {
@@ -51,10 +50,15 @@
   };
   home.sessionVariables.XCURSOR_SIZE = 36;
 
-
   # Home packages & programs
   home.packages = with pkgs; [
+    bitwarden-desktop
+    bitwarden-cli
+    bottles
+
+    blender
     gimp3-with-plugins
+    gitkraken
     vlc
 
     firefox-beta
@@ -75,8 +79,8 @@
     jdk21_headless
     # jdk17_headless
     # jdk8_headless
-  ];
 
-  systemd.user.startServices = "sd-switch";
-  home.stateVersion = "25.05";
+    # Unstable
+    inputs.matui.packages.${system}.matui
+  ];
 }

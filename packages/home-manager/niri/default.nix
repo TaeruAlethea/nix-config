@@ -5,6 +5,6 @@
 			inputs.niri.homeModules.niri
 		];
 
-		programs.niri.settings = import ./${osConfig.networking.hostName}.nix;
+		programs.niri.settings = import ./_${osConfig.networking.hostName}.nix;
 	};
 }

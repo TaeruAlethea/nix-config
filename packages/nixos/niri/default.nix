@@ -1,4 +1,4 @@
-{ self, inputs, config, ... }: {
+{ ... }: {
 	flake.nixosModules.niri = { pkgs, ... } :
 	{
 		nixpkgs.overlays = [ inputs.niri.overlays.niri ];

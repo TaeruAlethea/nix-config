@@ -2,6 +2,6 @@
   imports = [
     # ./ares
     ./artemis
-    # ./zeus
+    ./zeus
   ];
 }

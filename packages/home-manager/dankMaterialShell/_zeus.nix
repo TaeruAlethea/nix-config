@@ -1,6 +1,6 @@
 {
-  currentThemeName = "purple";
-  currentThemeCategory = "generic";
+  currentThemeName = "dynamic";
+  currentThemeCategory = "dynamic";
   customThemeFile = "";
   registryThemeVariants = {
   };
@@ -461,10 +461,6 @@
         {
           model = "CU34G4";
           name = "DP-3";
-        }
-        {
-          name = "eDP-1";
-          model = "0x419D";
         }
       ];
       showOnLastDisplay = false;
