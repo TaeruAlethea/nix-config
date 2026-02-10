@@ -2,25 +2,13 @@
   config,
   pkgs,
   inputs,
-  outputs,
   ...
 }:
 
 {
   imports = [
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-
-    inputs.agenix.nixosModules.default
-
-    outputs.nixosModules.niri
-
-    outputs.nixosModules.agenix
-    outputs.nixosModules.fonts
-    outputs.nixosModules.localization
-    
-    outputs.nixosModules.terminal
-    outputs.nixosModules.steam
+    ./_hardware-configuration.nix
   ];
 
   # Steam/Deadlock need this
@@ -93,9 +81,6 @@
   services.gvfs.enable = true; 
   environment.pathsToLink = [ "share/thumbnailers" ];
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -108,7 +93,6 @@
     # Peripherals
     openrazer-daemon
     polychromatic
-    opendeck
 
     git
     github-desktop
@@ -126,10 +110,6 @@
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     SDL_VIDEODRIVER = "wayland";
-  };
-
-  nixpkgs.config.packageOverrides = pkgs: {
-    opendeck = pkgs.callPackage outputs.customPkgs.opendeck {};
   };
 
   # Some programs need SUID wrappers, can be configured further or are

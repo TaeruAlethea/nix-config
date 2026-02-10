@@ -1,4 +1,5 @@
-{
+{ ... }: {
+	flake.nixosModules.stylix = {
   inputs,
   config,
   pkgs,
@@ -30,4 +31,5 @@
       terminal = 0.5;
     };
   };
+};
 }

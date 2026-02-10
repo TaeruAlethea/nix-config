@@ -1,6 +1,6 @@
 {
-  currentThemeName = "purple";
-  currentThemeCategory = "generic";
+  currentThemeName = "dynamic";
+  currentThemeCategory = "dynamic";
   customThemeFile = "";
   registryThemeVariants = {
   };
@@ -422,12 +422,12 @@
         "clock"
         "weather"
         {
-          id = "dankPomodoroTimer";
           enabled = true;
+          id = "dankPomodoroTimer";
         }
         {
-          id = "dankKDEConnect";
           enabled = true;
+          id = "dankKDEConnect";
         }
       ];
       enabled = true;

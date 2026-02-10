@@ -1,3 +1,0 @@
-{
-  opendeck = import ./opendeck;
-}

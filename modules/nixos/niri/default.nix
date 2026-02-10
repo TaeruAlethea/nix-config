@@ -1,19 +1,21 @@
-{ inputs, pkgs, ... } :
-{
-	nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-	programs.niri.package = pkgs.niri-unstable;
+{ inputs, ... }: {
+	flake.nixosModules.niri = { pkgs, ... } :
+	{
+		nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+		programs.niri.package = pkgs.niri-unstable;
 
-	systemd.user.services.niri-flake-polkit.enable = false;
+		systemd.user.services.niri-flake-polkit.enable = false;
 
-	programs.niri = {
-	  enable = true;
-	};
+		programs.niri = {
+			enable = true;
+		};
 
-	environment.systemPackages = with pkgs; [
-		xwayland-satellite
-	];
+		environment.systemPackages = with pkgs; [
+			xwayland-satellite
+			];
 
-	environment.sessionVariables = {
-		DISPLAY = ":0";
+		environment.sessionVariables = {
+			DISPLAY = ":0";
+		};
 	};
 }

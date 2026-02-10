@@ -1,8 +1,10 @@
-{ pkgs, ... }:
-{
-  programs.git = {
-    enable = true;
-    # userName = "TaeruAlethea";
-    # userEmail = "61478538+TaeruAlethea@users.noreply.github.com";
+{ ... }: {
+	flake.homeModules.gitToolchain = { pkgs, ... }:
+  {
+    programs.git = {
+      enable = true;
+      # userName = "TaeruAlethea";
+      # userEmail = "61478538+TaeruAlethea@users.noreply.github.com";
+    };
   };
 }

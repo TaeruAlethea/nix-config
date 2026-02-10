@@ -1,21 +1,25 @@
 {
-  inputs,
-  outputs,
   pkgs,
   ...
 }:
 {
-  imports = [
-    outputs.userConfigs.astraeaf.core
+  programs.home-manager.enable = true;
 
-    outputs.homeManagerModules.dankMaterialShell
-    outputs.homeManagerModules.wezterm
-    outputs.homeManagerModules.ghostty
-    outputs.homeManagerModules.emacs
-    outputs.homeManagerModules.niri
-    outputs.homeManagerModules.elgato
-    # outputs.homeManagerModules.stylix
-  ];
+  home = {
+    username = "astraeaf";
+    homeDirectory = "/home/astraeaf";
+  };
+
+  xdg.enable = true;
+
+  programs = {
+    bash.enable = true;
+    gh.enable = true;
+    gh-dash.enable = true;
+    git.enable = true; # need to refactor the HM Module
+    lazygit.enable = true;
+    yazi.enable = true;
+  };
 
   home = {
     sessionVariables = {
@@ -41,6 +45,7 @@
     size = 36;
   };
   home.sessionVariables.XCURSOR_SIZE = 36;
+
 
   # Home packages & programs
   home.packages = with pkgs; [
@@ -71,8 +76,8 @@
     jdk21_headless
     # jdk17_headless
     # jdk8_headless
-
-    # Unstable
-    inputs.matui.packages.${system}.matui
   ];
+
+  systemd.user.startServices = "sd-switch";
+  home.stateVersion = "25.05";
 }
