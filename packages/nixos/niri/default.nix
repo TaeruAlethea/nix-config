@@ -1,5 +1,5 @@
-{ ... }: {
-	flake.nixosModules.niri = { pkgs, inputs, ... } :
+{ inputs, ... }: {
+	flake.nixosModules.niri = { pkgs, ... } :
 	{
 		nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 		programs.niri.package = pkgs.niri-unstable;
