@@ -1,10 +1,10 @@
-{ self, inputs, config, osConfig, ... }: {
+{ inputs, ... }: {
 	flake.homeModules.niri = { pkgs, osConfig, ... } :
 	{
 		imports = [
 			inputs.niri.homeModules.niri
 		];
 
-		programs.niri.settings = import ./artemis.nix;
+		programs.niri.settings = import ./${osConfig.networking.hostName}.nix;
 	};
 }
