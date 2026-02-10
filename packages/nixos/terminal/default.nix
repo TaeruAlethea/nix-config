@@ -8,5 +8,5 @@
     in
     {
       environment.shellAliases = myShellAliases;
-    }:
+    };
 }
