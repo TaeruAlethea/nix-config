@@ -83,4 +83,7 @@
     # Unstable
     inputs.matui.packages.${system}.matui
   ];
+
+  systemd.user.startServices = "sd-switch";
+  home.stateVersion = "25.05";
 }
