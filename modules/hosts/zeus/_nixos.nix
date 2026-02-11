@@ -121,10 +121,5 @@
     flake = "/home/astraeaf/nix-config";
   };
 
-  programs.kdeconnect = {
-    enable = true;
-    package = pkgs.valent;
-  };
-
   system.stateVersion = "25.05";
 }
