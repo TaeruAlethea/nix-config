@@ -78,45 +78,33 @@
         # };
     };
 
-    # window-rules = [
-    #     {
-    #         excludes = [
-    #             { app-id = "^steam$"; }
-    #         ];
-    #         matches = [
-    #             { app-id = "^steam$"; }
-    #             { title = ''r#"^notificationtoasts_\d+_desktop$"#''; }
-    #         ];
-    #         open-floating = true;
-    #         default-floating-position = {
-    #             x = 10;
-    #             y = 10;
-    #             relative-to = "bottom-right";
-    #         };
-    #     }
-    #     {
-    #         excludes = [
-    #             { app-id = "^steam$"; }
-    #         ];
-    #         matches = [
-    #             { app-id = "^steam$"; }
-    #             { title = "^friends list$"; }
-    #         ];
-    #         open-floating = true;
-    #         default-floating-position = {
-    #             x = 10;
-    #             y = 10;
-    #             relative-to = "top-right";
-    #         };
-    #     }
-    #     {
-    #         matches = [
-    #             { app-id = "firefox"; }
-    #             { title = "^Extension: Bitwarden - Password Manager$"; }
-    #         ];
-    #         open-floating = true;
-    #     }
-    # ];
+    window-rules = [
+        {
+            matches = [
+                { app-id = "^steam$"; }
+                { title = ''r#"^notificationtoasts_\d+_desktop$"#''; }
+            ];
+            excludes = [
+                { app-id = "^steam$"; }
+            ];
+            open-floating = true;
+            default-floating-position = {
+                x = 0;
+                y = 0;
+                relative-to = "bottom-right";
+            };
+        }
+        {
+            matches = [
+                { app-id = "firefox"; }
+                { title = "^Extension: Bitwarden - Password Manager$"; }
+            ];
+            excludes = [
+                { app-id = "firefox"; }
+            ];
+            open-floating = true;
+        }
+    ];
 
     binds = {
         "Mod+Shift+Slash".action.show-hotkey-overlay = [];
@@ -153,6 +141,7 @@
 
         "Mod+Tab" = { repeat = false; action.toggle-overview = []; };
         "Mod+Q" = { repeat = false; action.close-window = []; };
+        "Mod+Z" = { repeat = false; action.toggle-window-floating = []; };
 
         "Mod+Left"  = { action.focus-column-left = []; };
         "Mod+Down"  = { action.focus-window-down = []; };
