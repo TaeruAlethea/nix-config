@@ -89,8 +89,8 @@
             ];
             open-floating = true;
             default-floating-position = {
-                x = 0;
-                y = 0;
+                x = 1;
+                y = 1;
                 relative-to = "bottom-right";
             };
         }
