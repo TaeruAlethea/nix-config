@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}:
-
+{  config, pkgs, ... }:
 {
   imports = [
     # Include the results of the hardware scan.
@@ -125,6 +119,11 @@
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
     flake = "/home/astraeaf/nix-config";
+  };
+
+  programs.kdeconnect = {
+    enable = true;
+    package = pkgs.valent;
   };
 
   system.stateVersion = "25.05";
