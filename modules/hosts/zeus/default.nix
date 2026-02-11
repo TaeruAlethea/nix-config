@@ -13,7 +13,6 @@
         self.nixosModules.niri
         self.nixosModules.steam
         self.nixosModules.terminal
-        self.nixosModules.valent
 
         inputs.agenix.nixosModules.default
         inputs.home-manager.nixosModules.home-manager
