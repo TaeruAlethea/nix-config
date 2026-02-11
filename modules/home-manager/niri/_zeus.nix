@@ -2,6 +2,7 @@
     spawn-at-startup =[
         { argv = ["bash" "-c" "wl-paste --watch cliphist store &"]; }
         { argv = ["/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"]; }
+        { argv = ["wezterm cli spawn --new-window --workspace scratchpad --"]; }
         # { argv = ["dms" "run"]; }
     ];
 
@@ -12,6 +13,7 @@
     };
 
     input = {
+        workspace-auto-back-and-forth = true;
         keyboard.numlock = true;
         
         mouse = {
@@ -76,10 +78,45 @@
         # };
     };
 
-    #window-rules.* = {
-    #	geometry-corner-radius = 12;
-    #	clip-to-geometry = true;
-    #};
+    # window-rules = [
+    #     {
+    #         excludes = [
+    #             { app-id = "^steam$"; }
+    #         ];
+    #         matches = [
+    #             { app-id = "^steam$"; }
+    #             { title = ''r#"^notificationtoasts_\d+_desktop$"#''; }
+    #         ];
+    #         open-floating = true;
+    #         default-floating-position = {
+    #             x = 10;
+    #             y = 10;
+    #             relative-to = "bottom-right";
+    #         };
+    #     }
+    #     {
+    #         excludes = [
+    #             { app-id = "^steam$"; }
+    #         ];
+    #         matches = [
+    #             { app-id = "^steam$"; }
+    #             { title = "^friends list$"; }
+    #         ];
+    #         open-floating = true;
+    #         default-floating-position = {
+    #             x = 10;
+    #             y = 10;
+    #             relative-to = "top-right";
+    #         };
+    #     }
+    #     {
+    #         matches = [
+    #             { app-id = "firefox"; }
+    #             { title = "^Extension: Bitwarden - Password Manager$"; }
+    #         ];
+    #         open-floating = true;
+    #     }
+    # ];
 
     binds = {
         "Mod+Shift+Slash".action.show-hotkey-overlay = [];
@@ -217,6 +254,5 @@
         "Ctrl+Alt+Delete" = { action.quit = []; };
 
         "Mod+Shift+P" = { action.power-off-monitors = []; };
-
     };
 }
