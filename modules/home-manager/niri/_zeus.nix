@@ -84,9 +84,6 @@
                 { app-id = "^steam$"; }
                 { title = ''r#"^notificationtoasts_\d+_desktop$"#''; }
             ];
-            excludes = [
-                { app-id = "^steam$"; }
-            ];
             open-floating = true;
             default-floating-position = {
                 x = 10;
