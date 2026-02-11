@@ -96,80 +96,29 @@
             action.spawn = ["wezterm"];
         };
 
-        # "XF86AudioRaiseVolume" = {
-        # 	allow-when-locked = true;
-        # 	action.spawn = ["dms" "ipc" "call" "audio" "increment" "3"];
-        # };
-        # "XF86AudioLowerVolume" = {
-        # 	allow-when-locked = true;
-        # 	action.spawn = ["dms" "ipc" "call" "audio" "decrement" "3"];
-        # };
-        # "XF86AudioMute" = {
-        # 	allow-when-locked = true;
-        # 	action.spawn = ["dms" "ipc" "call" "audio" "mute"];
-        # };
-        # "XF86AudioMicMute" = {
-        # 	allow-when-locked = true;
-        # 	action.spawn = ["dms" "ipc" "call" "audio" "micmute"];
-        # };
-        # "XF86MonBrightnessUp" = {
-        # 	allow-when-locked = true;
-        # 	action.spawn = ["dms" "ipc" "call" "brightness" "increment" "5" ""];
-        # };
-        # "XF86MonBrightnessDown" = {
-        # 	allow-when-locked = true;
-        # 	action.spawn = ["dms" "ipc" "call" "brightness" "decrement" "5" ""];
-        # };
-
-        "Mod+Tab" = { repeat = false; action.toggle-overview = []; };
-        "Mod+Q" = { repeat = false; action.close-window = []; };
-
-        "Mod+Left"  = { action.focus-column-left = []; };
-        "Mod+Down"  = { action.focus-window-down = []; };
-        "Mod+Up"    = { action.focus-window-up = []; };
-        "Mod+Right" = { action.focus-column-right = []; };
-        "Mod+H"     = { action.focus-column-left = []; };
-        "Mod+J"     = { action.focus-window-down = []; };
-        "Mod+K"     = { action.focus-window-up = []; };
-        "Mod+L"     = { action.focus-column-right = []; };
-
-        "Mod+Ctrl+Left"  = { action.move-column-left = []; };
-        "Mod+Ctrl+Down"  = { action.move-window-down = []; };
-        "Mod+Ctrl+Up"    = { action.move-window-up = []; };
-        "Mod+Ctrl+Right" = { action.move-column-right = []; };
-        "Mod+Ctrl+H"     = { action.move-column-left = []; };
-        "Mod+Ctrl+J"     = { action.move-window-down = []; };
-        "Mod+Ctrl+K"     = { action.move-window-up = []; };
-        "Mod+Ctrl+L"     = { action.move-column-right = []; };
-
-        "Mod+Shift+Left"  = { action.focus-monitor-left = []; };
-        "Mod+Shift+Down"  = { action.focus-monitor-down = []; };
-        "Mod+Shift+Up"    = { action.focus-monitor-up = []; };
-        "Mod+Shift+Right" = { action.focus-monitor-right = []; };
-        "Mod+Shift+H"     = { action.focus-monitor-left = []; };
-        "Mod+Shift+J"     = { action.focus-monitor-down = []; };
-        "Mod+Shift+K"     = { action.focus-monitor-up = []; };
-        "Mod+Shift+L"     = { action.focus-monitor-right = []; };
-
-        "Mod+Shift+Ctrl+Left"  = { action.move-column-to-monitor-left = []; };
-        "Mod+Shift+Ctrl+Down"  = { action.move-column-to-monitor-down = []; };
-        "Mod+Shift+Ctrl+Up"    = { action.move-column-to-monitor-up = []; };
-        "Mod+Shift+Ctrl+Right" = { action.move-column-to-monitor-right = []; };
-        "Mod+Shift+Ctrl+H"     = { action.move-column-to-monitor-left = []; };
-        "Mod+Shift+Ctrl+J"     = { action.move-column-to-monitor-down = []; };
-        "Mod+Shift+Ctrl+K"     = { action.move-column-to-monitor-up = []; };
-        "Mod+Shift+Ctrl+L"     = { action.move-column-to-monitor-right = []; };
-
-        # "Mod+WheelScrollDown"      = { cooldown-ms = 150; action.focus-workspace-down = true; };
-        # "Mod+WheelScrollUp"        = { cooldown-ms = 150; action.focus-workspace-up = true; };
-        # "Mod+Ctrl+WheelScrollDown" = { cooldown-ms = 150; action.move-column-to-workspace-down = true; };
-        # "Mod+Ctrl+WheelScrollUp"   = { cooldown-ms = 150; move-column-to-workspace-up = true; };
-        
-        "Mod+WheelScrollRight"      = { action.focus-column-right = []; };
-        "Mod+WheelScrollLeft"       = { action.focus-column-left = []; };
-        "Mod+Ctrl+WheelScrollRight" = { action.move-column-right = []; };
-        "Mod+Ctrl+WheelScrollLeft"  = { action.move-column-left = []; };
-
-        # "Mod+Shift+WheelScrollDown"      = { action.focus-column-right = true; };
+        "XF86AudioRaiseVolume" = {
+        	allow-when-locked = true;
+        	action.spawn = ["dms" "ipc" "call" "audio" "increment" "3"];
+        };
+        "XF86AudioLowerVolume" = {
+        	allow-when-locked = true;
+        	action.spawn = ["dms" "ipc" "call" "audio" "decrement" "3"];
+        };
+        "XF86AudioMute" = {
+        	allow-when-locked = true;
+        	action.spawn = ["dms" "ipc" "call" "audio" "mute"];
+        };
+        "XF86AudioMicMute" = {
+        	allow-when-locked = true;
+        	action.spawn = ["dms" "ipc" "call" "audio" "micmute"];
+        };
+        "XF86MonBrightnessUp" = {
+        	allow-when-locked = true;
+        	action.spawn = ["dms" "ipc" "call" "brightness" "increment" "5" ""];
+        };
+        "XF86MonBrightnessDown" = {
+        	allow-when-locked = true;
+        	action.spawn = ["dms" "ipc" "call" "brightness" "decrement" "5" ""];
+        };
     };
 }
