@@ -11,6 +11,7 @@
         self.nixosModules.localization
         self.nixosModules.niri
         self.nixosModules.steam
+        self.nixosModules.vesktop
 
         inputs.home-manager.nixosModules.home-manager
         {
@@ -25,6 +26,7 @@
               niri
               oh-my-posh
               wezterm
+              vesktop
             ];
             backupFileExtension = "bk";
             overwriteBackup = true;

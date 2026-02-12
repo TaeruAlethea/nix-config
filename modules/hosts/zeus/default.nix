@@ -28,7 +28,8 @@
               helix
               niri
               oh-my-posh
-              wezterm
+              weztermi
+              vesktop
             ];
             backupFileExtension = "bk";
             overwriteBackup = true;

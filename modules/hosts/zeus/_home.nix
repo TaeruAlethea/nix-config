@@ -60,7 +60,6 @@
 
     firefox-beta
     obsidian
-    vesktop
     zoom-us
 
     #games
