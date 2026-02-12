@@ -96,29 +96,29 @@
             action.spawn = ["wezterm"];
         };
 
-        "XF86AudioRaiseVolume" = {
-        	allow-when-locked = true;
-        	action.spawn = ["dms" "ipc" "call" "audio" "increment" "3"];
-        };
-        "XF86AudioLowerVolume" = {
-        	allow-when-locked = true;
-        	action.spawn = ["dms" "ipc" "call" "audio" "decrement" "3"];
-        };
-        "XF86AudioMute" = {
-        	allow-when-locked = true;
-        	action.spawn = ["dms" "ipc" "call" "audio" "mute"];
-        };
-        "XF86AudioMicMute" = {
-        	allow-when-locked = true;
-        	action.spawn = ["dms" "ipc" "call" "audio" "micmute"];
-        };
-        "XF86MonBrightnessUp" = {
-        	allow-when-locked = true;
-        	action.spawn = ["dms" "ipc" "call" "brightness" "increment" "5" ""];
-        };
-        "XF86MonBrightnessDown" = {
-        	allow-when-locked = true;
-        	action.spawn = ["dms" "ipc" "call" "brightness" "decrement" "5" ""];
-        };
+        # "XF86AudioRaiseVolume" = {
+        # 	allow-when-locked = true;
+        # 	action.spawn = ["dms" "ipc" "call" "audio" "increment" "3"];
+        # };
+        # "XF86AudioLowerVolume" = {
+        # 	allow-when-locked = true;
+        # 	action.spawn = ["dms" "ipc" "call" "audio" "decrement" "3"];
+        # };
+        # "XF86AudioMute" = {
+        # 	allow-when-locked = true;
+        # 	action.spawn = ["dms" "ipc" "call" "audio" "mute"];
+        # };
+        # "XF86AudioMicMute" = {
+        # 	allow-when-locked = true;
+        # 	action.spawn = ["dms" "ipc" "call" "audio" "micmute"];
+        # };
+        # "XF86MonBrightnessUp" = {
+        # 	allow-when-locked = true;
+        # 	action.spawn = ["dms" "ipc" "call" "brightness" "increment" "5" ""];
+        # };
+        # "XF86MonBrightnessDown" = {
+        # 	allow-when-locked = true;
+        # 	action.spawn = ["dms" "ipc" "call" "brightness" "decrement" "5" ""];
+        # };
     };
 }
