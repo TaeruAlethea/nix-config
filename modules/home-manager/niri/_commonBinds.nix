@@ -3,6 +3,11 @@
 		"Mod+Tab" = { repeat = false; action.toggle-overview = []; };
 		"Mod+Q" = { repeat = false; action.close-window = []; };
 		"Mod+Z" = { repeat = false; action.toggle-window-floating = []; };
+		"Mod+Shift+M" = {
+			repeat = false;
+			hotkey-overlay.title = "Toggle Dark/Light Mode";
+			action.spawn = ["dms" "ipc" "theme" "toggle"];
+		};
 
 		"Mod+Left"  = { action.focus-column-left = []; };
 		"Mod+Down"  = { action.focus-window-down = []; };
