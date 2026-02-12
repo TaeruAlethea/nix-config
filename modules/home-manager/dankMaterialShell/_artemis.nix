@@ -1,10 +1,10 @@
 {
-  currentThemeName = "purple";
-  currentThemeCategory = "generic";
+  currentThemeName = "dynamic";
+  currentThemeCategory = "dynamic";
   customThemeFile = "";
   registryThemeVariants = {
   };
-  matugenScheme = "scheme-tonal-spot";
+  matugenScheme = "scheme-expressive";
   runUserMatugenTemplates = true;
   matugenTargetMonitor = "";
   popupTransparency = 1;
@@ -212,7 +212,7 @@
   dankLauncherV2ShowFooter = true;
   useAutoLocation = false;
   weatherEnabled = true;
-  networkPreference = "auto";
+  networkPreference = "wifi";
   iconTheme = "System Default";
   cursorSettings = {
     dwl = {
@@ -398,6 +398,9 @@
   showOnLastDisplay = {
   };
   niriOutputSettings = {
+    eDP-2 = {
+      disabled = false;
+    };
   };
   hyprlandOutputSettings = {
   };
