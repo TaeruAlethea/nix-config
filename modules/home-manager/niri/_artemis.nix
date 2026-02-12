@@ -96,10 +96,10 @@
             action.spawn = ["wezterm"];
         };
 
-        "Mod+W" = {
-            repeat = false;
-            hotkey-overlay.title = "Toggle Lower Display";
-            action.spawn-sh = ["sh" "-c" ''niri msg -j outputs | jq '."eDP-2" | if .current_mode == null then "on" else "off" end' | xargs niri msg output eDP-2''];
+        "Mod+E" = {
+            # repeat = false;
+            # hotkey-overlay.title = "Toggle Lower Display";
+            action.spawn = ["sh" "-c" ''niri msg -j outputs | jq '."eDP-2" | if .current_mode == null then "on" else "off" end' | xargs niri msg output eDP-2''];
         };
 
         # "XF86AudioRaiseVolume" = {

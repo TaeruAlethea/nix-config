@@ -5,6 +5,10 @@
 			inputs.niri.homeModules.niri
 		];
 
+		home.packages = with pkgs; [
+			jq # needed for Artemis. Not bad to have around
+		];
+
 		programs.niri.settings = lib.recursiveUpdate
 			(import ./_${osConfig.networking.hostName}.nix)
 			(import ./_commonBinds.nix);
