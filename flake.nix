@@ -57,5 +57,7 @@
 
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
+
+    nixcord.url = "github:FlameFlag/nixcord";
   };
 }
