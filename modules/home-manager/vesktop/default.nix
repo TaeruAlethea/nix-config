@@ -18,7 +18,7 @@
     # quickCss = "/* css goes here */";
     config = {
     	enabledThemes = [
-    		"dms-midnight"
+    		"dank-discord.css"
     	];
       # useQuickCss = true;
       # themeLinks = [
