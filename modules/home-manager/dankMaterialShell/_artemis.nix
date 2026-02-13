@@ -4,7 +4,7 @@
   customThemeFile = "";
   registryThemeVariants = {
   };
-  matugenScheme = "scheme-expressive";
+  matugenScheme = "scheme-fruit-salad";
   runUserMatugenTemplates = true;
   matugenTargetMonitor = "";
   popupTransparency = 1;
