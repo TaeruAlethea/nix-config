@@ -102,4 +102,12 @@
             open-floating = true;
         }
     ];
+    binds = {
+        "Mod+Shift+Slash".action.show-hotkey-overlay = [];
+
+        "Mod+T" = {
+            hotkey-overlay.title = "Open a Terminal: wezterm";
+            action.spawn = ["wezterm"];
+        };
+    };
 }
