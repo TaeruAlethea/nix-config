@@ -12,7 +12,8 @@
 
 		environment.systemPackages = with pkgs; [
 			xwayland-satellite
-			];
+			nautilus
+		];
 
 		environment.sessionVariables = {
 			DISPLAY = ":0";
