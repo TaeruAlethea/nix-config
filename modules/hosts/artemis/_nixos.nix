@@ -69,15 +69,15 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-    settings = {
-      General = {
-        ControllerMode = "dual";
-        Disable = "Headset";
-        MultiProfile = "multiple";
-      };
-    };
+    # settings = {
+    #   General = {
+    #     ControllerMode = "dual";
+    #     Disable = "Headset";
+    #     MultiProfile = "multiple";
+    #   };
+    # };
   };
-  services.blueman.enable = true;
+  # services.blueman.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -95,6 +95,7 @@
 
   environment.systemPackages = with pkgs; [
     helix
+    vpl-gpu-rt
   ];
 
   programs.light.enable = true;
