@@ -7,6 +7,7 @@
 
 		home.packages = with pkgs; [
 			jq # needed for Artemis. Not bad to have around
+			brightnessctl
 		];
 
 		programs.niri.settings = lib.recursiveUpdate

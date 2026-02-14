@@ -24,6 +24,7 @@
             tap = true;
             natural-scroll = true;
             scroll-factor = 0.75;
+            dwt = true;
        };
     };
     
@@ -31,20 +32,29 @@
         "eDP-1" = {
             # Top Display
             enable = true;
-            # mode = "3440x1440@120";
-            scale = 1.5;
+            focus-at-startup = true;
+            mode = {
+                width = 2880;
+                height = 1800;
+                refresh = 120.000;
+            };
+            scale = 1.3;
             transform.rotation = 0;
             position.x = 0;
-            position.y = 1800;
+            position.y = 0;
         };
         "eDP-2" = {
             # Bottom Display
             enable = false;
-            # mode = "1920x1080";
-            scale = 1.5;
+            mode = {
+                width = 2880;
+                height = 1800;
+                refresh = 120.000;
+            };
+            scale = 1.3;
             transform.rotation = 0;
             position.x = 0;
-            position.y = 0;
+            position.y = 1385;
         };
     };
 
