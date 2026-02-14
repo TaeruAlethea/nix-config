@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
@@ -66,7 +66,18 @@
     };
   };
   powerManagement.enable = true;
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        ControllerMode = "dual";
+        Disable = "Headset";
+        MultiProfile = "multiple";
+      };
+    };
+  };
+  services.blueman.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -86,6 +97,7 @@
     helix
   ];
 
+  programs.light.enable = true;
   programs.nh = {
     enable = true;
     clean.enable = true;
