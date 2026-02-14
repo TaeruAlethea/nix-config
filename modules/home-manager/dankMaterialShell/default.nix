@@ -37,7 +37,6 @@
 			plugins = {
 				# Add plugin-specific settingsi
 				dankPomodoroTimer.enable = true;
-				dankKDEConnect.enable = true;
 			};
 		};
 
