@@ -17,7 +17,7 @@
       enable = true;
       efiSupport = true;
       devices = ["nodev"];
-      fontSize = 32;
+      fontSize = 48;
       gfxmodeEfi = "1280x720";
     };
   };
