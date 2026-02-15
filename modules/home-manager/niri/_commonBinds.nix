@@ -89,7 +89,7 @@
 		"Mod+F"            = { action.maximize-column = []; };
 		"Mod+Shift+F"      = { action.fullscreen-window = []; };
 		"Mod+Ctrl+F"       = { action.expand-column-to-available-width = []; };
-		"Mod+Shift+C"      = { action.center-column = []; };
+		"Mod+C"      = { action.center-column = []; };
 		"Mod+Ctrl+C"       = { action.center-visible-columns = []; };
 
 		"Mod+Minus"       = { action.set-column-width = "-10%"; };
