@@ -1,4 +1,16 @@
 {
+	animations = {
+		window-open.kind.easing = {
+			curve = "ease-out-cubic";
+			duration-ms = "150";
+		};
+		widow-close.kind.easing = {
+			curve = "ease-out-cubic";
+			duration-ms = "150";
+		};
+	};
+
+	
 	binds = {
 		"Mod+Tab" = { repeat = false; action.toggle-overview = []; };
 		"Mod+Q" = { repeat = false; action.close-window = []; };
