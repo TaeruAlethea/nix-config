@@ -2,11 +2,11 @@
 	animations = {
 		window-open.kind.easing = {
 			curve = "ease-out-cubic";
-			duration-ms = "150";
+			duration-ms = 150;
 		};
-		widow-close.kind.easing = {
+		window-close.kind.easing = {
 			curve = "ease-out-cubic";
-			duration-ms = "150";
+			duration-ms = 150;
 		};
 	};
 
