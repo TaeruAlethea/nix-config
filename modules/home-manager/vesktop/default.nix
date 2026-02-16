@@ -35,17 +35,21 @@
         # };
       };
     };
+
+    # https://github.com/refact0r/midnight-discord/blob/master/themes/midnight.theme.css
     quickCss = ''
 div[aria-label="Send a gift"] { display: none !important; }
 div[aria-label="Open sticker picker"] { display: none !important; }
 div[aria-label="Open GIF picker"] { display: none !important; }
 div[aria-label="Apps"]{ display:none !important; }
 body{
+    --custom-window-controls: off;
+    
     --gap: 8px;
     --transparency-tweaks: on;
     --remove-bg-layer: on;
     --panel-blur: on;
-    --blur-amount: 12px
+    --blur-amount: 12px;
 }
   		'';
   };
