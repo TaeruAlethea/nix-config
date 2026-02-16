@@ -69,18 +69,19 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-    # settings = {
-    #   General = {
-    #     ControllerMode = "dual";
-    #     Disable = "Headset";
-    #     MultiProfile = "multiple";
-    #   };
-    # };
-  };
-  # services.blueman.enable = true;
+   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vpl-gpu-rt
+    ];
+  };
+
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.astraeaf = {
@@ -95,7 +96,6 @@
 
   environment.systemPackages = with pkgs; [
     helix
-    vpl-gpu-rt
   ];
 
   programs.light.enable = true;
