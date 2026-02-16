@@ -17,14 +17,12 @@
     # Theming
     # quickCss = "/* css goes here */";
     config = {
+    	useQuickCss = true;    	
     	enabledThemes = [
     		"dank-discord.css"
     	];
-      # useQuickCss = true;
-      # themeLinks = [
-      #   "https://raw.githubusercontent.com/link/to/some/theme.css"
-      # ];
-      frameless = true;
+    	frameless = true;
+    	transparent = true;
 
       plugins = {
         # hideAttachments.enable = true;
@@ -37,6 +35,21 @@
         # };
       };
     };
+    quickCss = ''
+    		div[aria-label="Send a gift"] { display: none !important; }
+				div[aria-label="Open sticker picker"] { display: none !important; }
+				div[aria-label="Open GIF picker"] { display: none !important; }
+				div[aria-label="Apps"]{ display:none !important; }
+				//[class*=channelTextArea] [class*=buttons]>div:not(:nth-child(5)){ display:none !important; }
+
+				body{
+				    --gap: 8px;
+				    --transparency-tweaks: on;
+				    --remove-bg-layer: on;
+				    --panel-blur: on;
+				    --blur-amount: 12px
+				}
+  		'';
   };
 	};
 }
