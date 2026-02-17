@@ -1,12 +1,46 @@
-{
+let
+	_easing = {
+		curve = "ease-out-cubic";
+		duration-ms = 150;
+	};
+	_spring = {
+		damping-ratio = 0.8;
+		stiffness = 400;
+		epsilon = 0.0001;
+	};
+in
+{	
 	animations = {
-		window-open.kind.easing = {
-			curve = "ease-out-cubic";
-			duration-ms = 150;
+		window-open = {
+			enable = true;
+				kind.easing = _easing;
 		};
-		window-close.kind.easing = {
-			curve = "ease-out-cubic";
-			duration-ms = 150;
+		window-close = {
+			enable = true;
+			kind.easing = _easing;
+		};
+		window-movement = {
+			enable = true;
+			kind.spring = _spring;
+		};
+		horizontal-view-movement = {
+			enable = true;
+			kind.spring = _spring;
+		};
+		screenshot-ui-open = {
+			enable = true;
+			kind.easing = {
+				curve = "ease-out-quad";
+				duration-ms = 200;
+			};
+		};
+		overview-open-close = {
+			enable = true;
+			kind.spring = {
+				damping-ratio = 1.0;
+				stiffness = 800;
+				epsilon = 0.0001;
+			};
 		};
 	};
 
@@ -112,7 +146,12 @@
 
 		"Mod+W"       = { action.toggle-column-tabbed-display = []; };
 
-		"Mod+Shift+S" = { action.screenshot = { show-pointer = false; }; };
+		"Mod+Shift+S" = {
+			action.screenshot = {
+				show-pointer = false;
+				write-to-disk = false;
+			};
+		};
 		"Print"       = { action.screenshot = { show-pointer = false; }; };
 		"Ctrl+Print"  = { action.screenshot-screen = { show-pointer = false; }; };
 		"Alt+Print"   = { action.screenshot-window = []; };
