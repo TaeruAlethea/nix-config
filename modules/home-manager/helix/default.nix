@@ -35,6 +35,8 @@
           };
           soft-wrap.enable = true;
 
+          indent-guides.render = true;
+
           inline-diagnostics = {
             cursor-line = "warning";
             other-lines = "error";
@@ -81,6 +83,10 @@
             name = "nix";
             formatter = {
               command = "nixfmt";
+            };
+            indent = {
+            	tab-width = 2;
+            	unit = "t";
             };
           }
         ];
