@@ -146,12 +146,7 @@ in
 
 		"Mod+W"       = { action.toggle-column-tabbed-display = []; };
 
-		"Mod+Shift+S" = {
-			action.screenshot = {
-				show-pointer = false;
-				write-to-disk = false;
-			};
-		};
+		"Mod+Shift+S" = { action.screenshot = { show-pointer = false; }; };
 		"Print"       = { action.screenshot = { show-pointer = false; }; };
 		"Ctrl+Print"  = { action.screenshot-screen = { show-pointer = false; }; };
 		"Alt+Print"   = { action.screenshot-window = []; };
