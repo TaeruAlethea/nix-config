@@ -25,6 +25,15 @@
     	transparent = true;
 
       plugins = {
+        alwaysExpandRoles.enable = true;
+        BlurNSFW.enable = true;
+        crashHandler.enable = true;
+        platformIndicators.enable = true;
+        showHiddenChannels.enable = true;
+        showHiddenThings.enable = true;
+        webKeybinds.enable = true;
+        webScreenShareFixes.enable = true;
+        
         # hideAttachments.enable = true;
         # ignoreActivities = {
         #   enable = true;
