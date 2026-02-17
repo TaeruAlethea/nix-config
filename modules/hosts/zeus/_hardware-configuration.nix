@@ -19,15 +19,20 @@
       enable = true;
       users = [ "astraeaf" ];
     };
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
     nvidia = {
-      package = config.boot.kernelPackages.nvidiaPackages.production;
+      enable = true;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
       modesetting.enable = true;
       open = true;
       nvidiaSettings = true;
     };
   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  # services.xserver.videoDrivers = [ "nvidia" ];
   environment.systemPackages = with pkgs; [
     nvtopPackages.nvidia
   ];
@@ -37,6 +42,7 @@
   #  cudaCapability = [ "6.1" ];
   #};
 
+  # needed for Windows to not freak out
   time.hardwareClockInLocalTime = true;
 
   # Bootloader.
