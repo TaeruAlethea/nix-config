@@ -58,10 +58,7 @@
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
 
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
 
     nixcord.url = "github:FlameFlag/nixcord";
   };

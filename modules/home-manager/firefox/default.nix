@@ -1,5 +1,5 @@
-{ withSystem, inputs, ... }: {
-	flake.homeModules.firefox = { pkgs, ... }: {
+{ inputs, ... }: {
+	flake.homeModules.firefox = { pkgs, system, ... }: {
 		programs.firefox = {
 			enable = true;
 			package = pkgs.firefox-beta;
@@ -12,20 +12,16 @@
 					"extensions.autoDisableScopes" = 0;
 				};
 				
-				userChrome = ''
-					:root {
-  					--in-content-page-background: #00000000 !important;
-  					--in-content-box-background: #00000088 !important;
-					}'';
-				
+				userChrome = ./userChrome.css;
+
 				extensions = {
-					packages = with inputs.firefox-addons.packages."${withSystem pkgs.stdenv.hostPlatform.system}"; [
+					packages = with inputs.firefox-addons.packages.${system}; [
 						adnauseam
 						bitwarden
 						privacy-badger
 						shinigami-eyes
 						sponsorblock
-						tampermonkey
+						# tampermonkey
 					];
 				};
 			};
