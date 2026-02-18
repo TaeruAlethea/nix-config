@@ -58,7 +58,6 @@
     gitkraken
     vlc
 
-    firefox-beta
     obsidian
     zoom-us
 

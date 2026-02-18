@@ -25,6 +25,7 @@
               
               dankMaterialShell
               elgato
+              firefox
               helix
               niri
               oh-my-posh
