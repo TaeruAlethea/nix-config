@@ -78,31 +78,7 @@
         # };
     };
 
-    window-rules = [
-        {
-            matches = [
-                { app-id = "^steam$"; }
-                { title = ''r#"^notificationtoasts_\d+_desktop$"#''; }
-            ];
-            open-floating = true;
-            default-floating-position = {
-                x = 10;
-                y = 10;
-                relative-to = "bottom-right";
-            };
-        }
-        {
-            matches = [
-                { app-id = "firefox"; }
-                { title = "^Extension: Bitwarden - Password Manager$"; }
-            ];
-            excludes = [
-                { app-id = "firefox"; }
-            ];
-            open-floating = true;
-        }
-    ];
-    binds = {
+     binds = {
         "Mod+Shift+Slash".action.show-hotkey-overlay = [];
 
         "Mod+T" = {
