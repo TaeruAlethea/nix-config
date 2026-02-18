@@ -1,80 +1,51 @@
-:root {
---bg: #00000000;
---in-content-page-background: #00000000 !important;
---in-content-box-background: #00000088 !important;
-}
-
-/*window transparency*/
+/* The main window background */
 #main-window {
-background: var(--bg) !important;
+	-moz-appearance: /*-moz-mac-vibrancy-dark*/ none !important; /* -moz-win-glass */
+	background-color: rgba(25, 25, 25, .5) !important;
+	background-image: none !important;
+	--tabpanel-background-color: transparent !important;
+  background: transparent !important;
+	/*background: url(background.jpg);*/
 }
 
-/*current tab*/
-tab.tabbrowser-tab[selected="true"] stack.tab-stack vbox.tab-background {
-background: #FFFFFF22 !important;
-}
-
-/*hover tab*/
-tab.tabbrowser-tab:hover stack.tab-stack vbox.tab-background {
-background: #FFFFFF22 !important;
-}
-
-/*tab selection*/
-tab.tabbrowser-tab[pending="true"] {
-color: #FFFFFFcc !important;
-}
-
-/*hibernated*/
-tab.tabbrowser-tab stack.tab-stack vbox.tab-background {
-background: transparent !important;
-}
-
-/*bookmarks*/
-toolbar {
-background: transparent !important;
-}
-
-/*idk*/
-#nav-bar {
-background: transparent  !important;
-}
-
-/*idk but keep*/
 #navigator-toolbox {
-background: transparent !important;
-border: none !important;
+	background-color: rgba(0, 0, 0, .5);
 }
 
-/*urlbar*/
-#urlbar-background {
-background: #00000044 !important;
+/* Transparent Stuff */
+ #sidebar-box, #sidebar-main, #TabsToolbar, #titlebar, #navigator-toolbox, box, .theme-body {
+	-moz-appearance: none !important;
+	background-color: rgba(0, 0, 0, 0) !important;
+	background-image: none !important;
+	border: none;
+	outline: none;
 }
 
-/*suggestions dropdown*/
-#urlbar:is([open]) hbox#urlbar-background {
-background: #42414D !important;
+
+#sidebar-box, #sidebar-main {
+	-moz-appearance: none !important;
+	background-color: rgba(0, 0, 0, 0) !important;
+	background-image: none !important;
+	border: none;
+	outline: none;
 }
 
-/*little contextual buttons at left of urlbar*/
-#urlbar box#identity-box box {
-background: inherit !important;
-}
-#urlbar box#identity-box box:hover {
-background: #FFFFFF22 !important;
-}
-#urlbar box#identity-box box:active {
-background: #FFFFFF44 !important;
+
+/* Light Transparent Stuff */
+.tab-content, #tabs-newtab-button {
+	-moz-appearance: none !important;
+	color: #eee !important;
+	background-image: none !important;
+	fill: #eee !important;
 }
 
-/*new tab (not working)*/
-/*
-#main-window hbox#browser vbox#appcontent tabbox#tabbrowser-tabbox tabpanels#tabbrowser-tabpanels hbox.newTabBrowserPanel vbox.browserContainer stack.browserStack browser {
-background: ff00ff !important;
-opacity: 1;
+.tab-content[selected="true"]{
+	color: var(--lwt-tab-text) !important;
 }
 
-#main-window hbox#browser vbox#appcontent tabbox#tabbrowser-tabbox tabpanels#tabbrowser-tabpanels hbox.browserSidebarContainer {
-background: ff00ff !important;
-opacity: 1;
+/* Nuke all borders and outlines, they look bad */
+* {
+	border: none !important;
+	outline: none !important;
+	box-shadow: none !important;
 }
-*/

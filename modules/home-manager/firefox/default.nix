@@ -8,11 +8,12 @@
 				isDefault = true;
 				settings = {
 					"browser.tabs.allow_transparent_browser" = true;
+					"toolkit.legacyUserProfileCustomizations.stylesheets" = true;
 					"sidebar.verticalTabs" = true;
 					"extensions.autoDisableScopes" = 0;
 				};
 				
-				userChrome = ./userChrome.css;
+				# userChrome = ./userChrome.css;
 
 				extensions = {
 					packages = with inputs.firefox-addons.packages.${system}; [
