@@ -25,7 +25,6 @@
   hardware.intel-gpu-tools.enable = true;
   hardware.graphics = {
     enable = true;
-    package = pkgs.mesa;
     enable32Bit = true;
     extraPackages = with pkgs; [
       intel-media-driver
