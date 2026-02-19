@@ -15,8 +15,8 @@
 			nautilus
 		];
 
-		environment.sessionVariables = {
-			DISPLAY = ":0";
-		};
+		# environment.sessionVariables = {
+		# 	DISPLAY = ":0";
+		# };
 	};
 }

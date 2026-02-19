@@ -22,11 +22,15 @@
     };
   };
 
-
+  hardware.intel-gpu-tools.enable = true;
   hardware.graphics = {
     enable = true;
+    package = pkgs.mesa;
+    enable32Bit = true;
     extraPackages = with pkgs; [
       intel-media-driver
+      intel-vaapi-driver
+      libva-vdpau-driver
       vpl-gpu-rt
       libvdpau-va-gl
     ];
@@ -34,9 +38,10 @@
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD"; # Supposed to force newer Drivers
   };
-  
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "xe" ];
   boot.kernelModules = [ "kvm-intel" "xe" ];
   boot.extraModulePackages = [ ];
 
