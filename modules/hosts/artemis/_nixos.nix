@@ -71,18 +71,6 @@
     powerOnBoot = true;
    };
 
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [
-      intel-media-driver
-      vpl-gpu-rt
-    ];
-  };
-
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "iHD";
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.astraeaf = {
     isNormalUser = true;
