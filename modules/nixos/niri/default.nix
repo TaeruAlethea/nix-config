@@ -13,6 +13,7 @@
 		environment.systemPackages = with pkgs; [
 			xwayland-satellite
 			nautilus
+			image-roll
 		];
 
 		# environment.sessionVariables = {

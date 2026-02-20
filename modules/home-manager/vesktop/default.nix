@@ -2,6 +2,10 @@
 	flake.homeModules.vesktop = { pkgs, ... } :
 	{
 		imports = [ inputs.nixcord.homeModules.nixcord ];
+
+		home.shellAliases = {
+			Oxicord = "nix run github:linuxmobile/oxicord";
+		};
 		
 		programs.nixcord = {
     	enable = true;
