@@ -1,9 +1,9 @@
 { inputs, ... }: {
 	flake.homeModules.firefox = { pkgs, system, ... }: {
 		
-		home.packages = with pkgs; [
-			lynx
-		];
+		# home.packages = with pkgs; [
+		# 	lynx
+		# ];
 
 		programs.firefox = {
 			enable = true;
