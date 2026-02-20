@@ -55,6 +55,18 @@
     pulse.enable = true;
   };
 
+  services = {
+    power-profiles-daemon = {
+      enable = true;
+    };
+  };
+  powerManagement.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+   };
+
+
   users.users.astraeaf = {
     isNormalUser = true;
     hashedPasswordFile = config.age.secrets.secret1.path;
