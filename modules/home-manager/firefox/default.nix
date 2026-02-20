@@ -1,5 +1,10 @@
 { inputs, ... }: {
 	flake.homeModules.firefox = { pkgs, system, ... }: {
+		
+		home.packages = with pkgs; [
+			lynx
+		];
+
 		programs.firefox = {
 			enable = true;
 			package = pkgs.firefox-beta;
