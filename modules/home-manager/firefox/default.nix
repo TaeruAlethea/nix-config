@@ -16,6 +16,7 @@
 					"toolkit.legacyUserProfileCustomizations.stylesheets" = true;
 					"sidebar.verticalTabs" = true;
 					"extensions.autoDisableScopes" = 0;
+					"intl.regional_prefs.use_os_locales" = true;
 				};
 				
 				# userChrome = ./userChrome.css;
