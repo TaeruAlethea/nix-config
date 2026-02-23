@@ -85,5 +85,9 @@
             hotkey-overlay.title = "Open a Terminal: wezterm";
             action.spawn = ["wezterm"];
         };
+        "XF86AudioPlay" = {
+        	allow-when-locked = true;
+        	action.spawn = ["dms" "ipc" "call" "mpris" "playPause"];
+        };
     };
 }
