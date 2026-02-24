@@ -5,8 +5,7 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+    [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   # Bootloader.
   boot.loader = {
@@ -23,6 +22,7 @@
   };
 
   hardware.intel-gpu-tools.enable = true;
+  # hardware.intelgpu.driver = "xe";
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -32,7 +32,8 @@
       libva-vdpau-driver
       vpl-gpu-rt
       libvdpau-va-gl
-    ];
+      mesa
+    ];    
   };
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD"; # Supposed to force newer Drivers
@@ -40,10 +41,12 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "xe" ];
-  boot.kernelModules = [ "kvm-intel" "xe" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelParams = [ "i915.enable_psr=0"  ];
   boot.extraModulePackages = [ ];
-
+  # boot.blacklistedKernelModules = [ "i915" ];
+  
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/908578c3-f579-4fe3-8368-6c94f88bf27e";
       fsType = "ext4";
