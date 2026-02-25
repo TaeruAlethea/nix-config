@@ -38,15 +38,31 @@
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD"; # Supposed to force newer Drivers
   };
+  hardware.firmware = [
+    (
+      let
+        model = "37xx";
+        version = "0.0";
+
+        firmware = pkgs.fetchurl {
+          url = "https://github.com/intel/linux-npu-driver/raw/v1.28.0/firmware/bin/vpu_${model}_v${version}.bin";
+          hash = "sha256-CLxevoWz81uNcxtuNdboF7C7RM6CMeaNA93bUZaxm+U=";
+        };
+      in
+      pkgs.runCommand "intel-vpu-firmware-${model}-${version}" { } ''
+        mkdir -p "$out/lib/firmware/intel/vpu"
+        cp '${firmware}' "$out/lib/firmware/intel/vpu/vpu_${model}_v${version}.bin"
+      ''
+    )
+  ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [ "kvm-intel" "i915" ];
   boot.kernelParams = [ "i915.enable_psr=0"  ];
   boot.extraModulePackages = [ ];
-  # boot.blacklistedKernelModules = [ "i915" ];
-  
+    
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/908578c3-f579-4fe3-8368-6c94f88bf27e";
       fsType = "ext4";
