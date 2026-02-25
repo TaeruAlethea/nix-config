@@ -55,6 +55,7 @@
     firefox-beta
     obsidian
     zoom-us
+    protonmail-desktop
 
     #games
     modrinth-app
