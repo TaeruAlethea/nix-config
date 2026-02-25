@@ -55,7 +55,7 @@
     firefox-beta
     obsidian
     zoom-us
-    protonmail-desktop
+    # protonmail-desktop # Doesn't Work as expected.
 
     #games
     modrinth-app
