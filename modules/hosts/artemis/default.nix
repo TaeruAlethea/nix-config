@@ -19,7 +19,8 @@
             useUserPackages = true;
             users.astraeaf.imports = with config.flake.homeModules; [
               ./_home.nix
-              
+
+              calendar
               dankMaterialShell
               helix
               niri
