@@ -1,8 +1,30 @@
 { ... }: {
-	flake.homeModules.calendar = { pkgs, ... }: {
-	  # Home packages & programs
-	  home.packages = with pkgs; [ khal ];
+	flake.homeModules.calendar = { pkgs, config, ... }: {
+	  # home.packages = with pkgs; [  ];
 
-	  services.vdirsyncer.enable = true;
+		programs = {
+			khal = {
+				enable = true;
+				locale = {
+					firstweekday = 0;
+					weeknumbers = "left";
+				};
+			};
+		};
+
+
+		accounts.calendar = {
+			basePath = ".local/share/calendar";
+
+			accounts.astraeaf = {
+				khal = {
+					enable = true;
+				};
+
+				vdirsyncer = {
+					enable = true;
+				};
+			};
+		};
 	};
 }
