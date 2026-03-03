@@ -6,6 +6,9 @@
         inputs.agenix-rekey.nixosModules.default
     ];
 
+    services.pcscd.enable = true;
+    programs.yubikey-manager.enable = true;
+
     age = {
       identityPaths = [ "/home/astraeaf/.ssh/id_ed25519" ]; # isn't set automatically for some reason
 
@@ -16,7 +19,7 @@
 
       rekey = {
         hostPubkey = "_${config.networking.hostName}.pub";
-        masterIdentities = [ "_astraeaf.pub" ];
+        masterIdentities = [ ./_astraeaf.txt ];
         storageMode = "local";
         localStorageDir = (inputs.self + "/secrets/rekeyed/${config.networking.hostName}");
       };
