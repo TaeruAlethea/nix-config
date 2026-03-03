@@ -6,15 +6,22 @@
     flake-parts.lib.mkFlake { inherit inputs; } (top@{ config, withSystem, moduleWithSystem, ... }: {
       imports = [
         inputs.home-manager.flakeModules.home-manager
+        inputs.agenix-rekey.flakeModule
         
         (inputs.import-tree ./modules)
       ];
       systems = [ "x86_64-linux" ];
-      perSystem = { system, ... }: {
+      perSystem = { system, pkgs, ... }: {
+        devShells.default = pkgs.mkShell {
+          nativeBuildInputs = [ config.agenix-rekey.package ];
+        };
+        
         _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
           config.allowUnfree = true;
         };
+
+        agenix-rekey.nixosConfigurations = inputs.self.nixosConfigurations;
       };
     });
   
@@ -30,6 +37,10 @@
     import-tree.url = "github:vic/import-tree";
 
     agenix.url = "github:ryantm/agenix";
+    agenix-rekey = {
+      url = "github:oddlama/agenix-rekey";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     niri = {
       url = "github:sodiboo/niri-flake";
