@@ -11,7 +11,7 @@
         (inputs.import-tree ./modules)
       ];
       systems = [ "x86_64-linux" ];
-      perSystem = { system, pkgs, ... }: {
+      perSystem = { config, system, pkgs, ... }: {
         devShells.default = pkgs.mkShell {
           nativeBuildInputs = [ config.agenix-rekey.package ];
         };
