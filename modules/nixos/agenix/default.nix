@@ -6,8 +6,6 @@
         inputs.agenix-rekey.nixosModules.default
     ];
 
-    
-
     age = {
       identityPaths = [ "/home/astraeaf/.ssh/id_ed25519" ]; # isn't set automatically for some reason
 
@@ -20,7 +18,7 @@
         hostPubkey = "_${config.networking.hostName}.pub";
         masterIdentities = [ "_astraeaf.pub" ];
         storageMode = "local";
-        localStorageDir = ./. + "/secrets/rekeyed/${config.networking.hostName}";
+        localStorageDir = (inputs.self + "/secrets/rekeyed/${config.networking.hostName}");
       };
     };
   };
