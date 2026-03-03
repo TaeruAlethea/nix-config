@@ -1,4 +1,4 @@
-{  config, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports = [
     # Include the results of the hardware scan.
@@ -69,7 +69,7 @@
 
   users.users.astraeaf = {
     isNormalUser = true;
-    hashedPasswordFile = config.age.secrets.secret1.path;
+    # hashedPasswordFile = config.age.secrets.secret1.path;
     description = "Astraea Falke";
     extraGroups = [
       "networkmanager"
@@ -111,7 +111,7 @@
   ];
 
   programs.zoom-us.enable = true;
-
+  programs.ssh.startAgent = true;
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
