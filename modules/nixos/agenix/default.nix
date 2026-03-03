@@ -1,11 +1,12 @@
 { inputs, ... }: {
-	flake.nixosModules.agenix = { pkgs, config, ... }:
+	flake.nixosModules.secretsManagement = { pkgs, config, ... }:
   {
-    # environment.systemPackages = with pkgs; [
-	   #  age
+    imports = [
+        inputs.agenix.nixosModules.default
+        inputs.agenix-rekey.nixosModules.default
+    ];
 
-	   #  inputs.agenix.packages."${stdenv.hostPlatform.system}".default
-    # ];
+    
 
     age = {
       identityPaths = [ "/home/astraeaf/.ssh/id_ed25519" ]; # isn't set automatically for some reason
@@ -14,12 +15,13 @@
         rekeyFile = ./secret1.age;
         owner = "astraeaf";
       };
-    };
 
-    age.rekey = {
-      hostPubkey = "_${config.networking.hostName}.pub";
-      storageMode = "local";
-      localStorageDir = ./. + "/secrets/rekeyed/${config.networking.hostName}";
+      rekey = {
+        hostPubkey = "_${config.networking.hostName}.pub";
+        masterIdentities = [ "_astraeaf.pub" ];
+        storageMode = "local";
+        localStorageDir = ./. + "/secrets/rekeyed/${config.networking.hostName}";
+      };
     };
   };
 }

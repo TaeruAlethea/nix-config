@@ -7,15 +7,14 @@
       modules = [
         ./_nixos.nix
         
-        self.nixosModules.agenix
         self.nixosModules.defaultFonts
         self.nixosModules.localization
         self.nixosModules.niri
+        self.nixosModules.secretsManagement
         self.nixosModules.steam
         self.nixosModules.terminal
 
-        inputs.agenix.nixosModules.default
-        inputs.home-manager.nixosModules.home-manager
+       inputs.home-manager.nixosModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
