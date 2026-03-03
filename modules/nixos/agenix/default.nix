@@ -13,7 +13,7 @@
       identityPaths = [ "/home/astraeaf/.ssh/id_ed25519" ]; # isn't set automatically for some reason
 
       secrets.secret1 = {
-        rekeyFile = ./secrets/secret2.age;
+        rekeyFile = (inputs.self + "/secrets/secret2.age");
         owner = "astraeaf";
       };
 
