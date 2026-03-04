@@ -111,7 +111,6 @@
   ];
 
   programs.zoom-us.enable = true;
-  programs.ssh.startAgent = true;
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
