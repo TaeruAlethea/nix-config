@@ -44,6 +44,7 @@ in
 		};
 	};
 
+	gestures.hot-corners.enable = false;
 	
 	binds = {
 		"Mod+Tab" = { repeat = false; action.toggle-overview = []; };
