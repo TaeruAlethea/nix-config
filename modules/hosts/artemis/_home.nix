@@ -59,6 +59,7 @@
 
     #games
     modrinth-app
+    prismlauncher
     vintagestory
     xivlauncher
 
