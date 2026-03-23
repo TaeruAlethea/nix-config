@@ -69,7 +69,7 @@
 
   users.users.astraeaf = {
     isNormalUser = true;
-    hashedPasswordFile = config.age.secrets.secret1.path;
+    hashedPasswordFile = config.sops.secrets.astraeaf-pw.path;
     description = "Astraea Falke";
     extraGroups = [
       "networkmanager"

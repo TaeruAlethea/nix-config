@@ -30,6 +30,8 @@
     import-tree.url = "github:vic/import-tree";
 
     agenix.url = "github:ryantm/agenix";
+    inputs.sops-nix.url = "github:Mic92/sops-nix";
+    inputs.sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     niri = {
       url = "github:sodiboo/niri-flake";
