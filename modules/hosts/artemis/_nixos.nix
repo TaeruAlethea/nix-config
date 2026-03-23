@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -74,6 +74,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.astraeaf = {
     isNormalUser = true;
+    hashedPasswordFile = config.sops.secrets.astraeaf-pw.path;
     description = "astraeaf";
     extraGroups = [ "networkmanager" "wheel" "i2c" ];
     packages = with pkgs; [

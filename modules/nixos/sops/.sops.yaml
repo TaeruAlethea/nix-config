@@ -3,9 +3,11 @@
 keys:
   - &user_astraeaf age1e0a6fld3vgkyvaefyzk26qnycyk5ww2lj9lq5h86zgwlg7lvdpesqqgfsf
   - &host_zues age1x0p083svn5kxw5l74aecqjy4m6k7e57w7c4zetrwkfygjvs4gcgqh00zky
+  - &host_artemis age1lmve3vwwfaeq4lh94fgcrs7ng9wxaz9ws26uffv59z6walwf532sw0u5we
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
     - age:
       - *user_astraeaf
       - *host_zues
+      - *host_artemis

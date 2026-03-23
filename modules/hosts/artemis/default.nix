@@ -6,7 +6,8 @@
       };
       modules = [
         ./_nixos.nix
-        
+
+        self.nixosModules.sops
         self.nixosModules.defaultFonts
         self.nixosModules.localization
         self.nixosModules.niri
