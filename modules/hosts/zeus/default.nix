@@ -7,7 +7,6 @@
       modules = [
         ./_nixos.nix
         
-        # self.nixosModules.agenix
         self.nixosModules.sops
         self.nixosModules.defaultFonts
         self.nixosModules.localization
