@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-	flake.modules.nixos.fonts = {
+	flake.modules.nixos.defaultFonts = {
 		fonts = {
 			packages = with pkgs; [
 				# Fallback Fonts

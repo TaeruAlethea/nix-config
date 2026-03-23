@@ -45,6 +45,10 @@
     stylix = {
       url = "github:danth/stylix";
     };
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixcord.url = "github:FlameFlag/nixcord";
   };
 }
