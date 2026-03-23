@@ -13,6 +13,7 @@
 			defaultSopsFile = ./secrets.yaml;
 			secrets = {
 				"astraeaf-pw" = {};
+				"location" = {};
 			};
 		};
 	};
