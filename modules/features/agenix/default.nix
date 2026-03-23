@@ -1,8 +1,13 @@
 { pkgs, inputs, ... }:
 {
 	flake-file.inputs.agenix.url = "github:ryantm/agenix";
+
 	flake.modules.nixos.agenix = 
 	{
+		imports = [
+			inputs.agenix.nixosModules.default
+		];
+	
 		environment.systemPackages = with pkgs; [
 			age
 			inputs.agenix.packages."${stdenv.hostPlatform.system}".default
