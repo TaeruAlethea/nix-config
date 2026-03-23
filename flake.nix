@@ -49,13 +49,13 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
 	  };
+    sops-nix = {
+  		url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     stylix = {
       url = "github:danth/stylix";
-      inputs = {
-        inputs = "inputs";
-        nixpkgs = "nixpkgs";
-        config = "config";
-		};
+    };
     nixcord.url = "github:FlameFlag/nixcord";
   };
 }
