@@ -1,0 +1,19 @@
+{ pkgs, inputs, ... }:
+{
+	flake-file.inputs.agenix.url = "github:ryantm/agenix";
+	flake.modules.nixos.agenix = 
+	{
+		environment.systemPackages = with pkgs; [
+			age
+			inputs.agenix.packages."${stdenv.hostPlatform.system}".default
+		];
+
+		age = {
+			identityPaths = [ "/home/astraeaf/.ssh/id_ed25519" ]; # isn't set automatically for some reason
+			secrets.secret1 = {
+				file = (inputs.self + /secrets/secret1.age);
+				owner = "astraeaf";
+			};
+		};
+	};
+}
