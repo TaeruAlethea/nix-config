@@ -22,7 +22,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    Only needed for Windows Subsystem for Linux
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
