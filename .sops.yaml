@@ -1,3 +1,5 @@
+# If you add a new host to your .sops.yaml file, you will need to update the keys for all secrets that are used by the new host. This can be done like so:
+# $ nix-shell -p sops --run "sops updatekeys secrets/example.yaml"
 keys:
   - &user_astraeaf age1e0a6fld3vgkyvaefyzk26qnycyk5ww2lj9lq5h86zgwlg7lvdpesqqgfsf
   - &host_zues age1x0p083svn5kxw5l74aecqjy4m6k7e57w7c4zetrwkfygjvs4gcgqh00zky
