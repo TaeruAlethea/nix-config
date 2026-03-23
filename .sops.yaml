@@ -1,10 +1,8 @@
 keys:
-  - &user_astraeaf
-    age1e0a6fld3vgkyvaefyzk26qnycyk5ww2lj9lq5h86zgwlg7lvdpesqqgfsf
-  - &host_zues
-    age1x0p083svn5kxw5l74aecqjy4m6k7e57w7c4zetrwkfygjvs4gcgqh00zky
+  - &user_astraeaf age1e0a6fld3vgkyvaefyzk26qnycyk5ww2lj9lq5h86zgwlg7lvdpesqqgfsf
+  - &host_zues age1x0p083svn5kxw5l74aecqjy4m6k7e57w7c4zetrwkfygjvs4gcgqh00zky
 creation_rules:
-  - path_regex: \[^\/]+\.(yaml|json|env|ini)$
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
     - age:
       - *user_astraeaf
