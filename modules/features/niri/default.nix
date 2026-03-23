@@ -7,14 +7,13 @@
 
 	flake.modules.nixos.niri = {
 			nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-			programs.niri.package = pkgs.niri-unstable;
-
-			systemd.user.services.niri-flake-polkit.enable = false;
-
 			programs.niri = {
 				enable = true;
+				package = pkgs.niri-unstable;
 			};
-
+			
+			systemd.user.services.niri-flake-polkit.enable = false;
+			
 			environment.systemPackages = with pkgs; [
 				xwayland-satellite
 				nautilus
