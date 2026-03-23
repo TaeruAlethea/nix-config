@@ -1,10 +1,5 @@
 { inputs, pkgs, lib, osConfig, ... }:
 {
-	flake-file.inputs.niri = {
-		url = "github:sodiboo/niri-flake";
-		inputs.nixpkgs.follows = "nixpkgs";
-	};
-
 	flake.modules.nixos.niri = {
 			nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 			programs.niri = {

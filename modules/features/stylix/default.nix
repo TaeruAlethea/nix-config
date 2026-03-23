@@ -1,13 +1,4 @@
 { inputs, pkgs, config, ... }:{
-	flake-file.inputs.stylix = {
-		url = "github:danth/stylix";
-		inputs = {
-			inputs = "inputs";
-			nixpkgs = "nixpkgs";
-			config = "config";
-		};
-	};
-
 	flake.modules.stylix = {
 		imports = [ inputs.stylix.nixosModules.stylix ];
 

@@ -1,6 +1,4 @@
 { inputs, pkgs, system, ... }: {
-	flake-file.inputs.firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-
 	flake.modules.homeModules.firefox = {
 		
 		# home.packages = with pkgs; [

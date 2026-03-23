@@ -1,6 +1,4 @@
 { inputs, ... }: {
-	flake-file.inputs.nixcord.url = "github:FlameFlag/nixcord";
-
 	flake.modules.homeModules.vesktop = {
 		imports = [ inputs.nixcord.homeModules.nixcord ];
 

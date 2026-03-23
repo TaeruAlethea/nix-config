@@ -1,9 +1,4 @@
 { inputs, pkgs, ... }: {
-  flake-file.inputs ={
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
-    nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
-  };
-  
 	flake.modules.homeModules.emacs = {
     imports = [
       inputs.nix-doom-emacs-unstraightened.homeModule
