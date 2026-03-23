@@ -1,5 +1,5 @@
 { ... }: {
-  flakem.modules.homeModules.oh-my-posh = {
+  flake.modules.homeModules.oh-my-posh = {
     programs.oh-my-posh = {
       enable = true;
       enableBashIntegration = true;
