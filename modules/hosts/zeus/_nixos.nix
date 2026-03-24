@@ -67,8 +67,7 @@
    };
 
   services.udev.extraRules = ''
-    # Disable PS5 touchpad acting as mouse
-    ATTRS{name}=="Sony Interactive Entertainment Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1
+    ATTRS{name}=="Sony Interactive Entertainment Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
   '';
 
   users.users.astraeaf = {
