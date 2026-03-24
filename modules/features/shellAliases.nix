@@ -1,6 +1,6 @@
 { ... }:
 {
-	flake.modules.nixos.shell.aliases = 
+	flake.modules.nixos.shellAliases = 
 		let
 			myShellAliases = {
 				RestartSound = "systemctl restart --user wireplumber";

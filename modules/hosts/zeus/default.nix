@@ -8,8 +8,8 @@
       defaultFonts
       localization
       niri
+      shellAliases
       steam
-      terminal
       home-manager
     ];
   };
