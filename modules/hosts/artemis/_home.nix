@@ -62,6 +62,7 @@
     prismlauncher
     vintagestory
     xivlauncher
+    yetris
 
     easyeffects
 
