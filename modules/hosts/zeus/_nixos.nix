@@ -81,13 +81,15 @@
       "plugdev"
     ];
     packages = with pkgs; [
+      
       dotnetCorePackages.sdk_9_0-bin
       dotnetCorePackages.sdk_8_0-bin
     ];
   };
 
   # Needed for Nautilus file Browser
-  services.gvfs.enable = true; 
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
   environment.pathsToLink = [ "share/thumbnailers" ];
 
   # List packages installed in system profile. To search, run:
