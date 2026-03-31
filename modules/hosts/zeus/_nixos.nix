@@ -101,6 +101,8 @@
     nautilus # File Browser
       libheif libheif.out # Image Preview in Nautilus
 
+    r2modman
+
     # Peripherals
     openrazer-daemon
     polychromatic
