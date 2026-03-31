@@ -33,13 +33,13 @@
             position.x = 1080;
             position.y = 0;
         };
-        "HDMI-A-1" = {
+        "DP-2" = {
             enable = true;
             # mode = "1920x1080";
             scale = 1;
             transform.rotation = 90;
             position.x = 0;
-            position.y = 0;
+            position.y = -480;
         };
     };
 
