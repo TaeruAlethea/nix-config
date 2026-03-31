@@ -1,14 +1,16 @@
 { inputs, ... }: {
-	flake.homeModules.vesktop = { pkgs, ... } :
+	flake.homeModules.vesktop = { pkgs, osConfig, ... } :
 	{
 		imports = [ inputs.nixcord.homeModules.nixcord ];
 
-		home.shellAliases = {
-			Oxicord = "nix run github:linuxmobile/oxicord";
-		};
-		
+		# home.shellAliases = {
+		# 	Oxicord = "nix run github:linuxmobile/oxicord";
+		# };
+
+		home.packages = with pkgs; [ vesktop ];
+ 		
 		programs.nixcord = {
-    	enable = true;
+    	enable = false;
 
     # Choose your client (enable only one of these two)
     # discord.vencord.enable = true;      # Standard Vencord
@@ -21,7 +23,7 @@
     # Theming
     # quickCss = "/* css goes here */";
     config = {
-    	useQuickCss = true;    	
+    	useQuickCss = true;
     	enabledThemes = [
     		"dank-discord.css"
     	];
