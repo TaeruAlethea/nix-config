@@ -56,14 +56,15 @@
     blender
     gimp3-with-plugins
     gitkraken
+    reaper
     vlc
 
     obsidian
     zoom-us
 
     #games
-    modrinth-app
     prismlauncher
+    r2modman
     vintagestory
     xivlauncher
 

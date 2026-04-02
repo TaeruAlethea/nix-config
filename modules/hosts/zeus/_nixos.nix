@@ -53,6 +53,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    jack.enable = true;
   };
 
   services = {
@@ -81,7 +82,6 @@
       "plugdev"
     ];
     packages = with pkgs; [
-      
       dotnetCorePackages.sdk_9_0-bin
       dotnetCorePackages.sdk_8_0-bin
     ];
@@ -100,8 +100,6 @@
     coppwr
     nautilus # File Browser
       libheif libheif.out # Image Preview in Nautilus
-
-    r2modman
 
     # Peripherals
     openrazer-daemon
