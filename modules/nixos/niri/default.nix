@@ -8,6 +8,13 @@
 
 		programs.niri = {
 			enable = true;
+			useNautilus = true;
+		};
+
+		programs.gnome-disks.enable = true;
+
+		services.gnome = {
+			sushi.enable = true;
 		};
 
 		environment.systemPackages = with pkgs; [
