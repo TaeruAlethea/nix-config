@@ -126,6 +126,14 @@
     ];
   };
 
+  fileSystems."/mnt/SSD-2024-03-10C" = {
+    device = "/dev/disk/by-uuid/cc27b1bb-b699-4045-a114-112e51ccf822";
+    fsType = "ext4";
+    options = [
+      "x-gvfs-show"
+    ];
+  };
+
   swapDevices = [
     { device = "/dev/disk/by-uuid/ebda0953-a1cd-4237-94f6-24e6f51893c2"; }
   ];
