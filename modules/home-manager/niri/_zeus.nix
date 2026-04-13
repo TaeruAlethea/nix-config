@@ -2,7 +2,7 @@
     spawn-at-startup =[
         { argv = ["bash" "-c" "wl-paste --watch cliphist store &"]; }
         { argv = ["/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"]; }
-        { argv = ["wezterm cli spawn --new-window --workspace scratchpad --"]; }
+        # { argv = ["wezterm cli spawn --new-window --workspace scratchpad --"]; }
         # { argv = ["dms" "run"]; }
     ];
 
@@ -26,7 +26,11 @@
     outputs = {
         "DP-3" = {
             enable = true;
-            # mode = "3440x1440@120";
+            mode = {
+                width = 3440;
+                height = 1440;
+                refresh = 120.000;
+            }; #"3440x1440@120.000";
             variable-refresh-rate = true;
             scale = 1;
             transform.rotation = 0;
@@ -35,7 +39,12 @@
         };
         "DP-2" = {
             enable = true;
-            # mode = "1920x1080";
+            mode = {
+                width = 1920;
+                height = 1080;
+                refresh = 119.982;
+            }; # "1920x1080@119.982";
+            variable-refresh-rate = "on-demand";
             scale = 1;
             transform.rotation = 90;
             position.x = 0;
