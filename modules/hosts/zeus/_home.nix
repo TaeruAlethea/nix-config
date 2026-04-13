@@ -67,6 +67,8 @@
     r2modman
     vintagestory
     xivlauncher
+    boxflat #Moza Sim stuff
+    lutris
 
     easyeffects
 
