@@ -378,6 +378,26 @@
         "type": "github"
       }
     },
+    "nix-auto-follow": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1754073254,
+        "narHash": "sha256-CQp/v2HQ7AtGJQqFGRZLHt4MZAK3NF94I6GDaRyhbsc=",
+        "owner": "fzakaria",
+        "repo": "nix-auto-follow",
+        "rev": "5baa00b79d4cc46523da0b8b3532c5163d151be4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fzakaria",
+        "repo": "nix-auto-follow",
+        "type": "github"
+      }
+    },
     "nix-doom-emacs-unstraightened": {
       "inputs": {
         "doomemacs": "doomemacs",
@@ -680,6 +700,7 @@
         "import-tree": "import-tree",
         "matugen": "matugen",
         "niri": "niri",
+        "nix-auto-follow": "nix-auto-follow",
         "nix-doom-emacs-unstraightened": "nix-doom-emacs-unstraightened",
         "nixcord": "nixcord",
         "nixos-hardware": "nixos-hardware",
