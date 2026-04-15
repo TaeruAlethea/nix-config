@@ -1,15 +1,26 @@
-{ stdenv, fetchurl, autoPatchelfHook, makeWrapper, ... }: stdenv.mkDerivation rec {
+{
+  stdenv,
+  fetchurl,
+  autoPatchelfHook,
+  unzip,
+  ...
+}:
+stdenv.mkDerivation rec {
   name = "albion-online-launcher-${version}";
   version = "20260413175522";
   src = fetchurl {
-  	url = "https://live.albiononline.com/clients/${version}/albion-online-setup";
-  	hash = "";
+    url = "https://live.albiononline.com/clients/${version}/albion-online-setup";
+    hash = "sha256-ynI9RglRofEDbNQttBdsxBqMGDzHSaTQTZf5KiYDCps=";
   };
+  nativeBuildInputs = [ unzip ];
 
-		nativeBuildInputs = [ autoPatchelfHook makeWrapper ];
+  unpackPhase = ''
+    		unzip -qq $src -d . || true
+    	'';
 
-		installPhase = ''
-			mkdir -p $out
-			mv albion-online-setup $out/
-		'';
+  installPhase = ''
+    		mkdir -p $out/albiononline
+    		mv data $out/albiononline
+    		# install -Dm755 $out/albiononline/Albion-Online "$out/bin/Albion-Online"
+    	'';
 }
