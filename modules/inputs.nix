@@ -1,13 +1,6 @@
-{ inputs, ... }:
 {
-	flake-file.inputs = {
+  flake-file.inputs = {
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 
