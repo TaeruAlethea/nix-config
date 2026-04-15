@@ -16,7 +16,7 @@
       # ref = "refs/tags/matugen-v0.10.0";
     };
   };
-  
+
   flake.homeModules.dankMaterialShell =
     {
       inputs,

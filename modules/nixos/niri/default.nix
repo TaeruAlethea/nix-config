@@ -4,7 +4,7 @@
     url = "github:sodiboo/niri-flake";
     inputs.nixpkgs.follows = "nixpkgs";
   };
-  
+
   flake.nixosModules.niri =
     { pkgs, ... }:
     {
