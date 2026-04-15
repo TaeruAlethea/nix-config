@@ -1,37 +1,40 @@
-{ inputs, ... }: {
-	flake.homeModules.firefox = { pkgs, system, ... }: {
-		
-		# home.packages = with pkgs; [
-		# 	lynx
-		# ];
+{ inputs, ... }:
+{
+  flake.homeModules.firefox =
+    { pkgs, system, ... }:
+    {
 
-		programs.firefox = {
-			enable = true;
-			package = pkgs.firefox-beta;
-			
-			profiles."default" = {
-				isDefault = true;
-				settings = {
-					"browser.tabs.allow_transparent_browser" = true;
-					"toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-					"sidebar.verticalTabs" = true;
-					"extensions.autoDisableScopes" = 0;
-					"intl.regional_prefs.use_os_locales" = true;
-				};
-				
-				# userChrome = ./userChrome.css;
+      # home.packages = with pkgs; [
+      # 	lynx
+      # ];
 
-				extensions = {
-					packages = with inputs.firefox-addons.packages.${system}; [
-						adnauseam
-						bitwarden
-						privacy-badger
-						shinigami-eyes
-						sponsorblock
-						# tampermonkey
-					];
-				};
-			};
-		};
-	};
+      programs.firefox = {
+        enable = true;
+        package = pkgs.firefox-beta;
+
+        profiles."default" = {
+          isDefault = true;
+          settings = {
+            "browser.tabs.allow_transparent_browser" = true;
+            "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+            "sidebar.verticalTabs" = true;
+            "extensions.autoDisableScopes" = 0;
+            "intl.regional_prefs.use_os_locales" = true;
+          };
+
+          # userChrome = ./userChrome.css;
+
+          extensions = {
+            packages = with inputs.firefox-addons.packages.${system}; [
+              adnauseam
+              bitwarden
+              privacy-badger
+              shinigami-eyes
+              sponsorblock
+              # tampermonkey
+            ];
+          };
+        };
+      };
+    };
 }

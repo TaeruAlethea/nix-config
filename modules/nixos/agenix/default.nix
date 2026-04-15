@@ -1,19 +1,21 @@
-{ inputs, ... }: {
-	flake.nixosModules.agenix = { pkgs, ... }:
-  {
-    environment.systemPackages = with pkgs; [
-      age
+{ inputs, ... }:
+{
+  flake.nixosModules.agenix =
+    { pkgs, ... }:
+    {
+      environment.systemPackages = with pkgs; [
+        age
 
-      inputs.agenix.packages."${stdenv.hostPlatform.system}".default
-    ];
+        inputs.agenix.packages."${stdenv.hostPlatform.system}".default
+      ];
 
-    age = {
-      identityPaths = [ "/home/astraeaf/.ssh/id_ed25519" ]; # isn't set automatically for some reason
+      age = {
+        identityPaths = [ "/home/astraeaf/.ssh/id_ed25519" ]; # isn't set automatically for some reason
 
-      secrets.secret1 = {
-        file = (inputs.self + /secrets/secret1.age);
-        owner = "astraeaf";
+        secrets.secret1 = {
+          file = (inputs.self + /secrets/secret1.age);
+          owner = "astraeaf";
+        };
       };
     };
-  };
 }

@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./_hardware-configuration.nix
-    ];
-  
+  imports = [
+    # Include the results of the hardware scan.
+    ./_hardware-configuration.nix
+  ];
+
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -31,11 +31,11 @@
   services.greetd = {
     enable = true;
     settings = rec {
-      initial_session ={
+      initial_session = {
         command = "niri-session";
         user = "astraeaf";
       };
-    default_session = initial_session;
+      default_session = initial_session;
     };
   };
 
@@ -56,7 +56,7 @@
   services = {
     asusd = {
       enable = true;
-     };
+    };
     power-profiles-daemon = {
       enable = true;
     };
@@ -68,27 +68,29 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-   };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.astraeaf = {
     isNormalUser = true;
     hashedPasswordFile = config.sops.secrets.astraeaf-pw.path;
     description = "astraeaf";
-    extraGroups = [ "networkmanager" "wheel" "i2c" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "i2c"
+    ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
       asusctl
     ];
   };
-
 
   services.xserver.videoDrivers = [ "intel" ];
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     SDL_VIDEODRIVER = "wayland";
   };
-
 
   environment.systemPackages = with pkgs; [
     helix

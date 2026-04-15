@@ -1,30 +1,32 @@
-{ ... }: {
-	flake.homeModules.calendar = { pkgs, config, ... }: {
-	  # home.packages = with pkgs; [  ];
+{ ... }:
+{
+  flake.homeModules.calendar =
+    { pkgs, config, ... }:
+    {
+      # home.packages = with pkgs; [  ];
 
-		programs = {
-			khal = {
-				enable = true;
-				locale = {
-					firstweekday = 0;
-					weeknumbers = "left";
-				};
-			};
-		};
+      programs = {
+        khal = {
+          enable = true;
+          locale = {
+            firstweekday = 0;
+            weeknumbers = "left";
+          };
+        };
+      };
 
+      accounts.calendar = {
+        basePath = ".local/share/calendar";
 
-		accounts.calendar = {
-			basePath = ".local/share/calendar";
+        accounts.astraeaf = {
+          khal = {
+            enable = true;
+          };
 
-			accounts.astraeaf = {
-				khal = {
-					enable = true;
-				};
-
-				vdirsyncer = {
-					enable = true;
-				};
-			};
-		};
-	};
+          vdirsyncer = {
+            enable = true;
+          };
+        };
+      };
+    };
 }

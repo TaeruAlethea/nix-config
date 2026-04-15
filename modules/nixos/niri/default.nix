@@ -1,30 +1,32 @@
-{ inputs, ... }: {
-	flake.nixosModules.niri = { pkgs, ... } :
-	{
-		nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-		programs.niri.package = pkgs.niri-unstable;
+{ inputs, ... }:
+{
+  flake.nixosModules.niri =
+    { pkgs, ... }:
+    {
+      nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+      programs.niri.package = pkgs.niri-unstable;
 
-		systemd.user.services.niri-flake-polkit.enable = false;
+      systemd.user.services.niri-flake-polkit.enable = false;
 
-		programs.niri = {
-			enable = true;
-			useNautilus = true;
-		};
+      programs.niri = {
+        enable = true;
+        useNautilus = true;
+      };
 
-		programs.gnome-disks.enable = true;
+      programs.gnome-disks.enable = true;
 
-		services.gnome = {
-			sushi.enable = true;
-		};
+      services.gnome = {
+        sushi.enable = true;
+      };
 
-		environment.systemPackages = with pkgs; [
-			xwayland-satellite
-			nautilus
-			image-roll
-		];
+      environment.systemPackages = with pkgs; [
+        xwayland-satellite
+        nautilus
+        image-roll
+      ];
 
-		# environment.sessionVariables = {
-		# 	DISPLAY = ":0";
-		# };
-	};
+      # environment.sessionVariables = {
+      # 	DISPLAY = ":0";
+      # };
+    };
 }

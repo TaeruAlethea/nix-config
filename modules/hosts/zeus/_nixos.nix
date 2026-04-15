@@ -1,4 +1,4 @@
-{  config, pkgs, ... }:
+{ config, pkgs, ... }:
 {
   imports = [
     # Include the results of the hardware scan.
@@ -33,11 +33,11 @@
   services.greetd = {
     enable = true;
     settings = rec {
-      initial_session ={
+      initial_session = {
         command = "niri-session";
         user = "astraeaf";
       };
-    default_session = initial_session;
+      default_session = initial_session;
     };
   };
 
@@ -65,7 +65,7 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-   };
+  };
 
   services.udev.extraRules = ''
     # Moza sim stuff
@@ -103,7 +103,8 @@
     wireplumber
     coppwr
     nautilus # File Browser
-      libheif libheif.out # Image Preview in Nautilus
+    libheif
+    libheif.out # Image Preview in Nautilus
 
     # Peripherals
     openrazer-daemon
@@ -120,7 +121,6 @@
   ];
 
   programs.zoom-us.enable = true;
-
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";

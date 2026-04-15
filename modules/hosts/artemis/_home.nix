@@ -34,18 +34,17 @@
     hyprcursor.enable = true;
     package = pkgs.vimix-cursors;
     # [
-      # graphite-cursors
-      # layan-cursors
-      # lyra-cursors   # LyraS-cursors"
-      # vimix-cursors
-      # afterglow-cursors-recolored
+    # graphite-cursors
+    # layan-cursors
+    # lyra-cursors   # LyraS-cursors"
+    # vimix-cursors
+    # afterglow-cursors-recolored
     # ];
-    
+
     name = "Vimix-cursors";
     size = 36;
   };
   home.sessionVariables.XCURSOR_SIZE = 36;
-
 
   # Home packages & programs
   home.packages = with pkgs; [

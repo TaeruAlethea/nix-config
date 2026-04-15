@@ -15,7 +15,7 @@
   ];
 
   hardware = {
-    openrazer ={
+    openrazer = {
       enable = true;
       users = [ "astraeaf" ];
     };
@@ -32,7 +32,10 @@
     };
   };
 
-  services.xserver.videoDrivers = [ "modesetting" "nvidia" ];
+  services.xserver.videoDrivers = [
+    "modesetting"
+    "nvidia"
+  ];
   environment.systemPackages = with pkgs; [
     nvtopPackages.nvidia
   ];
