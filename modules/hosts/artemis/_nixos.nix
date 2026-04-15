@@ -56,8 +56,7 @@
   services = {
     asusd = {
       enable = true;
-      enableUserService = true;
-    };
+     };
     power-profiles-daemon = {
       enable = true;
     };
@@ -93,9 +92,9 @@
 
   environment.systemPackages = with pkgs; [
     helix
+    brightnessctl
   ];
 
-  programs.light.enable = true;
   programs.nh = {
     enable = true;
     clean.enable = true;
