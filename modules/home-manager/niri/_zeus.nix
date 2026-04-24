@@ -43,14 +43,27 @@
       position.x = 1080;
       position.y = 0;
     };
-    "DP-2" = {
+    # "DP-2" = {
+    #   enable = true;
+    #   mode = {
+    #     width = 1920;
+    #     height = 1080;
+    #     refresh = 119.982;
+    #   }; # "1920x1080@119.982";
+    #   variable-refresh-rate = "on-demand";
+    #   scale = 1;
+    #   transform.rotation = 90;
+    #   position.x = 0;
+    #   position.y = -480;
+    # };
+    "HDMI-A-1" = {
       enable = true;
       mode = {
         width = 1920;
         height = 1080;
-        refresh = 119.982;
-      }; # "1920x1080@119.982";
-      variable-refresh-rate = "on-demand";
+        refresh = 60.000;
+      }; # "1920x1080@60.000";
+      # variable-refresh-rate = "on-demand";
       scale = 1;
       transform.rotation = 90;
       position.x = 0;
