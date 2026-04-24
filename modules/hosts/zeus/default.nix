@@ -6,10 +6,7 @@
 }:
 {
   flake.nixosConfigurations.zeus = inputs.nixpkgs.lib.nixosSystem {
-    pkgs = import inputs.nixpkgs {
-      config.allowUnfree = true;
-      system = "x86_64-linux";
-    };
+    system = "x86_64-linux";
     modules = [
       ./_nixos.nix
 
@@ -22,6 +19,9 @@
       self.nixosModules.vr
 
       inputs.agenix.nixosModules.default
+    ] ++
+    ( with inputs.self.modules.nixos; [
+      base # includes allowUnfree = true definition
       inputs.home-manager.nixosModules.home-manager
       {
         home-manager = {
@@ -50,5 +50,6 @@
         };
       }
     ];
+    ] );
   };
 }
