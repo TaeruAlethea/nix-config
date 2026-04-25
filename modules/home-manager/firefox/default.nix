@@ -2,9 +2,10 @@
 {
   flake-file.inputs.firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
 
-  flake.homeModules.firefox =
+  flake.modules.homeManager.firefox =
     { pkgs, system, ... }:
     {
+      home.sessionVariables.BROWSER = "firefox";
 
       # home.packages = with pkgs; [
       # 	lynx

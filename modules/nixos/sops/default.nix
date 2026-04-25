@@ -6,7 +6,7 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  flake.nixosModules.sops =
+  flake.modules.nixos.sops =
     { pkgs, ... }:
     {
       imports = [

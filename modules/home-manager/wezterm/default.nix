@@ -1,8 +1,11 @@
 { ... }:
 {
-  flake.homeModules.wezterm =
+  flake.modules.homeManager.wezterm =
     { ... }:
     {
+
+      home.sessionVariables.TERMINAL = "wezterm";
+
       programs.wezterm = {
         enable = true;
         enableBashIntegration = true;

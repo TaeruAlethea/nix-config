@@ -16,9 +16,4 @@
       nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     };
   };
-
-
-  flake.modules.nixos.base = {
-    nixpkgs.config.allowUnfree = true;
-  };
 }
