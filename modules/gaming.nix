@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{  ... }:
 {
   flake.modules.nixos.gaming = {
     services.udev.extraRules = ''
@@ -15,7 +15,7 @@
 
   };
 
-  flake.modules.homeManager.gaming = {
+  flake.modules.homeManager.gaming ={pkgs, ... }:  {
     # Home packages & programs
     home.packages = with pkgs; [
       prismlauncher # Minecraft

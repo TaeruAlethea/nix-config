@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, ... }:
 {
   flake.modules.nixos.system_zeus = {
     networking = {
@@ -13,7 +13,7 @@
     ];
   };
 
-  flake.modules.homeManager.system_zeus = {
+  flake.modules.homeManager.system_zeus = {pkgs, ... }: {
     imports = with inputs.self.modules.homeManager; [
       system_base
 

@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  flake.modules.nixos.nvidia = {
+  flake.modules.nixos.nvidia = {pkgs, ... }: {
     hardware = {
       graphics = {
         enable = true;

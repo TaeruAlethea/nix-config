@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  flake.modules.nixos.razer = {
+  flake.modules.nixos.razer = {pkgs, ... }: {
     hardware = {
       openrazer = {
         enable = true;

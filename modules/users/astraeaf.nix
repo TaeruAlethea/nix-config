@@ -1,11 +1,11 @@
-{ inputs, config, ... }:
+{ inputs,  ... }:
 let
   userName = "astraeaf";
   userNameLong = "Astraea Falke";
 in
 {
   flake.modules.nixos."user_${userName}" =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
     {
       name = "${userName}";
       isNormalUser = true;

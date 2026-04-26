@@ -1,8 +1,8 @@
-{ inputs, pkgs, ... }:
+{ inputs, ... }:
 {
   # These modules will always be active
 
-  flake.modules.nixos.system_base = {
+  flake.modules.nixos.system_base = {pkgs, ... }: {
     imports = with inputs.self.modules.nixos; [
       home-manager
       secretsManagement

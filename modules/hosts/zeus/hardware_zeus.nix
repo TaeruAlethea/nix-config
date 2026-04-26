@@ -1,19 +1,10 @@
 {
-  modulesPath,
-  pkgs,
-  config,
   lib,
   ...
 }:
 {
-  flake.modules.nixos.hardware_zeus = {
-
-  };
-
-  flake.modules.homeManager.hardware_zeus = {
-    imports = [
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  flake.modules.nixos.hardware_zeus = {pkgs, config, ... }: {
+    hardware.enableRedistributableFirmware = lib.mkDefault true;
 
     # needed for Windows to not freak out
     time.hardwareClockInLocalTime = true;

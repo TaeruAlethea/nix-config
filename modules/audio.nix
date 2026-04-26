@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  flake.modules.nixos.audio = {
+  flake.modules.nixos.audio = {pkgs, ...}: {
     # Enable sound with pipewire.
     services.pulseaudio.enable = false;
 
@@ -18,7 +18,7 @@
     ];
   };
 
-  flake.modules.homeManager.audio = {
+  flake.modules.homeManager.audio = {pkgs, ... }: {
     home.packages = with pkgs; [
       coppwr
       easyeffects
