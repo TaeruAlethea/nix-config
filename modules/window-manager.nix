@@ -15,13 +15,13 @@
       };
     };
 
-    import = with inputs.self.modules.nixos; [
+    imports = with inputs.self.modules.nixos; [
       niri
     ];
   };
 
   flake.modules.homeManager.window-manager = {
-    import = with inputs.self.homeManagers.nixos; [
+    imports = with inputs.self.homeManagers.nixos; [
       niri
       dankMaterialShell
     ];
