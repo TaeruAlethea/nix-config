@@ -11,6 +11,5 @@
       enable = true;
       powerOnBoot = true;
     };
-
   };
 }

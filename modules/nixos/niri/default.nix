@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, ... }:
 {
   flake-file.inputs.niri = {
     url = "github:sodiboo/niri-flake";
@@ -8,6 +8,10 @@
   flake.modules.nixos.niri =
     { pkgs, ... }:
     {
+      imports = [
+        inputs.niri.nixosModules.niri
+      ];
+
       nixpkgs.overlays = [ inputs.niri.overlays.niri ];
       programs.niri.package = pkgs.niri-unstable;
 
@@ -15,7 +19,6 @@
 
       programs.niri = {
         enable = true;
-        useNautilus = true;
       };
 
       programs.gnome-disks.enable = true;
@@ -31,6 +34,7 @@
         libheif
         libheif.out # Image Preview in Nautilus
 
+        xdg-desktop-portal-gtk
       ];
 
       # Needed for Nautilus file Browser
@@ -46,7 +50,22 @@
       # };
     };
 
-  flake.modules.homeManager.niri = {
+  flake.modules.homeManager.niri = { pkgs, osConfig, lib, ... }:
+    {
+      # imports = [
+      #   inputs.niri.homeModules.niri
+      # ];
+
+      home.packages = with pkgs; [
+        jq # needed for Artemis. Not bad to have around
+        brightnessctl
+      ];
+
+      programs.niri.settings = lib.recursiveUpdate (import ./_${osConfig.networking.hostName}.nix) (
+        import ./_commonConfig.nix
+      );
+
+
 
     home.pointerCursor = {
       gtk.enable = true;

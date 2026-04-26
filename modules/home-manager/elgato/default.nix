@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.elgato =
+  flake.modules.homeManager.elgato =
     { ... }:
     {
       xdg.configFile."wireplumber/wireplumber.conf.d/51-wavexlr.conf".source = ./51-wavexlr.conf;

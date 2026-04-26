@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.nixosModules.localization =
+  flake.modules.nixos.localization =
     { config, ... }:
     {
       # Set your time zone.

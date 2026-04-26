@@ -1,8 +1,8 @@
-{ inputs, ... }:
+{ inputs, moduleWithSystem, ... }:
 {
   flake-file.inputs.firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
 
-  flake.modules.homeManager.firefox =
+  flake.modules.homeManager.firefox = moduleWithSystem (
     { pkgs, system, ... }:
     {
       home.sessionVariables.BROWSER = "firefox";
@@ -39,5 +39,5 @@
           };
         };
       };
-    };
+    });
 }

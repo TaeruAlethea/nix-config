@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 {
   flake-file.inputs = {
     dankMaterialShell = {
@@ -17,9 +17,8 @@
     };
   };
 
-  flake.homeModules.dankMaterialShell =
+  flake.modules.homeManager.dankMaterialShell =
     {
-      inputs,
       pkgs,
       osConfig,
       ...
@@ -29,7 +28,6 @@
         inputs.dankMaterialShell.homeModules.dank-material-shell
         inputs.dms-plugin-registry.modules.default
         inputs.matugen.nixosModules.default
-        inputs.dankMaterialShell.homeModules.niri
       ];
 
       home.packages = with pkgs; [
@@ -43,10 +41,10 @@
       programs.dank-material-shell = {
         enable = true;
 
-        niri = {
-          enableKeybinds = true; # Sets static preset keybinds
-          enableSpawn = true; # Auto-start DMS with niri, if enabled
-        };
+        # niri = {
+        #   enableKeybinds = true; # Sets static preset keybinds
+        #   enableSpawn = true; # Auto-start DMS with niri, if enabled
+        # };
 
         # Core features
         enableSystemMonitoring = true; # System monitoring widgets (dgop)

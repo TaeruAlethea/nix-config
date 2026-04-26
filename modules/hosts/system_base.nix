@@ -6,6 +6,9 @@
     imports = with inputs.self.modules.nixos; [
       home-manager
       secretsManagement
+
+      defaultFonts
+      localization
     ];
     nixpkgs.config.allowUnfree = true;
 
@@ -44,6 +47,7 @@
       imports = with inputs.self.modules.homeManager; [
         helix
         oh-my-posh
+        gitToolChain
       ];
 
       programs.home-manager.enable = true;

@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.nixosModules.steam =
+  flake.modules.nixos.steam =
     { pkgs, ... }:
     {
       programs.gamescope = {

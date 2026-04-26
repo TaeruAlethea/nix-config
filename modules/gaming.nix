@@ -1,10 +1,11 @@
-{  ... }:
+{ inputs, ... }:
 {
   flake.modules.nixos.gaming = {
+    imports = with inputs.self.modules.nixos; [
+      steam
+    ];
+    
     services.udev.extraRules = ''
-      # Moza sim stuff
-      SUBSYSTEM=="tty", KERNEL=="ttyACM*", ATTRS{idVendor}=="346e", ACTION=="add", MODE="0666", TAG+="uaccess"
-
       # Ignore PS5 touchpad
       ACTION=="add|change", KERNEL=="event[0-9]*", ATTRS{name}=="*Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
     '';
@@ -27,7 +28,6 @@
       r2modman
       vintagestory
       xivlauncher
-      boxflat # Moza Sim stuff
       lutris
     ];
 
