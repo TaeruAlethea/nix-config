@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.helix =
+  flake.modules.homeManager.helix =
     { pkgs, ... }:
     {
       home.sessionVariables.EDITOR = "hx";

@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.oh-my-posh =
+  flake.modules.homeManager.oh-my-posh =
     { lib, ... }:
     {
       programs.oh-my-posh = {
