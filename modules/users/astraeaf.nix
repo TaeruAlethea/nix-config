@@ -36,9 +36,9 @@ in
       };
     };
 
-  flake.modules.homeManager."user_${userName}" = {
+  flake.modules.homeManager."user_${userName}" = { osConfig, ... }: {
     imports = [
-      inputs.self.modules.homeManager."system_${config.networking.hostName}"
+      inputs.self.modules.homeManager."system_${osConfig.networking.hostName}"
     ];
 
     home = {
