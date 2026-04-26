@@ -7,16 +7,18 @@ in
   flake.modules.nixos."user_${userName}" =
     { pkgs, config, ... }:
     {
-      name = "${userName}";
-      isNormalUser = true;
-      hashedPasswordFile = config.sops.secrets.astraeaf-pw.path;
-      description = userNameLong;
-      extraGroups = [
-        "networkmanager"
-        "wheel"
-        "openrazer"
-        "plugdev"
-      ];
+      users.users."${userName}" = {
+        name = "${userName}";
+        isNormalUser = true;
+        hashedPasswordFile = config.sops.secrets.astraeaf-pw.path;
+        description = userNameLong;
+        extraGroups = [
+          "networkmanager"
+          "wheel"
+          "openrazer"
+          "plugdev"
+        ];
+      };
 
       # Enable automatic login for the user.
       services.displayManager.autoLogin.enable = true;
