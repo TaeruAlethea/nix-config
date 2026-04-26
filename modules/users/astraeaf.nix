@@ -31,7 +31,7 @@ in
 
       home-manager.users."${userName}" = {
         imports = [
-          inputs.self.modules.homeManger."user_${userName}"
+          inputs.self.modules.homeManager."user_${userName}"
         ];
       };
     };
