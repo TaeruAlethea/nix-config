@@ -1,49 +1,56 @@
-{ ... }: {
-	flake.homeModules.emacs = { inputs, pkgs, ... }:
-  {
-    imports = [
-      inputs.nix-doom-emacs-unstraightened.homeModule
-    ];
+{ ... }:
+{
+  flake-file.inputs = {
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
+    nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
+  };
 
-    # nixpkgs.overlays = [ (import inputs.emacs-overlay) ];
+  flake.homeModules.emacs =
+    { inputs, pkgs, ... }:
+    {
+      imports = [
+        inputs.nix-doom-emacs-unstraightened.homeModule
+      ];
 
-    # services.emacs = {
-    #   enable = true;
-    #   package = with pkgs; (
-    #     (emacsPackagesFor emacs-unstable-pgtk).emacsWithPackages (
-    #       epkgs: [
-    #         epkgs.helix
-    #         (epkgs.treesit-grammars.with-grammars (grammars: [ grammars.tree-sitter-bash ]))
-    #         epkgs.vterm
-    #       ]
-    #     )
-    #   );
-    # };
+      # nixpkgs.overlays = [ (import inputs.emacs-overlay) ];
 
-    # programs.emacs = {
-    #   enable = true;
-    #   package = pkgs.emacs-unstable-pgtk;
-    # };
+      # services.emacs = {
+      #   enable = true;
+      #   package = with pkgs; (
+      #     (emacsPackagesFor emacs-unstable-pgtk).emacsWithPackages (
+      #       epkgs: [
+      #         epkgs.helix
+      #         (epkgs.treesit-grammars.with-grammars (grammars: [ grammars.tree-sitter-bash ]))
+      #         epkgs.vterm
+      #       ]
+      #     )
+      #   );
+      # };
 
-    programs.doom-emacs = {
-      enable = true;
-      doomDir = ./doom.d;
-      extraPackages = epkgs: [
-        epkgs.treesit-grammars.with-all-grammars
+      # programs.emacs = {
+      #   enable = true;
+      #   package = pkgs.emacs-unstable-pgtk;
+      # };
+
+      programs.doom-emacs = {
+        enable = true;
+        doomDir = ./doom.d;
+        extraPackages = epkgs: [
+          epkgs.treesit-grammars.with-all-grammars
+        ];
+      };
+
+      home.packages = with pkgs; [
+        fd
+        ripgrep
+        ispell
+
+        # Vterm
+        gnumake
+        cmake
+
+        # # Code tools
+        # csharpier
       ];
     };
-
-    home.packages = with pkgs; [
-      fd
-      ripgrep
-      ispell
-
-      # Vterm
-      gnumake
-      cmake
-
-      # # Code tools
-      # csharpier
-    ];
-  };
 }

@@ -1,5 +1,6 @@
-{ ... }: {
-	flake.nixosModules.terminal = 
+{ ... }:
+{
+  flake.nixosModules.terminal =
     { ... }:
     let
       myShellAliases = {

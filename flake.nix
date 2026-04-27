@@ -1,42 +1,12 @@
+# DO-NOT-EDIT. This file was auto-generated using github:vic/flake-file.
+# Use `nix run .#write-flake` to regenerate it.
 {
   description = "Taeru's config flake";
 
-  outputs = inputs@{ flake-parts, ...}:
-    # https://flake.parts/module-arguments.html
-    flake-parts.lib.mkFlake { inherit inputs; } (top@{ config, withSystem, moduleWithSystem, ... }: {
-      imports = [
-        inputs.home-manager.flakeModules.home-manager
-        
-        (inputs.import-tree ./modules)
-      ];
-      systems = [ "x86_64-linux" ];
-      perSystem = { system, ... }: {
-        _module.args.pkgs = import inputs.nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-        };
-      };
-    });
-  
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
+
   inputs = {
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    import-tree.url = "github:vic/import-tree";
-
     agenix.url = "github:ryantm/agenix";
-    sops-nix.url = "github:Mic92/sops-nix";
-    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
-
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     dankMaterialShell = {
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -45,23 +15,35 @@
       url = "github:AvengeMedia/dms-plugin-registry";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
+    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    flake-file.url = "github:vic/flake-file";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+    home-manager.url = "github:nix-community/home-manager";
+    import-tree.url = "github:vic/import-tree";
     matugen = {
       url = "github:/InioX/Matugen";
       inputs.nixpkgs.follows = "nixpkgs";
-      # If you need a specific version:
-      # ref = "refs/tags/matugen-v0.10.0";
     };
-
-    stylix.url = "github:danth/stylix";
-
-    # Only needed for Windows Subsystem for Linux
-    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
-
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-auto-follow = {
+      url = "github:fzakaria/nix-auto-follow";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
-
-    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-
     nixcord.url = "github:FlameFlag/nixcord";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }
