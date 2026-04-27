@@ -27,7 +27,7 @@
         window-manager
         audio
 
-         # gaming
+         gaming
       ];
 
       # Home packages & programs
