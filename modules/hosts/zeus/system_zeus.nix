@@ -11,6 +11,7 @@
       window-manager
       audio
       powerManagement
+      razer
 
       communications
       gaming
