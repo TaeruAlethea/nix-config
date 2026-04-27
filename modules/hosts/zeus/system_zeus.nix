@@ -28,6 +28,7 @@
         elgato
 
         communications
+        emacs
         firefox
         gaming
         vr
