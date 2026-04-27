@@ -27,10 +27,7 @@
         window-manager
         audio
 
-        communications
-        emacs
-        firefox
-        gaming
+         # gaming
       ];
 
       # Home packages & programs
@@ -39,8 +36,6 @@
         gimp3-with-plugins
         reaper
         vlc
-
-        obsidian
       ];
 
     };

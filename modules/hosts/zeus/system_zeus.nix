@@ -28,9 +28,6 @@
         audio
         elgato
 
-        communications
-        emacs
-        firefox
         gaming
         vr
       ];
@@ -41,8 +38,6 @@
         gimp3-with-plugins
         reaper
         vlc
-
-        obsidian
       ];
 
     };

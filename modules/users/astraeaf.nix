@@ -39,10 +39,19 @@ in
     };
 
   flake.modules.homeManager."user_${userName}" =
-    { osConfig, ... }:
+    { osConfig, pkgs, ... }:
     {
       imports = [
         inputs.self.modules.homeManager."system_${osConfig.networking.hostName}"
+      ] ++ (with inputs.self.modules.homeManager; [
+        communications
+        emacs
+        firefox
+      ]);
+
+      home.packages = with pkgs; [
+        obsidian
+        logseq
       ];
 
       home = {
