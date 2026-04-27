@@ -37,6 +37,8 @@
         networkmanager
         power-profiles-daemon
         i2c-tools
+        adw-gtk3
+        kdePackages.qt6ct
       ];
 
       programs.dank-material-shell = {
@@ -81,7 +83,7 @@
         };
       };
 
-      qt.platformTheme = "kde";
+      qt.platformTheme = "qt6ct";
 
       home.sessionVariables = {
         QT_QPA_PLATFORMTHEME = "qt6ct";
