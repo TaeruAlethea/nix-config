@@ -22,7 +22,6 @@
       services = {
         gvfs.enable = true;
         udisks2.enable = true;
-
       };
 
       security = {
@@ -47,8 +46,7 @@
     { config, ... }:
     {
       imports = with inputs.self.modules.homeManager; [
-        helix
-        oh-my-posh
+        terminal
         gitToolChain
       ];
 
