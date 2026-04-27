@@ -15,6 +15,7 @@
 
       communications
       gaming
+      terminal
       vr
     ];
   };
