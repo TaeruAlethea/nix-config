@@ -64,10 +64,13 @@
 
             insert = {
               C-c = "normal_mode";
+              j = { j = "normal_mode"; };
             };
 
             select = {
               C-c = "normal_mode";
+              j = { j = "normal_mode"; };
+
             };
           };
 
@@ -85,7 +88,7 @@
             {
               name = "nix";
               formatter = {
-                command = "nixfmt";
+                command = "treefmt";
               };
               indent = {
                 tab-width = 2;
