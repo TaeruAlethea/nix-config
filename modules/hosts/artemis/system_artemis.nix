@@ -9,8 +9,8 @@
     imports = with inputs.self.modules.nixos; [
       system_base
       window-manager
-      powerManagement
       audio
+      powerManagement
       razer
 
       communications
