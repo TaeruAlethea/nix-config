@@ -50,7 +50,13 @@
       # };
     };
 
-  flake.modules.homeManager.niri = { pkgs, osConfig, lib, ... }:
+  flake.modules.homeManager.niri =
+    {
+      pkgs,
+      osConfig,
+      lib,
+      ...
+    }:
     {
       imports = [
         inputs.niri.homeModules.niri
@@ -65,24 +71,22 @@
         import ./_commonConfig.nix
       );
 
+      home.pointerCursor = {
+        gtk.enable = true;
+        x11.enable = true;
+        hyprcursor.enable = true;
+        package = pkgs.vimix-cursors;
+        # [
+        # graphite-cursors
+        # layan-cursors
+        # lyra-cursors   # LyraS-cursors"
+        # vimix-cursors
+        # afterglow-cursors-recolored
+        # ];
 
-
-    home.pointerCursor = {
-      gtk.enable = true;
-      x11.enable = true;
-      hyprcursor.enable = true;
-      package = pkgs.vimix-cursors;
-      # [
-      # graphite-cursors
-      # layan-cursors
-      # lyra-cursors   # LyraS-cursors"
-      # vimix-cursors
-      # afterglow-cursors-recolored
-      # ];
-
-      name = "Vimix-cursors";
-      size = 36;
+        name = "Vimix-cursors";
+        size = 36;
+      };
+      home.sessionVariables.XCURSOR_SIZE = 36;
     };
-    home.sessionVariables.XCURSOR_SIZE = 36;
-  };
 }

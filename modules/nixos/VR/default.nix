@@ -4,10 +4,10 @@
     { pkgs, ... }:
     {
       services.udev.extraRules = ''
-      # Moza sim stuff
-      SUBSYSTEM=="tty", KERNEL=="ttyACM*", ATTRS{idVendor}=="346e", ACTION=="add", MODE="0666", TAG+="uaccess"
+        # Moza sim stuff
+        SUBSYSTEM=="tty", KERNEL=="ttyACM*", ATTRS{idVendor}=="346e", ACTION=="add", MODE="0666", TAG+="uaccess"
       '';
-      
+
       services.wivrn = {
         enable = true;
         openFirewall = true;
@@ -20,9 +20,11 @@
       };
     };
 
-  flake.modules.homeManager.vr = { pkgs, ... }: {
-home.packages = with pkgs; [
-      boxflat # Moza Sim stuff
-];
-     };
+  flake.modules.homeManager.vr =
+    { pkgs, ... }:
+    {
+      home.packages = with pkgs; [
+        boxflat # Moza Sim stuff
+      ];
+    };
 }

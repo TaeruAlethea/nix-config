@@ -18,28 +18,30 @@
     ];
   };
 
-  flake.modules.homeManager.system_zeus = {pkgs, ... }: {
-    imports = with inputs.self.modules.homeManager; [
-      system_base
-      window-manager
-      audio
-      elgato
+  flake.modules.homeManager.system_zeus =
+    { pkgs, ... }:
+    {
+      imports = with inputs.self.modules.homeManager; [
+        system_base
+        window-manager
+        audio
+        elgato
 
-      communications
-      firefox
-      gaming
-      vr
-    ];
+        communications
+        firefox
+        gaming
+        vr
+      ];
 
-    # Home packages & programs
-    home.packages = with pkgs; [
-      blender
-      gimp3-with-plugins
-      reaper
-      vlc
+      # Home packages & programs
+      home.packages = with pkgs; [
+        blender
+        gimp3-with-plugins
+        reaper
+        vlc
 
-      obsidian
-   ];
+        obsidian
+      ];
 
-  };
+    };
 }

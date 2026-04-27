@@ -1,4 +1,4 @@
-{ inputs,  ... }:
+{ inputs, ... }:
 let
   userName = "astraeaf";
   userNameLong = "Astraea Falke";
@@ -38,15 +38,17 @@ in
       };
     };
 
-  flake.modules.homeManager."user_${userName}" = { osConfig, ... }: {
-    imports = [
-      inputs.self.modules.homeManager."system_${osConfig.networking.hostName}"
-    ];
+  flake.modules.homeManager."user_${userName}" =
+    { osConfig, ... }:
+    {
+      imports = [
+        inputs.self.modules.homeManager."system_${osConfig.networking.hostName}"
+      ];
 
-    home = {
-      username = "${userName}";
-      homeDirectory = "/home/${userName}";
+      home = {
+        username = "${userName}";
+        homeDirectory = "/home/${userName}";
+      };
+
     };
-
-  };
 }
