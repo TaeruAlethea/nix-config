@@ -26,6 +26,7 @@
     {
       imports = [
         inputs.dankMaterialShell.homeModules.dank-material-shell
+        inputs.dankMaterialShell.homeModules.niri
         inputs.dms-plugin-registry.modules.default
         inputs.matugen.nixosModules.default
       ];
@@ -41,10 +42,19 @@
       programs.dank-material-shell = {
         enable = true;
 
-        # niri = {
-        #   enableKeybinds = true; # Sets static preset keybinds
-        #   enableSpawn = true; # Auto-start DMS with niri, if enabled
-        # };
+        niri = {
+          includes = {
+            enable = true;
+            originalFileName = "hm";
+          };
+          enableKeybinds = true; # Sets static preset keybinds
+          # enableSpawn = true; # Auto-start DMS with niri, if enabled
+        };
+
+        systemd = {
+          enable = true;
+          restartIfChanged = true;
+        };
 
         # Core features
         enableSystemMonitoring = true; # System monitoring widgets (dgop)

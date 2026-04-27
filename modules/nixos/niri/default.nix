@@ -8,9 +8,9 @@
   flake.modules.nixos.niri =
     { pkgs, ... }:
     {
-      imports = [
-        inputs.niri.nixosModules.niri
-      ];
+      # imports = [
+      #   inputs.niri.nixosModules.niri
+      # ];
 
       nixpkgs.overlays = [ inputs.niri.overlays.niri ];
       programs.niri.package = pkgs.niri-unstable;
@@ -52,9 +52,9 @@
 
   flake.modules.homeManager.niri = { pkgs, osConfig, lib, ... }:
     {
-      # imports = [
-      #   inputs.niri.homeModules.niri
-      # ];
+      imports = [
+        inputs.niri.homeModules.niri
+      ];
 
       home.packages = with pkgs; [
         jq # needed for Artemis. Not bad to have around
