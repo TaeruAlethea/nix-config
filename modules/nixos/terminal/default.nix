@@ -1,6 +1,6 @@
-{ ... }:
+{ inputs, ... }:
 {
-  flake.nixosModules.terminal =
+  flake.modules.nixos.terminal =
     { ... }:
     let
       myShellAliases = {
@@ -10,4 +10,12 @@
     {
       environment.shellAliases = myShellAliases;
     };
+
+  flake.modules.homeManager.terminal = { ... }: {
+    imports = with inputs.self.modules.homeManager; [
+      helix
+      oh-my-posh
+      nushell
+    ];
+  };
 }
