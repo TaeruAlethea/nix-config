@@ -18,6 +18,7 @@ in
           "openrazer"
           "plugdev"
         ];
+        shell = pkgs.nushell; 
       };
 
       # Enable automatic login for the user.
@@ -52,6 +53,8 @@ in
       home.packages = with pkgs; [
         obsidian
         logseq
+
+        fastfetch
       ];
 
       home = {
