@@ -23,7 +23,7 @@ in
           "plugdev"
         ];
        shell = pkgs.nushell; 
-       openssh.authorizedKeys.keys = [ (config.sops.secrets.astraea-ssh-key.path) ];
+       openssh.authorizedKeys.keys = [ (config.sops.secrets.astraeaf-ssh-key.path) ];
      };
 
       # Enable automatic login for the user.
