@@ -21,6 +21,7 @@
         secrets = {
           "astraeaf-pw" = { };
           "location" = { };
+          "astraeaf-ssh-key" = { };
         };
       };
     };
