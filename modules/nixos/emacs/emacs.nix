@@ -10,6 +10,7 @@
         e.vterm
         e.mu4e
         e.counsel
+        e.org-modern
       ]);
     };
 
