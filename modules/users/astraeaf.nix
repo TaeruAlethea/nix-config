@@ -7,6 +7,10 @@ in
   flake.modules.nixos."user_${userName}" =
     { pkgs, config, ... }:
     {
+      imports = with inputs.self.modules.nixos; [
+        ssh
+      ];
+      
       users.users."${userName}" = {
         name = "${userName}";
         isNormalUser = true;
@@ -18,8 +22,9 @@ in
           "openrazer"
           "plugdev"
         ];
-        shell = pkgs.nushell; 
-      };
+       shell = pkgs.nushell; 
+       openssh.authorizedKeys.keys = [ (config.sops.secrets.astraea-ssh-key.path) ];
+     };
 
       # Enable automatic login for the user.
       services.displayManager.autoLogin.enable = true;
