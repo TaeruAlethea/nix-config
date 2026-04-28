@@ -9,8 +9,6 @@
       package = pkgs.emacs-pgtk.pkgs.withPackages (e: [
         e.vterm
         e.mu4e
-        e.counsel
-        e.org-modern
       ]);
     };
 
