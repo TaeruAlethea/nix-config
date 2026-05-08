@@ -1,0 +1,60 @@
+{ inputs, lib, ... }:{
+flake.modules.nixos.hardware_ares = {
+  pkgs, config, ...}:
+
+{
+  imports = [
+    inputs.nixos-hardware.nixosModules.microsoft-surface-common
+  ];
+
+	hardware.microsoft-surface.kernalVersion = "stable";
+
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.initrd.availableKernelModules = [
+    "xhci_pci"
+    "nvme"
+    "usb_storage"
+    "sd_mod"
+  ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.extraModulePackages = [ ];
+
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/08f5eac3-b7f0-408c-a6f4-69d32128b20a";
+    fsType = "ext4";
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/78C3-6B88";
+    fsType = "vfat";
+    options = [
+      "fmask=0077"
+      "dmask=0077"
+    ];
+  };
+
+  swapDevices = [
+    { device = "/dev/disk/by-uuid/00e6ec69-7a1b-4fb0-97b2-96eda75d79be"; }
+  ];
+
+  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+  # (the default) this is the recommended approach. When using systemd-networkd it's
+  # still possible to use this option, but it's recommended to use it in conjunction
+  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+  networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp1s0.useDHCP = lib.mkDefault true;
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.nvidia.open = true;
+
+  # Surface SP5 Specific Configs
+  services.thermald.enable = true;
+  service.iptsd.enable = true;
+  #microsoft-surface.surface-control.enable = true; # Inop, possibly depricated.
+};
+}
