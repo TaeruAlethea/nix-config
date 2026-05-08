@@ -7,7 +7,7 @@ flake.modules.nixos.hardware_ares = {
     inputs.nixos-hardware.nixosModules.microsoft-surface-common
   ];
 
-	# hardware.microsoft-surface.kernalVersion = "stable";
+	hardware.microsoft-surface.kernalVersion = "stable";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
