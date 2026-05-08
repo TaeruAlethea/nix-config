@@ -54,7 +54,6 @@ flake.modules.nixos.hardware_ares = {
 
   # Surface SP5 Specific Configs
   services.thermald.enable = true;
-  service.iptsd.enable = true;
-  #microsoft-surface.surface-control.enable = true; # Inop, possibly depricated.
-};
+  mircrosoft-serface.ipts.enable = true;
+    microsoft-surface.surface-control.enable = true;};
 }
