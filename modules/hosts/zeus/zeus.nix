@@ -9,7 +9,7 @@
   flake.modules.nixos.host_zeus = {
     imports = with inputs.self.modules.nixos; [
       hardware_zeus
-        nvidia
+      nvidia
       system_zeus
 
       user_astraeaf

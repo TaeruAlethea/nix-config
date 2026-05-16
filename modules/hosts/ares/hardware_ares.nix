@@ -1,56 +1,61 @@
-{ inputs, lib, ... }:{
-flake.modules.nixos.hardware_ares = {
-  pkgs, config, ...}:
-
+{ inputs, lib, ... }:
 {
-  imports = [
-    inputs.nixos-hardware.nixosModules.microsoft-surface-common
-  ];
+  flake.modules.nixos.hardware_ares =
+    {
+      pkgs,
+      config,
+      ...
+    }:
 
-	hardware.microsoft-surface.kernelVersion = "stable";
+    {
+      imports = [
+        inputs.nixos-hardware.nixosModules.microsoft-surface-common
+      ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+      hardware.microsoft-surface.kernelVersion = "stable";
 
-  boot.initrd.availableKernelModules = [
-    "xhci_pci"
-    "nvme"
-    "usb_storage"
-    "sd_mod"
-  ];
-  boot.initrd.kernelModules = [ "pinctrl_sunrisepoint" ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+      # Bootloader.
+      boot.loader.systemd-boot.enable = true;
+      boot.loader.efi.canTouchEfiVariables = true;
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/08f5eac3-b7f0-408c-a6f4-69d32128b20a";
-    fsType = "ext4";
-  };
+      boot.initrd.availableKernelModules = [
+        "xhci_pci"
+        "nvme"
+        "usb_storage"
+        "sd_mod"
+      ];
+      boot.initrd.kernelModules = [ "pinctrl_sunrisepoint" ];
+      boot.kernelModules = [ "kvm-intel" ];
+      boot.extraModulePackages = [ ];
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/78C3-6B88";
-    fsType = "vfat";
-    options = [
-      "fmask=0077"
-      "dmask=0077"
-    ];
-  };
+      fileSystems."/" = {
+        device = "/dev/disk/by-uuid/08f5eac3-b7f0-408c-a6f4-69d32128b20a";
+        fsType = "ext4";
+      };
 
-  swapDevices = [
-    { device = "/dev/disk/by-uuid/00e6ec69-7a1b-4fb0-97b2-96eda75d79be"; }
-  ];
+      fileSystems."/boot" = {
+        device = "/dev/disk/by-uuid/78C3-6B88";
+        fsType = "vfat";
+        options = [
+          "fmask=0077"
+          "dmask=0077"
+        ];
+      };
 
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp1s0.useDHCP = lib.mkDefault true;
+      swapDevices = [
+        { device = "/dev/disk/by-uuid/00e6ec69-7a1b-4fb0-97b2-96eda75d79be"; }
+      ];
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  hardware.nvidia.open = true;
+      # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+      # (the default) this is the recommended approach. When using systemd-networkd it's
+      # still possible to use this option, but it's recommended to use it in conjunction
+      # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+      networking.useDHCP = lib.mkDefault true;
+      # networking.interfaces.wlp1s0.useDHCP = lib.mkDefault true;
+
+      nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+      hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+      hardware.nvidia.open = true;
 
       # Surface SP5 Specific Configs
       services = {

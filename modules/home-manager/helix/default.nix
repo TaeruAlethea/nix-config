@@ -64,12 +64,16 @@
 
             insert = {
               C-c = "normal_mode";
-              j = { j = "normal_mode"; };
+              j = {
+                j = "normal_mode";
+              };
             };
 
             select = {
               C-c = "normal_mode";
-              j = { j = "normal_mode"; };
+              j = {
+                j = "normal_mode";
+              };
 
             };
           };

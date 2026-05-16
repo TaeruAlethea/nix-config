@@ -10,7 +10,7 @@ in
       imports = with inputs.self.modules.nixos; [
         ssh
       ];
-      
+
       users.users."${userName}" = {
         name = "${userName}";
         isNormalUser = true;
@@ -22,9 +22,9 @@ in
           "openrazer"
           "plugdev"
         ];
-       shell = pkgs.nushell; 
-       openssh.authorizedKeys.keys = [ (config.sops.secrets.astraeaf-ssh-key.path) ];
-     };
+        shell = pkgs.nushell;
+        openssh.authorizedKeys.keys = [ (config.sops.secrets.astraeaf-ssh-key.path) ];
+      };
 
       # Enable automatic login for the user.
       services.displayManager.autoLogin.enable = true;
@@ -49,7 +49,8 @@ in
     {
       imports = [
         inputs.self.modules.homeManager."system_${osConfig.networking.hostName}"
-      ] ++ (with inputs.self.modules.homeManager; [
+      ]
+      ++ (with inputs.self.modules.homeManager; [
         communications
         emacs
         firefox
