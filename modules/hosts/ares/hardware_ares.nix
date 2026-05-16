@@ -53,7 +53,11 @@ flake.modules.nixos.hardware_ares = {
   hardware.nvidia.open = true;
 
   # Surface SP5 Specific Configs
-  services.thermald.enable = true;
+  services = {thermald.enable = true;
+    iptsd = {
+      enable = true;
+    };
+  };
   # microsoft-surface.ipts.enable = true;
     # microsoft-surface.surface-control.enable = true; # Still Inop
   };
