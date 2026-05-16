@@ -19,7 +19,7 @@ flake.modules.nixos.hardware_ares = {
     "usb_storage"
     "sd_mod"
   ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "pinctrl_sunrisepoint" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
