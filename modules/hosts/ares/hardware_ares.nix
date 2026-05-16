@@ -52,13 +52,10 @@ flake.modules.nixos.hardware_ares = {
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware.nvidia.open = true;
 
-  # Surface SP5 Specific Configs
-  services = {thermald.enable = true;
-    iptsd = {
-      enable = true;
+      # Surface SP5 Specific Configs
+      services = {
+        thermald.enable = true;
+        iptsdi.enable = true;
+      };
     };
-  };
-  # microsoft-surface.ipts.enable = true;
-    # microsoft-surface.surface-control.enable = true; # Still Inop
-  };
 }
