@@ -27,7 +27,7 @@
       imports = [
         inputs.dankMaterialShell.homeModules.dank-material-shell
         inputs.dankMaterialShell.homeModules.niri
-        inputs.dms-plugin-registry.modules.default
+        inputs.dms-plugin-registry.homeModules.dms-plugin-registry
         inputs.matugen.nixosModules.default
       ];
 
