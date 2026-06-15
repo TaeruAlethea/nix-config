@@ -58,7 +58,7 @@ in
 
       home.packages = with pkgs; [
         obsidian
-        logseq
+        # logseq
 
         fastfetch
       ];
