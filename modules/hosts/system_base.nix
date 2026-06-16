@@ -39,7 +39,7 @@
         ];
       };
 
-      system.stateVersion = "25.05";
+      system.stateVersion = "26.05";
     };
 
   flake.modules.homeManager.system_base =
@@ -56,7 +56,7 @@
       systemd.user.startServices = "sd-switch";
       home = {
         homeDirectory = "/home/${config.home.username}";
-        stateVersion = "25.05";
+        stateVersion = "26.05";
         sessionVariables = {
           EDITOR = "hx";
         };

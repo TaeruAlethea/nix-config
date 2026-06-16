@@ -67,6 +67,5 @@ in
         username = "${userName}";
         homeDirectory = "/home/${userName}";
       };
-
     };
 }
