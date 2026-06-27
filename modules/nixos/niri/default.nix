@@ -33,9 +33,13 @@
         image-roll
         libheif
         libheif.out # Image Preview in Nautilus
-
-        xdg-desktop-portal-gtk
       ];
+
+      xdg.portal = {
+        enable = true;
+        xdgOpenUsePortal = true; 
+        extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; 
+      };
 
       # Needed for Nautilus file Browser
       environment.pathsToLink = [ "share/thumbnailers" ];
