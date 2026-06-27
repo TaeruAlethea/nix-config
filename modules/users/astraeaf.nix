@@ -53,7 +53,7 @@ in
       ++ (with inputs.self.modules.homeManager; [
         communications
         emacs
-        firefox
+        zen-browser
       ]);
 
       home.packages = with pkgs; [
