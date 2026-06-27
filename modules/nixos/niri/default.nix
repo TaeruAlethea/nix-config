@@ -21,12 +21,14 @@
         enable = true;
       };
 
-      programs.gnome-disks.enable = true;
+      programs.gnome-terminal.enable = false;
+      environment.gnome.excludePackages = with pkgs; [
+        gnome-console
+      ];
 
       services.gnome = {
         core-apps.enable = true;
-        sushi.enable = true;
-      };
+       };
 
       environment.systemPackages = with pkgs; [
         xwayland-satellite
@@ -36,11 +38,19 @@
         libheif.out # Image Preview in Nautilus
       ];
 
-      xdg.portal = {
+      xdg = {
+      mime = {
+        enable = true;
+        defaultApplications = {
+          "inode/directory" = "nautilus.desktop";
+        };
+      };
+        portal = {
         enable = true;
         # xdgOpenUsePortal = true;
         config.common.default = [ "gnome" ];
         extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome ];
+      };
       };
 
       # Needed for Nautilus file Browser
