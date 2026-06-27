@@ -24,6 +24,7 @@
       programs.gnome-disks.enable = true;
 
       services.gnome = {
+        core-apps.enable = true;
         sushi.enable = true;
       };
 
@@ -37,8 +38,9 @@
 
       xdg.portal = {
         enable = true;
-        xdgOpenUsePortal = true;
-        extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+        # xdgOpenUsePortal = true;
+        config.common.default = [ "gnome" ];
+        extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome ];
       };
 
       # Needed for Nautilus file Browser
