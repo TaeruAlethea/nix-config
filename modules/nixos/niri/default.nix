@@ -37,8 +37,8 @@
 
       xdg.portal = {
         enable = true;
-        xdgOpenUsePortal = true; 
-        extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; 
+        xdgOpenUsePortal = true;
+        extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
       };
 
       # Needed for Nautilus file Browser
