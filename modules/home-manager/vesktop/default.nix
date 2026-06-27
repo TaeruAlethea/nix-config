@@ -11,12 +11,13 @@
       # 	Oxicord = "nix run github:linuxmobile/oxicord";
       # };
 
-      home.packages = with pkgs; [ vesktop ];
+      # home.packages = with pkgs; [ vesktop ];
 
       programs.nixcord = {
-        enable = false;
+        enable = true;
 
         # Choose your client (enable only one of these two)
+        discord.enable = false;
         # discord.vencord.enable = true;      # Standard Vencord
         # discord.equicord.enable = true;   # Equicord (has more plugins)
 
