@@ -22,7 +22,7 @@
       # Home packages & programs
       home.packages = with pkgs; [
         prismlauncher # Minecraft
-        # jdk25_headless
+        jdk25_headless
         jdk21_headless
         # jdk17_headless
         # jdk8_headless
@@ -32,6 +32,5 @@
         xivlauncher
         lutris
       ];
-
     };
 }
