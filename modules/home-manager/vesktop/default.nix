@@ -37,7 +37,7 @@
 
           plugins = {
             alwaysExpandRoles.enable = true;
-            BlurNSFW.enable = true;
+            blurNsfw.enable = true;
             crashHandler.enable = true;
             platformIndicators.enable = true;
             showHiddenChannels.enable = true;
@@ -70,6 +70,7 @@
               --remove-bg-layer: on;
               --panel-blur: on;
               --blur-amount: 12px;
+              --bg-floating: var(--bg-3);
           }
             		'';
       };
