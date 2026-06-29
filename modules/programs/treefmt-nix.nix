@@ -9,9 +9,8 @@
     inputs.treefmt-nix.flakeModule
   ];
 
-  perSystem.treefmt =
-    { pkgs, ... }:
-    {
+  perSystem = { pkgs, ... }: {
+    treefmt = {
       # Used to find the project root
       projectRootFile = "flake.nix";
 
@@ -24,4 +23,5 @@
         yamlfmt.enable = true;
       };
     };
+  };
 }
