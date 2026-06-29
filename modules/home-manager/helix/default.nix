@@ -8,6 +8,7 @@
       home.packages = with pkgs; [
         rustfmt # Rust Formatter
 
+        omnisharp-roslyn
         nil # Nix Language Server
         nixfmt-tree # Nix Formatter
       ];
