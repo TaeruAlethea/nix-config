@@ -23,7 +23,7 @@
       home.packages = with pkgs; [
         prismlauncher # Minecraft
         jdk25_headless
-        jdk21_headless
+        # jdk21_headless
         # jdk17_headless
         # jdk8_headless
 
