@@ -29,6 +29,7 @@
         polkit.enable = true;
       };
 
+      nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
       nix.settings = {
         auto-optimise-store = true;
 
