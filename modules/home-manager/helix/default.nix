@@ -1,15 +1,20 @@
 { ... }:
 {
   flake.modules.homeManager.helix =
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
     {
       home.sessionVariables.EDITOR = "hx";
 
       home.packages = with pkgs; [
-        rustfmt # Rust Formatter
+        # C-Sharp
+        omnisharp-roslyn # Lanuage Server
+        netcoredbg # debug adapter
 
-        omnisharp-roslyn
-        nil # Nix Language Server
+        # Json
+        vscode-json-languageserver
+
+        # nix
+        nixd # Nix Language Server
         nixfmt-tree # Nix Formatter
       ];
 
@@ -84,10 +89,13 @@
         languages = {
           language = [
             {
-              name = "rust";
-              formatter = {
-                command = "rustfmt";
-              };
+              name = "c-sharp";
+              formatter.command = "${lib.getExe pkgs.csharpier}";
+              auto-format = true;
+            }
+            {
+              name = "json";
+              formatter.command = "${lib.getExe pkgs.jsonfmt}";
               auto-format = true;
             }
             {
@@ -101,9 +109,15 @@
               };
             }
             {
-              name = "c-sharp";
-              formatter.command = "csharpier";
+              name = "rust";
+              formatter = {
+                command = "${lib.getExe pkgs.rustfmt}";
+              };
               auto-format = true;
+            }
+            {
+              name = "yaml";
+              formatter.command = "${lib.getExe pkgs.yamlfmt}";
             }
           ];
         };
