@@ -100,6 +100,11 @@
                 unit = "t";
               };
             }
+            {
+              name = "c-sharp";
+              formatter.command = "csharpier";
+              auto-format = true;
+            }
           ];
         };
 
