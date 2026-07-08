@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.nixosModules.valent =
+  flake.modules.nixos.valent =
     { pkgs, ... }:
     {
       programs.kdeconnect = {

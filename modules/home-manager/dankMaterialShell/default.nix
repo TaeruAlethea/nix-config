@@ -29,7 +29,9 @@
         inputs.dankMaterialShell.homeModules.niri
         inputs.dms-plugin-registry.homeModules.dms-plugin-registry
         inputs.matugen.nixosModules.default
-      ];
+      ] ++ (with inputs.self.modules.nixos; [
+        valent
+      ]);
 
       home.packages = with pkgs; [
         accountsservice
