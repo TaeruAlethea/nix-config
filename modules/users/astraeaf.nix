@@ -9,6 +9,7 @@ in
     {
       imports = with inputs.self.modules.nixos; [
         ssh
+        valent
       ];
 
       users.users."${userName}" = {
