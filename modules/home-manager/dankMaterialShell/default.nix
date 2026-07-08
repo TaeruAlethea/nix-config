@@ -71,15 +71,11 @@
         plugins = {
           # Add plugin-specific settingsi
           dankPomodoroTimer.enable = true;
-          dankCalculator = {
-            enable = true;
-            src = pkgs.fetchFromGitHub {
-              owner = "rochacbruno";
-              repo = "DankCalculator";
-              tag = "0.2.2";
-              sha256 = "sha256-bhV22bL38CJp58Y8tCY8sEBRYxmuk671fEymmdg0Yuk=";
-            };
-          };
+          dankKDEConnect.enable = true;
+          dankRazer.enable = true;
+          dankObsidian.enable = true;
+          activateLinux.enable = true;
+          networkIndicator.enable = true;
         };
       };
 
