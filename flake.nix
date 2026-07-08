@@ -7,6 +7,10 @@
 
   inputs = {
     agenix.url = "github:ryantm/agenix";
+    dankCalendar = {
+      url = "github:/AvengeMedia/dankcalendar";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     dankMaterialShell = {
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -15,6 +15,10 @@
       # If you need a specific version:
       # ref = "refs/tags/matugen-v0.10.0";
     };
+    dankCalendar = {
+      url = "github:/AvengeMedia/dankcalendar";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   flake.modules.homeManager.dankMaterialShell =
@@ -27,6 +31,7 @@
       imports = [
         inputs.dankMaterialShell.homeModules.dank-material-shell
         inputs.dankMaterialShell.homeModules.niri
+        inputs.dankCalendar.homeModules.default
         inputs.dms-plugin-registry.homeModules.dms-plugin-registry
         inputs.matugen.nixosModules.default
       ] ++ (with inputs.self.modules.nixos; [
@@ -42,6 +47,11 @@
         adw-gtk3
         kdePackages.qt6ct
       ];
+
+      programs.dank-calendar = {
+        enable = true;
+        systemd.enable = true;
+      };
 
       programs.dank-material-shell = {
         enable = true;
