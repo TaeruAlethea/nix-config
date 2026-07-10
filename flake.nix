@@ -32,10 +32,11 @@
       url = "github:/InioX/Matugen";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri = {
+    niri-flake = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri-nix.url = "git+https://codeberg.org/BANanaD3V/niri-nix";
     nix-auto-follow = {
       url = "github:fzakaria/nix-auto-follow";
       inputs.nixpkgs.follows = "nixpkgs";

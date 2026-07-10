@@ -59,7 +59,7 @@
             enable = true;
             originalFileName = "hm";
           };
-          enableKeybinds = true; # Sets static preset keybinds
+          # enableKeybinds = true; # Sets static preset keybinds
           # enableSpawn = true; # Auto-start DMS with niri, if enabled
         };
 

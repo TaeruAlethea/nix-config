@@ -1,18 +1,23 @@
 { inputs, ... }:
 {
-  flake-file.inputs.niri = {
-    url = "github:sodiboo/niri-flake";
-    inputs.nixpkgs.follows = "nixpkgs";
+  flake-file.inputs = {
+    niri-flake = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    niri-nix = {
+      url = "git+https://codeberg.org/BANanaD3V/niri-nix";
+    };
   };
 
   flake.modules.nixos.niri =
     { pkgs, ... }:
     {
-      # imports = [
-      #   inputs.niri.nixosModules.niri
-      # ];
+      imports = [
+        inputs.niri-nix.nixosModules.default
+      ];
 
-      nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+      nixpkgs.overlays = [ inputs.niri-nix.overlays.niri-nix ];
       programs.niri.package = pkgs.niri-unstable;
 
       systemd.user.services.niri-flake-polkit.enable = false;
@@ -45,15 +50,6 @@
             "inode/directory" = "nautilus.desktop";
           };
         };
-        portal = {
-          enable = true;
-          # xdgOpenUsePortal = true;
-          config.common.default = [ "gnome" ];
-          extraPortals = [
-            pkgs.xdg-desktop-portal-gtk
-            pkgs.xdg-desktop-portal-gnome
-          ];
-        };
       };
 
       # Needed for Nautilus file Browser
@@ -78,7 +74,7 @@
     }:
     {
       imports = [
-        inputs.niri.homeModules.niri
+        inputs.niri-nix.homeModules.default
       ];
 
       home.packages = with pkgs; [
