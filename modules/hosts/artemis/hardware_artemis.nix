@@ -1,6 +1,5 @@
-{ lib, ... }:
+{ lib, inputs, ... }:
 {
-
   flake.modules.nixos.hardware_artemis =
     {
       config,
@@ -9,6 +8,12 @@
     }:
 
     {
+      imports = [
+        inputs.nixos-hardware.nixosModules.common-cpu-intel
+        inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
+      ];
+
+
       hardware.enableRedistributableFirmware = lib.mkDefault true;
 
       # Bootloader.
@@ -98,5 +103,9 @@
 
       nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
       hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+      services = {
+        iptsd.enable = true;
+      };
     };
 }
