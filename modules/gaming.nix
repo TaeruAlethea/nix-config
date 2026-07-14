@@ -28,6 +28,8 @@
         # jdk8_headless
 
         r2modman
+        melonloader-installer
+        
         vintagestory
         xivlauncher
         lutris
