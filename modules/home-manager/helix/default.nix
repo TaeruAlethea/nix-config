@@ -1,11 +1,17 @@
-{ ... }:
+{ inputs, ... }:
 {
+  flake-file.inputs.steel = {
+    url = "github:mattwparas/steel";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+  
   flake.modules.homeManager.helix =
     { pkgs, lib, ... }:
     {
       home.sessionVariables.EDITOR = "hx";
 
       home.packages = with pkgs; [
+        
         # C-Sharp
         omnisharp-roslyn # Lanuage Server
         netcoredbg # debug adapter
@@ -16,10 +22,13 @@
         # nix
         nixd # Nix Language Server
         nixfmt-tree # Nix Formatter
+      ] ++ [
+        inputs.steel.packages.${system}.steel
       ];
 
       programs.helix = {
         enable = true;
+        package = pkgs.steelix;
         defaultEditor = true;
 
         settings = {
