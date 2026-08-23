@@ -124,10 +124,10 @@
               };
               auto-format = true;
             }
-            {
-              name = "yaml";
-              formatter.command = "${lib.getExe pkgs.yamlfmt}";
-            }
+            # {
+            #   name = "yaml";
+            #   formatter.command = "${lib.getExe pkgs.yamlfmt}";
+            # }
           ];
         };
 
