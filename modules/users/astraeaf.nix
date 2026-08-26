@@ -33,7 +33,7 @@ in
         flake = "/home/${userName}/nix-config";
       };
       
-      home-manager.users."${userName}" = { config, ... }:{
+      home-manager.users."${userName}" = {
         imports = [
           inputs.self.modules.homeManager."user_${userName}_${config.networking.hostName}"
         ]
