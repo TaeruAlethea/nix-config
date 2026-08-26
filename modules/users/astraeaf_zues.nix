@@ -4,7 +4,6 @@
     { pkgs, ... }:
     {
       imports = with inputs.self.modules.homeManager; [
-        system_base
         window-manager
         audio
         elgato
