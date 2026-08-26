@@ -9,6 +9,7 @@
     imports = with inputs.self.modules.nixos; [
       system_base
       powerManagement
+      sshServer
     ];
   };
 }
