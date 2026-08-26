@@ -9,12 +9,16 @@
         audio
 
         gaming
+        communications
+        emacs
+        zen-browser
       ];
 
       # Home packages & programs
       home.packages = with pkgs; [
         blender
         gimp3-with-plugins
+        obsidian
         reaper
         vlc
       ];

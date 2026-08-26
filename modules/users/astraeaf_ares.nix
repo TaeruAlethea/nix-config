@@ -7,12 +7,16 @@
         system_base
         window-manager
         audio
+
+        communications
+        zen-browser
       ];
 
       home.packages = with pkgs; [
         blender
         gimp3-with-plugins
         krita
+        obsidian
         vlc
       ];
     };

@@ -32,36 +32,34 @@ in
         clean.extraArgs = "--keep-since 4d --keep 3";
         flake = "/home/${userName}/nix-config";
       };
-
-      home-manager.users."${userName}" = {
+      
+      home-manager.users."${userName}" = { config, ... }:{
         imports = [
-          inputs.self.modules.homeManager."user_${userName}"
+          inputs.self.modules.homeManager."user_${userName}_${config.networking.hostName}"
+        ]
+        ++ (with inputs.self.modules.homeManager; [
+          emacs
+          gitToolChain
+          terminal
+        ]);
+
+        home.packages = with pkgs; [
+          fastfetch
         ];
-      };
-    };
 
-  flake.modules.homeManager."user_${userName}" =
-    { osConfig, pkgs, ... }:
-    {
-      imports = [
-        inputs.self.modules.homeManager."user_${userName}_${osConfig.networking.hostName}"
-      ]
-      ++ (with inputs.self.modules.homeManager; [
-        communications
-        emacs
-        zen-browser
-      ]);
+        home = {
+          username = "${userName}";
+          homeDirectory = "/home/${userName}";
+          stateVersion = "26.05";
+          sessionVariables = {
+            EDITOR = "hx";
+          };
+        };
 
-      home.packages = with pkgs; [
-        obsidian
-        # logseq
+        programs.home-manager.enable = true;
+        xdg.enable = true;
 
-        fastfetch
-      ];
-
-      home = {
-        username = "${userName}";
-        homeDirectory = "/home/${userName}";
+        systemd.user.startServices = "sd-switch";
       };
     };
 }

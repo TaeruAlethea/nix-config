@@ -9,14 +9,17 @@
         audio
         elgato
 
+        communications
         gaming
         vr
+        zen-browser
       ];
 
       # Home packages & programs
       home.packages = with pkgs; [
         blender
         gimp3-with-plugins
+        obsidian
         reaper
         vlc
       ];
