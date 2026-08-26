@@ -49,7 +49,7 @@ in
     { osConfig, pkgs, ... }:
     {
       imports = [
-        inputs.self.modules.homeManager."system_${osConfig.networking.hostName}"
+        inputs.self.modules.homeManager."user_${userName}_${osConfig.networking.hostName}"
       ]
       ++ (with inputs.self.modules.homeManager; [
         communications
