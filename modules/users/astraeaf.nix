@@ -7,11 +7,6 @@ in
   flake.modules.nixos."user_${userName}" =
     { pkgs, config, ... }:
     {
-      imports = with inputs.self.modules.nixos; [
-        ssh
-        valent
-      ];
-
       users.users."${userName}" = {
         name = "${userName}";
         isNormalUser = true;

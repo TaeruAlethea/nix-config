@@ -16,6 +16,7 @@
       communications
       gaming
       terminal
+      valent
       vr
     ];
   };
