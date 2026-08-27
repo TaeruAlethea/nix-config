@@ -58,8 +58,8 @@
 
   	users.groups.certs.members = [ "prosody" "nginx" ];
 
-  	# security.acme = {
-  	# 	acceptTerms = true;
+  	security.acme = {
+  		acceptTerms = true;
   	# 	defaults.email = "TaeruAlethea@gmail.com";
   	# 	certs.${domain} = {
   	# 		group = "certs";
@@ -67,7 +67,7 @@
   	# 		postRun = "systemctl reload prosody.service";
   	# 		extraDomainNames = [ mucDomain uploadDomain ];
   	# 	};
-  	# };
+  	};
 
   	services.nginx = {
   		enable = true;
