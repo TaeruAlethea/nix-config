@@ -1,0 +1,13 @@
+name = "All of Create"
+author = "quickqwek"
+version = "2.4"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "0eb00fa0b1ac04b294bea0ce09f353a02e18e274389e62701839e497b37b47d7"
+
+[versions]
+minecraft = "1.21.1"
+neoforge = "21.1.248"
