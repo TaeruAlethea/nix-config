@@ -21,13 +21,14 @@
         defaultSopsFile = ./secrets/secrets.yaml;
         secrets = {
           "astraeaf-pw" = {
-            owner = config.users.users.astraeaf.name;
+            # owner = config.users.users.astraeaf.name;
           };
           "location" = {
-            owner = config.users.users.astraeaf.name;
+            # owner = config.users.users.astraeaf.name;
           };
           "astraeaf-ssh-key" = {
-            owner = config.users.users.astraeaf.name;
+            path = "/home/astraeaf/.ssh/authorized_keys";
+            # owner = config.users.users.astraeaf.name;
           };
         };
       };
