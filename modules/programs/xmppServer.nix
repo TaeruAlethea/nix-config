@@ -61,7 +61,7 @@
   	security.acme = {
   		acceptTerms = true;
   		defaults.email = "TaeruAlethea@gmail.com";
-  		certs."${domain}" = {
+  		certs.${domain} = {
   			group = "certs";
   			webroot = "/var/lib/acme/acme-challenge";
   			postRun = "systemctl reload prosody.service";
