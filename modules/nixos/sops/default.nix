@@ -7,7 +7,7 @@
   };
 
   flake.modules.nixos.sops =
-    { pkgs, ... }:
+    { config, ... }:
     {
       imports = [
         inputs.sops-nix.nixosModules.sops
@@ -16,12 +16,19 @@
       sops = {
         age = {
           sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+          generateKey = true;
         };
         defaultSopsFile = ./secrets/secrets.yaml;
         secrets = {
-          "astraeaf-pw" = { };
-          "location" = { };
-          "astraeaf-ssh-key" = { };
+          "astraeaf-pw" = {
+            owner = config.users.users.astraeaf.name;
+          };
+          "location" = {
+            owner = config.users.users.astraeaf.name;
+          };
+          "astraeaf-ssh-key" = {
+            owner = config.users.users.astraeaf.name;
+          };
         };
       };
     };
