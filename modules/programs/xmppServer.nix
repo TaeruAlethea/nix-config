@@ -58,21 +58,23 @@
 
   	users.groups.certs.members = [ "prosody" "nginx" ];
 
-  	security.acme = {
-  		acceptTerms = true;
-  		defaults.email = "TaeruAlethea@gmail.com";
-  		certs.${domain} = {
-  			group = "certs";
-  			webroot = "/var/lib/acme/acme-challenge";
-  			postRun = "systemctl reload prosody.service";
-  			extraDomainNames = [ mucDomain uploadDomain ];
-  		};
-  	};
+  	# security.acme = {
+  	# 	acceptTerms = true;
+  	# 	defaults.email = "TaeruAlethea@gmail.com";
+  	# 	certs.${domain} = {
+  	# 		group = "certs";
+  	# 		webroot = "/var/lib/acme/acme-challenge";
+  	# 		postRun = "systemctl reload prosody.service";
+  	# 		extraDomainNames = [ mucDomain uploadDomain ];
+  	# 	};
+  	# };
 
   	services.nginx = {
   		enable = true;
   		virtualHosts.${domain} = {
-					locations."/.well-known/acme-challenge".root = "/var/lib/acme/acme-challenge";
+			    enableACME = true;
+			    forceSSL = true;
+					# locations."/.well-known/acme-challenge".root = "/var/lib/acme/acme-challenge";
 					locations."/".return = "404";
   		};
   	};
