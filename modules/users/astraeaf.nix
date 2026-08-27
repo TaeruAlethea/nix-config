@@ -19,7 +19,6 @@ in
           "plugdev"
         ];
         shell = pkgs.nushell;
-        openssh.authorizedKeys.keyFiles = [ "~/.ssh/authorized_keys" ];
       };
 
       # Enable automatic login for the user.
