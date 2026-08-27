@@ -25,7 +25,7 @@
   		muc = [
   			{
   				domain = mucDomain;
-  				name = "Chat Rooms";
+  				name = "TheForest";
   				restrictRoomCreation = false;
   			}
   		];
