@@ -2,7 +2,8 @@
 {
   flake.modules.nixos.xmppServer = { config, ... }:
 		let
-			domain = "xmpp.demondeer.team";
+			simpleDomain = "demondeer.team";
+			domain = "xmpp.${simpleDomain}";
 			mucDomain = "conference.${domain}";
 			uploadDomain = "upload.${domain}";
 		in
@@ -87,7 +88,7 @@
 	    	"${mucDomain}"
 	    	"${uploadDomain}"
 	    ];
-	    zone = "${domain}";
+	    zone = "${simpleDomain}";
 	    ssl = true;
 	  };
 
