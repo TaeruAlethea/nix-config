@@ -10,7 +10,7 @@
   {
   	services.prosody = {
   		enable = true;
-  		admins = [ "admin@${domain}" ];
+  		admins = [ "admin@${domain}" "taeru@${domain}" ];
 
   		ssl = {
   			cert = "/var/lib/acme/${domain}/fullchain.pem";
