@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.system_hera = { ... }:{
+  flake.modules.nixos.system_hera = {
     networking = {
       hostName = "hera";
       networkmanager.enable = true;

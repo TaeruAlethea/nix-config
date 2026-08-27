@@ -1,5 +1,5 @@
-{ ... }:{
-  flake.modules.nixos.hardware_hera = { config, lib,... }:{
+{ lib, ... }:{
+  flake.modules.nixos.hardware_hera = { config, ... }:{
     # Use the systemd-boot EFI boot loader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;

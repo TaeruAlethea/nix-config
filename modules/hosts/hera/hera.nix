@@ -9,7 +9,6 @@
   flake.modules.nixos.host_hera = {
     imports = with inputs.self.modules.nixos; [
       hardware_hera
-      nvidia
       system_hera
 
       user_astraeaf

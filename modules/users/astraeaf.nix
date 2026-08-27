@@ -19,7 +19,7 @@ in
           "plugdev"
         ];
         shell = pkgs.nushell;
-        # openssh.authorizedKeys.keyFiles = [ config.sops.secrets.astraeaf-ssh-key.path ];
+        openssh.authorizedKeys.keyFiles = [ "~/.ssh/authorized_keys" ];
       };
 
       # Enable automatic login for the user.
@@ -34,14 +34,13 @@ in
       };
       
       home-manager.users."${userName}" = {
-        imports = [
-          inputs.self.modules.homeManager."user_${userName}_${config.networking.hostName}"
-        ]
-        ++ (with inputs.self.modules.homeManager; [
+        imports = (with inputs.self.modules.homeManager; [
           emacs
           gitToolChain
           terminal
-        ]);
+        ]) ++ [
+          inputs.self.modules.homeManager."user_${userName}_${config.networking.hostName}"
+        ];
 
         home.packages = with pkgs; [
           fastfetch
