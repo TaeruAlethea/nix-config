@@ -16,6 +16,7 @@
           user_astraeaf
 
           powerManagement
+          minecraftServer
           sshServer
           xmppServer
         ];

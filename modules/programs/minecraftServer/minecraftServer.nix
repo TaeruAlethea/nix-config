@@ -1,44 +1,63 @@
 { inputs, lib, ... }:{
 	flake-file.inputs.nix-minecraft = {
     url = "github:Infinidoge/nix-minecraft";
-    inputs.nixpkgs.follows = "nixpkgs";
   };
 
   flake.modules.nixos.minecraftServer = { pkgs, ... }:{
-imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
-  nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
+    imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
+    nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
 
-  services.minecraft-servers = {
-    enable = true;
-    eula = true;
-    
-    package = pkgs.minecraft-server-1-12;
-    dataDir = "/var/lib/someotherdir";
+    services.minecraft-servers = {
+      enable = true;
+      eula = true;
+      openFirewall = true;
+      dataDir = "/var/lib/minecraft/";
 
-    servers = {
-      AllOfCreate =
-      	let
-				  modpack = pkgs.fetchPackwizModpack {
-				    url = "./allOfCreate/pack.toml";
-				    packHash = "";
-				  };
-				  mcVersion = modpack.manifest.versions.minecraft;
-				  fabricVersion = modpack.manifest.versions.fabric;
-				  serverVersion = lib.replaceStrings [ "." ] [ "_" ] "fabric-${mcVersion}";
-      	in
-      	{
-        enable = true;
-        package = pkgs.fabricServers.${serverVersion}.override { loaderVersion = fabricVersion; };
+      servers =
+      let
+        allofcreate = { packwiz, stdenv, fetchurl  }: stdenv.mkDerivation {
+          name = "allOfCreatePackwiz";
+          version = "2.4";
+          src = fetchurl {
+            url = "https://www.curseforge.com/api/v1/mods/1518930/files/8669802/download";
+            hash = "";
+          };
+          nativeBuildInputs = [ packwiz ];
 
-        serverProperties = {/* */};
-        whitelist = {/* */};
+          unpackPhase = ''
+            ls -a
+            packwiz cursforge import $src
+            '';
 
-        symlinks = {
-          # Modpack example
-          "mods" = "${modpack}/mods";
+          installPhase = ''
+            mv . $out/
+            '';
+   	    };
+		    allofcreatePackage = pkgs.callPackage allofcreate;
+      in
+      {
+        AllOfCreate =
+       	let
+       	     modpack = pkgs.fetchPackwizModpack {
+  				    src = "${allofcreatePackage}/pack.toml";
+  				  };
+  				  mcVersion = modpack.manifest.versions.minecraft;
+  				  neoforgeVersion = modpack.manifest.versions.neoforge;
+  				  serverVersion = lib.replaceStrings [ "." ] [ "_" ] "neoforge-${mcVersion}";
+       	in
+       	{
+          enable = true;
+          package = pkgs.neoforgeServers.${serverVersion}.override { loaderVersion = neoforgeVersion; };
+
+          serverProperties = {/* */};
+          whitelist = {/* */};
+
+          symlinks = {
+            # Modpack example
+            "mods" = "${modpack}/mods";
+          };
         };
       };
     };
-  };
   };
 }
