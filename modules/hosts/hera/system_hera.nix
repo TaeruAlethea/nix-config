@@ -10,8 +10,6 @@
       system_base
       powerManagement
       sshServer
-
-      terminal
     ];
   };
 }
