@@ -22,6 +22,7 @@
 
           communications
           gaming
+          septabee-daw
           terminal
           valent
           vr
