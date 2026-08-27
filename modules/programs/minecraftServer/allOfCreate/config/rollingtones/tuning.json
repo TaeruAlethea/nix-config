@@ -1,0 +1,189 @@
+{
+  "_instructions": [
+    "This is a CLIENT-ONLY file. Edit it while Minecraft is running, then use /rollingtones reload.",
+    "All volume and pitch values are multipliers. Missing values inherit from the selected surface.",
+    "Add any exact registry id under blocks or wheels to tune modded content.",
+    "Add block tag ids under tags for broad mod compatibility. Exact blocks win; the first matching tag wins.",
+    "Surface names: clay, dirt, dirtlike, grass, gravel, leaves, metal, snow, sand, ice, water, hard, unknown, silent.",
+    "Hard blocks intentionally have no rolling loop until a suitable hard rolling asset is chosen."
+  ],
+  "format": 1,
+  "surfaces": {
+    "clay": {
+      "rolling": {"volume": 0.9, "pitch": 0.96},
+      "skidding": {"volume": 0.9, "pitch": 0.96}
+    },
+    "dirt": {
+      "rolling": {"volume": 1.0, "pitch": 1.0},
+      "skidding": {"volume": 1.0, "pitch": 1.0}
+    },
+    "dirtlike": {
+      "rolling": {"volume": 0.95, "pitch": 1.0},
+      "skidding": {"volume": 0.9, "pitch": 1.0}
+    },
+    "grass": {
+      "rolling": {"volume": 0.9, "pitch": 1.0},
+      "skidding": {"volume": 0.9, "pitch": 1.0}
+    },
+    "gravel": {
+      "rolling": {"volume": 0.9, "pitch": 1.0},
+      "skidding": {"volume": 0.95, "pitch": 1.0}
+    },
+    "leaves": {
+      "rolling": {"volume": 0.8, "pitch": 1.02},
+      "skidding": {"volume": 0.75, "pitch": 1.03}
+    },
+    "metal": {
+      "rolling": {"volume": 0.72, "pitch": 0.96},
+      "skidding": {"volume": 0.75, "pitch": 1.0}
+    },
+    "snow": {
+      "rolling": {"volume": 0.85, "pitch": 0.96},
+      "skidding": {"volume": 0.85, "pitch": 0.98}
+    },
+    "sand": {
+      "rolling": {"volume": 0.9, "pitch": 0.96},
+      "skidding": {"volume": 0.75, "pitch": 0.94}
+    },
+    "ice": {
+      "rolling": {"volume": 0.75, "pitch": 1.02},
+      "skidding": {"volume": 0.9, "pitch": 1.02}
+    },
+    "water": {
+      "rolling": {"volume": 0.75, "pitch": 1.0},
+      "skidding": {"volume": 0.0, "pitch": 1.0}
+    },
+    "hard": {
+      "rolling": {"volume": 0.0, "pitch": 1.0},
+      "skidding": {"volume": 0.8, "pitch": 1.0}
+    },
+    "unknown": {
+      "rolling": {"volume": 0.0, "pitch": 1.0},
+      "skidding": {"volume": 0.6, "pitch": 1.0}
+    },
+    "silent": {
+      "rolling": {"volume": 0.0, "pitch": 1.0},
+      "skidding": {"volume": 0.0, "pitch": 1.0}
+    }
+  },
+  "blocks": {
+    "minecraft:clay": {"surface": "clay"},
+    "minecraft:slime_block": {
+      "surface": "clay",
+      "rolling": {"volume": 0.8, "pitch": 0.92},
+      "skidding": {"volume": 0.8, "pitch": 0.92}
+    },
+    "minecraft:honey_block": {
+      "surface": "clay",
+      "rolling": {"volume": 0.75, "pitch": 0.88},
+      "skidding": {"volume": 0.7, "pitch": 0.9}
+    },
+    "minecraft:mud": {"surface": "clay"},
+    "minecraft:muddy_mangrove_roots": {"surface": "clay"},
+    "minecraft:dirt": {"surface": "dirt"},
+    "minecraft:coarse_dirt": {"surface": "dirt"},
+    "minecraft:rooted_dirt": {"surface": "dirt"},
+    "minecraft:dirt_path": {"surface": "dirtlike"},
+    "minecraft:farmland": {"surface": "dirtlike"},
+    "minecraft:podzol": {"surface": "dirtlike"},
+    "minecraft:mycelium": {"surface": "dirtlike"},
+    "minecraft:grass_block": {"surface": "grass"},
+    "minecraft:moss_block": {"surface": "grass"},
+    "minecraft:moss_carpet": {"surface": "grass"},
+    "minecraft:gravel": {"surface": "gravel"},
+    "minecraft:suspicious_gravel": {"surface": "gravel"},
+    "minecraft:sand": {"surface": "sand"},
+    "minecraft:red_sand": {"surface": "sand"},
+    "minecraft:suspicious_sand": {"surface": "sand"},
+    "minecraft:soul_sand": {"surface": "sand"},
+    "minecraft:soul_soil": {"surface": "dirtlike"},
+    "minecraft:snow": {"surface": "snow"},
+    "minecraft:snow_block": {"surface": "snow"},
+    "minecraft:powder_snow": {"surface": "snow"},
+    "minecraft:ice": {"surface": "ice"},
+    "minecraft:packed_ice": {"surface": "ice"},
+    "minecraft:blue_ice": {"surface": "ice"},
+    "minecraft:frosted_ice": {"surface": "ice"},
+    "minecraft:iron_block": {"surface": "metal"},
+    "minecraft:copper_block": {"surface": "metal"},
+    "minecraft:gold_block": {"surface": "metal"},
+    "minecraft:diamond_block": {"surface": "metal"},
+    "minecraft:netherite_block": {"surface": "metal"},
+    "minecraft:stone": {"surface": "hard"},
+    "minecraft:oak_planks": {"surface": "hard"}
+  },
+  "tags": {
+    "c:gravels": {"surface": "gravel"},
+    "c:sands": {"surface": "sand"},
+    "minecraft:planks": {"surface": "hard"},
+    "minecraft:logs": {"surface": "hard"},
+    "minecraft:wooden_slabs": {"surface": "hard"},
+    "minecraft:wooden_stairs": {"surface": "hard"},
+    "c:stones": {"surface": "hard"},
+    "c:cobblestones": {"surface": "hard"},
+    "minecraft:base_stone_overworld": {"surface": "hard"},
+    "minecraft:base_stone_nether": {"surface": "hard"}
+  },
+  "wheels": {
+    "offroad:small_tire": {
+      "rollingVolume": 0.86,
+      "rollingPitch": 1.06,
+      "skiddingVolume": 0.82,
+      "skiddingPitch": 1.03
+    },
+    "offroad:tire": {
+      "rollingVolume": 1.0,
+      "rollingPitch": 1.0,
+      "skiddingVolume": 1.0,
+      "skiddingPitch": 1.0
+    },
+    "offroad:large_tire": {
+      "rollingVolume": 1.12,
+      "rollingPitch": 0.95,
+      "skiddingVolume": 1.1,
+      "skiddingPitch": 0.97
+    },
+    "offroad:monstrous_tire": {
+      "rollingVolume": 1.3,
+      "rollingPitch": 0.87,
+      "skiddingVolume": 1.25,
+      "skiddingPitch": 0.93
+    },
+    "offroad:rockcutting_wheel": {
+      "rollingVolume": 0.9,
+      "rollingPitch": 1.04,
+      "skiddingVolume": 0.9,
+      "skiddingPitch": 1.02
+    },
+    "create:crushing_wheel": {
+      "rollingVolume": 1.05,
+      "rollingPitch": 0.97,
+      "skiddingVolume": 1.0,
+      "skiddingPitch": 0.98
+    },
+    "create:water_wheel": {
+      "rollingVolume": 1.05,
+      "rollingPitch": 0.97,
+      "skiddingVolume": 1.0,
+      "skiddingPitch": 0.98
+    },
+    "create:large_water_wheel": {
+      "rollingVolume": 1.35,
+      "rollingPitch": 0.84,
+      "skiddingVolume": 1.25,
+      "skiddingPitch": 0.91
+    },
+    "create:flywheel": {
+      "rollingVolume": 1.15,
+      "rollingPitch": 0.93,
+      "skiddingVolume": 1.1,
+      "skiddingPitch": 0.96
+    },
+    "create:mechanical_roller": {
+      "rollingVolume": 0.82,
+      "rollingPitch": 1.08,
+      "skiddingVolume": 0.8,
+      "skiddingPitch": 1.04
+    }
+  }
+}

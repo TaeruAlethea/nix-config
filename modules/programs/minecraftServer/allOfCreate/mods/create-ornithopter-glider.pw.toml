@@ -1,0 +1,13 @@
+name = "Create: Ornithopter Glider"
+filename = "createornithopterglider-1.2.0-1.21.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c966977d7df7ceaca24b644ee610e907d6bdd5c1"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8192296
+project-id = 1312780

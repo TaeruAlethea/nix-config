@@ -1,0 +1,23 @@
+#.
+#Parameters and abilities of Petrochem's kinetic mechanisms
+[kinetics]
+
+		#.
+		#.
+		#Fine tune the kinetic stats of individual components
+		[kinetics.stressValues.v2]
+
+			#.
+			#.
+			#[in Stress Units]
+			#Configure the individual stress impact of mechanical blocks. Note that this cost is doubled for every speed increase it receives.
+			[kinetics.stressValues.v2.impact]
+				steel_pump = 3.0
+				pumpjack_crank = 32.0
+
+			#.
+			#[in Stress Units]
+			#Configure how much stress a source can accommodate for.
+			[kinetics.stressValues.v2.capacity]
+				medium_engine = 1536.0
+				small_engine = 128.0

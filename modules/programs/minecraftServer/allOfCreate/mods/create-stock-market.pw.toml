@@ -1,0 +1,13 @@
+name = "Create: Stock Market"
+filename = "create-stockmarket-1.1.0+mc1.21.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "329e6cc8104bc7b73606771d66aba7264515f2fe"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8246369
+project-id = 1549447

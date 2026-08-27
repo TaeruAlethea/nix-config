@@ -1,0 +1,13 @@
+name = "Create: Charcoal Bulk Haunting"
+filename = "charcoal_to_coal_1.21.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "3924acfb5af8cb41f83f37105ba40557c126adbc"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7585727
+project-id = 978589

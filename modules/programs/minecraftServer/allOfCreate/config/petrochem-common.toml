@@ -1,0 +1,6 @@
+#.
+#[in FE/tick]
+#The amount of FE produced by the gas turbine every tick, does not affect consumption rate
+# Default: 128
+# Range: > 1
+turbineProduction = 128

@@ -1,0 +1,3 @@
+#.
+#Enable the sapper to require tree leaves to be natural, by worldgen or sapling (applies for leaf blocks that decay)
+requireNaturalLeaves = true

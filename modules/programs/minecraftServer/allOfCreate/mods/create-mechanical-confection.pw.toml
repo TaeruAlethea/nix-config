@@ -1,0 +1,13 @@
+name = "Create:Mechanical Confection"
+filename = "createmechanicalconfection-0.3.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "e1de040861fb16cfa15f82cf38e77d13d9990571"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6519954
+project-id = 1260229

@@ -1,0 +1,13 @@
+name = "Create: Create: Dreams n' Desires - No Diamond Recipes"
+filename = "no_dnd_diamond_1.21.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "2d8b050044da01870c8a82f1d73c0cfbf66727e4"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7586038
+project-id = 1455778

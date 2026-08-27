@@ -1,0 +1,13 @@
+name = "Create Addons Fix"
+filename = "Create_Addons_Fix_v1.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "095c0a15c3e1f2b6eb22bdf258198cd6deb7255a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5707673
+project-id = 964705

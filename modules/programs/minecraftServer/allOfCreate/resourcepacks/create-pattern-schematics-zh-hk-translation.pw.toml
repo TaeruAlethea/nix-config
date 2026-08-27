@@ -1,0 +1,13 @@
+name = "Create Pattern Schematics zh_hk Translation"
+filename = "create_pattern_schematics_zh_hk_translation.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "7cbd8102832c26b01d95821be34842679a84ef4f"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5677450
+project-id = 1093675

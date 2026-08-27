@@ -1,0 +1,13 @@
+name = "Create - Xaero's map"
+filename = "sablexaeromaps-1.21.1-1.0.34.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "2441af2f2649c1f329e3e1dccf3990d7cb7a32af"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8506461
+project-id = 1622142

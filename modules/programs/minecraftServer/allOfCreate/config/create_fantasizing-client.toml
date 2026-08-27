@@ -1,0 +1,2 @@
+#When processing, the Refined Radiance Tunnel and Shadow Steel Tunnel do not play particles and sound.
+silent_chromatic_tunnel = false

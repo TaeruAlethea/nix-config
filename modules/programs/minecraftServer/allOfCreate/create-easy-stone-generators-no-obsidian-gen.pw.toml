@@ -1,0 +1,13 @@
+name = "Create: Easy Stone Generators - No Obsidian Gen"
+filename = "Create_Easy_Stone_Generators_ No_Obsidian_Gen.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "a9b0e8048e1721ec1ec8b83dc3c831c1650ec678"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7537707
+project-id = 1446673

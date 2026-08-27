@@ -1,0 +1,105 @@
+#Client-only master controls. Detailed per-surface, per-block, and
+#per-wheel tuning lives in config/rollingtones/tuning.json.
+[volume]
+	#Master multiplier for every Rolling Tones sound.
+	# Default: 0.55
+	# Range: 0.0 ~ 4.0
+	global = 0.55
+	#Additional multiplier for rolling loops.
+	# Default: 1.0
+	# Range: 0.0 ~ 4.0
+	rolling = 1.0
+	#Additional multiplier for lateral skid/drift loops.
+	# Default: 0.8
+	# Range: 0.0 ~ 4.0
+	skidding = 0.8
+	#Manual attenuation distance in blocks (needed for stereo roll assets).
+	# Default: 42.0
+	# Range: 4.0 ~ 256.0
+	maxDistance = 42.0
+
+#Speed is measured in blocks per game tick.
+[rolling]
+	#Below this traversal/spin speed, wheels stay silent.
+	# Default: 0.0125
+	# Range: 0.0 ~ 2.0
+	startSpeed = 0.0125
+	#Speed at which the rolling volume curve reaches full strength.
+	# Default: 0.35
+	# Range: 0.001 ~ 4.0
+	fullSpeed = 0.35
+	#Base pitch at the rolling threshold, before surface/wheel tuning.
+	# Default: 0.78
+	# Range: 0.5 ~ 2.0
+	minPitch = 0.78
+	#Base pitch at full rolling speed.
+	# Default: 1.12
+	# Range: 0.5 ~ 2.0
+	maxPitch = 1.12
+	#Maximum stable per-loop pitch variation used to de-phase nearby wheels.
+	#0.025 means each loop may vary by up to 2.5 percent.
+	# Default: 0.025
+	# Range: 0.0 ~ 0.1
+	pitchVariation = 0.025
+
+[skidding]
+	#Below this lateral speed, small drifts stay silent.
+	# Default: 0.025
+	# Range: 0.0 ~ 2.0
+	startSpeed = 0.025
+	#Lateral speed at which skid volume reaches full strength.
+	# Default: 0.3
+	# Range: 0.001 ~ 4.0
+	fullSpeed = 0.3
+	#Base pitch at the skid threshold.
+	# Default: 0.88
+	# Range: 0.5 ~ 2.0
+	minPitch = 0.88
+	#Base pitch at full lateral slip; intentionally only a modest rise.
+	# Default: 1.08
+	# Range: 0.5 ~ 2.0
+	maxPitch = 1.08
+	#Maximum stable per-loop skid pitch variation.
+	#0.018 means each loop may vary by up to 1.8 percent.
+	# Default: 0.018
+	# Range: 0.0 ~ 0.1
+	pitchVariation = 0.018
+
+[smoothing]
+	#Per-tick fade/chase factor. Higher values react faster.
+	# Default: 0.22
+	# Range: 0.02 ~ 1.0
+	fadeFactor = 0.22
+
+#Quiet longitudinal tread ambience for optional Create: Tracks installations.
+#Terrain rolling and skidding still use the regular wheel controls above.
+[tracks]
+	#Maximum baseline ambience gain after the global volume is applied.
+	#The default global volume reduces this further; raising global cannot exceed this cap.
+	# Default: 0.18
+	# Range: 0.0 ~ 1.0
+	ambienceVolumeCap = 0.18
+	#Below this longitudinal/tread speed, track ambience stays silent.
+	# Default: 0.0125
+	# Range: 0.0 ~ 2.0
+	startSpeed = 0.0125
+	#Speed at which track ambience reaches its configured volume cap.
+	# Default: 0.65
+	# Range: 0.001 ~ 4.0
+	fullSpeed = 0.65
+	#Speed at which the low loop starts crossfading to the medium loop.
+	# Default: 0.1
+	# Range: 0.0 ~ 4.0
+	lowToMediumStart = 0.1
+	#Speed at which the crossfade has fully reached the medium loop.
+	# Default: 0.3
+	# Range: 0.001 ~ 4.0
+	lowToMediumEnd = 0.3
+	#Track ambience pitch at its movement threshold.
+	# Default: 0.8
+	# Range: 0.5 ~ 2.0
+	minPitch = 0.8
+	#Track ambience pitch at full speed.
+	# Default: 1.08
+	# Range: 0.5 ~ 2.0
+	maxPitch = 1.08

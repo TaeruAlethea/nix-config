@@ -1,0 +1,13 @@
+name = "Create: Blaze Burner Fuels zh_hk Translation"
+filename = "create_blaze_burner_fuels_zh_hk.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "fc744ca210e5301c37baf5b2162191e680cfb878"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7596623
+project-id = 1457754

@@ -1,0 +1,13 @@
+name = "Create: Bits 'n' Bobs"
+filename = "bits_n_bobs-2.2.5.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "84cc01e60ff34823942789517d8dec667d86c8d8"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8660793
+project-id = 1398383

@@ -1,0 +1,13 @@
+name = "Smarter Farmers (farmers replant)"
+filename = "smarterfarmers-1.21-2.2.4-neoforge.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "49e58b648cfe1e5d6623b1b2c3ce5aca0b8c08df"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7120722
+project-id = 491290

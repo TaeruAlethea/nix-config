@@ -1,0 +1,13 @@
+name = "Create: Wrencheable Planes"
+filename = "WrencheablePlanes2.0.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "e156dc647a529aeb55596e6f03555458a8bf0491"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6850945
+project-id = 1321349

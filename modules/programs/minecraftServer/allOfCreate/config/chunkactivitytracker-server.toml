@@ -1,0 +1,3 @@
+#.
+#Store initial chunk heightmap data. Useful for some mods, disabled by default as it takes up much more space.
+"Store Heightmap Info" = false

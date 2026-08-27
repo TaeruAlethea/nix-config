@@ -1,0 +1,13 @@
+name = "Create: Aquatic Ambitions"
+filename = "create_aquatic_ambitions-1.21.1-2.0.4.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "a02ce8ffc8395566c4fbe7907e721e82fd1b590b"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8466444
+project-id = 1005676

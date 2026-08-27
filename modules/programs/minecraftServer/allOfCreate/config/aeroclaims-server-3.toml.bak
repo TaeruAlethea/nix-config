@@ -1,0 +1,19 @@
+[general]
+	#How many ship blocks one aero claim covers. Example: 100 means 1 claim = 100 block limit.
+	# Default: 250
+	# Range: > 1
+	blocksPerClaim = 250
+	#If true, the claim will be deactivated when a refresh finds the ship exceeds its block limit. Default: false.
+	deactivateOnOverflow = false
+	#Additional blocks of protection margin around claimed blocks. 0 = no margin, 1 = 1 block buffer, etc. Default: 0.
+	# Default: 0
+	# Range: 0 ~ 100
+	claimMarginBlocks = 0
+	#If true, explosions cannot destroy or damage blocks inside active claims. Default: true.
+	explosionProtection = true
+	#If true, Create drills and saws can only break claimed blocks if placed by a player with permission. Default: true.
+	kineticBlockProtection = true
+	#Which party/teams mod to use for claim access checks. FTB Teams or Open Parties and CLaims.
+	#Default: OPAC
+	#Allowed Values: FTB, OPAC
+	partyProvider = "OPAC"

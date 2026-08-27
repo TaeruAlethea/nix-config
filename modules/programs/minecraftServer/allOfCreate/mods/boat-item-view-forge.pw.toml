@@ -1,0 +1,13 @@
+name = "Boat Item View (Forge/Neoforge)"
+filename = "boatiview-neoforge-0.0.6-1.21.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "77cadff679ed3f533f0510655d1d6088fb876d0f"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6059206
+project-id = 482444

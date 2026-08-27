@@ -1,0 +1,13 @@
+name = "e4mc"
+filename = "e4mc-neoforge-6.2.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c881286372c35048c40f31dc3c457838a21d9401"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8526346
+project-id = 849519

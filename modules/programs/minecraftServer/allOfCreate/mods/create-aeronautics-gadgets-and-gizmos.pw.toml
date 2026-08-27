@@ -1,0 +1,13 @@
+name = "Create Aeronautics: Gadgets & Gizmos"
+filename = "createthrusters-bundled-V1.1.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "d29df5e23a6aee1171b08b424d73c02d6fc3dd6e"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8523257
+project-id = 1537945

@@ -1,0 +1,37 @@
+#.
+#Control panel for block Interaction of air current through fluid should be enabled
+[recipes]
+	#.
+	#.
+	#If air current block interaction of Bulk Blasting should be enabled
+	enableBulkBlastingBlockInteraction = true
+	#.
+	#If air current block interaction of Bulk Smoking should be enabled
+	enableBulkSmokingBlockInteraction = false
+	#.
+	#If air current of Bulk Blasting ignite block when possible
+	bulkBlastingIgniteBlock = false
+	#.
+	#If air current of Bulk Blasting spread fire on flammable block when possible
+	bulkBlastingSpreadFire = true
+	#.
+	#If air current block interaction of Bulk Splashing should be enabled
+	enableBulkSplashingBlockInteraction = true
+	#.
+	#If air current of Bulk Splashing extinguish fire when possible
+	bulkSplashingExtinguishFire = true
+	#.
+	#If air current block interaction of Bulk Haunting should be enabled
+	enableBulkHauntingBlockInteraction = false
+	#.
+	#If air current block interaction of Bulk Freezing should be enabled
+	enableBulkFreezingBlockInteraction = true
+	#.
+	#If air current block interaction of Bulk Ending should be enabled
+	enableBulkEndingBlockInteraction = false
+	#.
+	#If air current block interaction of Bulk Sanding should be enabled
+	enableBulkSandingBlockInteraction = false
+	#.
+	#If air current block interaction of Bulk Coloring should be enabled
+	enableBulkColoringBlockInteraction = true

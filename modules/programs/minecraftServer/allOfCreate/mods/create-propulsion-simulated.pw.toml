@@ -1,0 +1,13 @@
+name = "Create Propulsion: Simulated"
+filename = "createpropulsion-1.1.5.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "928e9428ee92d07426c296b04a7fffb1e737e290"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8496246
+project-id = 1522736

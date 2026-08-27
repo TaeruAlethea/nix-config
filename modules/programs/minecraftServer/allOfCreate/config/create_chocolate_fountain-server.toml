@@ -1,0 +1,50 @@
+#Set the range of Chocolate Fountain (in Blocks)
+# Default: 10
+# Range: > 0
+chocolate_fountain_range = 10
+#Set the internal Tank Capacity of the Chocolate Fountain (in mB)
+# Default: 1000
+# Range: > 0
+chocolateFountainTankCapacity = 1000
+#Amount of Chocolate consumed when autofeeding the Player (in mB)
+# Default: 250
+# Range: > 0
+chocolateFountainConsumedPerUsage = 250
+#Time between possible feeding actions (in ticks)
+# Default: 40
+# Range: > 1
+chocolateFountainCooldown = 40
+#Amount of Food added to the Player)
+# Default: 3
+# Range: 0 ~ 20
+chocolateFountainFoodAmount = 3
+#Amount of Saturation added to the Player
+# Default: 0.3
+# Range: 0.0 ~ 20.0
+chocolateFountainSaturationAmount = 0.3
+#Enable Honey in Chocolate Fountain
+autofeedHoney = true
+#Amount of Food added to the Player when using Honey)
+# Default: 2
+# Range: 0 ~ 20
+honeyFountainFoodAmount = 2
+#Amount of Saturation added to the Player when using Honey
+# Default: 0.2
+# Range: 0.0 ~ 20.0
+honeyFountainSaturationAmount = 0.2
+#Amount of Honey consumed when calming a bee (in mB)
+# Default: 10
+# Range: > 0
+beeCalmingConsumed = 10
+#Enable Water in Chocolate Fountain
+autofeedWater = true
+#Amount of Thirst restored when using Water (requires Thirst Was Taken mod)
+# Default: 6
+# Range: 0 ~ 20
+waterThirstAmount = 6
+#Amount of Thirst quenched when using Water (requires Thirst Was Taken mod)
+# Default: 8
+# Range: 0 ~ 20
+waterQuenchedAmount = 8
+#Enable Create Confectionery fluids in Chocolate Fountain
+autofeedConfectionery = true

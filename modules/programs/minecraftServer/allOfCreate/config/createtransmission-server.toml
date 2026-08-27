@@ -1,0 +1,3 @@
+#.
+#Enable or disable transmission chain placement check. When disabled allows transmission chains to be placed everywhere.
+placing_check = true

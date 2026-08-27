@@ -1,0 +1,13 @@
+name = "Create Questing unofficial ZH_HK Translation"
+filename = "createquestingzhhk.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c60973ea6e503cacffb5b44b6110de414ee557e0"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5136820
+project-id = 971920

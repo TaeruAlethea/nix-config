@@ -1,0 +1,13 @@
+name = "Create: Rolling Tones"
+filename = "rolling-tones-0.2.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "f4f7ea17980d1c3e4460ec0dbab622e5b61baf9a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8603507
+project-id = 1626954

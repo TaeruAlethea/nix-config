@@ -1,0 +1,13 @@
+name = "Cut Through"
+filename = "CutThrough-v21.1.0-1.21.1-NeoForge.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "550f272c140566f0961c1bb3fdfb1a6272be30dd"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5731913
+project-id = 969423

@@ -1,0 +1,14 @@
+[
+  {"version":1},
+  {"ingredient":{"id":"someassemblyrequired:bread_slice"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"someassemblyrequired:toasted_bread_slice"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"createfood:bread_slice"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"simulated:optical_sensor"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"simulated:docking_connector"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"simulated:analog_transmission"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"simulated:gyroscopic_mechanism"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"aeronautics:smart_propeller"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"aeronautics:andesite_propeller"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"aeronautics:gyroscopic_propeller_bearing"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"aeronautics:steam_vent"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+]

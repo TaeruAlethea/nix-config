@@ -1,0 +1,13 @@
+name = "Integrated API"
+filename = "integrated_api-neoforge-1.21.1-1.8.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "d224f01f8a575a4eecac4de088d18eb5f8e7c5af"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8636576
+project-id = 817709

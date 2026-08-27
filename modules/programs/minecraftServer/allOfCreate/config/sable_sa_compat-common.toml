@@ -1,0 +1,3 @@
+#Whether to allow the Create SA 'block picker' to grab block entities (such as chests or create fluid tanks)
+#Note that this is disabled by default because grabbing this blocks usually results in data losses
+allowPickingBlockEntities = false

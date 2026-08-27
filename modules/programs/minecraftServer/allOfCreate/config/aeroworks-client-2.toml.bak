@@ -1,0 +1,10 @@
+#Client-only joystick feel settings (input pacing).
+[joystick]
+	#Milliseconds between repeat tilt steps while a direction key is held. Lower = full deflection reached faster (snappier); higher = slower sweep.
+	# Default: 100
+	# Range: 10 ~ 2000
+	keyRepeatDelayMs = 100
+	#Grace window after the last direction-key press/release before spring-back starts decaying. Lets you tap a key repeatedly without fighting the spring between taps. Set to 0 to spring back immediately.
+	# Default: 300
+	# Range: 0 ~ 5000
+	springBackDelayMs = 300

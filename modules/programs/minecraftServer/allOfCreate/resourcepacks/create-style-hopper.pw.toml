@@ -1,0 +1,13 @@
+name = "Create Style Hopper"
+filename = "Create_Style_Hopper_24_5_29.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "0b219947e6a5ed43eadd05b24163b8282fcd902f"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5380486
+project-id = 840329

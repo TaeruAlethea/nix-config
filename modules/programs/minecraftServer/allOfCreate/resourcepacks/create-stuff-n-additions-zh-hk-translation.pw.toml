@@ -1,0 +1,13 @@
+name = "Create Stuff 'N Additions ZH_HK Translation"
+filename = "create_stuff_additions_zh_hk.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "3d751a38bebe96423c97caf0e259e8ba351c8bfe"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7589028
+project-id = 1456302

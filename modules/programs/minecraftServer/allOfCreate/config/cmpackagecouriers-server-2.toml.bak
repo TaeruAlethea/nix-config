@@ -1,0 +1,6 @@
+#enables targeting depots with cardboard planes
+enablePlaneLocationLogistics = true
+#enables targeting players with cardboard planes
+enablePlanePlayerLogistics = true
+#enables integration with Create's Shop system that rewrites @player addresses to the ordering player's nick)
+enableShopAddressReplacement = true

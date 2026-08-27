@@ -1,0 +1,13 @@
+name = "Chunk Activity Tracker"
+filename = "chunkactivitytracker-neoforge-1.0.1-1.21.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "cf068831c27693cc49b79a74ed252caa12351275"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6164360
+project-id = 1193454

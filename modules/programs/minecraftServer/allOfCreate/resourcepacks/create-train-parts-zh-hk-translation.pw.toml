@@ -1,0 +1,13 @@
+name = "Create Train Parts zh_hk Translation"
+filename = "create_train_parts_zh_hk.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "36948cb05b3ea9d7aaa7969507c44bfa34d17a75"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7596646
+project-id = 1457762

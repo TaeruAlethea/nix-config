@@ -1,0 +1,13 @@
+name = "Create: Gears n' Kinetics"
+filename = "GnKinetics-1.21.1-1.0m.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "15cc60c8864ac8b5329723a55a97a548980611de"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7449378
+project-id = 1166576

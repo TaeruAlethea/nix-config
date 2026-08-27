@@ -1,0 +1,13 @@
+name = "Create: Tradeworks"
+filename = "tradeworks-1.0.7.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "d04d0d7dfac9a28593f2644c469ce608c4415f77"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8004324
+project-id = 1477581

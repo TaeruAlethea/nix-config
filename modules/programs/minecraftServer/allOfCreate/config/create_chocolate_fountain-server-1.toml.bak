@@ -1,0 +1,24 @@
+#Set the range of Chocolate Fountain (in Blocks)
+# Default: 10
+# Range: > 0
+chocolate_fountain_range = 10
+#Set the internal Tank Capacity of the Chocolate Fountain (in mB)
+# Default: 1000
+# Range: > 0
+chocolateFountainTankCapacity = 1000
+#Amount of Chocolate consumed when autofeeding the Player (in mB)
+# Default: 250
+# Range: > 0
+chocolateFountainConsumedPerUsage = 250
+#Time between possible feeding actions (in ticks)
+# Default: 40
+# Range: > 1
+chocolateFountainCooldown = 40
+#Amount of Food added to the Player)
+# Default: 3
+# Range: 0 ~ 20
+chocolateFountainFoodAmount = 3
+#Amount of Saturation added to the Player
+# Default: 0.3
+# Range: 0.0 ~ 20.0
+chocolateFountainSaturationAmount = 0.3

@@ -1,0 +1,13 @@
+name = "Create: Advancement Plagues"
+filename = "createadvancementplague.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "04e6fbd0d7d22f6f15fba9ee34a9ccb15e0432f6"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5198465
+project-id = 989975

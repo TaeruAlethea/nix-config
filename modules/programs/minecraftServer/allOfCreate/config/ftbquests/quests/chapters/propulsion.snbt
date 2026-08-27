@@ -1,0 +1,292 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "propulsion"
+	group: "408D0BD6C358F867"
+	icon: {
+		id: "createpropulsion:thruster"
+	}
+	id: "51D2631964351F3A"
+	images: [ ]
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["74A663BECB035204"]
+			id: "55BE81A7CBA9D72F"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "03B3568016488EBD"
+				table_id: 5001068052608706388L
+				type: "random"
+			}]
+			tasks: [
+				{
+					count: 20L
+					id: "2C74F8CBBBF0B3E3"
+					item: { count: 1, id: "minecraft:iron_ingot" }
+					type: "item"
+				}
+				{
+					count: 20L
+					id: "4EEF42BDA2D6B38D"
+					item: { count: 1, id: "create:andesite_alloy" }
+					type: "item"
+				}
+				{
+					count: 20L
+					id: "6F5D00C24B098F1E"
+					item: { count: 1, id: "minecraft:copper_ingot" }
+					type: "item"
+				}
+				{
+					count: 20L
+					id: "4DD38209F79DAF85"
+					item: { count: 1, id: "create:brass_ingot" }
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["64D485944845F231"]
+			id: "43D0152B9C0F0E1B"
+			tasks: [
+				{
+					id: "23C42FB43165B0F6"
+					item: { count: 1, id: "createpropulsion:solid_burner" }
+					type: "item"
+				}
+				{
+					id: "271B5433E854008C"
+					item: { count: 1, id: "createpropulsion:liquid_burner" }
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["55BE81A7CBA9D72F"]
+			id: "64D485944845F231"
+			tasks: [{
+				id: "5EC0EB720CEEBD25"
+				item: { count: 1, id: "createpropulsion:stirling_engine" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["55BE81A7CBA9D72F"]
+			id: "4B25075C31109A90"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "2A86B6EF1456D720"
+					table_id: 5001068052608706388L
+					type: "loot"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "3CF73199BD5BB5FF"
+					table_id: 5499456467321392182L
+					type: "all_table"
+				}
+			]
+			tasks: [{
+				id: "4F0527E5945CBEF4"
+				item: { count: 1, id: "createpropulsion:thruster" }
+				type: "item"
+			}]
+			x: -1.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["6F5A9597B7259915"]
+			id: "07B2E02E2328F4C2"
+			tasks: [{
+				id: "2769539B30B516EA"
+				item: { count: 1, id: "createpropulsion:vector_thruster" }
+				type: "item"
+			}]
+			x: -1.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["55BE81A7CBA9D72F"]
+			id: "51ED2D53445DAB57"
+			tasks: [{
+				id: "59B65B129C897071"
+				item: { count: 1, id: "createpropulsion:ion_thruster" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["55BE81A7CBA9D72F"]
+			id: "2E907AC52B8EE2E9"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "433102057DDB9A61"
+				table_id: 5499456467321392182L
+				type: "loot"
+			}]
+			tasks: [{
+				id: "1BB3CEFA47E8EE4E"
+				item: { count: 1, id: "createpropulsion:liquid_vector_thruster" }
+				type: "item"
+			}]
+			x: 1.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["55BE81A7CBA9D72F"]
+			id: "19D25E21CB4DD55C"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "0AB8D41729DED604"
+				table_id: 5001068052608706388L
+				type: "loot"
+			}]
+			tasks: [{
+				id: "07DDE5AE5CAF84B4"
+				item: { count: 1, id: "createpropulsion:redstone_transmission" }
+				type: "item"
+			}]
+			x: -2.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["6F5A9597B7259915"]
+			id: "639561EA12D5FADC"
+			tasks: [{
+				id: "33A3A501F3260597"
+				item: { count: 1, id: "createpropulsion:redstone_converter" }
+				type: "item"
+			}]
+			x: 1.5d
+			y: 6.0d
+		}
+		{
+			icon: {
+				components: {
+					"ftbquests:icon": "createpropulsion:block/cable_relay_block"
+				}
+				id: "ftbquests:custom_icon"
+			}
+			id: "74A663BECB035204"
+			size: 1.5d
+			tasks: [{
+				id: "47B6EF665629565A"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["74A663BECB035204"]
+			id: "6F5A9597B7259915"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "1B16CC182B11D7CF"
+				table_id: 5001068052608706388L
+				type: "loot"
+			}]
+			tasks: [{
+				count: 12L
+				id: "24B9C2AD320A858F"
+				item: { count: 1, id: "createpropulsion:platinum_ingot" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["6F5A9597B7259915"]
+			id: "708AB3D0AC844C2F"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "46FC7A912B9BD461"
+				table_id: 5001068052608706388L
+				type: "loot"
+			}]
+			tasks: [{
+				id: "2AA792A97F9C7D9D"
+				item: { count: 1, id: "createpropulsion:platinum_fluid_tank" }
+				type: "item"
+			}]
+			x: -1.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["6F5A9597B7259915"]
+			id: "227D8B17E7004F3A"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "0A7834AEB6768682"
+					table_id: 5001068052608706388L
+					type: "loot"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "747F965D56ABE8B3"
+					table_id: 5499456467321392182L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "299E7FBAE1BB3271"
+					item: { count: 1, id: "createpropulsion:cable_relay" }
+					type: "item"
+				}
+				{
+					count: 6L
+					id: "3BDAB023FFBEB581"
+					item: { count: 1, id: "createpropulsion:cable" }
+					type: "item"
+				}
+			]
+			x: 1.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["55BE81A7CBA9D72F"]
+			id: "3D6ADF4135A3BE48"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "4F1713351B5A35E2"
+				table_id: 5499456467321392182L
+				type: "random"
+			}]
+			tasks: [{
+				id: "306A6B110F65AB5C"
+				item: { count: 1, id: "createpropulsion:tilt_adapter" }
+				type: "item"
+			}]
+			x: 1.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["55BE81A7CBA9D72F"]
+			id: "505D0025C3E036D4"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "3304C495B5735745"
+				table_id: 5001068052608706388L
+				type: "random"
+			}]
+			tasks: [{
+				id: "3C895C34F5D1A756"
+				item: { count: 1, id: "createpropulsion:wing" }
+				type: "item"
+			}]
+			x: -1.5d
+			y: 2.5d
+		}
+	]
+}

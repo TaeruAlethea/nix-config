@@ -1,0 +1,417 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "gadgets_and_gizmos"
+	group: "2F8B068425AF05D4"
+	icon: {
+		id: "createthrusters:analogue_contraption_controller"
+	}
+	id: "24A48F8DA4024C8F"
+	images: [ ]
+	order_index: 8
+	quest_links: [ ]
+	quests: [
+		{
+			icon: {
+				id: "electroenergetics:electric_shock_sign"
+			}
+			id: "54DF387F802921AB"
+			tasks: [{
+				id: "633AB9455AC027C4"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["54DF387F802921AB"]
+			id: "496C2FD7E9BB6971"
+			shape: "gear"
+			size: 2.0d
+			tasks: [
+				{
+					count: 10L
+					id: "28DA6C2414B606B3"
+					item: { count: 1, id: "create:andesite_alloy" }
+					type: "item"
+				}
+				{
+					count: 10L
+					id: "3CFF85F123982CD7"
+					item: { count: 1, id: "create:industrial_iron_block" }
+					type: "item"
+				}
+				{
+					count: 6L
+					id: "78BCAE0BFECED00C"
+					item: { count: 1, id: "create:andesite_casing" }
+					type: "item"
+				}
+				{
+					count: 6L
+					id: "14748C85624B2842"
+					item: { count: 1, id: "create:cogwheel" }
+					type: "item"
+				}
+				{
+					count: 12L
+					id: "13E3B68C07C4B0F3"
+					item: { count: 1, id: "create:iron_sheet" }
+					type: "item"
+				}
+				{
+					count: 6L
+					id: "6C7D1E65DB961149"
+					item: { count: 1, id: "create:brass_casing" }
+					type: "item"
+				}
+				{
+					count: 6L
+					id: "61B628DA45EC989A"
+					item: { count: 1, id: "minecraft:iron_ingot" }
+					type: "item"
+				}
+				{
+					count: 10L
+					id: "7C88603938910B31"
+					item: { count: 1, id: "create:brass_ingot" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "0985AECD81DC41F1"
+					item: { count: 1, id: "create:brass_sheet" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "4ABBDB35719BB35E"
+					item: { count: 1, id: "create:precision_mechanism" }
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["496C2FD7E9BB6971"]
+			id: "7CFE797B0EC4A6E7"
+			tasks: [
+				{
+					id: "7600255DCAFF93EC"
+					item: { count: 1, id: "createthrusters:thruster" }
+					type: "item"
+				}
+				{
+					id: "065A0CDE6B4E348A"
+					item: { count: 1, id: "createthrusters:small_thruster" }
+					type: "item"
+				}
+			]
+			x: -2.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["496C2FD7E9BB6971"]
+			id: "1524E0F8D079A605"
+			tasks: [{
+				id: "52944234151CA72F"
+				item: { count: 1, id: "createthrusters:fuel_oxidizer" }
+				type: "item"
+			}]
+			x: -2.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["496C2FD7E9BB6971"]
+			id: "709E90DDEFB25E66"
+			tasks: [
+				{
+					id: "4F54EB251026E4D2"
+					item: { count: 1, id: "createthrusters:industrial_motor" }
+					type: "item"
+				}
+				{
+					id: "340FE627B95CCA2E"
+					item: { count: 1, id: "createthrusters:alternator" }
+					type: "item"
+				}
+				{
+					id: "5C47263EB5A47442"
+					item: { count: 1, id: "createthrusters:andesite_cable" }
+					type: "item"
+				}
+			]
+			x: -1.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["496C2FD7E9BB6971"]
+			id: "7986DE628299BE48"
+			tasks: [
+				{
+					id: "4A1BE9733A8A6955"
+					item: { count: 1, id: "createthrusters:variable_transmission" }
+					type: "item"
+				}
+				{
+					id: "53C35EDD52B6D7C1"
+					item: { count: 1, id: "createthrusters:vertical_variable_transmission" }
+					type: "item"
+				}
+			]
+			x: -2.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["496C2FD7E9BB6971"]
+			id: "3DADAD947C982C71"
+			tasks: [
+				{
+					id: "52EB65B0FD8CBBB6"
+					item: { count: 1, id: "createthrusters:physics_gantry_belt_wheel" }
+					type: "item"
+				}
+				{
+					id: "7DC11EE736CCE150"
+					item: { count: 1, id: "createthrusters:physics_gantry_carriage" }
+					type: "item"
+				}
+				{
+					id: "66D83CE554ACD487"
+					item: { count: 1, id: "createthrusters:claw" }
+					type: "item"
+				}
+				{
+					id: "78C00E282DDEDB07"
+					item: { count: 1, id: "createthrusters:powered_zipline" }
+					type: "item"
+				}
+				{
+					id: "78B2BC44C88FD9CF"
+					item: { count: 1, id: "createthrusters:physics_gantry_shaft" }
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -5.0d
+		}
+		{
+			dependencies: ["496C2FD7E9BB6971"]
+			id: "71ECD7EE0270484A"
+			tasks: [
+				{
+					id: "34CA4399CECBEF11"
+					item: { count: 1, id: "createthrusters:vertical_bidirectional_gearbox" }
+					type: "item"
+				}
+				{
+					id: "4DB37A40711D9D1D"
+					item: { count: 1, id: "createthrusters:bidirectional_gearbox" }
+					type: "item"
+				}
+			]
+			x: -1.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["0D04B64A3C45F2B6"]
+			id: "776D3E4656FECF89"
+			tasks: [{
+				id: "6E0E84562064B02C"
+				item: { count: 1, id: "createthrusters:thruster_bearing" }
+				type: "item"
+			}]
+			x: 1.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["776D3E4656FECF89"]
+			id: "6BD99B734B74E3EC"
+			tasks: [{
+				id: "724698D95F364FED"
+				item: { count: 1, id: "createthrusters:aileron_bearing" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["496C2FD7E9BB6971"]
+			id: "0D04B64A3C45F2B6"
+			tasks: [{
+				id: "3BCE468C16941143"
+				item: { count: 1, id: "simulated:swivel_bearing" }
+				type: "item"
+			}]
+			x: 1.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["496C2FD7E9BB6971"]
+			id: "7B17ACDB9B2B94E5"
+			tasks: [
+				{
+					id: "69AB7968C493861A"
+					item: { count: 1, id: "createthrusters:gyroscope_link" }
+					type: "item"
+				}
+				{
+					id: "630B88D90A8606C4"
+					item: { count: 1, id: "createthrusters:copycat_double_button" }
+					type: "item"
+				}
+				{
+					id: "241CFF7844ACB725"
+					item: { count: 1, id: "createthrusters:double_button" }
+					type: "item"
+				}
+				{
+					id: "7E544B7DD5B04D09"
+					item: { count: 1, id: "createthrusters:analogue_joystick" }
+					type: "item"
+				}
+				{
+					id: "5CEC9255AAB8F129"
+					item: { count: 1, id: "createthrusters:analogue_contraption_controller" }
+					type: "item"
+				}
+				{
+					id: "39778BE4CBDF8A0A"
+					item: { count: 1, id: "createthrusters:portable_contraption_controller" }
+					type: "item"
+				}
+			]
+			x: 1.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["496C2FD7E9BB6971"]
+			id: "5565EC42DFB73B73"
+			tasks: [{
+				id: "72C0328123E7FDBA"
+				item: { count: 1, id: "createthrusters:advanced_navigation_table" }
+				type: "item"
+			}]
+			x: 1.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["7CFE797B0EC4A6E7"]
+			id: "55D143E89EAA9BAC"
+			tasks: [{
+				id: "50E1CA43E1997D50"
+				item: { count: 1, id: "createthrusters:thruster_lense" }
+				type: "item"
+			}]
+			x: -2.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["7CFE797B0EC4A6E7"]
+			id: "1FE0DB58676C394D"
+			tasks: [
+				{
+					id: "68E3460B412CFE2D"
+					item: { count: 1, id: "createthrusters:processing_upgrade_smoking_t1" }
+					type: "item"
+				}
+				{
+					id: "40CDDEF719A96507"
+					item: { count: 1, id: "createthrusters:processing_upgrade_smelting_t1" }
+					type: "item"
+				}
+				{
+					id: "757F4F29B28ACCC2"
+					item: { count: 1, id: "createthrusters:processing_upgrade_haunting_t1" }
+					type: "item"
+				}
+				{
+					id: "6A62C605317729BA"
+					item: { count: 1, id: "createthrusters:propulsion_upgrade_t1" }
+					type: "item"
+				}
+			]
+			x: -3.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["1FE0DB58676C394D"]
+			id: "7E8F42F1D630BD88"
+			tasks: [
+				{
+					id: "59723D6F1F025DD3"
+					item: { count: 1, id: "createthrusters:processing_upgrade_smoking_t2" }
+					type: "item"
+				}
+				{
+					id: "06887F24DD0E2C0D"
+					item: { count: 1, id: "createthrusters:processing_upgrade_smelting_t2" }
+					type: "item"
+				}
+				{
+					id: "217B7F7DA58B6E17"
+					item: { count: 1, id: "createthrusters:processing_upgrade_haunting_t2" }
+					type: "item"
+				}
+				{
+					id: "56CD959012F0788E"
+					item: { count: 1, id: "createthrusters:propulsion_upgrade_t2" }
+					type: "item"
+				}
+			]
+			x: -4.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["7E8F42F1D630BD88"]
+			id: "3928FD010478D80E"
+			tasks: [
+				{
+					id: "53E9B0FE59072281"
+					item: { count: 1, id: "createthrusters:processing_upgrade_smoking_t3" }
+					type: "item"
+				}
+				{
+					id: "14FD0B525C2A4DE7"
+					item: { count: 1, id: "createthrusters:processing_upgrade_smelting_t3" }
+					type: "item"
+				}
+				{
+					id: "264B1BAAED39F35A"
+					item: { count: 1, id: "createthrusters:processing_upgrade_haunting_t3" }
+					type: "item"
+				}
+				{
+					id: "5122F1066FEFDDE2"
+					item: { count: 1, id: "createthrusters:propulsion_upgrade_t3" }
+					type: "item"
+				}
+			]
+			x: -4.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["54DF387F802921AB"]
+			id: "5C9C878E8C6DEEF7"
+			tasks: [{
+				id: "5F1B9B2C98DFDA98"
+				item: { count: 1, id: "createthrusters:contraption_network_linker" }
+				type: "item"
+			}]
+			x: -1.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["54DF387F802921AB"]
+			id: "4D73BF9B7B5574C8"
+			tasks: [{
+				id: "190C332B07C051A0"
+				item: { count: 1, id: "createthrusters:physics_goggles" }
+				type: "item"
+			}]
+			x: 1.0d
+			y: 1.0d
+		}
+	]
+}

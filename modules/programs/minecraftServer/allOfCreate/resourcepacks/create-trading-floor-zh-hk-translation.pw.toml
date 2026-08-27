@@ -1,0 +1,13 @@
+name = "Create: Trading Floor ZH_HK Translation"
+filename = "trading_floor_zh_hk.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "106ee82ae706d66b96277371bbfa307e14936703"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7596607
+project-id = 1457748

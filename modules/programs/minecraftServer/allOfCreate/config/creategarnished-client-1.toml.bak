@@ -1,0 +1,38 @@
+#.
+[client]
+	#.
+	#The vision range though peanut butter will be multiplied by this factor
+	# Default: 1.0
+	# Range: 0.125 ~ 256.0
+	peanutButter = 1.0
+	#.
+	#The vision range though birch syrup will be multiplied by this factor
+	# Default: 1.0
+	# Range: 0.125 ~ 256.0
+	birchSyrup = 1.0
+	#.
+	#The vision range though almond extract will be multiplied by this factor
+	# Default: 1.0
+	# Range: 0.125 ~ 256.0
+	almondExtract = 1.0
+	#.
+	#The vision range though royal cider will be multiplied by this factor
+	# Default: 1.0
+	# Range: 0.125 ~ 256.0
+	royalCider = 1.0
+	#.
+	#The vision range though beetroot juice will be multiplied by this factor
+	# Default: 1.0
+	# Range: 0.125 ~ 256.0
+	beetrootJuice = 1.0
+	#.
+	#The vision range though mushroom slop will be multiplied by this factor
+	# Default: 1.0
+	# Range: 0.125 ~ 256.0
+	mushroomSlop = 1.0
+	#.
+	#Controls whether or not the note block pling sound will play after defeating a mob with a hatchet while inflicted with the luck status effect.
+	allowLuckyPlingSoundEvent = true
+	#.
+	#Controls whether or not the anvil fall sound will play after breaking a log with a hatchet.
+	allowShotgunSoundEvent = true

@@ -1,0 +1,13 @@
+name = "Create: Tweaked Controllers"
+filename = "create_tweaked_controllers-1.21.1-1.2.7.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "6358da213d0eff982c3431a8d004a3e912f7957a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7958165
+project-id = 898849
