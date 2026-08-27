@@ -2,16 +2,23 @@
 {
   flake.nixosConfigurations.hera = inputs.nixpkgs.lib.nixosSystem {
     modules = [
-      inputs.self.modules.nixos.host_hera
-    ];
-  };
+      {
+        networking = {
+          hostName = "hera";
+          networkmanager.enable = true;
+        };
 
-  flake.modules.nixos.host_hera = {
-    imports = with inputs.self.modules.nixos; [
-      hardware_hera
-      system_hera
+        
+        imports = with inputs.self.modules.nixos; [
+          system_base
+          hardware_hera
 
-      user_astraeaf
+          user_astraeaf
+
+          powerManagement
+          sshServer
+        ];
+      }
     ];
   };
 }

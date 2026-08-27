@@ -2,17 +2,31 @@
 {
   flake.nixosConfigurations.zeus = inputs.nixpkgs.lib.nixosSystem {
     modules = [
-      inputs.self.modules.nixos.host_zeus
-    ];
-  };
+      {
+        networking = {
+          hostName = "zeus";
+          networkmanager.enable = true;
+        };
+  
+        imports = with inputs.self.modules.nixos; [
+          system_base
+          hardware_zeus
+          nvidia
 
-  flake.modules.nixos.host_zeus = {
-    imports = with inputs.self.modules.nixos; [
-      hardware_zeus
-      nvidia
-      system_zeus
+          user_astraeaf
 
-      user_astraeaf
+          window-manager
+          audio
+          powerManagement
+          razer
+
+          communications
+          gaming
+          terminal
+          valent
+          vr
+        ];
+      }
     ];
   };
 }
