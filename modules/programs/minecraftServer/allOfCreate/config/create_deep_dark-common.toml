@@ -1,7 +1,0 @@
-[armor_effects]
-	#Increased effects level for echo armor (boolean, default = true)
-	strong_armor = true
-
-[sword_effects]
-	#Increased effects level for echo sword (boolean, default = true)
-	strong_sword = true

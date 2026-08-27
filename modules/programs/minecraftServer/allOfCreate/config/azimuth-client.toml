@@ -1,6 +1,0 @@
-#.
-#Tooltip Builder
-[tooltipBuilder]
-	#.
-	#Render goggle tooltip translation keys literally for live updates.
-	tooltipBuilderDebug = false
