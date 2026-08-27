@@ -51,6 +51,7 @@
 				ping = true;
 				admin_adhoc = true;
 				http_files = true;
+				register = true; # For password changing
 			};
 
 			allowRegistration = false;
