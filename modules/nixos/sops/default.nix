@@ -31,7 +31,7 @@
             path = "/home/astraeaf/.ssh/authorized_keys";
             owner = config.users.users.astraeaf.name;
           };
-          "clourflare" = {
+          "cloudflare" = {
           };
 
         };

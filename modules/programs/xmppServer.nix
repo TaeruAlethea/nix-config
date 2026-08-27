@@ -30,7 +30,7 @@
   		];
 
   		virtualHosts.${domain} = {
-  			enable = true;
+  			enabled = true;
   			domain = domain;
   			ssl = {
 	  			cert = "/var/lib/acme/${domain}/fullchain.pem";
