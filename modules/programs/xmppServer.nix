@@ -56,25 +56,26 @@
 			allowRegistration = false;
   	};
 
-  	users.groups.certs.members = [ "prosody" "nginx" ];
+  	users.groups.certs.members = [ config.services.prosody.group config.services.nginx.group ];
 
   	security.acme = {
   		acceptTerms = true;
-  	# 	defaults.email = "TaeruAlethea@gmail.com";
-  	# 	certs.${domain} = {
-  	# 		group = "certs";
-  	# 		webroot = "/var/lib/acme/acme-challenge";
-  	# 		postRun = "systemctl reload prosody.service";
-  	# 		extraDomainNames = [ mucDomain uploadDomain ];
-  	# 	};
+  		defaults.email = "TaeruAlethea@gmail.com";
+  		certs.${domain} = {
+  			group = "certs";
+  			webroot = "/var/lib/acme/acme-challenge";
+  			postRun = "systemctl reload prosody.service";
+  			extraDomainNames = [ mucDomain uploadDomain ];
+  		};
   	};
 
   	services.nginx = {
   		enable = true;
   		virtualHosts.${domain} = {
-			    enableACME = true;
+			    # enableACME = true;
 			    forceSSL = true;
-					# locations."/.well-known/acme-challenge".root = "/var/lib/acme/acme-challenge";
+			    useACMEHost = domain;
+          locations."/.well-known/".root = "/var/lib/acme/acme-challenge/";
 					locations."/".return = "404";
   		};
   	};
@@ -99,6 +100,7 @@
   		443 # https file uploads
   		5281 # prosody http file upload
   		5222 # xmpp client connections
+  		5259 # xmpp server federation (unofficial?)
   		5269 # xmpp server federation
   	];
   };
