@@ -97,7 +97,7 @@
   		443 # https file uploads
   		5281 # prosody http file upload
   		5222 # xmpp client connections
-  		5259 # xmpp server federation
+  		5269 # xmpp server federation
   	];
   };
 }
