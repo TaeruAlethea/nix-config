@@ -14,40 +14,21 @@
       dataDir = "/var/lib/minecraft/";
 
       servers =
-      let
-        allofcreate = { packwiz, stdenv, fetchurl  }: stdenv.mkDerivation {
-          name = "allOfCreatePackwiz";
-          version = "2.4";
-          src = fetchurl {
-            url = "https://www.curseforge.com/api/v1/mods/1518930/files/8669802/download";
-            hash = "";
-          };
-          nativeBuildInputs = [ packwiz ];
-
-          unpackPhase = ''
-            ls -a
-            packwiz cursforge import $src
-            '';
-
-          installPhase = ''
-            mv . $out/
-            '';
-   	    };
-		    allofcreatePackage = pkgs.callPackage allofcreate;
-      in
       {
         AllOfCreate =
        	let
-       	     modpack = pkgs.fetchPackwizModpack {
-  				    src = "${allofcreatePackage}/pack.toml";
+       	     modpack = pkgs.fetchzip {
+  				    url = "https://edge.forgecdn.net/files/8669/802/All%20of%20Create%20-%20Aeronautics-v2.4.zip?api-key=267C6CA3";
+  				    hash = "sha256-rHVoVNGJ0Q1ai4+CfSdWdMKdCYix/N5BoHJnlPZJ15w=";
+  				    stripRoot = false;
   				  };
-  				  mcVersion = modpack.manifest.versions.minecraft;
-  				  neoforgeVersion = modpack.manifest.versions.neoforge;
-  				  serverVersion = lib.replaceStrings [ "." ] [ "_" ] "neoforge-${mcVersion}";
+  				  mcVersion = "1.21.1";
+  				  neoforgeVersion = "21.1.248";
+  				  serverVersion = lib.replaceStrings [ "." ] [ "_" ] "neoforge-${mcVersion}-${neoforgeVersion}";
        	in
        	{
           enable = true;
-          package = pkgs.neoforgeServers.${serverVersion}.override { loaderVersion = neoforgeVersion; };
+          package = pkgs.neoforgeServers.${serverVersion};
 
           serverProperties = {/* */};
           whitelist = {/* */};
