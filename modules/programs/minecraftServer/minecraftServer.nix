@@ -15,6 +15,18 @@
 
       servers =
       {
+        vanillaServer = {
+          enable = true;
+          autoStart = true;
+          openFirewall = true;
+          package = pkgs.vanillaServers.vanilla;
+          jvmOpts = "-Xms6144M -Xmx8192M";
+
+          serverProperties = {
+            server-port = 25566;
+          };
+        };
+        
         AllOfCreate =
        	let
        	     modpack = pkgs.fetchzip {
@@ -28,9 +40,14 @@
        	in
        	{
           enable = true;
+          autoStart = true;
+          openFirewall = true;
           package = pkgs.neoforgeServers.${serverVersion};
+          jvmOpts = "-Xms6144M -Xmx8192M";
 
-          serverProperties = {/* */};
+          serverProperties = {
+            server-port = 25565;
+          };
           whitelist = {/* */};
 
           symlinks = {
