@@ -9,7 +9,6 @@
 
         gaming
         communications
-        emacs
         zen-browser
       ];
 

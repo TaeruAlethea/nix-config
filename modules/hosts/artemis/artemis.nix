@@ -2,16 +2,29 @@
 {
   flake.nixosConfigurations.artemis = inputs.nixpkgs.lib.nixosSystem {
     modules = [
-      inputs.self.modules.nixos.host_artemis
-    ];
-  };
+      {
+        networking = {
+          hostName = "artemis";
+          networkmanager.enable = true;
+        };
 
-  flake.modules.nixos.host_artemis = {
-    imports = with inputs.self.modules.nixos; [
-      hardware_artemis # hardware-config.nix
-      system_artemis
+        imports = with inputs.self.modules.nixos; [
+          hardware_artemis # hardware-config.nix
 
-      user_astraeaf
+          user_astraeaf
+        ]
+        ++ (with inputs.self.modules.nixos; [
+          system_base
+          window-manager
+          audio
+          powerManagement
+          razer
+
+          communications
+          gaming
+          terminal
+        ]);
+      }
     ];
   };
 }
