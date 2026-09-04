@@ -15,7 +15,7 @@
       # Home packages & programs
       home.packages = with pkgs; [
         blender
-        gimp3-with-plugins
+        gimp3
         obsidian
         reaper
         vlc

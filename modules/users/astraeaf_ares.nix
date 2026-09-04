@@ -13,7 +13,7 @@
 
       home.packages = with pkgs; [
         blender
-        gimp3-with-plugins
+        gimp3
         krita
         obsidian
         vlc
