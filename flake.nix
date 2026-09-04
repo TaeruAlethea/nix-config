@@ -47,7 +47,7 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     septabee-daw = {
-      url = "github:TaeruAlethea/septabee-flake";
+      url = "github:Ap6661/septabee-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix = {

@@ -21,6 +21,7 @@
           razer
 
           communications
+          septabee-daw
           gaming
           terminal
         ]);
