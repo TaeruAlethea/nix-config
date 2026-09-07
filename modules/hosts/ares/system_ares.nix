@@ -14,6 +14,7 @@
 
       communications
       terminal
+      septabee_daw
     ];
   };
 }
