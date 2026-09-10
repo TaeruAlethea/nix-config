@@ -910,11 +910,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788916390,
-        "narHash": "sha256-IEyHQP1kKoOGYFJ7N3aXDZQWsg7d30sQoMQorNef5co=",
+        "lastModified": 1789002567,
+        "narHash": "sha256-NfQBftRXlgAOB5D/jUvK0EGv9FspRY83fa0R2sJ+2oI=",
         "owner": "Ap6661",
         "repo": "septabee-flake",
-        "rev": "28132764989596ca9d72efef0a89bea1e7ab5076",
+        "rev": "ca0f4a7170288c7c9eab856e4ad6d6e241dacc43",
         "type": "github"
       },
       "original": {
