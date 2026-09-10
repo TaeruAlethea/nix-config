@@ -46,6 +46,54 @@ in
 
   clipboard.disable-primary = true;
   gestures.hot-corners.enable = false;
+  blur = {
+    enable = true;
+  };
+
+  layout = {
+    gaps = 16;
+    always-center-single-column = false;
+    preset-column-widths = [
+      { proportion = 1. / 3.; }
+      { proportion = 1. / 2.; }
+      { proportion = 2. / 3.; }
+    ];
+    default-column-width = {
+      proportion = 1. / 2.;
+    };
+
+    focus-ring = {
+      enable = true;
+      width = 4;
+      active = {
+        color = "#7fc8ff";
+      };
+      inactive = {
+        color = "#505050";
+      };
+    };
+
+    border = {
+      enable = true;
+      width = 4;
+      active = {
+        color = "#ffc87f";
+      };
+      inactive = {
+        color = "#505050";
+      };
+      urgent = {
+        color = "#9b0000";
+      };
+    };
+  };
+
+  layer-rules = [
+    {
+      matches = [ { namespace = "dms:blurwallpaper"; } ];
+      background-effect.blur = true;
+    }
+  ];
 
   binds = {
     "Mod+Tab" = {

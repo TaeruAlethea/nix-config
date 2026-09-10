@@ -8,11 +8,7 @@
       ];
     }
     { argv = [ "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1" ]; }
-    # { argv = ["wezterm cli spawn --new-window --workspace scratchpad --"]; }
-    # { argv = ["dms" "run"]; }
   ];
-
-  # config-notification.disable-failed = true;
 
   cursor = {
     size = 36;
@@ -68,53 +64,6 @@
     #   transform.rotation = 90;
     #   position.x = 0;
     #   position.y = -480;
-    # };
-  };
-
-  layout = {
-    gaps = 16;
-    always-center-single-column = false;
-    preset-column-widths = [
-      { proportion = 1. / 3.; }
-      { proportion = 1. / 2.; }
-      { proportion = 2. / 3.; }
-    ];
-    default-column-width = {
-      proportion = 1. / 2.;
-    };
-
-    focus-ring = {
-      enable = true;
-      width = 4;
-      active = {
-        color = "#7fc8ff";
-      };
-      inactive = {
-        color = "#505050";
-      };
-    };
-
-    border = {
-      enable = true;
-      width = 4;
-      active = {
-        color = "#ffc87f";
-      };
-      inactive = {
-        color = "#505050";
-      };
-      urgent = {
-        color = "#9b0000";
-      };
-    };
-
-    # shadow = {
-    # 	enable = true;
-    # 	softness = 30;
-    # 	spread = 5;
-    # 	offset.x = 0;
-    # 	offset.y = 5;
-    # 	color = "#000007";
     # };
   };
 

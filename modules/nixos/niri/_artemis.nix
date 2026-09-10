@@ -8,10 +8,7 @@
       ];
     }
     { argv = [ "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1" ]; }
-    # { argv = ["dms" "run"]; }
   ];
-
-  # config-notification.disable-failed = true;
 
   cursor = {
     size = 36;
@@ -100,21 +97,7 @@
         color = "#9b0000";
       };
     };
-
-    # shadow = {
-    # 	enable = true;
-    # 	softness = 30;
-    # 	spread = 5;
-    # 	offset.x = 0;
-    # 	offset.y = 5;
-    # 	color = "#000007";
-    # };
   };
-
-  #window-rules.* = {
-  #	geometry-corner-radius = 12;
-  #	clip-to-geometry = true;
-  #};
 
   binds = {
     "Mod+Shift+Slash".action.show-hotkey-overlay = [ ];
