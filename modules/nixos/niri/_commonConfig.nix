@@ -48,6 +48,10 @@ in
   gestures.hot-corners.enable = false;
   blur = {
     enable = true;
+    passes = 2;
+    offset = 2;
+    noise = 0.02;
+    saturation = 3;
   };
 
   layout = {
@@ -93,6 +97,20 @@ in
       matches = [ { namespace = "dms:blurwallpaper"; } ];
       background-effect.blur = true;
     }
+    {
+      matches =[
+        { layer = "top"; }
+        { layer = "overlay"; }
+      ];
+      background-effect.xray = false;
+    }
+  ];
+
+  window-rules = [
+    {
+      matches = [ {} ];
+      background-effect.blur = true;
+     }
   ];
 
   binds = {
