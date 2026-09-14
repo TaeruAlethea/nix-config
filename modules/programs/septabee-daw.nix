@@ -8,10 +8,12 @@
   flake.modules.nixos.septabee-daw = 
     { ... }:
     {
-      imports = [ inputs.septabee-daw.nixosModules.x86_64-linux.default ];
+      imports = [ inputs.septabee-daw.nixosModules.default ];
+
       programs.septabee = {
         enable = true;
         wayland-deps = true;
+        offline = true;
       };
     };
 }
