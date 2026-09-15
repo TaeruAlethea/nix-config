@@ -12,6 +12,7 @@
 
       programs.septabee = {
         enable = true;
+        version = "latest";
         wayland-deps = true;
         offline = true;
       };
