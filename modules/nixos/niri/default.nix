@@ -39,6 +39,7 @@
         image-roll
         libheif
         libheif.out # Image Preview in Nautilus
+        ffmpegthumbnailer # Video Preview in Nautilus
       ];
 
       xdg = {
