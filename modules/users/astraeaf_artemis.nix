@@ -16,6 +16,7 @@
       home.packages = with pkgs; [
         blender
         gimp3
+        kicad-small
         obsidian
         reaper
         vlc
