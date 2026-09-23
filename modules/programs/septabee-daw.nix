@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
   flake-file.inputs.septabee-daw = {
-    url = "github:Ap6661/septabee-flake";
+    url = "github:TaeruAlethea/septabee-flake";
     inputs.nixpkgs.follows = "nixpkgs";
   };
 	
