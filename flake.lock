@@ -903,11 +903,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790344154,
-        "narHash": "sha256-LJ+5X1AOYe7fJvZMR8Pz+FB5ivlLQxPO9+8+a8PVtDc=",
+        "lastModified": 1790865176,
+        "narHash": "sha256-v0BFBBVAyeDs3tPvR4sdn2TulHb1OFAY/9idXg+WAd8=",
         "owner": "TaeruAlethea",
         "repo": "septabee-flake",
-        "rev": "44e539d8e4a0de705b54fc3b1d6a681d674aebd2",
+        "rev": "be23010c166000e75c37daa61195c506aff998c2",
         "type": "github"
       },
       "original": {
