@@ -45,7 +45,12 @@ in
   };
 
   clipboard.disable-primary = true;
-  gestures.hot-corners.enable = false;
+  gestures.hot-corners = {
+    top-left = false;
+    top-right = false;
+    bottom-left = false;
+    bottom-right = false;
+  };
   blur = {
     enable = true;
     passes = 2;
