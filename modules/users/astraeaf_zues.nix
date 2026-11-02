@@ -19,6 +19,7 @@
         blender
         gimp3
         kicad-small
+        mixxx
         obsidian
         reaper
         vlc
