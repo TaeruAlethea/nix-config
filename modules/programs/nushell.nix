@@ -14,7 +14,7 @@
       programs = {
         nushell = {
           enable = true;
-
+          loadSessionVariables = true;
           extraConfig = ''
                     let carapace_completer = {|spans|
                       carapace $spans.0 nushell ...$spans | from json
