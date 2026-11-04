@@ -40,6 +40,9 @@
         libheif
         libheif.out # Image Preview in Nautilus
         ffmpegthumbnailer # Video Preview in Nautilus
+
+        gsettings-desktop-schemas
+        gsettings-qt
       ];
 
       xdg = {
@@ -49,15 +52,15 @@
             "inode/directory" = "nautilus.desktop";
           };
         };
-        portal = {
-          enable = true;
-          xdgOpenUsePortal = true;
-          config.common.default = [ "gnome" ];
-          extraPortals = [
-            pkgs.xdg-desktop-portal-gtk
-            pkgs.xdg-desktop-portal-gnome
-          ];
-        };
+        # portal = {
+        #   enable = true;
+        #   xdgOpenUsePortal = true;
+        #   config.common.default = [ "gnome" ];
+        #   extraPortals = [
+        #     pkgs.xdg-desktop-portal-gtk
+        #     pkgs.xdg-desktop-portal-gnome
+        #   ];
+        # };
       };
 
       # Needed for Nautilus file Browser

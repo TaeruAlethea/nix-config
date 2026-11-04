@@ -25,6 +25,7 @@ in
       services.displayManager.autoLogin.enable = true;
       services.displayManager.autoLogin.user = "${userName}";
 
+      programs.dconf.enable = true;
       programs.nh = {
         enable = true;
         clean.enable = true;
