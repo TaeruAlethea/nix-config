@@ -33,6 +33,7 @@
         kicad-small
         mixxx
         obsidian
+        obs-studio
         reaper
         vlc
       ];
