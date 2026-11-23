@@ -18,8 +18,8 @@
         gimp3
         kicad-small
         obsidian
-        mixxx
         obs-studio
+        mixxx
         reaper
         vlc
       ];
