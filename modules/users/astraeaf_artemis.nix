@@ -7,6 +7,7 @@
         window-manager
         audio
 
+        DjAndStream
         gaming
         communications
         zen-browser
@@ -18,9 +19,6 @@
         gimp3
         kicad-small
         obsidian
-        obs-studio
-        mixxx
-        projectm_3
         reaper
         vlc
       ];

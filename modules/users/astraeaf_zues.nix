@@ -2,24 +2,13 @@
 {
   flake.modules.homeManager.user_astraeaf_zeus =
     { pkgs, ... }:
-    let
-     mixxx = pkgs.mixxx.overrideAttrs (old: {
-        qtWrapperArgs =
-          (old.qtWrapperArgs or [])
-          ++ [
-            "--prefix"
-            "XDG_DATA_DIRS"
-            ":"
-            "${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}"
-          ];
-      });
-    in
     {
       imports = with inputs.self.modules.homeManager; [
         window-manager
         audio
         elgato
 
+        DjAndStream
         communications
         gaming
         vr
@@ -32,9 +21,6 @@
         gimp3
         kicad-small
         obsidian
-        obs-studio
-        mixxx
-        projectm_3
         reaper
         vlc
       ];
