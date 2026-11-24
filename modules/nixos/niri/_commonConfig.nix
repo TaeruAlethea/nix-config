@@ -116,6 +116,21 @@ in
       matches = [ {} ];
       background-effect.blur = true;
      }
+    {
+      matches = [ { is-window-cast-target = true; } ];
+      focus-ring = {
+        active.color = "#f38ba8";
+        inactive.color = "#7d0d2d";
+      };
+    }
+    # {
+    #   matches = [ { app-id = "r#\"^projectM*$\"#"; } ];
+    #   is-active = true; 
+    # }
+    # {
+    #   matches = [ { app-id = "r#\"^mixxx*$\"#"; } ];
+    #   is-active = true;
+    # }
   ];
 
   binds = {
@@ -346,6 +361,9 @@ in
     };
     "Mod+Shift+F" = {
       action.fullscreen-window = [ ];
+    };
+    "Mod+Ctrl+Shift+F" = {
+      action.toggle-windowed-fullscreen = [ ];
     };
     "Mod+Ctrl+F" = {
       action.expand-column-to-available-width = [ ];

@@ -2,6 +2,12 @@
 {
   flake-file.inputs.niri = {
     url = "github:epireyn/niri-flake";
+    inputs.niri-unstable.follows = "niri-unstable";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+  flake-file.inputs.niri-unstable = {
+    
+    url =  "github:niri-wm/niri";
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
