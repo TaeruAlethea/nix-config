@@ -20,6 +20,7 @@
         obsidian
         obs-studio
         mixxx
+        projectm_3
         reaper
         vlc
       ];
